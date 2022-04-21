@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+      "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
       "projectName": "Promeetec.EDMS.Vecozo.ION",
-      "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+      "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
+      "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",

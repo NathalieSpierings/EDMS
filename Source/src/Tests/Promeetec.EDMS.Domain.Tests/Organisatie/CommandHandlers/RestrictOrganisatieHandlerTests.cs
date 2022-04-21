@@ -36,7 +36,7 @@ public class RestrictOrganisatieHandlerTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -68,7 +68,7 @@ public class RestrictOrganisatieHandlerTests : TestFixtureBase
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<RestrictOrganisatie>()
-            .With(x => x.RestrictOrganisatieId, organisatie.Id)
+            .With(x => x.Id, organisatie.Id)
             .Create();
 
         var sut = new RestrictOrganisatieHandler(_repository, _eventRepository);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YGkN37Hjpsnf8NAtpgdq4tVYFrMGk5MJIhoxXlclNJ+2kNCCThjwHae0c95UCbyatDeyVcBEPPZv/7mroy/VmA==",
+  "dgSpecHash": "rX9BLJo0Ys5Mf73blU5KRcCvv4QynaIeJVcDGnrXRm57ikULsDbD5TcwId2OZspvQLyjopDfkDa41dhvbXkgrw==",
   "success": true,
-  "projectFilePath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
+  "projectFilePath": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nspierings\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\nspierings\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",

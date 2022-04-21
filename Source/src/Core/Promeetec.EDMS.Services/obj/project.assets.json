@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+      "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
       "projectName": "Promeetec.EDMS.Services",
-      "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+      "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\obj\\",
+      "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",

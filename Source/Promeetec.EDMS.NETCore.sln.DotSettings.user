@@ -15,6 +15,16 @@
     &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CommandHandlers.UpdateOrganisatieHandlerTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.Rules.IsOrganisatieNummerUniqueTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CommandHandlers.CreateOrganisatieHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenNummerIsEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenNummerIsTooLong&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenNumberIsNotUnque&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenNameIsEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenNameIsTooLong&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenAgbCodeOndernemingIsEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenAgbCodeOndernemingIsTooLong&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenTelefoonZakelijkIsEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenTelefoonZakelijkIsTooLong&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

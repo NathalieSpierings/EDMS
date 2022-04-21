@@ -25,11 +25,11 @@ public class DeleteOrganisatieHandler : ICommandHandler<DeleteOrganisatie>
     {
         var organisatie = await _repository.Query()
             .FirstOrDefaultAsync(x =>
-                x.Id == command.DeleteOrganisatieId &&
+                x.Id == command.Id &&
                 x.Status != Status.Verwijderd);
 
         if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.DeleteOrganisatieId} niet gevonden.");
+            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
 
         organisatie.Delete();

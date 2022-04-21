@@ -26,9 +26,16 @@ public class UpdateOrganisatieValidator : AbstractValidator<UpdateOrganisatie>
             .EmailAddress().WithMessage("Dit is geen geldig e-mailadres!");
 
         RuleFor(c => c.Website)
-            .Length(9, 256).WithMessage("Website moet minimaal 9 en maximaal 256 tekens lang zijn.");
+            .Length(9, 256).WithMessage("Website moet minimaal 9 en maximaal 256 tekens lang zijn.")
+            .Must(BeAValidUrl).WithMessage("Dit is geen geldige website URL. HTTP://www.xx.nl");
 
         RuleFor(c => c.ContactpersoonId)
             .NotEmpty().WithMessage("Contactpersoon is verplicht.");
+    }
+
+    private static bool BeAValidUrl(string arg)
+    {
+        Uri result;
+        return Uri.TryCreate(arg, UriKind.Absolute, out result);
     }
 }

@@ -28,10 +28,10 @@ public class UpdateOrganisatieHandler : ICommandHandler<UpdateOrganisatie>
         await _validator.ValidateCommand(command);
 
         var organisatie = await _repository.Query()
-            .FirstOrDefaultAsync(x => x.Id == command.UpdateOrganisatieId);
+            .FirstOrDefaultAsync(x => x.Id == command.Id);
 
         if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.UpdateOrganisatieId} niet gevonden.");
+            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Update(command);
 

@@ -22,3 +22,15 @@ D:\Promeetec\NetCore\Promeetec.EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\ob
 D:\Promeetec\NetCore\Promeetec.EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\refint\Promeetec.EDMS.Vecozo.ION.dll
 D:\Promeetec\NetCore\Promeetec.EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.pdb
 D:\Promeetec\NetCore\Promeetec.EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\ref\Promeetec.EDMS.Vecozo.ION.dll
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\bin\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.deps.json
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\bin\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.dll
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\bin\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.pdb
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.csproj.AssemblyReference.cache
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.AssemblyInfoInputs.cache
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.AssemblyInfo.cs
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.csproj.CoreCompileInputs.cache
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.dll
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\refint\Promeetec.EDMS.Vecozo.ION.dll
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\Promeetec.EDMS.Vecozo.ION.pdb
+D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Vecozo.ION\obj\Debug\net6.0\ref\Promeetec.EDMS.Vecozo.ION.dll

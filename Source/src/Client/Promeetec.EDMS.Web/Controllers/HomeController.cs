@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Promeetec.EDMSWeb.Models;
+using Promeetec.EDMS.Web.Models;
 
-namespace Promeetec.EDMSWeb.Controllers
+namespace Promeetec.EDMS.Web.Controllers
 {
     public class HomeController : Controller
     {

@@ -11170,11 +11170,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
+      "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
       "projectName": "Promeetec.EDMS.Web",
-      "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
+      "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\obj\\",
+      "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11191,23 +11191,23 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
             },
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
             },
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj"
             },
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj"
             },
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj"
             },
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
             }
           }
         }

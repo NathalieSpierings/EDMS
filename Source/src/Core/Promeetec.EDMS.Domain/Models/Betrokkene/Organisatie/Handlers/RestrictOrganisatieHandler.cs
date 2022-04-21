@@ -26,11 +26,11 @@ public class RestrictOrganisatieHandler : ICommandHandler<RestrictOrganisatie>
     {
         var organisatie = await _repository.Query()
             .FirstOrDefaultAsync(x =>
-                x.Id == command.RestrictOrganisatieId &&
+                x.Id == command.Id &&
                 x.Status != Status.Verwijderd);
 
         if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.RestrictOrganisatieId} niet gevonden.");
+            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Restrict(command.Reason);
         await _repository.UpdateAsync(organisatie);

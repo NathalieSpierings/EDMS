@@ -25,11 +25,11 @@ public class ReinstateOrganisatieHandler : ICommandHandler<ReinstateOrganisatie>
     {
         var organisatie = await _repository.Query()
             .FirstOrDefaultAsync(x => 
-                x.Id == command.ReinstateOrganisatieId && 
+                x.Id == command.Id && 
                 x.Status != Status.Verwijderd);
 
         if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.ReinstateOrganisatieId} niet gevonden.");
+            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Reinstate();
         await _repository.UpdateAsync(organisatie);

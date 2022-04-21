@@ -338,7 +338,6 @@
     <Compile Remove="Models\Admin\Zorgstraat\IZorgstraatRepository.cs" />
     <Compile Remove="Models\Betrokkene\Adres\IAdresRepository.cs" />
     <Compile Remove="Models\Betrokkene\Land\ILandRepository.cs" />
-    <Compile Remove="Models\Betrokkene\Medewerker\Commands\CreateMedewerker.cs" />
     <Compile Remove="Models\Betrokkene\Memo\IMemoRepository.cs" />
     <Compile Remove="Models\Betrokkene\Notification\INotificatieRepository.cs" />
     <Compile Remove="Models\Betrokkene\UserProfile\IUserProfileRepository.cs" />
@@ -387,7 +386,6 @@
     <Folder Include="Models\Admin\Zorgstraat\Validators\" />
     <Folder Include="Models\Betrokkene\Land\Rules\" />
     <Folder Include="Models\Betrokkene\Land\Validators\" />
-    <Folder Include="Models\Betrokkene\Medewerker\Commands\" />
     <Folder Include="Models\Betrokkene\Organisatie\Handlers\" />
     <Folder Include="Models\Betrokkene\Organisatie\Events\" />
     <Folder Include="Models\Betrokkene\Verzekeraar\Events\" />

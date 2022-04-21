@@ -22,7 +22,7 @@ namespace Promeetec.EDMS.Domain.Tests.Organisatie
 
             _cmd = new CreateOrganisatie
             {
-                CreateOrganisatieId = _createOrganisatieId,
+                Id = _createOrganisatieId,
                 Nummer = "1234",
                 Naam = "Test org 1",
                 TelefoonZakelijk = "1234567897",

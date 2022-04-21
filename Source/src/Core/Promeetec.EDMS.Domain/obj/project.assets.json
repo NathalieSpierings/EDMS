@@ -1921,11 +1921,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
+      "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
       "projectName": "Promeetec.EDMS.Domain",
-      "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
+      "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\obj\\",
+      "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1942,8 +1942,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-              "projectPath": "D:\\Promeetec\\NetCore\\Promeetec.EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
             }
           }
         }

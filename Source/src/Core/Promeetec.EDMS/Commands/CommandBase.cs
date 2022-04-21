@@ -2,7 +2,7 @@
 
 public abstract class CommandBase : ICommand
 {
-   // public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     /// <summary>
     /// The unique identifier of the Organisatie whose the request belongs to.

@@ -45,7 +45,7 @@ public class DeleteOrganisatieHandlerTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -78,15 +78,15 @@ public class DeleteOrganisatieHandlerTests : TestFixtureBase
 
 
         var command = Fixture.Build<DeleteOrganisatie>()
-            .With(x => x.DeleteOrganisatieId, organisatie1.Id)
+            .With(x => x.Id, organisatie1.Id)
             .With(x => x.OrganisatieId, organisatie1.Id)
             .Create();
 
         var sut = new DeleteOrganisatieHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var organisatieDeleted = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.DeleteOrganisatieId);
-        var organisatieEvent = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.DeleteOrganisatieId);
+        var organisatieDeleted = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
+        var organisatieEvent = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         Assert.AreEqual(Status.Verwijderd, organisatieDeleted.Status);
         Assert.NotNull(organisatieEvent);

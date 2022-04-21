@@ -161,7 +161,7 @@ public class Organisatie : AggregateRoot
     /// <param name="cmd">The create organisatie command.</param>
     public Organisatie(CreateOrganisatie cmd)
     {
-        Id = cmd.CreateOrganisatieId;
+        Id = cmd.Id;
         Status = Status.Inactief;
         Nummer = cmd.Nummer;
         Naam = cmd.Naam;

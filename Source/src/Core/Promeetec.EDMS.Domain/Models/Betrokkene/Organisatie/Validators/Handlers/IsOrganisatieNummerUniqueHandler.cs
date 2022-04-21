@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
 using Promeetec.EDMS.Domain.Models.Shared;
 using Promeetec.EDMS.Queries;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Rules.Handlers;
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Handlers;
 
 public class IsOrganisatieNummerUniqueHandler : IQueryHandler<IsOrganisatieNummerUnique, bool>
 {

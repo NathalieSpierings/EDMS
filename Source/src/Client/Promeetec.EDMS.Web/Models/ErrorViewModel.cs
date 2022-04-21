@@ -1,4 +1,4 @@
-namespace Promeetec.EDMSWeb.Models
+namespace Promeetec.EDMS.Web.Models
 {
     public class ErrorViewModel
     {

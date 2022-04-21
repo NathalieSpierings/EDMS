@@ -25,11 +25,11 @@ public class SuspendOrganisatieHandler : ICommandHandler<SuspendOrganisatie>
     {
         var organisatie = await _repository.Query()
             .FirstOrDefaultAsync(x =>
-                x.Id == command.SuspendOrganisatieId &&
+                x.Id == command.Id &&
                 x.Status != Status.Verwijderd);
 
         if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.SuspendOrganisatieId} niet gevonden.");
+            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Suspend();
         await _repository.UpdateAsync(organisatie);

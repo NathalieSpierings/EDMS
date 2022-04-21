@@ -4,7 +4,6 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 
 public class UpdateOrganisatie : CommandBase
 {
-    public Guid UpdateOrganisatieId = Guid.NewGuid();
     public string Naam { get; set; }
     public string TelefoonZakelijk { get; set; }
     public string TelefoonPrive { get; set; }

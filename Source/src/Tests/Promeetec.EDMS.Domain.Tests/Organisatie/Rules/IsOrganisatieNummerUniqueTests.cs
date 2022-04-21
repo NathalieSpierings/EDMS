@@ -3,8 +3,8 @@ using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Rules;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Rules.Handlers;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Handlers;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
 using Promeetec.EDMS.Domain.Models.Cov;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
@@ -34,7 +34,7 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -79,7 +79,7 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -108,7 +108,7 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
         var organisatie = new Models.Betrokkene.Organisatie.Organisatie(cmd);
 
         var cmd1 = cmd;
-        cmd1.CreateOrganisatieId = Guid.NewGuid();
+        cmd1.Id = Guid.NewGuid();
         cmd1.Nummer = "5678";
         cmd1.Naam = "Test org 2";
         var organisatie1 = new Models.Betrokkene.Organisatie.Organisatie(cmd1);
@@ -130,7 +130,7 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -173,7 +173,7 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -202,7 +202,7 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
         var organisatie = new Models.Betrokkene.Organisatie.Organisatie(cmd);
 
         var cmd1 = cmd;
-        cmd1.CreateOrganisatieId = Guid.NewGuid();
+        cmd1.Id = Guid.NewGuid();
         cmd1.Nummer = "5678";
         cmd1.Naam = "Test org 2";
         var organisatie1 = new Models.Betrokkene.Organisatie.Organisatie(cmd1);

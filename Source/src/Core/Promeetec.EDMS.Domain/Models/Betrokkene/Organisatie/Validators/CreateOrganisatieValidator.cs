@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Rules;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators;
 
@@ -10,8 +10,8 @@ public class CreateOrganisatieValidator : AbstractValidator<CreateOrganisatie>
     {
         RuleFor(c => c.Nummer)
             .NotEmpty().WithMessage("Nummer is verplicht.")
-            .Length(1, 20).WithMessage("Nummer moet minimaal 1 en maximaal 50 tekens lang zijn.")
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsOrganisatieNummerUnique { Nummer = p, Id = c.CreateOrganisatieId }))
+            .Length(1, 20).WithMessage("Nummer moet minimaal 1 en maximaal 20 tekens lang zijn.")
+            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsOrganisatieNummerUnique { Nummer = p, Id = c.Id }))
             .WithMessage(c => $"Er bestaat al een organisatie met nummer {c.Nummer}.");
 
 
@@ -34,9 +34,16 @@ public class CreateOrganisatieValidator : AbstractValidator<CreateOrganisatie>
             .EmailAddress().WithMessage("Dit is geen geldig e-mailadres!");
 
         RuleFor(c => c.Website)
-            .Length(9, 256).WithMessage("Website moet minimaal 9 en maximaal 256 tekens lang zijn.");
+            .Length(9, 256).WithMessage("Website moet minimaal 9 en maximaal 256 tekens lang zijn.")
+            .Must(BeAValidUrl).WithMessage("Dit is geen geldige website URL. HTTP://www.xx.nl");
 
         RuleFor(c => c.ContactpersoonId)
             .NotEmpty().WithMessage("Contactpersoon is verplicht.");
+    }
+
+    private static bool BeAValidUrl(string arg)
+    {
+        Uri result;
+        return Uri.TryCreate(arg, UriKind.Absolute, out result);
     }
 }

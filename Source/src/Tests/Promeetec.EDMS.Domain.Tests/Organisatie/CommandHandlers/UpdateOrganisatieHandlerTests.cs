@@ -39,7 +39,7 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -71,7 +71,7 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
 
 
         var command = Fixture.Build<UpdateOrganisatie>()
-            .With(x => x.UpdateOrganisatieId, organisatie.Id)
+            .With(x => x.Id, organisatie.Id)
             .With(x => x.OrganisatieId, organisatie.Id)
             .Create();
 
@@ -83,8 +83,8 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
         await sut.Handle(command);
 
 
-        var updatedOrganisatie = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.UpdateOrganisatieId);
-        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.UpdateOrganisatieId);
+        var updatedOrganisatie = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
         Assert.AreEqual(command.Naam, updatedOrganisatie.Naam);

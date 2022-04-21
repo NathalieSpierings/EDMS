@@ -12,7 +12,7 @@ using Promeetec.EDMS.Data.Context;
 namespace Promeetec.EDMS.Data.Migrations
 {
     [DbContext(typeof(EDMSDbContext))]
-    [Migration("20220408085412_Initial")]
+    [Migration("20220421082233_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -247,13 +247,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
 
-                    b.Property<string>("AangemaaktDoor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AangemaaktDoorId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
@@ -274,13 +267,13 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<string>("AgbCodeOnderneming")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("AgbCodeZorgverlener")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<byte[]>("Avatar")
                         .IsRequired()
@@ -289,6 +282,13 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DeactivatieReden")
                         .IsRequired()

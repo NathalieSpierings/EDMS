@@ -37,7 +37,7 @@ public class SuspendOrganisatieHandlerTests : TestFixtureBase
     {
         var cmd = new CreateOrganisatie
         {
-            CreateOrganisatieId = Guid.NewGuid(),
+            Id = Guid.NewGuid(),
             Nummer = "1234",
             Naam = "Test org 1",
             TelefoonZakelijk = "1234567897",
@@ -69,7 +69,7 @@ public class SuspendOrganisatieHandlerTests : TestFixtureBase
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<SuspendOrganisatie>()
-            .With(x => x.SuspendOrganisatieId, organisatie.Id)
+            .With(x => x.Id, organisatie.Id)
             .Create();
 
         var sut = new SuspendOrganisatieHandler(_repository, _eventRepository);

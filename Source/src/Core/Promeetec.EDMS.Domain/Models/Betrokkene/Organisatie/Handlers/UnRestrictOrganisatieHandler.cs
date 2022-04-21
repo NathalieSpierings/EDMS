@@ -25,11 +25,11 @@ public class UnRestrictOrganisatieHandler : ICommandHandler<UnrestrictOrganisati
     {
         var organisatie = await _repository.Query()
             .FirstOrDefaultAsync(x =>
-                x.Id == command.UnrestrictOrganisatieId &&
+                x.Id == command.Id &&
                 x.Status != Status.Verwijderd);
 
         if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.UnrestrictOrganisatieId} niet gevonden.");
+            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Unrestrict();
         await _repository.UpdateAsync(organisatie);
