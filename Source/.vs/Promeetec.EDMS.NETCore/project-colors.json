@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5d8d260f-9c1e-45e7-a283-a3bdbdb6c1a4": {
+      "ProjectGuid": "5d8d260f-9c1e-45e7-a283-a3bdbdb6c1a4",
+      "DisplayName": "Promeetec.EDMSWeb",
+      "ColorIndex": 0
+    },
+    "538d60df-ff61-40d2-9a3f-741981ed494f": {
+      "ProjectGuid": "538d60df-ff61-40d2-9a3f-741981ed494f",
+      "DisplayName": "Promeetec.EDMS.Domain",
+      "ColorIndex": 1
+    },
+    "9073a260-b42f-4203-a5d2-0f340d43ab9d": {
+      "ProjectGuid": "9073a260-b42f-4203-a5d2-0f340d43ab9d",
+      "DisplayName": "Promeetec.EDMS.Web",
+      "ColorIndex": 2
+    },
+    "15023cca-8dd4-4f63-a5f4-54fc2016890a": {
+      "ProjectGuid": "15023cca-8dd4-4f63-a5f4-54fc2016890a",
+      "DisplayName": "Promeetec.EDMS.Data",
+      "ColorIndex": 3
+    },
+    "2bdc0035-5487-4963-89fc-c0bcf059385d": {
+      "ProjectGuid": "2bdc0035-5487-4963-89fc-c0bcf059385d",
+      "DisplayName": "Promeetec.EDMS",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 5
+}
