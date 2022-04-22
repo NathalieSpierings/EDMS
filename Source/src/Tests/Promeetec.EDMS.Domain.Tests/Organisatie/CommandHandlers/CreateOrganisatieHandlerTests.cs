@@ -42,11 +42,11 @@ public class CreateOrganisatieHandlerTests : TestFixtureBase
 
         await sut.Handle(command);
 
-        var organisatie = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
+        var dbEntity = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.NotNull(organisatie);
+        Assert.NotNull(dbEntity);
         Assert.NotNull(@event);
     }
 }

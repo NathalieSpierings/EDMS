@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Medewerker\Rules\" />
+  </ItemGroup>
+
 </Project>

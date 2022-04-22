@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
 using Promeetec.EDMS.Domain.Models.Identity;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
@@ -162,21 +164,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     /// </summary>
     [Column(TypeName = "datetime2")]
     public DateTime? ActivationMailSendOn { get; set; }
-
-    ///// <summary>
-    ///// The unique identifier of the medewerker who sended the activation email.
-    ///// </summary>
-    //public Guid? ActivationMailSendById { get; set; }
-
-
-    ///// <summary>
-    ///// The name of the medewerker who sended the activation email.
-    ///// </summary>
-    //[MaxLength(200)]
-    //public string ActivationMailSendBy { get; set; }
-
-
-
+    
     /// <summary>
     /// The time stamp of when the record has been created.
     /// </summary>
@@ -271,7 +259,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
 
     public Guid OrganisatieId { get; set; }
     public virtual Organisatie.Organisatie Organisatie { get; set; }
-    
+
     public Guid? AdresId { get; set; }
     public virtual Adres.Adres Adres { get; set; }
 
@@ -305,6 +293,167 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
 
         Id = id;
     }
+
+
+    /// <summary>
+    /// Creates an organisatie.
+    /// </summary>
+    /// <param name="cmd">The create organisatie command.</param>
+    public Medewerker(CreateMedewerker cmd)
+    {
+        Id = cmd.Id;
+        OrganisatieId = cmd.OrganisatieId;
+        MedewerkerSoort = cmd.MedewerkerSoort;
+
+        cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
+        cmd.Persoon.FormeleNaam = PersoonExtensions.SetFormeleNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        Persoon = cmd.Persoon;
+        Email = cmd.Email;
+        Functie = cmd.Functie;
+        AgbCodeZorgverlener = cmd.AgbCodeZorgverlener;
+        AgbCodeOnderneming = cmd.AgbCodeOnderneming;
+        IONToestemmingsverklaringActivatieLink = cmd.IonToestemmingsverklaringActivatieLink;
+        Avatar = cmd.Avatar;
+        AccountState = cmd.AccountState;
+        UserName = cmd.UserName;
+        TempCode = cmd.TempCode;
+        PukCode = cmd.PukCode;
+
+        Adres = cmd.Adres;
+        
+        Status = Status.Inactief;
+        UserProfile = new UserProfile.UserProfile();
+
+        EmailConfirmed = false;
+        PhoneNumberConfirmed = true;
+        GoogleAuthenticatorEnabled = false;
+
+        // TODO: hasher testen
+        var hasher = new PasswordHasher<Medewerker>();
+        var hashedPassword = hasher.HashPassword(this, cmd.TempCode);
+
+
+        //var hasher = new PasswordHasher(Medewerker);
+        //PasswordHash = hasher.HashPassword(cmd.TempCode);
+
+        PasswordHash = cmd.PasswordHash;
+        SecurityStamp = Guid.NewGuid().ToString();
+        
+        CreatedById = cmd.UserId;
+        CreatedBy = cmd.UserDisplayName;
+    }
+
+    /// <summary>
+    /// Update the details of the organisatie.
+    /// </summary>
+    /// <param name="cmd">The update organisatie command.</param>
+    public void Update(UpdateMedewerker cmd)
+    {
+        cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
+        cmd.Persoon.FormeleNaam = PersoonExtensions.SetFormeleNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        Persoon = cmd.Persoon;
+        Functie = cmd.Functie;
+        Email = cmd.Email;
+        IONToestemmingsverklaringActivatieLink = cmd.IonToestemmingsverklaringActivatieLink;
+        AgbCodeZorgverlener = cmd.AgbCodeZorgverlener;
+        AgbCodeOnderneming = cmd.AgbCodeOnderneming;
+        Avatar = cmd.Avatar;
+        Adres = cmd.Adres;
+    }
+
+
+    /// <summary>
+    /// Sets the status of the medewerker as suspended.
+    /// The medewerker will no longer be able to login.
+    /// </summary>
+    public void Suspend(SuspendMedewerker cmd)
+    {
+        Status = Status.Inactief;
+        DeactivatieReden = cmd.DeactivatieReden;
+    }
+
+    /// <summary>
+    /// Reinstates the medewerker if suspended.
+    /// </summary>
+    public void Reinstate()
+    {
+        Status = Status.Actief;
+    }
+
+    /// <summary>
+    /// Set the status as deleted.
+    /// The medewerker will no longer be visible.
+    /// </summary>
+    public void Delete()
+    {
+        Status = Status.Verwijderd;
+    }
+
+
+    /// <summary>
+    /// Activates Google Authenticator.
+    /// </summary>
+    public void ActivateGoogleAuthenticator(ActivateGoogleAuthenticator cmd)
+    {
+        AccountState = cmd.AccountState;
+        GoogleAuthenticatorEnabled = true;
+        GoogleAuthenticatorSecretKey = cmd.SecretKey;
+    }
+
+    /// <summary>
+    /// Reactivates Google Authenticator.
+    /// </summary>
+    public void ReactivateGoogleAuthenticator(ReactivateGoogleAuthenticator cmd)
+    {
+        AccountState = UserAccountState.ReactivateGoogleAuthenticator;
+        GoogleAuthenticatorEnabled = false;
+        GoogleAuthenticatorSecretKey = null;
+        TwoFactorEnabled = false;
+    }
+
+    /// <summary>
+    /// Confirms the e-mail.
+    /// </summary>
+    public void ConfirmEmail()
+    {
+        AccountState = UserAccountState.EmailConfirmed;
+        EmailConfirmed = true;
+    }
+
+    public void AddMedewerkerToGroup(AddMedewerkerToGroup cmd)
+    {
+        if (Groups.FirstOrDefault(x => x.GroupId == cmd.GroupUser.GroupId) != null)
+            throw new Exception("Medewerker is al toegevoegd aan deze groep.");
+
+        Groups.Add(cmd.GroupUser);
+    }
+
+    /// <summary>
+    /// Sets the last and previous login date.
+    /// </summary>
+    /// <param name="cmd"></param>
+    public void Login(LoginMedewerker cmd)
+    {
+        VorigeLoginOp = LaatstIngelogdOp;
+        LaatstIngelogdOp = cmd.IngelogdOp;
+    }
+
+
+    public void UpdatePassword(UpdatePassword cmd)
+    {
+        // TODO: hasher testen
+        var hasher = new PasswordHasher<Medewerker>();
+        var hashedPassword = hasher.HashPassword(this, cmd.Password);
+        SecurityStamp = Guid.NewGuid().ToString();
+    }
+
+    public void UpdateAccountState(UpdateAccountState cmd)
+    {
+        AccountState = cmd.AccountState;
+    }
+
 
     #region AggregateRoot implementations
 

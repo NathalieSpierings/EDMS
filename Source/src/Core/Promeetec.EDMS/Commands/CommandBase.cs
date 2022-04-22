@@ -13,4 +13,10 @@ public abstract class CommandBase : ICommand
     /// The unique identifier of the User who initiated the request.
     /// </summary>
     public Guid UserId { get; set; }
+
+
+    /// <summary>
+    /// The display name of the User who initiated the request.
+    /// </summary>
+    public string UserDisplayName { get; set; }
 }

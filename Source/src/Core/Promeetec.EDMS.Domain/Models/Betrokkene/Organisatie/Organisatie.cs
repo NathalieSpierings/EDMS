@@ -235,7 +235,7 @@ public class Organisatie : AggregateRoot
     }
 
     /// <summary>
-    /// Re-activates the organisatie if suspended.
+    /// Reinstate the organisatie if suspended.
     /// </summary>
     public void Reinstate()
     {
