@@ -16,9 +16,11 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
     [TestFixture]
     public class Medewerker : TestFixtureBase
     {
-        private Medewerker _sut;
+        private EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker _sut;
         private CreateMedewerker _cmd;
         private Guid _createMedewerkerId;
+
+
         [SetUp]
         public void Setup()
         {
@@ -54,7 +56,7 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
                 PukCode = "ASD345H78",
             };
 
-            _sut = new Medewerker(_cmd);
+            _sut = new EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker(_cmd);
         }
 
         [Test]
@@ -62,28 +64,32 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
         {
             Assert.AreEqual(_createMedewerkerId, _sut.Id);
             Assert.AreEqual(Status.Inactief, _sut.Status);
-            Assert.AreEqual(_cmd.Nummer, _sut.Nummer);
-            Assert.AreEqual(_cmd.Naam, _sut.Naam);
-            Assert.AreEqual(_cmd.TelefoonZakelijk, _sut.TelefoonZakelijk);
-            Assert.AreEqual(_cmd.TelefoonPrive, _sut.TelefoonPrive);
-            Assert.AreEqual(_cmd.Email, _sut.Email);
-            Assert.AreEqual(_cmd.Website, _sut.Website);
+            Assert.AreEqual(_cmd.MedewerkerSoort, _sut.MedewerkerSoort);
+            Assert.AreEqual(_cmd.Persoon.Geslacht, _sut.Persoon.Geslacht);
+            Assert.AreEqual(_cmd.Persoon.Geboortedatum, _sut.Persoon.Geboortedatum);
+            Assert.AreEqual(_cmd.Persoon.Voorletters, _sut.Persoon.Voorletters);
+            Assert.AreEqual(_cmd.Persoon.Tussenvoegsel, _sut.Persoon.Tussenvoegsel);
+            Assert.AreEqual(_cmd.Persoon.Voornaam, _sut.Persoon.Voornaam);
+            Assert.AreEqual(_cmd.Persoon.Achternaam, _sut.Persoon.Achternaam);
+            Assert.AreEqual(_cmd.Persoon.TelefoonZakelijk, _sut.Persoon.TelefoonZakelijk);
+            Assert.AreEqual(_cmd.Persoon.TelefoonPrive, _sut.Persoon.TelefoonPrive);
+            Assert.AreEqual(_cmd.Persoon.Doorkiesnummer, _sut.Persoon.Doorkiesnummer);
+            Assert.AreEqual(_cmd.Persoon.Email, _sut.Persoon.Email);
+            Assert.AreEqual(_cmd.Persoon.VolledigeNaam, _sut.Persoon.VolledigeNaam);
+            Assert.AreEqual(_cmd.Persoon.FormeleNaam, _sut.Persoon.FormeleNaam);
+            Assert.AreEqual(_cmd.AgbCodeZorgverlener, _sut.AgbCodeZorgverlener);
             Assert.AreEqual(_cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
-            Assert.AreEqual(_cmd.Zorggroep, _sut.Zorggroep);
-            Assert.AreEqual(_cmd.Logo, _sut.Logo);
-
-            Assert.AreEqual(_cmd.Settings.IONZoekoptie, _sut.Settings.IONZoekoptie);
-            Assert.AreEqual(_cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
-            Assert.AreEqual(_cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
-            Assert.AreEqual(_cmd.Settings.COVControleType, _sut.Settings.COVControleType);
-            Assert.AreEqual(_cmd.Settings.COVControleProcessType, _sut.Settings.COVControleProcessType);
-            Assert.AreEqual(_cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
-
-            Assert.AreEqual(_cmd.ZorggroepRelatieId, _sut.ZorggroepRelatieId);
-            Assert.AreEqual(_cmd.ContactpersoonId, _sut.ContactpersoonId);
-            Assert.AreEqual(_cmd.AdresId, _sut.AdresId);
-            Assert.AreEqual(_cmd.VoorraadId, _sut.VoorraadId);
-            Assert.AreEqual(_cmd.AdresboekId, _sut.AdresboekId);
+            Assert.AreEqual(_cmd.Functie, _sut.Functie);
+            Assert.AreEqual(_cmd.Avatar, _sut.Avatar);
+            Assert.AreEqual(_cmd.Email, _sut.Email);
+            Assert.AreEqual(_cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
+            Assert.AreEqual(_cmd.AccountState, _sut.AccountState);
+            Assert.AreEqual(_cmd.UserName, _sut.UserName);
+            Assert.AreEqual(_cmd.TempCode, _sut.TempCode);
+            Assert.AreEqual(_cmd.PukCode, _sut.PukCode);
+            Assert.AreEqual(_cmd.Adres, _sut.Adres);
+            Assert.AreEqual(_cmd.UserId, _sut.CreatedById);
+            Assert.AreEqual(_cmd.UserDisplayName, _sut.CreatedBy);
         }
 
 
@@ -93,50 +99,42 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
             // Gives error on logo byte[]
             // var sut = Fixture.Create<EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie>();
 
-            var cmd = new UpdateOrganisatie
+            var cmd = new UpdateMedewerker
             {
-                Naam = "New Naam",
-                TelefoonZakelijk = "0401234567",
-                TelefoonPrive = "0401234567",
-                Email = "abc@test.com",
-                Website = "http://www.test.com",
-                AgbCodeOnderneming = "12345677",
-                Zorggroep = true,
-                Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
-                Settings = new OrganisatieSettings
+                Persoon = new Persoon
                 {
-                    IONZoekoptie = IONZoekOptie.ZoekenOpPraktijk,
-                    AanleverbestandLocatie = "New Test location",
-                    AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.Verwerkt,
-                    COVControleProcessType = COVControleProcessType.COVProcesStoppenBijUitval,
-                    COVControleType = COVControleType.COVControleBijVoorraad,
-                    VerwijzerInAdresboek = VerwijzerInAdresboekType.VewijzerOptioneel
+                    Voorletters = "D",
+                    Tussenvoegsel = "von",
+                    Voornaam = "Dita",
+                    Achternaam = "Dite",
+                    TelefoonZakelijk = "0401234567",
+                    TelefoonPrive = "0401234567",
+                    Email = "abc@test.com",
                 },
-                ContactpersoonId = Guid.NewGuid(),
-                ZorggroepRelatieId = Guid.NewGuid(),
-                AdresId = Guid.NewGuid(),
+                Functie = "New job",
+                Email = "abc@test.com",
+                AgbCodeZorgverlener = "85296324",
+                AgbCodeOnderneming = "74136985",
+                IonToestemmingsverklaringActivatieLink ="New link",
+                Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
+                AdresId = Guid.NewGuid()
             };
 
             _sut.Update(cmd);
 
-            Assert.AreEqual(cmd.Naam, _sut.Naam);
-            Assert.AreEqual(cmd.TelefoonZakelijk, _sut.TelefoonZakelijk);
-            Assert.AreEqual(cmd.TelefoonPrive, _sut.TelefoonPrive);
+            Assert.AreEqual(cmd.Persoon.Voorletters, _sut.Persoon.Voorletters);
+            Assert.AreEqual(cmd.Persoon.Tussenvoegsel, _sut.Persoon.Tussenvoegsel);
+            Assert.AreEqual(cmd.Persoon.Voornaam, _sut.Persoon.Voornaam);
+            Assert.AreEqual(cmd.Persoon.Achternaam, _sut.Persoon.Achternaam);
+            Assert.AreEqual(cmd.Persoon.TelefoonZakelijk, _sut.Persoon.TelefoonZakelijk);
+            Assert.AreEqual(cmd.Persoon.TelefoonPrive, _sut.Persoon.TelefoonPrive);
+            Assert.AreEqual(cmd.Persoon.Email, _sut.Persoon.Email);
+            Assert.AreEqual(cmd.Functie, _sut.Functie);
             Assert.AreEqual(cmd.Email, _sut.Email);
-            Assert.AreEqual(cmd.Website, _sut.Website);
+            Assert.AreEqual(cmd.AgbCodeZorgverlener, _sut.AgbCodeZorgverlener);
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
-            Assert.AreEqual(cmd.Zorggroep, _sut.Zorggroep);
-            Assert.AreEqual(cmd.Logo, _sut.Logo);
-
-            Assert.AreEqual(cmd.Settings.IONZoekoptie, _sut.Settings.IONZoekoptie);
-            Assert.AreEqual(cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
-            Assert.AreEqual(cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
-            Assert.AreEqual(cmd.Settings.COVControleType, _sut.Settings.COVControleType);
-            Assert.AreEqual(cmd.Settings.COVControleProcessType, _sut.Settings.COVControleProcessType);
-            Assert.AreEqual(cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
-
-            Assert.AreEqual(cmd.ZorggroepRelatieId, _sut.ZorggroepRelatieId);
-            Assert.AreEqual(cmd.ContactpersoonId, _sut.ContactpersoonId);
+            Assert.AreEqual(cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
+            Assert.AreEqual(cmd.Avatar, _sut.Avatar);
             Assert.AreEqual(cmd.AdresId, _sut.AdresId);
         }
 
@@ -150,7 +148,7 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
         [Test]
         public void Suspend()
         {
-            _sut.Suspend();
+            _sut.Suspend(new SuspendMedewerker{DeactivatieReden = });
             Assert.AreEqual(Status.Inactief, _sut.Status);
         }
 
@@ -159,24 +157,6 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
         {
             _sut.Reinstate();
             Assert.AreEqual(Status.Actief, _sut.Status);
-        }
-
-        [Test]
-        public void Restrict()
-        {
-            var reason = "Test reason";
-
-            _sut.Restrict(reason);
-
-            Assert.AreEqual(true, _sut.Beperkt);
-            Assert.AreEqual(reason, _sut.BeperktReden, nameof(_sut.BeperktReden));
-        }
-
-        [Test]
-        public void Unrestrict()
-        {
-            _sut.Unrestrict();
-            Assert.AreEqual(false, _sut.Beperkt);
         }
     }
 }
