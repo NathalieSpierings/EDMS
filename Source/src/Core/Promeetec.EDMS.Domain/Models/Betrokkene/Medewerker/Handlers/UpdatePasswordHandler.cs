@@ -30,10 +30,7 @@ public class UpdatePasswordHandler : ICommandHandler<UpdatePassword>
     {
         await _validator.ValidateCommand(command);
 
-        var medewerker = await _repository.Query()
-            .FirstOrDefaultAsync(x => x.Id == command.Id &&
-                                      x.Status != Status.Verwijderd);
-
+        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
         

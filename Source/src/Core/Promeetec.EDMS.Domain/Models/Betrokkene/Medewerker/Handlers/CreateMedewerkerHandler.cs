@@ -37,7 +37,7 @@ public class CreateMedewerkerHandler : ICommandHandler<CreateMedewerker>
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
 
-            Organisatie = medewerker.Organisatie.DisplayName,
+            Organisatie = command.OrganisatieDisplayName,
             Status = medewerker.Status.ToString(),
             MedewerkerSoort = medewerker.MedewerkerSoort.GetDisplayName(),
             Geslacht = medewerker.Persoon.Geslacht.GetDisplayName(),

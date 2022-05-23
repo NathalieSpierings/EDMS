@@ -52,7 +52,7 @@ public class UserProfile : AggregateRoot
     /// The carbon copy addresses comma seperated.
     /// </summary>
     [MaxLength]
-    public string CarbonCopyAdressen { get; set; }
+    public string? CarbonCopyAdressen { get; set; }
 
 
     /// <summary>

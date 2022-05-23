@@ -3,15 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Data.Repositories;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Handlers;
-using Promeetec.EDMS.Domain.Models.Cov;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.ION;
+using Promeetec.EDMS.Domain.Models.Identity.Users;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers;
@@ -34,52 +32,68 @@ public class ReinstateMedewerkerHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public async Task ShouldReinstateMedewerkerAndAddEvent()
+    public async Task Should_reinstate_mMedewerker_and_add_event()
     {
-        var cmd = new CreateOrganisatie
+        var cmd = new CreateMedewerker
         {
+            UserId = Guid.NewGuid(),
+            UserDisplayName = "Ad de Admin",
+
             Id = Guid.NewGuid(),
-            Nummer = "1234",
-            Naam = "Test org 1",
-            TelefoonZakelijk = "1234567897",
-            TelefoonPrive = "7894561236",
-            Email = "email@test.com",
-            Website = "http://www.test.com",
-            AgbCodeOnderneming = "12345678",
-            Zorggroep = false,
-            Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
-            Settings = new OrganisatieSettings
+            OrganisatieId = Guid.NewGuid(),
+            OrganisatieDisplayName = "Test organisatie",
+            MedewerkerSoort = MedewerkerSoort.Extern,
+            Persoon = new Persoon
             {
-                IONZoekoptie = IONZoekOptie.ZoekenOpPraktijkEnGekoppeldeZorgverleners,
-                AanleverbestandLocatie = "Test location",
-                AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                COVControleProcessType = COVControleProcessType.COVProcesDoorzettenBijUitval,
-                COVControleType = COVControleType.COVControleBijAanlevering,
-                VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
+                Geboortedatum = new DateTime(1975, 07, 22),
+                Geslacht = Geslacht.Vrouwelijk,
+                Voorletters = "J",
+                Voornaam = "Joan",
+                Achternaam = "Do",
+                TelefoonZakelijk = "1234567897",
+                TelefoonPrive = "7894561236",
+                Email = "joan.do@test.com",
             },
-            ContactpersoonId = Guid.NewGuid(),
-            ZorggroepRelatieId = Guid.NewGuid(),
-            VoorraadId = Guid.NewGuid(),
-            AdresboekId = Guid.NewGuid(),
-            AdresId = Guid.NewGuid()
+            Email = "joan.do@test.com",
+            Functie = "Recruter",
+            AgbCodeZorgverlener = "87654321",
+            AgbCodeOnderneming = "12345678",
+            IonToestemmingsverklaringActivatieLink = "my link",
+            Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
+            AccountState = UserAccountState.Test,
+            UserName = "0000-jdo",
+            TempCode = "1358#$sd%",
+            PukCode = "ASD345H78",
+            Adres = new Adres
+            {
+                Straat = "Koeveringsedijk",
+                Huisnummer = "5",
+                Huisnummertoevoeging = "A",
+                Postcode = "5491SB",
+                Woonplaats = "Sint Oedenrode",
+                LandNaam = "NEDERLAND"
+            }
         };
 
-        var organisatie = new Models.Betrokkene.Organisatie.Organisatie(cmd);
-
-        _context.Organisaties.Add(organisatie);
+        var medewerker = new Models.Betrokkene.Medewerker.Medewerker(cmd);
+        _context.Medewerkers.Add(medewerker);
         await _context.SaveChangesAsync();
 
-        var command = Fixture.Build<ReinstateOrganisatie>()
-            .With(x => x.Id, organisatie.Id)
+
+        var command = Fixture.Build<ReinstateMedewerker>()
+            .With(x => x.Id, medewerker.Id)
+            .With(x => x.OrganisatieId, medewerker.OrganisatieId)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
-        var sut = new ReinstateOrganisatieHandler(_repository, _eventRepository);
+        var sut = new ReinstateMedewerkerHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var org = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == organisatie.Id);
-        var orgEvent = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == organisatie.Id);
+        var dbEntity = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == medewerker.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == medewerker.Id);
 
-        Assert.AreEqual(Status.Actief, org.Status);
-        Assert.NotNull(orgEvent);
+        Assert.AreEqual(Status.Actief, dbEntity.Status);
+        Assert.NotNull(@event);
     }
 }

@@ -29,7 +29,7 @@ public class Persoon
     /// The middle name of the person.
     /// </summary>
     [MaxLength(20)]
-    public string Tussenvoegsel { get; set; }
+    public string? Tussenvoegsel { get; set; }
 
     /// <summary>
     /// The first name of the person.
@@ -61,7 +61,7 @@ public class Persoon
     /// The phonenumber extension of the person.
     /// </summary>
     [MaxLength(50)]
-    public string Doorkiesnummer { get; set; }
+    public string? Doorkiesnummer { get; set; }
 
 
     /// <summary>

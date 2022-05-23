@@ -1,5 +1,4 @@
 ﻿using System.Data;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
@@ -27,7 +26,7 @@ public class ConfirmEmailHandler : ICommandHandler<ConfirmEmail>
 
     public async Task<IEnumerable<IEvent>> Handle(ConfirmEmail command)
     {
-        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
 

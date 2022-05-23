@@ -73,6 +73,8 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
         var command = Fixture.Build<UpdateOrganisatie>()
             .With(x => x.Id, organisatie.Id)
             .With(x => x.OrganisatieId, organisatie.Id)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
         var validator = new Mock<IValidator<UpdateOrganisatie>>();

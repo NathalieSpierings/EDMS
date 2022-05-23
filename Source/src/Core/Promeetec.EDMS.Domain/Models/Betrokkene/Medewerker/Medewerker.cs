@@ -76,7 +76,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     /// The suspension reason for the medewerker.
     /// </summary>
     [MaxLength(450)]
-    public string DeactivatieReden { get; set; }
+    public string? DeactivatieReden { get; set; }
 
 
     /// <summary>
@@ -135,7 +135,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     /// The Google authenticator secret key for this medewerker.
     /// </summary>
     [MaxLength(200)]
-    public string GoogleAuthenticatorSecretKey { get; set; }
+    public string? GoogleAuthenticatorSecretKey { get; set; }
 
 
     /// <summary>
@@ -203,7 +203,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
             if (IsAdmin || IsInterneMedewerker)
                 return false;
 
-            return Organisatie.Beperkt;
+            return Organisatie?.Beperkt ?? false;
         }
     }
 
@@ -230,7 +230,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         var hasAccess = false;
         try
         {
-            if (Groups.Any(g => g.Group.Name == groupName))
+            if(Groups.Any(g => g.Group?.Name == groupName))
                 hasAccess = true;
         }
         catch
@@ -263,15 +263,15 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     public virtual Adres.Adres Adres { get; set; }
 
     public virtual UserProfile.UserProfile UserProfile { get; set; }
-    public virtual ICollection<GroupUser> Groups { get; set; }
-    public virtual ICollection<UserRole> Roles { get; set; }
-    public virtual ICollection<VerzekerdeToUser> Verzekerden { get; set; }
-    public virtual ICollection<Memo.Memo> Memos { get; set; }
-    public virtual ICollection<UserClaim> Claims { get; set; }
-    public virtual ICollection<UserLogin> Logins { get; set; }
-    public virtual ICollection<UserToken> Tokens { get; set; }
-    public virtual ICollection<UserRole> UserRoles { get; set; }
-    public virtual ICollection<Event.Event> Events { get; set; }
+    public virtual ICollection<GroupUser> Groups { get; set; } = new List<GroupUser>();
+    public virtual ICollection<UserRole> Roles { get; set; } = new List<UserRole>();
+    public virtual ICollection<VerzekerdeToUser> Verzekerden { get; set; } = new List<VerzekerdeToUser>();
+    public virtual ICollection<Memo.Memo> Memos { get; set; } = new List<Memo.Memo>();
+    public virtual ICollection<UserClaim> Claims { get; set; } = new List<UserClaim>();
+    public virtual ICollection<UserLogin> Logins { get; set; } = new List<UserLogin>();
+    public virtual ICollection<UserToken> Tokens { get; set; } = new List<UserToken>();
+    public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
+    public virtual ICollection<Event.Event> Events { get; set; } = new List<Event.Event>();
 
 
     #endregion
@@ -327,16 +327,12 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         EmailConfirmed = false;
         PhoneNumberConfirmed = true;
         GoogleAuthenticatorEnabled = false;
-
+ 
         // TODO: hasher testen
         var hasher = new PasswordHasher<Medewerker>();
         var hashedPassword = hasher.HashPassword(this, cmd.TempCode);
 
-
-        //var hasher = new PasswordHasher(Medewerker);
-        //PasswordHash = hasher.HashPassword(cmd.TempCode);
-
-        PasswordHash = cmd.PasswordHash;
+        PasswordHash = hashedPassword;
         SecurityStamp = Guid.NewGuid().ToString();
         
         CreatedById = cmd.UserId;
@@ -398,6 +394,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     {
         AccountState = cmd.AccountState;
         GoogleAuthenticatorEnabled = true;
+        TwoFactorEnabled = true;
         GoogleAuthenticatorSecretKey = cmd.SecretKey;
     }
 
@@ -442,9 +439,9 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
 
     public void UpdatePassword(UpdatePassword cmd)
     {
-        // TODO: hasher testen
         var hasher = new PasswordHasher<Medewerker>();
         var hashedPassword = hasher.HashPassword(this, cmd.Password);
+        PasswordHash = hashedPassword;
         SecurityStamp = Guid.NewGuid().ToString();
     }
 

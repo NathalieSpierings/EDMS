@@ -85,10 +85,10 @@ public class DeleteOrganisatieHandlerTests : TestFixtureBase
         var sut = new DeleteOrganisatieHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var organisatieDeleted = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
-        var organisatieEvent = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
+        var dbEntity = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
-        Assert.AreEqual(Status.Verwijderd, organisatieDeleted.Status);
-        Assert.NotNull(organisatieEvent);
+        Assert.AreEqual(Status.Verwijderd, dbEntity.Status);
+        Assert.NotNull(@event);
     }
 }

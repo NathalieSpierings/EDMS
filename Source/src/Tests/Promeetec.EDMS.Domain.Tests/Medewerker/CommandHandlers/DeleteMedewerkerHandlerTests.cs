@@ -33,17 +33,20 @@ public class DeleteMedewerkerHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldThrowDataExceptionWhenMedewerkerNotFound()
+    public void Should_throw_data_exception_when_medewerker_not_found()
     {
         var sut = new DeleteMedewerkerHandler(_repository, _eventRepository);
         Assert.ThrowsAsync<DataException>(async () => await sut.Handle(Fixture.Create<DeleteMedewerker>()));
     }
 
     [Test]
-    public async Task ShouldDeleteMedewerkerAndAddEvent()
+    public async Task Should_delete_medewerker_and_add_event()
     {
         var cmd = new CreateMedewerker
         {
+            UserId = Guid.NewGuid(),
+            UserDisplayName = "Ad de Admin",
+
             Id = Guid.NewGuid(),
             OrganisatieId = Guid.NewGuid(),
             OrganisatieDisplayName = "Test organisatie",
@@ -81,7 +84,6 @@ public class DeleteMedewerkerHandlerTests : TestFixtureBase
         };
 
         var medewerker1 = new Models.Betrokkene.Medewerker.Medewerker(cmd);
-
         _context.Medewerkers.Add(medewerker1);
         await _context.SaveChangesAsync();
 
@@ -89,15 +91,17 @@ public class DeleteMedewerkerHandlerTests : TestFixtureBase
         var command = Fixture.Build<DeleteMedewerker>()
             .With(x => x.Id, medewerker1.Id)
             .With(x => x.OrganisatieId, medewerker1.Id)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
         var sut = new DeleteMedewerkerHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var deleted = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == command.Id);
+        var dbEntity = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == command.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
-        Assert.AreEqual(Status.Verwijderd, deleted.Status);
+        Assert.AreEqual(Status.Verwijderd, dbEntity.Status);
         Assert.NotNull(@event);
     }
 }

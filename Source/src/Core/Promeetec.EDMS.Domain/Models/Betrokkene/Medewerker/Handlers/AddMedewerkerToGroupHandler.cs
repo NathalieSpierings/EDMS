@@ -23,10 +23,7 @@ public class AddMedewerkerToGroupHandler : ICommandHandler<AddMedewerkerToGroup>
 
     public async Task<IEnumerable<IEvent>> Handle(AddMedewerkerToGroup command)
     {
-        var medewerker = await _repository.Query()
-            .FirstOrDefaultAsync(x => x.Id == command.Id &&
-                                      x.Status != Status.Verwijderd);
-
+        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
 
@@ -39,7 +36,7 @@ public class AddMedewerkerToGroupHandler : ICommandHandler<AddMedewerkerToGroup>
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
 
-            GroupUser = command.GroupUser
+            GroupName = command.GroupUser.Group.Name
         };
 
         await _repository.UpdateAsync(medewerker);

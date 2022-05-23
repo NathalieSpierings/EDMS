@@ -70,15 +70,18 @@ public class ReinstateOrganisatieHandlerTests : TestFixtureBase
 
         var command = Fixture.Build<ReinstateOrganisatie>()
             .With(x => x.Id, organisatie.Id)
+            .With(x => x.OrganisatieId, organisatie.Id)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
         var sut = new ReinstateOrganisatieHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var org = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == organisatie.Id);
-        var orgEvent = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == organisatie.Id);
+        var dbEntity = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == organisatie.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == organisatie.Id);
 
-        Assert.AreEqual(Status.Actief, org.Status);
-        Assert.NotNull(orgEvent);
+        Assert.AreEqual(Status.Actief, dbEntity.Status);
+        Assert.NotNull(@event);
     }
 }

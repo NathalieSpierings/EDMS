@@ -10,12 +10,12 @@ using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
 
-public class ReinstateOrganisatieHandler : ICommandHandler<ReinstateMedewerker>
+public class ReinstateMedewerkerHandler : ICommandHandler<ReinstateMedewerker>
 {
     private readonly IMedewerkerRepository _repository;
     private readonly IEventRepository _eventRepository;
 
-    public ReinstateOrganisatieHandler(IMedewerkerRepository repository, IEventRepository eventRepository)
+    public ReinstateMedewerkerHandler(IMedewerkerRepository repository, IEventRepository eventRepository)
     {
         _repository = repository;
         _eventRepository = eventRepository;
@@ -23,10 +23,7 @@ public class ReinstateOrganisatieHandler : ICommandHandler<ReinstateMedewerker>
 
     public async Task<IEnumerable<IEvent>> Handle(ReinstateMedewerker command)
     {
-        var medewerker = await _repository.Query()
-            .FirstOrDefaultAsync(x => x.Id == command.Id && 
-                                      x.Status != Status.Verwijderd);
-
+        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
 

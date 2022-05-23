@@ -10,15 +10,26 @@
 
   <ItemGroup>
     <Compile Remove="Medewerker\CommandHandlers\**" />
-    <Compile Remove="Medewerker\Validators\**" />
+    <Compile Remove="Medewerker\Rules\**" />
     <EmbeddedResource Remove="Medewerker\CommandHandlers\**" />
-    <EmbeddedResource Remove="Medewerker\Validators\**" />
+    <EmbeddedResource Remove="Medewerker\Rules\**" />
     <None Remove="Medewerker\CommandHandlers\**" />
-    <None Remove="Medewerker\Validators\**" />
+    <None Remove="Medewerker\Rules\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Medewerker\CommandHandlers\ActivateGoogleAuthenticatorHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\AddMedewerkerToGroupHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\ConfirmEmailHandlerTests.cs" />
     <Compile Include="Medewerker\CommandHandlers\CreateMedewerkerHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\DeleteMedewerkerHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\LoginMedewerkerHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\ReactivateGoogleAuthenticatorHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\ReinstateMedewerkerHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\SuspendMedewerkerHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\UpdateAccountStateHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\UpdateMedewerkerHandlerTests.cs" />
+    <Compile Include="Medewerker\CommandHandlers\UpdatePasswordHandlerTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,10 +45,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj" />
     <ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Medewerker\Rules\" />
   </ItemGroup>
 
 </Project>

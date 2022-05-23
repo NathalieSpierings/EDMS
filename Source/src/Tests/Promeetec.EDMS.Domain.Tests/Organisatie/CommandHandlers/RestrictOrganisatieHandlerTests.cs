@@ -69,16 +69,19 @@ public class RestrictOrganisatieHandlerTests : TestFixtureBase
 
         var command = Fixture.Build<RestrictOrganisatie>()
             .With(x => x.Id, organisatie.Id)
+            .With(x => x.OrganisatieId, organisatie.Id)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
         var sut = new RestrictOrganisatieHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var org = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == organisatie.Id);
-        var orgEvent = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == organisatie.Id);
+        var dbEntity = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == organisatie.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == organisatie.Id);
 
-        Assert.AreEqual(true, org.Beperkt);
-        Assert.AreEqual(command.Reason, org.BeperktReden);
-        Assert.NotNull(orgEvent);
+        Assert.AreEqual(true, dbEntity.Beperkt);
+        Assert.AreEqual(command.Reason, dbEntity.BeperktReden);
+        Assert.NotNull(@event);
     }
 }

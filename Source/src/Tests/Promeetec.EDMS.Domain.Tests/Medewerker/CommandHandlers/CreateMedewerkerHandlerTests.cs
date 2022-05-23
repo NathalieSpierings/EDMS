@@ -1,5 +1,4 @@
-﻿using AutoFixture;
-using FluentValidation;
+﻿using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Moq;
@@ -33,11 +32,16 @@ public class CreateMedewerkerHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public async Task ShouldCreateNewMedewerkerAndAddEvent()
+    public async Task Should_create_new_medewerker_and_add_event()
     {
         var command = new CreateMedewerker
         {
-            OrganisatieDisplayName = "Test organisatie 1",
+            UserId = Guid.NewGuid(),
+            UserDisplayName = "Ad de Admin",
+
+            Id = Guid.NewGuid(),
+            OrganisatieId = Guid.NewGuid(),
+            OrganisatieDisplayName = "Test organisatie",
             MedewerkerSoort = MedewerkerSoort.Extern,
             Persoon = new Persoon
             {
@@ -50,7 +54,8 @@ public class CreateMedewerkerHandlerTests : TestFixtureBase
                 TelefoonPrive = "7894561236",
                 Email = "joan.do@test.com",
             },
-            Functie = "Software developer",
+            Email = "joan.do@test.com",
+            Functie = "Recruter",
             AgbCodeZorgverlener = "87654321",
             AgbCodeOnderneming = "12345678",
             IonToestemmingsverklaringActivatieLink = "my link",
@@ -69,9 +74,7 @@ public class CreateMedewerkerHandlerTests : TestFixtureBase
                 LandNaam = "NEDERLAND"
             }
         };
-
-       // var command = Fixture.Create<CreateMedewerker>();
-
+        
         var validator = new Mock<IValidator<CreateMedewerker>>();
         validator.Setup(x => x.ValidateAsync(command, new CancellationToken())).ReturnsAsync(new ValidationResult());
 
