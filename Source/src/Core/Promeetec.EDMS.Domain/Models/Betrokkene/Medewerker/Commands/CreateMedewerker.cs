@@ -23,5 +23,4 @@ public class CreateMedewerker : CommandBase
     public string PukCode { get; set; }
     public string PasswordHash { get; set; }
     public Adres.Adres Adres { get; set; }
-    public Guid? AdresId { get; set; }
 }

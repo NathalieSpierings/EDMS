@@ -34,3 +34,15 @@ D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.dl
 D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\refint\Promeetec.EDMS.dll
 D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.pdb
 D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\ref\Promeetec.EDMS.dll
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\bin\Debug\net6.0\Promeetec.EDMS.deps.json
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\bin\Debug\net6.0\Promeetec.EDMS.dll
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\bin\Debug\net6.0\Promeetec.EDMS.pdb
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.csproj.AssemblyReference.cache
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.GeneratedMSBuildEditorConfig.editorconfig
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.AssemblyInfoInputs.cache
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.AssemblyInfo.cs
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.csproj.CoreCompileInputs.cache
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.dll
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\refint\Promeetec.EDMS.dll
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\Promeetec.EDMS.pdb
+C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\obj\Debug\net6.0\ref\Promeetec.EDMS.dll

@@ -31,7 +31,7 @@ public class CreateOrganisatieHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public async Task Should_create_new_organisatie_and_add_event()
+    public async Task ShouldCreateNewOrganisatieAndAddEvent()
     {
         var command = Fixture.Create<CreateOrganisatie>();
 

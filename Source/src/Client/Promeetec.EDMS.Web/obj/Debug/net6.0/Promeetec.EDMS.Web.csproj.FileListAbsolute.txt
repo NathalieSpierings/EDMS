@@ -859,3 +859,15 @@ D:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\scopedcss\p
 D:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.csproj.CopyComplete
 D:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.genruntimeconfig.cache
 D:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\ref\Promeetec.EDMS.Web.dll
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.csproj.AssemblyReference.cache
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.AssemblyInfoInputs.cache
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.AssemblyInfo.cs
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.csproj.CoreCompileInputs.cache
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.RazorAssemblyInfo.cache
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.RazorAssemblyInfo.cs
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.dll
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\refint\Promeetec.EDMS.Web.dll
+C:\TFS\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.pdb

@@ -25,6 +25,8 @@
     &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenTelefoonZakelijkIsEmpty&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests.ShouldHaveValidationErrorWhenTelefoonZakelijkIsTooLong&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CreateOrganisatieValidatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.MedewerkerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.CreateMedewerkerHandlerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

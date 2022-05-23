@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+      "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
       "projectName": "Promeetec.EDMS.Vecozo.ION",
-      "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+      "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
+      "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

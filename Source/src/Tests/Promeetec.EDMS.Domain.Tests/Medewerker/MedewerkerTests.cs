@@ -1,20 +1,15 @@
 ﻿using NUnit.Framework;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
-using Promeetec.EDMS.Domain.Models.Cov;
 using Promeetec.EDMS.Domain.Models.Identity.Users;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.ION;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Tests.Medewerker
 {
     [TestFixture]
-    public class Medewerker : TestFixtureBase
+    public class MedewerkerTests : TestFixtureBase
     {
         private EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker _sut;
         private CreateMedewerker _cmd;
@@ -54,6 +49,15 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
                 UserName = "0000-jdo",
                 TempCode = "1358#$sd%",
                 PukCode = "ASD345H78",
+                Adres = new Adres
+                {
+                    Straat = "Koeveringsedijk",
+                    Huisnummer = "5",
+                    Huisnummertoevoeging = "A",
+                    Postcode = "5491SB",
+                    Woonplaats = "Sint Oedenrode",
+                    LandNaam = "NEDERLAND"
+                }
             };
 
             _sut = new EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker(_cmd);
@@ -90,11 +94,12 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
             Assert.AreEqual(_cmd.Adres, _sut.Adres);
             Assert.AreEqual(_cmd.UserId, _sut.CreatedById);
             Assert.AreEqual(_cmd.UserDisplayName, _sut.CreatedBy);
+            Assert.AreEqual(_cmd.Adres, _sut.Adres);
         }
 
 
         [Test]
-        public void Update_details()
+        public void Update()
         {
             // Gives error on logo byte[]
             // var sut = Fixture.Create<EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie>();
@@ -117,7 +122,14 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
                 AgbCodeOnderneming = "74136985",
                 IonToestemmingsverklaringActivatieLink ="New link",
                 Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
-                AdresId = Guid.NewGuid()
+                Adres = new Adres
+                {
+                    Straat = "Dorpsstraat",
+                    Huisnummer = "37",
+                    Postcode = "5735EB",
+                    Woonplaats = "Aarle-Rixtel",
+                    LandNaam = "NEDERLAND"
+                }
             };
 
             _sut.Update(cmd);
@@ -135,7 +147,7 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
             Assert.AreEqual(cmd.Avatar, _sut.Avatar);
-            Assert.AreEqual(cmd.AdresId, _sut.AdresId);
+            Assert.AreEqual(cmd.Adres, _sut.Adres);
         }
 
         [Test]
@@ -148,7 +160,7 @@ namespace Promeetec.EDMS.Domain.Tests.Medewerker
         [Test]
         public void Suspend()
         {
-            _sut.Suspend(new SuspendMedewerker{DeactivatieReden = });
+            _sut.Suspend(new SuspendMedewerker{DeactivatieReden = "Test deactivatie reden"});
             Assert.AreEqual(Status.Inactief, _sut.Status);
         }
 

@@ -68,8 +68,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     /// <summary>
     /// The avatar  for the medewerker.
     /// </summary>
-    [MaxLength]
-    [Column(TypeName = "varbinary(max)")]
+    [MaxLength, Column(TypeName = "varbinary(max)")]
     public byte[] Avatar { get; set; }
 
 

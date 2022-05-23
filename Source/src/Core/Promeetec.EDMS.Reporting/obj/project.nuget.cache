@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x4KhUh0i/3EO62WtGNnrx8Wf5NkvZa2VhbjYzKeUciN8nExqAmZUnkwkn9QKTmW0N5txg10uLzI4RD5WkaZFFw==",
+  "dgSpecHash": "00AQ1Sbn35F4QFht3lyeqt3gGI6i7KSgv1fTrDBIRSAGUL8SLdv/pHNWl46OHsGhbCqS6Cd767YG6FGZ1FGmGw==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
+  "projectFilePath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

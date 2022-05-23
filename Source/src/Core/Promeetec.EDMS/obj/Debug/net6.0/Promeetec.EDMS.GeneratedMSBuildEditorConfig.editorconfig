@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Promeetec.EDMS
-build_property.ProjectDir = D:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS\
+build_property.ProjectDir = C:\TFS\Repos\EDMS\Source\src\Core\Promeetec.EDMS\

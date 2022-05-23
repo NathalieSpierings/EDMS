@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj": {}
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
         "projectName": "Promeetec.EDMS.Web",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,23 +28,23 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
               },
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
               },
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj"
               },
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj"
               },
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj"
               },
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
               }
             }
           }
@@ -106,18 +106,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
         "projectName": "Promeetec.EDMS.Data",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -134,11 +134,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
               },
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
               }
             }
           }
@@ -173,18 +173,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
         "projectName": "Promeetec.EDMS.Domain",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -201,8 +201,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+                "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
               }
             }
           }
@@ -257,18 +257,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
         "projectName": "Promeetec.EDMS.Reporting",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -311,18 +311,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
         "projectName": "Promeetec.EDMS.Services",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -365,18 +365,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
         "projectName": "Promeetec.EDMS.Vecozo.ION",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -419,18 +419,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+    "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
+        "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
         "projectName": "Promeetec.EDMS",
-        "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
+        "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\obj\\",
+        "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -483,7 +483,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

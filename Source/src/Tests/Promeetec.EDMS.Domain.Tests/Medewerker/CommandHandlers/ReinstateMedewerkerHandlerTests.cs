@@ -34,7 +34,7 @@ public class ReinstateMedewerkerHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public async Task Should_reinstate_organisatie_and_add_event()
+    public async Task ShouldReinstateMedewerkerAndAddEvent()
     {
         var cmd = new CreateOrganisatie
         {

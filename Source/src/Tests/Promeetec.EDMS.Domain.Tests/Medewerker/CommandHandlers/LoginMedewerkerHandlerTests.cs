@@ -7,7 +7,6 @@ using NUnit.Framework;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;

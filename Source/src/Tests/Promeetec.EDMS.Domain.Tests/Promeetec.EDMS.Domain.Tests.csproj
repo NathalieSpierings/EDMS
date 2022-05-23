@@ -9,6 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Medewerker\CommandHandlers\**" />
+    <Compile Remove="Medewerker\Validators\**" />
+    <EmbeddedResource Remove="Medewerker\CommandHandlers\**" />
+    <EmbeddedResource Remove="Medewerker\Validators\**" />
+    <None Remove="Medewerker\CommandHandlers\**" />
+    <None Remove="Medewerker\Validators\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Medewerker\CommandHandlers\CreateMedewerkerHandlerTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.17.0" />
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.3" />

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ihVDeKPCxxKJXYa1xLcss6CWCoDRhbQ0PgM6cIM/3QjyrMuwlQMvkF0hM8xk04i5298uSXDS0FYAvuj7cwHPow==",
+  "dgSpecHash": "3xP/6Gcx86DYOV/2dafIr5O+M+lyAowYm4WLNTmrSnZi2bbPzAehZg7N+dSNkMspE4qHEKEXar5u4Koph0hTwg==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
+  "projectFilePath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nspierings\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\nspierings\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

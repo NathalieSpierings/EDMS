@@ -6962,11 +6962,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+      "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
       "projectName": "Promeetec.EDMS.Domain.Tests",
-      "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+      "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\obj\\",
+      "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6983,11 +6983,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
-              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
+            "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+              "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
             },
-            "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-              "projectPath": "D:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+            "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+              "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
             }
           }
         }
@@ -7046,7 +7046,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
