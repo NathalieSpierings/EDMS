@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Land.Events;
+﻿using Promeetec.EDMS.Events;
 
-public class LandAangemaakt : DomainEvent
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Events;
+
+public class LandAangemaakt : EventBase
 {
     public string Status { get; set; }
     public string CultureCode { get; set; }

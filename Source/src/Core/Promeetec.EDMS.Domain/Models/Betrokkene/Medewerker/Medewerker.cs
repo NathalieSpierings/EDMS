@@ -295,9 +295,9 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
 
 
     /// <summary>
-    /// Creates an organisatie.
+    /// Creates an medewerker.
     /// </summary>
-    /// <param name="cmd">The create organisatie command.</param>
+    /// <param name="cmd">The create medewerker command.</param>
     public Medewerker(CreateMedewerker cmd)
     {
         Id = cmd.Id;
@@ -340,9 +340,9 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     }
 
     /// <summary>
-    /// Update the details of the organisatie.
+    /// Update the details of the medewerker.
     /// </summary>
-    /// <param name="cmd">The update organisatie command.</param>
+    /// <param name="cmd">The update medewerker command.</param>
     public void Update(UpdateMedewerker cmd)
     {
         cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);

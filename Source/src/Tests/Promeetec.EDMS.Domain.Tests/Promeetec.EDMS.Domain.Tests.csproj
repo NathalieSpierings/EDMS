@@ -9,27 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Medewerker\CommandHandlers\**" />
-    <Compile Remove="Medewerker\Rules\**" />
-    <EmbeddedResource Remove="Medewerker\CommandHandlers\**" />
-    <EmbeddedResource Remove="Medewerker\Rules\**" />
-    <None Remove="Medewerker\CommandHandlers\**" />
-    <None Remove="Medewerker\Rules\**" />
+    <Compile Remove="Betrokkene\Land\CommandHandlers\**" />
+    <Compile Remove="Betrokkene\Land\Rules\**" />
+    <Compile Remove="Betrokkene\Land\Validators\**" />
+    <Compile Remove="Betrokkene\Medewerker\CommandHandlers\**" />
+    <Compile Remove="Betrokkene\Medewerker\Rules\**" />
+    <EmbeddedResource Remove="Betrokkene\Land\CommandHandlers\**" />
+    <EmbeddedResource Remove="Betrokkene\Land\Rules\**" />
+    <EmbeddedResource Remove="Betrokkene\Land\Validators\**" />
+    <EmbeddedResource Remove="Betrokkene\Medewerker\CommandHandlers\**" />
+    <EmbeddedResource Remove="Betrokkene\Medewerker\Rules\**" />
+    <None Remove="Betrokkene\Land\CommandHandlers\**" />
+    <None Remove="Betrokkene\Land\Rules\**" />
+    <None Remove="Betrokkene\Land\Validators\**" />
+    <None Remove="Betrokkene\Medewerker\CommandHandlers\**" />
+    <None Remove="Betrokkene\Medewerker\Rules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Medewerker\CommandHandlers\ActivateGoogleAuthenticatorHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\AddMedewerkerToGroupHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\ConfirmEmailHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\CreateMedewerkerHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\DeleteMedewerkerHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\LoginMedewerkerHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\ReactivateGoogleAuthenticatorHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\ReinstateMedewerkerHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\SuspendMedewerkerHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\UpdateAccountStateHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\UpdateMedewerkerHandlerTests.cs" />
-    <Compile Include="Medewerker\CommandHandlers\UpdatePasswordHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\ActivateGoogleAuthenticatorHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\AddMedewerkerToGroupHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\ConfirmEmailHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\CreateMedewerkerHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\DeleteMedewerkerHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\LoginMedewerkerHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\ReactivateGoogleAuthenticatorHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\ReinstateMedewerkerHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\SuspendMedewerkerHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\UpdateAccountStateHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\UpdateMedewerkerHandlerTests.cs" />
+    <Compile Include="Betrokkene\Medewerker\CommandHandlers\UpdatePasswordHandlerTests.cs" />
   </ItemGroup>
 
   <ItemGroup>

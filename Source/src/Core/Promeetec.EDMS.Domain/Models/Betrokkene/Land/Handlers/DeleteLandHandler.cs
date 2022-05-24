@@ -1,29 +1,49 @@
-using Promeetec.EDMS.Domain.Betrokkene.Land.Commands;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Events;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.Land.Handlers;
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 
-public class DeleteLandHandler : ICommandHandlerAsync<DeleteLand>
+public class DeleteLandHandler : ICommandHandler<DeleteLand>
 {
     private readonly ILandRepository _repository;
+    private readonly IEventRepository _eventRepository;
 
-    public DeleteLandHandler(ILandRepository repository)
+    public DeleteLandHandler(ILandRepository repository, IEventRepository eventRepository)
     {
         _repository = repository;
+        _eventRepository = eventRepository;
     }
 
 
-    public async Task<CommandResponse> HandleAsync(DeleteLand command)
+    public async Task<IEnumerable<IEvent>> Handle(DeleteLand command)
     {
-        var land = await _repository.GetByIdAsync(command.AggregateRootId);
-        if (land == null)
-            throw new ApplicationException($"Land niet gevonden. Id: {command.AggregateRootId}");
+        var country = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+        if (country == null)
+            throw new DataException($"Land met Id {command.Id} niet gevonden.");
 
-        land.Delete(command);
-        await _repository.UpdateAsync(land);
 
-        return new CommandResponse
+        country.Delete();
+
+        var @event = new LandVerwijderd
         {
-            Events = land.Events
+            TargetId = country.Id,
+            TargetType = nameof(Land),
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+
+            Status = Status.Verwijderd.ToString()
         };
+
+        await _repository.UpdateAsync(country);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
+
+        return new IEvent[] { @event };
     }
 }

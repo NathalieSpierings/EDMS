@@ -1,5 +1,7 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Land.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class DeleteLand : DomainCommand<Land>
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
+
+public class DeleteLand : CommandBase
 {
 }

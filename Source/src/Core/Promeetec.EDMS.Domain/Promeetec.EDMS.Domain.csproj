@@ -12,9 +12,7 @@
     <Compile Remove="Models\Admin\Zorgstraat\Commands\**" />
     <Compile Remove="Models\Admin\Zorgstraat\Events\**" />
     <Compile Remove="Models\Admin\Zorgstraat\Handlers\**" />
-    <Compile Remove="Models\Betrokkene\Land\Commands\**" />
-    <Compile Remove="Models\Betrokkene\Land\Events\**" />
-    <Compile Remove="Models\Betrokkene\Land\Handlers\**" />
+    <Compile Remove="Models\Betrokkene\Land\Rules\**" />
     <Compile Remove="Models\Betrokkene\Memo\Commands\**" />
     <Compile Remove="Models\Betrokkene\Memo\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -47,9 +45,6 @@
     <Compile Remove="Models\Admin\Zorgstraat\Commands\**" />
     <Compile Remove="Models\Admin\Zorgstraat\Events\**" />
     <Compile Remove="Models\Admin\Zorgstraat\Handlers\**" />
-    <Compile Remove="Models\Betrokkene\Land\Commands\**" />
-    <Compile Remove="Models\Betrokkene\Land\Events\**" />
-    <Compile Remove="Models\Betrokkene\Land\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Memo\Commands\**" />
     <Compile Remove="Models\Betrokkene\Memo\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -119,9 +114,7 @@
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Commands\**" />
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Events\**" />
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Handlers\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\Land\Commands\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\Land\Events\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\Land\Handlers\**" />
+    <EmbeddedResource Remove="Models\Betrokkene\Land\Rules\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -154,9 +147,6 @@
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Commands\**" />
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Events\**" />
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Handlers\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\Land\Commands\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\Land\Events\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\Land\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -226,9 +216,7 @@
     <None Remove="Models\Admin\Zorgstraat\Commands\**" />
     <None Remove="Models\Admin\Zorgstraat\Events\**" />
     <None Remove="Models\Admin\Zorgstraat\Handlers\**" />
-    <None Remove="Models\Betrokkene\Land\Commands\**" />
-    <None Remove="Models\Betrokkene\Land\Events\**" />
-    <None Remove="Models\Betrokkene\Land\Handlers\**" />
+    <None Remove="Models\Betrokkene\Land\Rules\**" />
     <None Remove="Models\Betrokkene\Memo\Commands\**" />
     <None Remove="Models\Betrokkene\Memo\Handlers\**" />
     <None Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -261,9 +249,6 @@
     <None Remove="Models\Admin\Zorgstraat\Commands\**" />
     <None Remove="Models\Admin\Zorgstraat\Events\**" />
     <None Remove="Models\Admin\Zorgstraat\Handlers\**" />
-    <None Remove="Models\Betrokkene\Land\Commands\**" />
-    <None Remove="Models\Betrokkene\Land\Events\**" />
-    <None Remove="Models\Betrokkene\Land\Handlers\**" />
     <None Remove="Models\Betrokkene\Memo\Commands\**" />
     <None Remove="Models\Betrokkene\Memo\Handlers\**" />
     <None Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -336,7 +321,6 @@
     <Compile Remove="Models\Admin\Mededeling\IMededelingRepository.cs" />
     <Compile Remove="Models\Admin\RedenEindeZorg\IRedenEindeZorgRepository.cs" />
     <Compile Remove="Models\Admin\Zorgstraat\IZorgstraatRepository.cs" />
-    <Compile Remove="Models\Betrokkene\Land\ILandRepository.cs" />
     <Compile Remove="Models\Betrokkene\Memo\IMemoRepository.cs" />
     <Compile Remove="Models\Betrokkene\Notification\INotificatieRepository.cs" />
     <Compile Remove="Models\Betrokkene\UserProfile\IUserProfileRepository.cs" />
@@ -383,8 +367,6 @@
     <Folder Include="Models\Admin\Mededeling\Handlers\" />
     <Folder Include="Models\Admin\Zorgstraat\Rules\" />
     <Folder Include="Models\Admin\Zorgstraat\Validators\" />
-    <Folder Include="Models\Betrokkene\Land\Rules\" />
-    <Folder Include="Models\Betrokkene\Land\Validators\" />
     <Folder Include="Models\Betrokkene\Organisatie\Handlers\" />
     <Folder Include="Models\Betrokkene\Organisatie\Events\" />
     <Folder Include="Models\Betrokkene\Verzekeraar\Events\" />

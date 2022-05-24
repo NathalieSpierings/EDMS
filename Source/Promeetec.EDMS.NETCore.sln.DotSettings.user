@@ -13,27 +13,11 @@
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c15fe8e0_002D4a14_002D49f6_002D94da_002Deb9b7120fd61/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldCreateNewMedewerkerAndAddEvent" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b54b35e8_002Dbc20_002D4796_002D9463_002D1ff79c26886b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LandTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.CreateMedewerkerHandlerTests.ShouldCreateNewMedewerkerAndAddEvent&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.UpdateMedewerkerHandlerTests.ShouldUpdateMedewerkerAndAddEvent&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CommandHandlers.UpdateOrganisatieHandlerTests.Should_update_organisatie_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.DeleteMedewerkerHandlerTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CommandHandlers.DeleteOrganisatieHandlerTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.CommandHandlers.ReinstateOrganisatieHandlerTests.Should_reinstate_organisatie_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.SuspendMedewerkerHandlerTests.Should_suspend_medewerker_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.ReinstateMedewerkerHandlerTests.Should_reinstate_mMedewerker_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.ConfirmEmailHandlerTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.UpdateAccountStateHandlerTests.Should_update_accountstate_medewerker_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.LoginMedewerkerHandlerTests.Should_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.UpdatePasswordHandlerTests.Should_update_organisatie_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.ReactivateGoogleAuthenticatorHandlerTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.AddMedewerkerToGroupHandlerTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.CommandHandlers.ActivateGoogleAuthenticatorHandlerTests.Should_activate_google_authenticator_and_add_event&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.Validators.CreateMedewerkerValidatorTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Organisatie.Validators.UpdateOrganisatieValidatorTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Medewerker.Validators.UpdatePasswordValidatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Betrokkene.Land.LandTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	
 	
 	</wpf:ResourceDictionary>

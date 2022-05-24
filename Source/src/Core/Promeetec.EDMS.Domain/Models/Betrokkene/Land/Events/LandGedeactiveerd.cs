@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Land.Events;
+﻿using Promeetec.EDMS.Events;
 
-public class LandGedeactiveerd : DomainEvent
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Events;
+
+public class LandGedeactiveerd : EventBase
 {
     public string Status { get; set; }
 }
