@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Memo;
 
@@ -18,7 +19,7 @@ public class Memo : AggregateRoot
 
 
     #region Navigation properties
-    
+
     public Guid MedewerkerId { get; set; }
     public virtual Medewerker.Medewerker Medewerker { get; set; }
 
@@ -34,26 +35,16 @@ public class Memo : AggregateRoot
 
     }
 
-    //public Memo(CreateMemo cmd)
-    //{
-    //    MedewerkerId = cmd.MedewerkerId;
-    //    Date = cmd.Date;
-    //    Content = cmd.Content;
-    //}
+    /// <summary>
+    /// Creates a memo.
+    /// </summary>
+    /// <param name="cmd">The create memo command.</param>
+    public Memo(CreateMemo cmd)
+    {
+        Id = cmd.Id;
 
-    //#region Navigation properties
-
-    ///// <summary>
-    ///// The unique identifier of the medewerker for the memo.
-    ///// </summary>
-    //public Guid MedewerkerId { get; set; }
-
-
-    ///// <summary>
-    ///// Reference to the medewerker for the momo.
-    ///// </summary>
-    //public Medewerker.Medewerker Medewerker { get; set; }
-
-
-    //#endregion
+        MedewerkerId = cmd.MedewerkerId;
+        Date = cmd.Date;
+        Content = cmd.Content;
+    }
 }

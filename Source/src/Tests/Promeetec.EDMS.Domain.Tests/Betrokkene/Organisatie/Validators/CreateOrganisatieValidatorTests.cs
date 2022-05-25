@@ -18,12 +18,12 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     public void Setup()
     {
         _dispachter = new Mock<IDispatcher>();
-        _validator =  new CreateOrganisatieValidator(_dispachter.Object);
+        _validator = new CreateOrganisatieValidator(_dispachter.Object);
     }
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenNummerIsEmpty()
+    public void Should_have_Validation_error_when_nummer_is_empty()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Nummer, string.Empty).Create();
         var result = _validator.TestValidate(command);
@@ -31,7 +31,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenNummerIsTooLong()
+    public void Should_have_Validation_error_when_nummer_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Nummer, new string('*', 21)).Create();
         var result = _validator.TestValidate(command);
@@ -39,7 +39,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenNumberIsNotUnque()
+    public void Should_have_Validation_error_when_nummer_is_not_unique()
     {
         var command = Fixture.Create<CreateOrganisatie>();
         _dispachter.Setup(x => x.Get(new IsOrganisatieNummerUnique { Nummer = command.Nummer, Id = command.Id })).ReturnsAsync(false);
@@ -50,7 +50,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenNameIsEmpty()
+    public void Should_have_Validation_error_when_name_is_empty()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Naam, string.Empty).Create();
         var result = _validator.TestValidate(command);
@@ -58,7 +58,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenNameIsTooLong()
+    public void Should_have_Validation_error_when_name_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Naam, new string('*', 201)).Create();
         var result = _validator.TestValidate(command);
@@ -68,7 +68,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenAgbCodeOndernemingIsEmpty()
+    public void Should_have_Validation_error_when_agbcodeonderneming_is_empty()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.AgbCodeOnderneming, string.Empty).Create();
         var result = _validator.TestValidate(command);
@@ -76,7 +76,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenAgbCodeOndernemingIsTooLong()
+    public void Should_have_Validation_error_when_agbcodeonderneming_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.AgbCodeOnderneming, new string('*', 201)).Create();
         var result = _validator.TestValidate(command);
@@ -85,7 +85,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenTelefoonZakelijkIsEmpty()
+    public void Should_have_Validation_error_when_telefoonzakelijk_is_empty()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonZakelijk, string.Empty).Create();
         var result = _validator.TestValidate(command);
@@ -93,7 +93,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenTelefoonZakelijkIsTooLong()
+    public void Should_have_Validation_error_when_telefoonzakelijk_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonZakelijk, new string('*', 16)).Create();
         var result = _validator.TestValidate(command);
@@ -102,7 +102,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenTelefoonPriveIsEmpty()
+    public void Should_have_Validation_error_when_telefoonprive_is_empty()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonPrive, string.Empty).Create();
         var result = _validator.TestValidate(command);
@@ -110,7 +110,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenTelefoonPriveIsTooLong()
+    public void Should_have_Validation_error_when_telefoonprive_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonPrive, new string('*', 16)).Create();
         var result = _validator.TestValidate(command);
@@ -118,10 +118,10 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
 
-   
+
 
     [Test]
-    public void ShouldHaveValidationErrorWhenEmailIsTooLong()
+    public void Should_have_Validation_error_when_email_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Email, new string('*', 451)).Create();
         var result = _validator.TestValidate(command);
@@ -129,7 +129,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenEmailIsNotValid()
+    public void Should_have_Validation_error_when_email_is_not_valid()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Email, "email").Create();
         var result = _validator.TestValidate(command);
@@ -138,7 +138,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenWebsiteIsTooLong()
+    public void Should_have_Validation_error_when_website_is_too_long()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Website, new string('*', 257)).Create();
         var result = _validator.TestValidate(command);
@@ -146,7 +146,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void ShouldHaveValidationErrorWhenWebsiteIsNotValid()
+    public void Should_have_Validation_error_when_website_is_not_valid()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.Website, "test.nl").Create();
         var result = _validator.TestValidate(command);
@@ -155,7 +155,7 @@ public class CreateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void ShouldHaveValidationErrorWhenContactpersoonIsEmpty()
+    public void Should_have_Validation_error_when_contactpersoon_is_empty()
     {
         var command = Fixture.Build<CreateOrganisatie>().With(x => x.ContactpersoonId, Guid.Empty).Create();
         var result = _validator.TestValidate(command);

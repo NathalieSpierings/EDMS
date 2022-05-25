@@ -1,24 +1,23 @@
-using Promeetec.EDMS.Domain.Betrokkene.Notification.Commands;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.Notification.Handlers;
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Handlers;
 
-public class CreateProductHandlerAsync : ICommandHandlerAsync<CreateNotificatie>
+public class CreateNotificatieHandler : ICommandHandler<CreateNotificatie>
 {
     private readonly INotificatieRepository _repository;
 
-    public CreateProductHandlerAsync(INotificatieRepository repository)
+    public CreateNotificatieHandler(INotificatieRepository repository)
     {
         _repository = repository;
     }
 
-    public async Task<CommandResponse> HandleAsync(CreateNotificatie command)
+    public async Task<IEnumerable<IEvent>> Handle(CreateNotificatie command)
     {
         var notificatie = new Notificatie(command);
         await _repository.AddAsync(notificatie);
 
-        return new CommandResponse
-        {
-            Events = notificatie.Events
-        };
+        return new IEvent[] { };
     }
 }

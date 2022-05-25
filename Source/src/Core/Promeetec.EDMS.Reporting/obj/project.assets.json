@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\nspierings\\.nuget\\packages\\": {}
+    "C:\\Users\\Talsja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
+      "projectUniqueName": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
       "projectName": "Promeetec.EDMS.Reporting",
-      "projectPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
-      "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\obj\\",
+      "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
+      "packagesPath": "C:\\Users\\Talsja\\.nuget\\packages\\",
+      "outputPath": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Talsja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -15,13 +15,13 @@ public class UpdateOrganisatieValidatorTests : TestFixtureBase
     [SetUp]
     public void Setup()
     {
-        _validator =  new UpdateMedewerkerValidator();
+        _validator = new UpdateMedewerkerValidator();
     }
 
 
 
     [Test]
-    public void Should_have_validation_error_when_geslacht_isEmpty()
+    public void Should_have_validation_error_when_geslacht_is_empty()
     {
         var command = Fixture.Build<UpdateMedewerker>()
             .Without(x => x.Persoon)
@@ -41,7 +41,7 @@ public class UpdateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void Should_have_validation_error_when_voorletters_isEmpty()
+    public void Should_have_validation_error_when_voorletters_is_empty()
     {
         var command = Fixture.Build<UpdateMedewerker>()
             .Without(x => x.Persoon)
@@ -100,7 +100,7 @@ public class UpdateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void Should_have_validation_error_when_achternaam_isEmpty()
+    public void Should_have_validation_error_when_achternaam_is_empty()
     {
         var command = Fixture.Build<UpdateMedewerker>()
             .Without(x => x.Persoon)
@@ -228,7 +228,7 @@ public class UpdateOrganisatieValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void Should_have_validation_error_when_agbcode_onderneming_isEmpty()
+    public void Should_have_validation_error_when_agbcode_onderneming_is_empty()
     {
         var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.AgbCodeOnderneming, string.Empty).Create();
         var result = _validator.TestValidate(command);

@@ -8,14 +8,14 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
     public class LandTests : TestFixtureBase
     {
         private EDMS.Domain.Models.Betrokkene.Land.Land _sut;
-        private CreateLand _cmd;
+        private CreateCountry _cmd;
         private Guid _createLandId;
         [SetUp]
         public void Setup()
         {
             _createLandId = Guid.NewGuid();
 
-            _cmd = new CreateLand
+            _cmd = new CreateCountry
             {
                 Id = _createLandId,
                 CultureCode = "nl-NL",
@@ -38,7 +38,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
         [Test]
         public void Update_details()
         {
-            var cmd = new UpdateLand
+            var cmd = new UpdateCountry
             {
                 CultureCode = "en-EN",
                 NativeName = "United Kingdom"
@@ -70,6 +70,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
             _sut.Reinstate();
             Assert.AreEqual(Status.Actief, _sut.Status);
         }
-        
+
     }
 }

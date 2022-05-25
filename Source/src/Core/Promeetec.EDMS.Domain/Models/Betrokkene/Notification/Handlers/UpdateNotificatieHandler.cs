@@ -1,8 +1,12 @@
-using Promeetec.EDMS.Domain.Betrokkene.Notification.Commands;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.Notification.Handlers;
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Handlers;
 
-public class UpdateNotificatieHandler : ICommandHandlerAsync<UpdateNotificatie>
+public class UpdateNotificatieHandler : ICommandHandler<UpdateNotificatie>
 {
     private readonly INotificatieRepository _repository;
 
@@ -11,18 +15,15 @@ public class UpdateNotificatieHandler : ICommandHandlerAsync<UpdateNotificatie>
         _repository = repository;
     }
 
-    public async Task<CommandResponse> HandleAsync(UpdateNotificatie command)
+    public async Task<IEnumerable<IEvent>> Handle(UpdateNotificatie command)
     {
-        var notificatie = await _repository.GetByIdAsync(command.AggregateRootId);
-        if (notificatie == null)
-            throw new ApplicationException($"Notificatie niet gevonden. Id: {command.AggregateRootId}");
+        var noti = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+        if (noti == null)
+            throw new DataException($"Notificatie met Id {command.Id} niet gevonden.");
 
-        notificatie.Update(command);
-        await _repository.UpdateAsync(notificatie);
+        noti.Update(command);
+        await _repository.UpdateAsync(noti);
 
-        return new CommandResponse
-        {
-            Events = notificatie.Events
-        };
+        return new IEvent[] { };
     }
 }

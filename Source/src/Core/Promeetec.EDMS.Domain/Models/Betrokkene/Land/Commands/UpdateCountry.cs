@@ -3,7 +3,7 @@ using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 
-public class UpdateLand : CommandBase
+public class UpdateCountry : CommandBase
 {
     public string CultureCode { get; set; }
     public string NativeName { get; set; }

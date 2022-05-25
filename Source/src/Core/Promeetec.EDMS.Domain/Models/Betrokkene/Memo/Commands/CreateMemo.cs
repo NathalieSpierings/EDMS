@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Memo.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class CreateMemo : DomainCommand<Memo>
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
+
+public class CreateMemo : CommandBase
 {
     public Guid MedewerkerId { get; set; }
     public DateTime Date { get; set; }

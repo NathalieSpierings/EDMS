@@ -14,11 +14,11 @@ public class UpdatePasswordValidatorTests : TestFixtureBase
     [SetUp]
     public void Setup()
     {
-        _validator =  new UpdatePasswordValidator();
+        _validator = new UpdatePasswordValidator();
     }
 
     [Test]
-    public void Should_have_validation_error_when_password_isEmpty()
+    public void Should_have_validation_error_when_password_is_empty()
     {
         var command = Fixture.Build<UpdatePassword>().With(x => x.Password, String.Empty).Create();
         var result = _validator.TestValidate(command);

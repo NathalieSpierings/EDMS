@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Notification.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class UpdateNotificatie : DomainCommand<Notificatie>
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
+
+public class UpdateNotificatie : CommandBase
 {
     public NotificatieStatus NotificatieStatus { get; set; }
 }

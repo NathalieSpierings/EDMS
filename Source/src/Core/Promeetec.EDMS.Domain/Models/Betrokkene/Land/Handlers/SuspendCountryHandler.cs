@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
@@ -9,39 +10,34 @@ using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 
-public class CreateLandHandler : ICommandHandler<CreateLand>
+public class SuspendCountryHandler : ICommandHandler<SuspendCountry>
 {
     private readonly ILandRepository _repository;
     private readonly IEventRepository _eventRepository;
-    private readonly IValidator<CreateLand> _validator;
 
-    public CreateLandHandler(ILandRepository repository, IEventRepository eventRepository, IValidator<CreateLand> validator)
+    public SuspendCountryHandler(ILandRepository repository, IEventRepository eventRepository)
     {
         _repository = repository;
         _eventRepository = eventRepository;
-        _validator = validator;
     }
 
-    public async Task<IEnumerable<IEvent>> Handle(CreateLand command)
+    public async Task<IEnumerable<IEvent>> Handle(SuspendCountry command)
     {
-        await _validator.ValidateCommand(command);
+        var country = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+        if (country == null)
+            throw new DataException($"Land met Id {command.Id} niet gevonden.");
 
-        var country = new Land(command);
+        country.Suspend();
 
-
-        var @event = new LandAangemaakt
+        var @event = new LandGedeactiveerd
         {
             TargetId = country.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId,
-
-            Status = Status.Actief.ToString(),
-            CultureCode = command.CultureCode,
-            NativeName = command.NativeName
+            UserId = command.UserId
         };
 
-        await _repository.AddAsync(country);
+        await _repository.UpdateAsync(country);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

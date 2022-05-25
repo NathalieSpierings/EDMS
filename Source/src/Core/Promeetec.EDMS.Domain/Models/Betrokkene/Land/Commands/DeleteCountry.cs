@@ -2,6 +2,6 @@
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 
-public class SuspendLand : CommandBase
+public class DeleteCountry : CommandBase
 {
 }

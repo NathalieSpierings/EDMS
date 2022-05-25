@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Domain.Models.Admin.DownloadActivity;
 using Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
@@ -7,6 +8,8 @@ using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Memo;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar;
@@ -17,6 +20,7 @@ using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
 using Promeetec.EDMS.Domain.Models.Document.Bestand;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage;
+using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Identity;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
 using Promeetec.EDMS.Domain.Models.Identity.Role;
@@ -30,8 +34,6 @@ using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
 using Promeetec.EDMS.Domain.Models.Modules.ION;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
-using System.Reflection;
-using Promeetec.EDMS.Domain.Models.Event;
 
 namespace Promeetec.EDMS.Data.Context;
 
@@ -70,6 +72,8 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<Menu> Menus { get; set; }
     public DbSet<MenuItem> MenuItems { get; set; }
     public DbSet<MenuItemRole> MenuItemRoles { get; set; }
+    public DbSet<Memo> Memos { get; set; }
+    public DbSet<Notificatie> Notificaties { get; set; }
     public DbSet<Organisatie> Organisaties { get; set; }
     public DbSet<Overigbestand> Overigebestanden { get; set; }
     public DbSet<Rapportage> Rapportages { get; set; }

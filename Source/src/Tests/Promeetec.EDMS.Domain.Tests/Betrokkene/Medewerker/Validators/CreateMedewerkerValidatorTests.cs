@@ -15,12 +15,12 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
     [SetUp]
     public void Setup()
     {
-        _validator =  new CreateMedewerkerValidator();
+        _validator = new CreateMedewerkerValidator();
     }
 
 
     [Test]
-    public void Should_have_validation_error_when_geslacht_isEmpty()
+    public void Should_have_validation_error_when_geslacht_is_empty()
     {
         var command = Fixture.Build<CreateMedewerker>()
             .Without(x => x.Persoon)
@@ -40,7 +40,7 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void Should_have_validation_error_when_voorletters_isEmpty()
+    public void Should_have_validation_error_when_voorletters_is_empty()
     {
         var command = Fixture.Build<CreateMedewerker>()
             .Without(x => x.Persoon)
@@ -53,7 +53,7 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
                 .With(x => x.Voorletters, String.Empty)
                 .Create())
             .Create();
-        
+
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
     }
@@ -99,7 +99,7 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
 
 
     [Test]
-    public void Should_have_validation_error_when_achternaam_isEmpty()
+    public void Should_have_validation_error_when_achternaam_is_empty()
     {
         var command = Fixture.Build<CreateMedewerker>()
             .Without(x => x.Persoon)
@@ -224,16 +224,16 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Email);
     }
-    
+
 
     [Test]
-    public void Should_have_validation_error_when_agbcode_onderneming_isEmpty()
+    public void Should_have_validation_error_when_agbcode_onderneming_is_empty()
     {
         var command = Fixture.Build<CreateMedewerker>().Without(x => x.Adres).With(x => x.AgbCodeOnderneming, string.Empty).Create();
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.AgbCodeOnderneming);
     }
-    
+
     [Test]
     public void Should_have_validation_error_when_functie_is_too_long()
     {

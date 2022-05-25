@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
 
@@ -75,7 +76,7 @@ public class Notificatie : AggregateRoot
 
 
     #region Navigation Properties
-    
+
     public Guid MedewerkerId { get; set; }
     public virtual Medewerker.Medewerker Medewerker { get; set; }
 
@@ -90,21 +91,28 @@ public class Notificatie : AggregateRoot
 
     }
 
+    /// <summary>
+    /// Creates a notification.
+    /// </summary>
+    /// <param name="cmd">The create notification command.</param>
+    public Notificatie(CreateNotificatie cmd)
+    {
+        Datum = DateTime.Now;
+        Titel = cmd.Titel;
+        Bericht = cmd.Bericht;
+        Url = cmd.Url;
+        NotificatieType = cmd.NotificatieType;
+        NotificatieStatus = NotificatieStatus.Nieuw;
+        MedewerkerId = cmd.OntvangerId;
+    }
 
-    //public Notificatie(CreateNotificatie cmd)
-    //{
-    //    Datum = DateTime.Now;
-    //    Titel = cmd.Titel;
-    //    Bericht = cmd.Bericht;
-    //    Url = cmd.Url;
-    //    NotificatieType = cmd.NotificatieType;
-    //    NotificatieStatus = NotificatieStatus.Nieuw;
-    //    MedewerkerId = cmd.OntvangerId;
-    //}
-
-    //public void Update(UpdateNotificatie cmd)
-    //{
-    //    GelezenOp = cmd.NotificatieStatus == NotificatieStatus.Nieuw ? (DateTime?)null : DateTime.Now;
-    //    NotificatieStatus = cmd.NotificatieStatus;
-    //}
+    /// <summary>
+    /// Updates a notification.
+    /// </summary>
+    /// <param name="cmd">The update notification command.</param>
+    public void Update(UpdateNotificatie cmd)
+    {
+        GelezenOp = cmd.NotificatieStatus == NotificatieStatus.Nieuw ? (DateTime?)null : DateTime.Now;
+        NotificatieStatus = cmd.NotificatieStatus;
+    }
 }

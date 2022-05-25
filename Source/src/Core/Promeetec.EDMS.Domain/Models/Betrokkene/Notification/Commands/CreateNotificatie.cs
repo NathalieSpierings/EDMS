@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Notification.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class CreateNotificatie : DomainCommand<Notificatie>
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
+
+public class CreateNotificatie : CommandBase
 {
     public string Titel { get; set; }
     public string Bericht { get; set; }

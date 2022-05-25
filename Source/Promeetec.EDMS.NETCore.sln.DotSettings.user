@@ -1,23 +1,34 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=03a281f4_002D9e42_002D465b_002D8154_002Dc7838da45342/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=03a281f4_002D9e42_002D465b_002D8154_002Dc7838da45342/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3499e11e_002Df881_002D4be2_002D8292_002D5ce933de93b6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateNotificationHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Betrokkene.Notification.CommandHandlers.CreateNotificationHandlerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34d35756_002D558e_002D449b_002D8e80_002Db2bfa1b07484/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34d35756_002D558e_002D449b_002D8e80_002Db2bfa1b07484/@EntryIndexRemoved">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexRemoved">True</s:Boolean>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexRemoved">True</s:Boolean>
 	
 	
 	
 	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b54b35e8_002Dbc20_002D4796_002D9463_002D1ff79c26886b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LandTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=af437e64_002Dc649_002D445c_002Dab71_002Df959520b1f12/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateMemoHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Betrokkene.Land.LandTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Betrokkene.Memo.CommandHandlers.CreateMemoHandlerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	
+	
+	
 	
 	
 	</wpf:ResourceDictionary>

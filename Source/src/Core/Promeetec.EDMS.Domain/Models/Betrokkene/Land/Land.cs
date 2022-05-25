@@ -38,7 +38,7 @@ public class Land : AggregateRoot
     /// Creates a country.
     /// </summary>
     /// <param name="cmd">The create country command.</param>
-    public Land(CreateLand cmd)
+    public Land(CreateCountry cmd)
     {
         Id = cmd.Id;
 
@@ -51,7 +51,7 @@ public class Land : AggregateRoot
     /// Update the details of the country.
     /// </summary>
     /// <param name="cmd">The update country command.</param>
-    public void Update(UpdateLand cmd)
+    public void Update(UpdateCountry cmd)
     {
         CultureCode = cmd.CultureCode;
         NativeName = cmd.NativeName;

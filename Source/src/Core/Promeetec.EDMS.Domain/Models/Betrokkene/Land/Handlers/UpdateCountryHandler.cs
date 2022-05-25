@@ -1,4 +1,5 @@
-﻿using System.Data;
+using System.Data;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
@@ -10,31 +11,39 @@ using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 
-public class SuspendLandHandler : ICommandHandler<SuspendLand>
+public class UpdateCountryHandler : ICommandHandler<UpdateCountry>
 {
     private readonly ILandRepository _repository;
     private readonly IEventRepository _eventRepository;
+    private readonly IValidator<UpdateCountry> _validator;
 
-    public SuspendLandHandler(ILandRepository repository, IEventRepository eventRepository)
+    public UpdateCountryHandler(ILandRepository repository, IEventRepository eventRepository, IValidator<UpdateCountry> validator)
     {
         _repository = repository;
         _eventRepository = eventRepository;
+        _validator = validator;
     }
 
-    public async Task<IEnumerable<IEvent>> Handle(SuspendLand command)
+
+    public async Task<IEnumerable<IEvent>> Handle(UpdateCountry command)
     {
+        await _validator.ValidateCommand(command);
+
         var country = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (country == null)
             throw new DataException($"Land met Id {command.Id} niet gevonden.");
 
-        country.Suspend();
+        country.Update(command);
 
-        var @event = new LandGedeactiveerd
+        var @event = new LandGewijzigd
         {
             TargetId = country.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+
+            CultureCode = country.CultureCode,
+            NativeName = country.NativeName
         };
 
         await _repository.UpdateAsync(country);

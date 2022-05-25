@@ -1,4 +1,4 @@
-using System.Data;
+﻿using System.Data;
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
@@ -10,35 +10,32 @@ using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 
-public class DeleteLandHandler : ICommandHandler<DeleteLand>
+public class ReinstateCountryHandler : ICommandHandler<ReinstateCountry>
 {
     private readonly ILandRepository _repository;
     private readonly IEventRepository _eventRepository;
 
-    public DeleteLandHandler(ILandRepository repository, IEventRepository eventRepository)
+    public ReinstateCountryHandler(ILandRepository repository, IEventRepository eventRepository)
     {
         _repository = repository;
         _eventRepository = eventRepository;
     }
 
-
-    public async Task<IEnumerable<IEvent>> Handle(DeleteLand command)
+    public async Task<IEnumerable<IEvent>> Handle(ReinstateCountry command)
     {
         var country = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (country == null)
             throw new DataException($"Land met Id {command.Id} niet gevonden.");
 
 
-        country.Delete();
+        country.Reinstate();
 
-        var @event = new LandVerwijderd
+        var @event = new LandGeactiveerd
         {
             TargetId = country.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId,
-
-            Status = Status.Verwijderd.ToString()
+            UserId = command.UserId
         };
 
         await _repository.UpdateAsync(country);

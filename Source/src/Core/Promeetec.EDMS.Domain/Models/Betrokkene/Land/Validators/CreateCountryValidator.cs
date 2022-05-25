@@ -3,9 +3,9 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Validators;
 
-public class UpdateLandValidator : AbstractValidator<UpdateLand>
+public class CreateCountryValidator : AbstractValidator<CreateCountry>
 {
-    public UpdateLandValidator()
+    public CreateCountryValidator()
     {
         RuleFor(c => c.CultureCode)
             .NotEmpty().WithMessage("CultureCode is verplicht.")
