@@ -34,7 +34,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Notification
         public void New()
         {
             Assert.AreEqual(_createId, _sut.Id);
-            Assert.AreEqual(_cmd.Datum, _sut.Datum);
+            Assert.AreEqual(_cmd.Datum.ToShortDateString(), _sut.Datum.ToShortDateString());
             Assert.AreEqual(_cmd.Titel, _sut.Titel);
             Assert.AreEqual(_cmd.Bericht, _sut.Bericht);
             Assert.AreEqual(_cmd.Url, _sut.Url);

@@ -20,9 +20,11 @@
     <Compile Remove="Models\Betrokkene\UserProfile\Events\**" />
     <Compile Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
+    <Compile Remove="Models\Betrokkene\Verzekeraar\Rules\**" />
     <Compile Remove="Models\Betrokkene\Verzekerde\Commands\**" />
     <Compile Remove="Models\Betrokkene\Verzekerde\Events\**" />
     <Compile Remove="Models\Betrokkene\Verzekerde\Handlers\**" />
+    <Compile Remove="Models\Betrokkene\Verzekerde\Rules\**" />
     <Compile Remove="Models\Betrokkene\Weegmoment\Commands\**" />
     <Compile Remove="Models\Betrokkene\Weegmoment\Events\**" />
     <Compile Remove="Models\Betrokkene\Weegmoment\Handlers\**" />
@@ -120,9 +122,11 @@
     <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Events\**" />
     <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
+    <EmbeddedResource Remove="Models\Betrokkene\Verzekeraar\Rules\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekerde\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekerde\Events\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekerde\Handlers\**" />
+    <EmbeddedResource Remove="Models\Betrokkene\Verzekerde\Rules\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Weegmoment\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Weegmoment\Events\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Weegmoment\Handlers\**" />
@@ -220,9 +224,11 @@
     <None Remove="Models\Betrokkene\UserProfile\Events\**" />
     <None Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <None Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
+    <None Remove="Models\Betrokkene\Verzekeraar\Rules\**" />
     <None Remove="Models\Betrokkene\Verzekerde\Commands\**" />
     <None Remove="Models\Betrokkene\Verzekerde\Events\**" />
     <None Remove="Models\Betrokkene\Verzekerde\Handlers\**" />
+    <None Remove="Models\Betrokkene\Verzekerde\Rules\**" />
     <None Remove="Models\Betrokkene\Weegmoment\Commands\**" />
     <None Remove="Models\Betrokkene\Weegmoment\Events\**" />
     <None Remove="Models\Betrokkene\Weegmoment\Handlers\**" />
@@ -316,8 +322,6 @@
     <Compile Remove="Models\Admin\RedenEindeZorg\IRedenEindeZorgRepository.cs" />
     <Compile Remove="Models\Admin\Zorgstraat\IZorgstraatRepository.cs" />
     <Compile Remove="Models\Betrokkene\UserProfile\IUserProfileRepository.cs" />
-    <Compile Remove="Models\Betrokkene\Verzekeraar\IVerzekeraarRepository.cs" />
-    <Compile Remove="Models\Betrokkene\Verzekerde\IVerzekerdeRepository.cs" />
     <Compile Remove="Models\Betrokkene\Weegmoment\IWeegMomentRepository.cs" />
     <Compile Remove="Models\Document\Aanleverbestand\Aanleverberstand\IAanleverbestandRepository.cs" />
     <Compile Remove="Models\Document\Aanleverbestand\Samenvatting\IAanleverbestandSamenvattingRepository.cs" />
@@ -345,6 +349,30 @@
     <Compile Include="Models\Betrokkene\Notification\Commands\UpdateNotificatie.cs" />
     <Compile Include="Models\Betrokkene\Notification\Handlers\CreateNotificatieHandler.cs" />
     <Compile Include="Models\Betrokkene\Notification\Handlers\UpdateNotificatieHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekeraar\Commands\CreateVerzekeraar.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\ReinstateVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\ReinstateVerzekerdeMetZorgprofiel.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\SuspendVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\SuspendVerzekerdeMetZorgprofiel.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\CreateVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\AssingVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\UndeleteVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\UpdateVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\UpdateVerzekerdeLengte.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\DeleteVerzekerde.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Commands\DeleteVerzekerdeMetZorgprofiel.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Events\VerzekerdeAangemaakt.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Events\VerzekerdeGewijzigd.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\AssingVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\CreateVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\DeleteVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\ReinstateVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\ReinstateVerzekerdeMetZorgprofielHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\SuspendVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\SuspendVerzekerdeMetZorgprofielHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\UndeleteVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\UpdateVerzekerdeHandler.cs" />
+    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\UpdateVerzekerdeLengteHandler.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -366,12 +394,6 @@
     <Folder Include="Models\Admin\Zorgstraat\Validators\" />
     <Folder Include="Models\Betrokkene\Organisatie\Handlers\" />
     <Folder Include="Models\Betrokkene\Organisatie\Events\" />
-    <Folder Include="Models\Betrokkene\Verzekeraar\Events\" />
-    <Folder Include="Models\Betrokkene\Verzekeraar\Handlers\" />
-    <Folder Include="Models\Betrokkene\Verzekeraar\Rules\" />
-    <Folder Include="Models\Betrokkene\Verzekeraar\Validators\" />
-    <Folder Include="Models\Betrokkene\Verzekerde\Rules\" />
-    <Folder Include="Models\Betrokkene\Verzekerde\Validators\" />
     <Folder Include="Models\Betrokkene\Weegmoment\Rules\" />
     <Folder Include="Models\Betrokkene\Weegmoment\Validators\" />
     <Folder Include="Models\Document\Aanleverbestand\Aanleverberstand\Rules\" />

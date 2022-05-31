@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands
 {
-    public class UndeleteVerzekerde : DomainCommand<Verzekerde>
+    public class UndeleteVerzekerde : CommandBase
     {
     }
 }

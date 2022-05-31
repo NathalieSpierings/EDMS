@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
@@ -109,140 +111,135 @@ public class Verzekerde : AggregateRoot
 
     }
 
-    //public Verzekerde(NieuweVerzekerde cmd)
-    //{
-    //    AangemaaktDoorId = cmd.UserId;
-    //    AangemaaktDoor = cmd.UserDisplayName;
-    //    AdresboekId = cmd.AdresboekId;
-    //    Adres = cmd.Adres;
-    //    Zorgverzekering = cmd.Zorgverzekering;
-    //    Zorgprofiel = cmd.Zorgprofiel;
+    /// <summary>
+    /// Creates an verzekerde.
+    /// </summary>
+    /// <param name="cmd">The create verzekerde command.</param>
+    public Verzekerde(CreateVerzekerde cmd)
+    {
+        Id = cmd.Id;
 
-    //    cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
-    //    cmd.Persoon.FormeleNaam = PersoonExtensions.SetFormeleNaam(PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters), cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
-    //    cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters), cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
-    //    Persoon = cmd.Persoon;
+        AdresboekId = cmd.AdresboekId;
+        Status = Status.Actief;
+        Shared = false;
+        
+        Bsn = cmd.Bsn;
+        cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
+        cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        Persoon = cmd.Persoon;
+        Adres = cmd.Adres;
 
-    //    Verwijsdatum = cmd.Verwijsdatum;
+        cmd.Zorgverzekering = cmd.Zorgverzekering;
+        cmd.Zorgprofiel = cmd.Zorgprofiel;
 
-    //    AddAndApplyEvent(new VerzekerdeAangemaakt
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        UserId = cmd.UserId,
-    //        Bsn = cmd.Bsn,
-    //        AgbCodeVerwijzer = cmd.AgbCodeVerwijzer,
-    //        NaamVerwijzer = cmd.NaamVerwijzer,
-    //        Verwijsdatum = cmd.Verwijsdatum.HasValue ? cmd.Verwijsdatum.Value.ToString("dd-MM-yyyy") : string.Empty,
-    //        Persoon = new Persoon.Persoon
-    //        {
-    //            Geboortedatum = cmd.Persoon.Geboortedatum,
-    //            VolledigeNaam = cmd.Persoon.VolledigeNaam
-    //        }
-    //    });
-    //}
+        AgbCodeVerwijzer = cmd.AgbCodeVerwijzer;
+        NaamVerwijzer = cmd.NaamVerwijzer;
+        Verwijsdatum = cmd.Verwijsdatum;
+        
+        TimeStamp = DateTime.Now;
+        AangemaaktDoor = cmd.UserDisplayName;
+        AangemaaktDoorId = cmd.UserId;
+
+    }
 
 
-    //public void Update(double lengte)
-    //{
-    //    Lengte = lengte;
-    //}
 
-    //public void Update(UpdateVerzekerde cmd)
-    //{
-    //    Zorgverzekering = cmd.Zorgverzekering;
-    //    Adres = cmd.Adres;
-    //    Zorgprofiel = cmd.Zorgprofiel;
-    //    cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
-    //    cmd.Persoon.FormeleNaam = PersoonExtensions.SetFormeleNaam(PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters), cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
-    //    cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters), cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
-    //    Persoon = cmd.Persoon;
-
-    //    Verwijsdatum = cmd.Verwijsdatum;
-
-    //    AddAndApplyEvent(new VerzekerdeGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        Bsn = cmd.Bsn,
-    //        AgbCodeVerwijzer = cmd.AgbCodeVerwijzer,
-    //        NaamVerwijzer = cmd.NaamVerwijzer,
-    //        Verwijsdatum = cmd.Verwijsdatum.HasValue ? cmd.Verwijsdatum.Value.ToString("dd-MM-yyyy") : string.Empty,
-    //        Persoon = new Persoon.Persoon
-    //        {
-    //            Geboortedatum = cmd.Persoon.Geboortedatum,
-    //            VolledigeNaam = cmd.Persoon.VolledigeNaam
-    //        }
-    //    });
-    //}
+    /// <summary>
+    /// Update the details of the verzekerde.
+    /// </summary>
+    /// <param name="cmd">The update verzekerde command.</param>
+    public void Update(UpdateVerzekerde cmd)
+    {
+        Bsn = cmd.Bsn;
+        cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
+        cmd.Persoon.FormeleNaam = PersoonExtensions.SetFormeleNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
+        Persoon = cmd.Persoon;
+        Adres = cmd.Adres;
+        Zorgverzekering = cmd.Zorgverzekering;
+        Zorgprofiel = cmd.Zorgprofiel;
+        AgbCodeVerwijzer = cmd.AgbCodeVerwijzer;
+        NaamVerwijzer = cmd.NaamVerwijzer;
+        Verwijsdatum = cmd.Verwijsdatum;
+    }
 
 
-    //public void Share(ToewijzenVerzekerde cmd)
-    //{
-    //    Shared = cmd.Shared;
-    //}
 
-    //public void Activate(ActiveerVerzekerde cmd)
-    //{
-    //    Status = Status.Actief;
-    //}
+    /// <summary>
+    /// Set the status as verzekerde.
+    /// The verzekerde will no longer be visible.
+    /// </summary>
+    public void Delete()
+    {
+        Status = Status.Verwijderd;
 
-    //public void Deactivate(DeactiveerVerzekerde cmd)
-    //{
-    //    Status = Status.Inactief;
-    //}
+        if (Zorgprofiel != null)
+            Zorgprofiel = null;
+    }
 
-    //public void ActivateMetZorgprofiel(ActiveerVerzekerdeMetZorgprofiel cmd)
-    //{
-    //    Status = Status.Actief;
-    //    Zorgprofiel.ProfielStartdatum = cmd.ProfielStartdatum;
-    //    Zorgprofiel.ProfielEinddatum = null;
-    //}
-
-    //public void DeactivateMetZorgprofiel(DeactiveerVerzekerdeMetZorgprofiel cmd)
-    //{
-    //    Status = Status.Inactief;
-    //    Zorgprofiel.ProfielEinddatum = cmd.ProfielEinddatum;
-    //}
-
-    //public void Delete(VerwijderVerzekerde cmd)
-    //{
-    //    Status = Status.Verwijderd;
-
-    //    if (Zorgprofiel != null)
-    //    {
-    //        // Zorgprofiel.ProfielEinddatum = DateTime.Now;
-    //        Zorgprofiel = null;
-    //    }
-    //}
-
-    //public void Undelete(UndeleteVerzekerde cmd)
-    //{
-    //    Status = Status.Actief;
-    //    Zorgprofiel = null;
-    //}
+    /// <summary>
+    /// Set the status as verzekerde.
+    /// The verzekerde will be visible.
+    /// </summary>
+    public void Undelete()
+    {
+        Status = Status.Actief;
+        Zorgprofiel = null;
+    }
 
 
-    //#region Private
+    /// <summary>
+    /// Sets the status of the verzekerde as suspended.
+    /// The verzekerde will no longer be available.
+    /// </summary>
+    public void Suspend()
+    {
+        Status = Status.Inactief;
+    }
 
-    //private void Apply(VerzekerdeAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
-    //    Status = Status.Actief;
-    //    Shared = false;
-    //    AangemaaktOp = DateTime.Now;
-    //    Bsn = @event.Bsn;
-    //    AgbCodeVerwijzer = @event.AgbCodeVerwijzer;
-    //    NaamVerwijzer = @event.NaamVerwijzer;
-    //}
+    /// <summary>
+    /// Reinstates the verzekerde if suspended.
+    /// </summary>
+    public void Reinstate()
+    {
+        Status = Status.Actief;
+    }
 
-    //private void Apply(VerzekerdeGewijzigd @event)
-    //{
-    //    Bsn = @event.Bsn;
-    //    AgbCodeVerwijzer = @event.AgbCodeVerwijzer;
-    //    NaamVerwijzer = @event.NaamVerwijzer;
-    //}
 
-    //#endregion
+    /// <summary>
+    /// Sets the status of the verzekerde with healthcare profile as suspended.
+    /// The verzekerde will no longer be available.
+    /// </summary>
+    public void SuspendWithProfile(SuspendVerzekerdeMetZorgprofiel cmd)
+    {
+        Status = Status.Inactief;
+        Zorgprofiel.ProfielEinddatum = cmd.ProfielEinddatum;
+    }
+
+    /// <summary>
+    /// Reinstates the verzekerde with healthcare profile if suspended.
+    /// </summary>
+    public void ReinstateWithProfile(ReinstateVerzekerdeMetZorgprofiel cmd)
+    {
+        Status = Status.Actief;
+        Zorgprofiel.ProfielStartdatum = cmd.ProfielStartdatum;
+        Zorgprofiel.ProfielEinddatum = null;
+    }
+
+
+    /// <summary>
+    /// Updates the lenght of the verzekerde.
+    /// </summary>
+    public void Update(double lengte)
+    {
+        Lengte = lengte;
+    }
+
+    /// <summary>
+    /// Shares the verzekerde with a colleague.
+    /// </summary>
+    public void Share(AssingVerzekerde cmd)
+    {
+        Shared = cmd.Shared;
+    }
 }

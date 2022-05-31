@@ -12,4 +12,5 @@ public class UpdateMedewerker : CommandBase
     public byte[] Avatar { get; set; }
     public string IonToestemmingsverklaringActivatieLink { get; set; }
     public Adres.Adres Adres { get; set; }
+
 }

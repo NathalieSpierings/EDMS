@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands
 {
-    public class UpdateVerzekerdeLengte : DomainCommand<Verzekerde>
+    public class UpdateVerzekerdeLengte : CommandBase
     {
         public double Lengte { get; set; }
     }

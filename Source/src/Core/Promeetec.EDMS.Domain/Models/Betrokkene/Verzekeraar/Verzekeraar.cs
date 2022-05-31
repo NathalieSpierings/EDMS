@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar;
 
@@ -30,5 +31,17 @@ public class Verzekeraar : AggregateRoot
     public Verzekeraar()
     {
 
+    }
+
+    /// <summary>
+    /// Creates a verzekeraar.
+    /// </summary>
+    /// <param name="cmd">The create verzekeraar command.</param>
+    public Verzekeraar(CreateVerzekeraar cmd)
+    {
+        Id = cmd.Id;
+        Uzovi = cmd.Uzovi;
+        Naam = cmd.Naam;
+        Actief = cmd.Actief;
     }
 }

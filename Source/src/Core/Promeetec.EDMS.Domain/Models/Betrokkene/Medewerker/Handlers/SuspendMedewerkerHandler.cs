@@ -23,10 +23,7 @@ public class SuspendMedewerkerHandler : ICommandHandler<SuspendMedewerker>
 
     public async Task<IEnumerable<IEvent>> Handle(SuspendMedewerker command)
     {
-        var medewerker = await _repository.Query()
-            .FirstOrDefaultAsync(x => x.Id == command.Id &&
-                                      x.Status != Status.Verwijderd);
-
+        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
 

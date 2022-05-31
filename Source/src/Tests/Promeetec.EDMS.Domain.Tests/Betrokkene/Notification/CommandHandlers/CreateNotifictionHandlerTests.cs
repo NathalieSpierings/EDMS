@@ -26,7 +26,7 @@ public class CreateNotificationHandlerTests : TestFixtureBase
 
 
     [Test]
-    public async Task Should_create_new_notification_and_add_event()
+    public async Task Should_create_new_notification()
     {
         var command = Fixture.Create<CreateNotificatie>();
 
@@ -37,6 +37,6 @@ public class CreateNotificationHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         Assert.NotNull(dbEntity);
-        Assert.NotNull(@event);
+        Assert.Null(@event);
     }
 }

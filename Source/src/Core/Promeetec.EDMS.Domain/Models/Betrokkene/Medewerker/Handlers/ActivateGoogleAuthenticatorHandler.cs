@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Events;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Shared;
 using Promeetec.EDMS.Events;
 using Promeetec.EDMS.Extensions;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
 

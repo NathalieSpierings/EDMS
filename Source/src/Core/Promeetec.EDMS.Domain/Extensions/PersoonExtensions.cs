@@ -94,7 +94,7 @@ public static class PersoonExtensions
         return naam;
     }
 
-    public static string SetVolledigeNaam(string voorletters, string tussenvoegsel, string achternaam, string? voornaam = default)
+    public static string SetVolledigeNaam(string voorletters, string? tussenvoegsel, string achternaam, string? voornaam = default)
     {
         string naam;
         if (!string.IsNullOrWhiteSpace(voornaam))

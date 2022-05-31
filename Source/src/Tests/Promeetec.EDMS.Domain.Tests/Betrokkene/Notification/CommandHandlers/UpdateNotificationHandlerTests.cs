@@ -26,7 +26,7 @@ public class UpdateNotificationHandlerTests : TestFixtureBase
 
 
     [Test]
-    public async Task Should_update_memo_and_add_event()
+    public async Task Should_update_memo()
     {
         var cmd = Fixture.Create<CreateNotificatie>();
 
@@ -51,6 +51,6 @@ public class UpdateNotificationHandlerTests : TestFixtureBase
 
 
         Assert.AreEqual(command.NotificatieStatus, dbEntity.NotificatieStatus);
-        Assert.NotNull(@event);
+        Assert.Null(@event);
     }
 }

@@ -97,6 +97,7 @@ public class Notificatie : AggregateRoot
     /// <param name="cmd">The create notification command.</param>
     public Notificatie(CreateNotificatie cmd)
     {
+        Id = cmd.Id;
         Datum = DateTime.Now;
         Titel = cmd.Titel;
         Bericht = cmd.Bericht;

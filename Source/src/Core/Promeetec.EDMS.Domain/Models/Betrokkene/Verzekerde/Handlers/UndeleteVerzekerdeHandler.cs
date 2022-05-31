@@ -1,8 +1,12 @@
-﻿using Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Commands;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
 {
-    public class UndeleteVerzekerdeHandler : ICommandHandlerAsync<UndeleteVerzekerde>
+    public class UndeleteVerzekerdeHandler : ICommandHandler<UndeleteVerzekerde>
     {
         private readonly IVerzekerdeRepository _repository;
 
@@ -11,19 +15,17 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
             _repository = repository;
         }
 
-        public async Task<CommandResponse> HandleAsync(UndeleteVerzekerde command)
+        public async Task<IEnumerable<IEvent>> Handle(UndeleteVerzekerde command)
         {
-            var verzekerde = await _repository.GetByIdAsync(command.AggregateRootId);
+            var verzekerde = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
             if (verzekerde == null)
-                throw new ApplicationException($"Verzekerde niet gevonden. Id: {command.AggregateRootId}");
+                throw new DataException($"Verzekerde met Id {command.Id} niet gevonden.");
+            
+            verzekerde.Undelete();
 
-            verzekerde.Undelete(command);
             await _repository.UpdateAsync(verzekerde);
 
-            return new CommandResponse
-            {
-                Events = verzekerde.Events
-            };
+            return new IEvent[] { };
         }
     }
 }

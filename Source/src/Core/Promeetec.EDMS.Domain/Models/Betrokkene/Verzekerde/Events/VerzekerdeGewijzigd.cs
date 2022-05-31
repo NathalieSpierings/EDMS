@@ -1,8 +1,9 @@
-﻿using Promeetec.EDMS.Domain.Modules.Verbruiksmiddelen.Zorgprofiel;
+﻿using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Events
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Events
 {
-    public class VerzekerdeGewijzigd : DomainEvent
+    public class VerzekerdeGewijzigd : EventBase
     {
         public string Bsn { get; set; }
         public string AgbCodeVerwijzer { get; set; }

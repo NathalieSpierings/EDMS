@@ -1,9 +1,13 @@
-﻿using Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Commands;
-using Promeetec.EDMS.Domain.Modules.Verbruiksmiddelen.Zorgprofiel;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
 {
-    public class UpdateVerzekerdeHandler : ICommandHandlerAsync<UpdateVerzekerde>
+    public class UpdateVerzekerdeHandler : ICommandHandler<UpdateVerzekerde>
     {
         private readonly IVerzekerdeRepository _repository;
 
@@ -12,11 +16,11 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
             _repository = repository;
         }
 
-        public async Task<CommandResponse> HandleAsync(UpdateVerzekerde command)
+        public async Task<IEnumerable<IEvent>> Handle(UpdateVerzekerde command)
         {
-            var verzekerde = await _repository.GetByIdAsync(command.AggregateRootId);
+            var verzekerde = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
             if (verzekerde == null)
-                throw new ApplicationException($"Client niet gevonden. Id: {command.AggregateRootId}");
+                throw new DataException($"Verzekerde met Id {command.Id} niet gevonden.");
 
             // Adresgegevens zijn gewijzigd
             if (verzekerde.Adres.Straat != command.Adres.Straat
@@ -28,7 +32,11 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
             {
                 var currentAdres = verzekerde.Adres;
                 currentAdres.WoonachtigTot = DateTime.Now;
-                verzekerde.Adressen.Add(currentAdres);
+                verzekerde.Adressen.Add(new VerzekerdeToAdres
+                {
+                    AdresId = currentAdres.Id, 
+                    VerzekerdeId = verzekerde.Id
+                });
 
                 verzekerde.Adres = command.Adres;
             }
@@ -39,7 +47,11 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
             {
                 var currentZorgverzekering = verzekerde.Zorgverzekering;
                 currentZorgverzekering.VerzekerdTot = DateTime.Now;
-                verzekerde.Zorgverzekeringen.Add(currentZorgverzekering);
+                verzekerde.Zorgverzekeringen.Add(new VerzekerdeToZorgverzekering
+                {
+                   ZorgverzekeringId = currentZorgverzekering.Id,
+                   VerzekerdeId = verzekerde.Id
+                });
 
                 verzekerde.Zorgverzekering = command.Zorgverzekering;
             }
@@ -95,7 +107,11 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
                                 // De startdatum van profiel 'Geen' wordt de einddatum van het oude profiel.
                                 command.Zorgprofiel.ProfielStartdatum = verzekerde.Zorgprofiel.ProfielEinddatum.Value;
 
-                                verzekerde.Zorgprofielen.Add(verzekerde.Zorgprofiel);
+                                verzekerde.Zorgprofielen.Add(new VerzekerdeToZorgprofiel
+                                {
+                                    ZorgprofielId = verzekerde.Zorgprofiel.Id,
+                                    VerzekerdeId = verzekerde.Id
+                                });
 
                                 break;
                             case ProfielCode.ProfielCode0:
@@ -139,7 +155,11 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
                                     throw new Exception("Profiel datums zijn ongeldig. Neem contact op met Promeetec.");
                                 }
 
-                                verzekerde.Zorgprofielen.Add(verzekerde.Zorgprofiel);
+                                verzekerde.Zorgprofielen.Add(new VerzekerdeToZorgprofiel
+                                {
+                                    ZorgprofielId = verzekerde.Zorgprofiel.Id,
+                                    VerzekerdeId = verzekerde.Id
+                                });
 
                                 break;
                         }
@@ -150,10 +170,7 @@ namespace Promeetec.EDMS.Domain.Betrokkene.Verzekerde.Handlers
             verzekerde.Update(command);
             await _repository.UpdateAsync(verzekerde);
 
-            return new CommandResponse
-            {
-                Events = verzekerde.Events
-            };
+            return new IEvent[] { };
         }
     }
 }
