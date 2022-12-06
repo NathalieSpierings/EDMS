@@ -9,9 +9,8 @@
   <ItemGroup>
     <Compile Remove="Models\Admin\Mededeling\Commands\**" />
     <Compile Remove="Models\Admin\Mededeling\Handlers\**" />
-    <Compile Remove="Models\Admin\Zorgstraat\Commands\**" />
-    <Compile Remove="Models\Admin\Zorgstraat\Events\**" />
     <Compile Remove="Models\Admin\Zorgstraat\Handlers\**" />
+    <Compile Remove="Models\Admin\Zorgstraat\Rules\**" />
     <Compile Remove="Models\Betrokkene\Land\Rules\**" />
     <Compile Remove="Models\Betrokkene\Memo\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -43,8 +42,6 @@
     <Compile Remove="Models\Document\Rapportage\Events\**" />
     <Compile Remove="Models\Document\Rapportage\Handlers\**" />
     <Compile Remove="Domain\**" />
-    <Compile Remove="Models\Admin\Zorgstraat\Commands\**" />
-    <Compile Remove="Models\Admin\Zorgstraat\Events\**" />
     <Compile Remove="Models\Admin\Zorgstraat\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Memo\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -105,9 +102,8 @@
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
     <EmbeddedResource Remove="Models\Admin\Mededeling\Commands\**" />
     <EmbeddedResource Remove="Models\Admin\Mededeling\Handlers\**" />
-    <EmbeddedResource Remove="Models\Admin\Zorgstraat\Commands\**" />
-    <EmbeddedResource Remove="Models\Admin\Zorgstraat\Events\**" />
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Handlers\**" />
+    <EmbeddedResource Remove="Models\Admin\Zorgstraat\Rules\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Land\Rules\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -139,8 +135,6 @@
     <EmbeddedResource Remove="Models\Document\Rapportage\Events\**" />
     <EmbeddedResource Remove="Models\Document\Rapportage\Handlers\**" />
     <EmbeddedResource Remove="Domain\**" />
-    <EmbeddedResource Remove="Models\Admin\Zorgstraat\Commands\**" />
-    <EmbeddedResource Remove="Models\Admin\Zorgstraat\Events\**" />
     <EmbeddedResource Remove="Models\Admin\Zorgstraat\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -201,9 +195,8 @@
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
     <None Remove="Models\Admin\Mededeling\Commands\**" />
     <None Remove="Models\Admin\Mededeling\Handlers\**" />
-    <None Remove="Models\Admin\Zorgstraat\Commands\**" />
-    <None Remove="Models\Admin\Zorgstraat\Events\**" />
     <None Remove="Models\Admin\Zorgstraat\Handlers\**" />
+    <None Remove="Models\Admin\Zorgstraat\Rules\**" />
     <None Remove="Models\Betrokkene\Land\Rules\**" />
     <None Remove="Models\Betrokkene\Memo\Handlers\**" />
     <None Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -235,8 +228,6 @@
     <None Remove="Models\Document\Rapportage\Events\**" />
     <None Remove="Models\Document\Rapportage\Handlers\**" />
     <None Remove="Domain\**" />
-    <None Remove="Models\Admin\Zorgstraat\Commands\**" />
-    <None Remove="Models\Admin\Zorgstraat\Events\**" />
     <None Remove="Models\Admin\Zorgstraat\Handlers\**" />
     <None Remove="Models\Betrokkene\Memo\Handlers\**" />
     <None Remove="Models\Betrokkene\Notification\Commands\**" />
@@ -300,9 +291,7 @@
   <ItemGroup>
     <Compile Remove="Models\Admin\DownloadActivity\IDownloadActivityRepository.cs" />
     <Compile Remove="Models\Admin\EiStandaard\IEiStandaardRepository.cs" />
-    <Compile Remove="Models\Admin\Mededeling\IMededelingRepository.cs" />
     <Compile Remove="Models\Admin\RedenEindeZorg\IRedenEindeZorgRepository.cs" />
-    <Compile Remove="Models\Admin\Zorgstraat\IZorgstraatRepository.cs" />
     <Compile Remove="Models\Betrokkene\UserProfile\IUserProfileRepository.cs" />
     <Compile Remove="Models\Betrokkene\Weegmoment\IWeegMomentRepository.cs" />
     <Compile Remove="Models\Document\Aanleverbestand\Aanleverberstand\IAanleverbestandRepository.cs" />
@@ -326,6 +315,13 @@
   <ItemGroup>
     <Compile Include="Models\Admin\Mededeling\Commands\CreateMededeling.cs" />
     <Compile Include="Models\Admin\Mededeling\Commands\UpdateMededeling.cs" />
+    <Compile Include="Models\Admin\Mededeling\Handlers\CreateMededelingHandler.cs" />
+    <Compile Include="Models\Admin\Mededeling\Handlers\UpdateMededelingHandler.cs" />
+    <Compile Include="Models\Admin\Zorgstraat\Handlers\CreateZorgstraatHandler.cs" />
+    <Compile Include="Models\Admin\Zorgstraat\Handlers\DeleteZorgstraatHandler.cs" />
+    <Compile Include="Models\Admin\Zorgstraat\Handlers\ReistateZorgstraatHandler.cs" />
+    <Compile Include="Models\Admin\Zorgstraat\Handlers\SuspendZorgstraatHandler.cs" />
+    <Compile Include="Models\Admin\Zorgstraat\Handlers\UpdateZorgstraatHandler.cs" />
     <Compile Include="Models\Betrokkene\Memo\Handlers\CreateMemoHandler.cs" />
     <Compile Include="Models\Betrokkene\Notification\Commands\CreateNotificatie.cs" />
     <Compile Include="Models\Betrokkene\Notification\Commands\UpdateNotificatie.cs" />
@@ -371,9 +367,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Admin\Mededeling\Handlers\" />
-    <Folder Include="Models\Admin\Zorgstraat\Rules\" />
-    <Folder Include="Models\Admin\Zorgstraat\Validators\" />
     <Folder Include="Models\Betrokkene\Organisatie\Handlers\" />
     <Folder Include="Models\Betrokkene\Organisatie\Events\" />
     <Folder Include="Models\Betrokkene\Weegmoment\Rules\" />
@@ -402,6 +395,7 @@
     <Folder Include="Models\Modules\Haarwerk\Validators\Rules\" />
     <Folder Include="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Rules\" />
     <Folder Include="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Validators\" />
+    <Folder Include="Models\Changelog\" />
   </ItemGroup>
 
 </Project>

@@ -28,7 +28,6 @@ public class AanleveringMap : IEntityTypeConfiguration<Aanlevering>
             .OnDelete(DeleteBehavior.NoAction)
             .IsRequired(false);
 
-
         builder.HasMany(e => e.Aanleverberichten)
             .WithOne(e => e.Aanlevering)
             .HasForeignKey(e => e.AanleveringId)

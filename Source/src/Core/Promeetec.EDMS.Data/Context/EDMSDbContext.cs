@@ -30,6 +30,7 @@ using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
@@ -47,7 +48,6 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
         base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-
     public DbSet<Aanleverbericht> Aanleverberichten { get; set; }
     public DbSet<Aanleverbestand> Aanleverbestanden { get; set; }
     public DbSet<Aanlevering> Aanleveringen { get; set; }
@@ -61,23 +61,25 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<GliIntake> GliIntakes { get; set; }
     public DbSet<Group> Groups { get; set; }
     public DbSet<GroupRole> GroupRoles { get; set; }
-    public DbSet<VerzekerdeToAdres> GroupUsers { get; set; }
-    public DbSet<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
+    public DbSet<Haarwerk> Haarwerk { get; set; }
     public DbSet<Land> Landen { get; set; }
     public DbSet<Mededeling> Mededelingen { get; set; }
     public DbSet<Medewerker> Medewerkers { get; set; }
+    public DbSet<Memo> Memos { get; set; }
     public DbSet<Menu> Menus { get; set; }
     public DbSet<MenuItem> MenuItems { get; set; }
     public DbSet<MenuItemRole> MenuItemRoles { get; set; }
-    public DbSet<Memo> Memos { get; set; }
     public DbSet<Notificatie> Notificaties { get; set; }
     public DbSet<Organisatie> Organisaties { get; set; }
     public DbSet<Overigbestand> Overigebestanden { get; set; }
     public DbSet<Rapportage> Rapportages { get; set; }
+    public DbSet<Domain.Models.Admin.Settings.Settings> Settings { get; set; }
     public DbSet<UserProfile> UserProfiles { get; set; }
     public DbSet<UserRole> UserRoles { get; set; }
+    public DbSet<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
     public DbSet<Verzekeraar> Verzekeraars { get; set; }
     public DbSet<Verzekerde> Verzekerden { get; set; }
+    public DbSet<VerzekerdeToAdres> GroupUsers { get; set; }
     public DbSet<Weegmoment> Weegmoment { get; set; }
     public DbSet<Zorgprofiel> Zorgprofielen { get; set; }
     public DbSet<Zorgstraat> Zorgstraten { get; set; }

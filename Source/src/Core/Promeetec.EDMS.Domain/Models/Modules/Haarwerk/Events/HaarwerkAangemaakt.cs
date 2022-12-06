@@ -21,4 +21,4 @@ public class HaarwerkAangemaakt : EventBase
     public decimal BedragEigenBijdragen { get; set; }
     public decimal BedragTeOntvangen { get; set; }
     public HaarwerkCreditType CreditType { get; set; }
-}}
+}

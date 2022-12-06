@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Admin.Zorgstraat.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class DeleteZorgstraat : DomainCommand<Zorgstraat>
+namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
+
+public class DeleteZorgstraat : CommandBase
 {
     public Guid VerwijderdDoor { get; set; }
     public DateTime VerwijderdOp { get; set; }

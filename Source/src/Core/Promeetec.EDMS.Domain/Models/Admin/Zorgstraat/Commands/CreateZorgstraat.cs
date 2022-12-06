@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Admin.Zorgstraat.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class CreateZorgstraat : DomainCommand<Zorgstraat>
+namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
+
+public class CreateZorgstraat : CommandBase
 {
     public string Naam { get; set; }
 }

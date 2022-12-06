@@ -3,59 +3,65 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Events;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Events;
 using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Handlers;
 
-public class UpdateHaarwerkHandler : ICommandHandler<UpdateOrganisatie>
+public class UpdateHaarwerkHandler : ICommandHandler<UpdateHaarwerk>
 {
-    private readonly IOrganisatieRepository _repository;
+    private readonly IHaarwerkRepository _repository;
     private readonly IEventRepository _eventRepository;
-    private readonly IValidator<UpdateOrganisatie> _validator;
+    private readonly IValidator<UpdateHaarwerk> _validator;
 
-    public UpdateHaarwerkHandler(IOrganisatieRepository repository, IEventRepository eventRepository, IValidator<UpdateOrganisatie> validator)
+    public UpdateHaarwerkHandler(IHaarwerkRepository repository, IEventRepository eventRepository, IValidator<UpdateHaarwerk> validator)
     {
         _repository = repository;
         _eventRepository = eventRepository;
         _validator = validator;
     }
 
-    public async Task<IEnumerable<IEvent>> Handle(UpdateOrganisatie command)
+    public async Task<IEnumerable<IEvent>> Handle(UpdateHaarwerk command)
     {
         await _validator.ValidateCommand(command);
 
-        var organisatie = await _repository.Query()
+        var haarwerk = await _repository.Query()
             .FirstOrDefaultAsync(x => x.Id == command.Id);
 
-        if (organisatie == null)
-            throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
+        if (haarwerk == null)
+            throw new DataException($"Haarwerk registratie met Id {command.Id} niet gevonden.");
 
-        organisatie.Update(command);
+        haarwerk.Update(command);
 
-        var @event = new OrganisatieGewijzigd
+        var @event = new HaarwerkGewijzigd
         {
-            TargetId = organisatie.Id,
-            TargetType = nameof(Organisatie),
+            TargetId = haarwerk.Id,
+            TargetType = nameof(Haarwerk),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
 
-            Naam = organisatie.Naam,
-            TelefoonZakelijk = organisatie.TelefoonZakelijk,
-            TelefoonPrive = organisatie.TelefoonPrive,
-            Email = organisatie.Email,
-            Website = organisatie.Website,
-            AgbCodeOnderneming = organisatie.AgbCodeOnderneming,
-            Zorggroep = organisatie.Zorggroep,
-            AanleverbestandLocatie = organisatie.Settings.AanleverbestandLocatie,
-            AanleverStatusNaSchrijvenAanleverbestanden = organisatie.Settings.AanleverStatusNaSchrijvenAanleverbestanden,
-            VerwijzerInAdresboek = organisatie.Settings.VerwijzerInAdresboek
+            Naam = haarwerk.Naam,
+            Geboortedatum = haarwerk.Geboortedatum,
+            Bsn = haarwerk.Bsn,
+            Verzekeringsnummer = haarwerk.Verzekeringsnummer,
+            Machtigingsnummer = haarwerk.Machtigingsnummer,
+            TypeHulpmiddel = haarwerk.TypeHulpmiddel,
+            LeveringSoort = haarwerk.LeveringSoort,
+            HaarwerkSoort = haarwerk.HaarwerkSoort,
+            Afleverdatum = haarwerk.Afleverdatum,
+            DatumVoorgaandHulpmiddel = haarwerk.DatumVoorgaandHulpmiddel,
+            DatumMedischVoorschrift = haarwerk.DatumMedischVoorschrift,
+            PrijsHaarwerk = haarwerk.PrijsHaarwerk,
+            BedragBasisVerzekering = haarwerk.BedragBasisVerzekering,
+            BedragAanvullendeVerzekering = haarwerk.BedragAanvullendeVerzekering,
+            BedragEigenBijdragen = haarwerk.BedragEigenBijdragen,
+            BedragTeOntvangen = haarwerk.BedragTeOntvangen,
+            CreditType = haarwerk.CreditType
         };
 
-        await _repository.UpdateAsync(organisatie);
+        await _repository.UpdateAsync(haarwerk);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

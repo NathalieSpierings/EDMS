@@ -5,6 +5,7 @@ using Promeetec.EDMS.Domain.Models.Document.Rapportage;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Shared;
 
@@ -128,12 +129,13 @@ public class Organisatie : AggregateRoot
 
     public Guid? AdresId { get; set; }
     public virtual Adres.Adres Adres { get; set; }
-    
+
     public Guid AdresboekId { get; set; }
     public virtual Adresboek Adresboek { get; set; }
 
     public virtual ICollection<Medewerker.Medewerker> Medewerkers { get; set; }
     public virtual ICollection<Aanlevering> Aanleveringen { get; set; }
+    public virtual ICollection<Haarwerk> HaarwerkPrestaties { get; set; }
     public virtual ICollection<Rapportage> Rapportages { get; set; }
     public virtual ICollection<GliIntake> GliIntakes { get; set; }
     public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }

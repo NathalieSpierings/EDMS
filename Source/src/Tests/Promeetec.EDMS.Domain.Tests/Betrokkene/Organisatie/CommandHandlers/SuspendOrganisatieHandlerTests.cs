@@ -53,7 +53,6 @@ public class SuspendOrganisatieHandlerTests : TestFixtureBase
             },
             ContactpersoonId = Guid.NewGuid(),
             ZorggroepRelatieId = Guid.NewGuid(),
-            VoorraadId = Guid.NewGuid(),
             AdresboekId = Guid.NewGuid(),
             AdresId = Guid.NewGuid()
         };

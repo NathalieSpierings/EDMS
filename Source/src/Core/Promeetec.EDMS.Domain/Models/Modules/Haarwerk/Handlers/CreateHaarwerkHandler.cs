@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Events;
 using Promeetec.EDMS.Events;
 
@@ -12,7 +12,7 @@ public class CreateHaarwerkHandler : ICommandHandler<CreateHaarwerk>
 {
     private readonly IEventRepository _eventRepository;
     private readonly IHaarwerkRepository _repository;
-    private readonly IValidator<CreateOrganisatie> _validator;
+    private readonly IValidator<CreateHaarwerk> _validator;
 
     public CreateHaarwerkHandler(IHaarwerkRepository repository,
         IEventRepository eventRepository,
@@ -27,29 +27,35 @@ public class CreateHaarwerkHandler : ICommandHandler<CreateHaarwerk>
     {
         await _validator.ValidateCommand(command);
 
-        var organisatie = new Haarwerk(command);
+        var haarwerk = new Haarwerk(command);
 
         var @event = new HaarwerkAangemaakt
         {
-            TargetId = organisatie.Id,
+            TargetId = haarwerk.Id,
             TargetType = nameof(Haarwerk),
-            OrganisatieId = organisatie.Id,
+            OrganisatieId = haarwerk.OrganisatieId,
             UserId = command.UserId,
 
-            //Nummer = organisatie.Nummer,
-            //Naam = organisatie.Naam,
-            //TelefoonZakelijk = organisatie.TelefoonZakelijk,
-            //TelefoonPrive = organisatie.TelefoonPrive,
-            //Email = organisatie.Email,
-            //Website = organisatie.Website,
-            //AgbCodeOnderneming = organisatie.AgbCodeOnderneming,
-            //Zorggroep = organisatie.Zorggroep,
-            //AanleverbestandLocatie = organisatie.Settings.AanleverbestandLocatie,
-            //AanleverStatusNaSchrijvenAanleverbestanden = organisatie.Settings.AanleverStatusNaSchrijvenAanleverbestanden,
-            //VerwijzerInAdresboek = organisatie.Settings.VerwijzerInAdresboek
+            Naam = haarwerk.Naam,
+            Geboortedatum = haarwerk.Geboortedatum,
+            Bsn = haarwerk.Bsn,
+            Verzekeringsnummer = haarwerk.Verzekeringsnummer,
+            Machtigingsnummer = haarwerk.Machtigingsnummer,
+            TypeHulpmiddel = haarwerk.TypeHulpmiddel,
+            LeveringSoort = haarwerk.LeveringSoort,
+            HaarwerkSoort = haarwerk.HaarwerkSoort,
+            Afleverdatum = haarwerk.Afleverdatum,
+            DatumVoorgaandHulpmiddel = haarwerk.DatumVoorgaandHulpmiddel,
+            DatumMedischVoorschrift = haarwerk.DatumMedischVoorschrift,
+            PrijsHaarwerk = haarwerk.PrijsHaarwerk,
+            BedragBasisVerzekering = haarwerk.BedragBasisVerzekering,
+            BedragAanvullendeVerzekering = haarwerk.BedragAanvullendeVerzekering,
+            BedragEigenBijdragen = haarwerk.BedragEigenBijdragen,
+            BedragTeOntvangen = haarwerk.BedragTeOntvangen,
+            CreditType = haarwerk.CreditType
         };
 
-        await _repository.AddAsync(organisatie);
+        await _repository.AddAsync(haarwerk);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

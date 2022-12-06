@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Admin.Zorgstraat.Events;
+﻿using Promeetec.EDMS.Events;
 
-public class ZorgstraatVerwijderd : DomainEvent
+namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Events;
+
+public class ZorgstraatVerwijderd : EventBase
 {
     public string Status { get; set; }
 }

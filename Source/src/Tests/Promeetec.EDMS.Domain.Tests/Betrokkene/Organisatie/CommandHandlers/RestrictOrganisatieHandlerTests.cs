@@ -6,7 +6,6 @@ using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Handlers;
-using Promeetec.EDMS.Domain.Models.Cov;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
@@ -53,7 +52,6 @@ public class RestrictOrganisatieHandlerTests : TestFixtureBase
             },
             ContactpersoonId = Guid.NewGuid(),
             ZorggroepRelatieId = Guid.NewGuid(),
-            VoorraadId = Guid.NewGuid(),
             AdresboekId = Guid.NewGuid(),
             AdresId = Guid.NewGuid()
         };

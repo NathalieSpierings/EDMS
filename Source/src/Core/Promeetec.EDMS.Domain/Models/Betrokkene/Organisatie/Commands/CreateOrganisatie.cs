@@ -20,6 +20,5 @@ public class CreateOrganisatie : CommandBase
     public Guid? ZorggroepRelatieId { get; set; }
     public Guid ContactpersoonId { get; set; }
     public Guid? AdresId { get; set; }
-    public Guid VoorraadId { get; set; }
     public Guid AdresboekId { get; set; }
 }

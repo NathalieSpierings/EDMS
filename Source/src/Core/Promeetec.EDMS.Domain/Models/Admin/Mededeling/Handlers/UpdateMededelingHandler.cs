@@ -1,8 +1,12 @@
-using Promeetec.EDMS.Domain.Admin.Mededeling.Commands;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Admin.Mededeling.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Admin.Mededeling.Handlers;
+namespace Promeetec.EDMS.Domain.Models.Admin.Mededeling.Handlers;
 
-public class UpdateMededelingHandler : ICommandHandlerAsync<UpdateMededeling>
+public class UpdateMededelingHandler : ICommandHandler<UpdateMededeling>
 {
     private readonly IMededelingRepository _repository;
 
@@ -10,19 +14,16 @@ public class UpdateMededelingHandler : ICommandHandlerAsync<UpdateMededeling>
     {
         _repository = repository;
     }
-
-    public async Task<CommandResponse> HandleAsync(UpdateMededeling command)
+    public async Task<IEnumerable<IEvent>> Handle(UpdateMededeling command)
     {
-        var mededeling = await _repository.GetByIdAsync(command.AggregateRootId);
-        if (mededeling == null)
-            throw new ApplicationException($"Mededeling niet gevonden. Id: {command.AggregateRootId}");
 
-        mededeling.Update(command);
-        await _repository.UpdateAsync(mededeling);
+        var country = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+        if (country == null)
+            throw new DataException($"Mededeling met Id {command.Id} niet gevonden.");
 
-        return new CommandResponse
-        {
-            Events = mededeling.Events
-        };
+        country.Update(command);
+        await _repository.UpdateAsync(country);
+
+        return new IEvent[] { };
     }
 }

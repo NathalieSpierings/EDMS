@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Admin.Zorgstraat.Commands;
+﻿using Promeetec.EDMS.Commands;
 
-public class UpdateZorgstraat : DomainCommand<Zorgstraat>
+namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
+
+public class UpdateZorgstraat : CommandBase
 {
     public string Naam { get; set; }
     public Shared.Status Status { get; set; }

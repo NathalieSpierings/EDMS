@@ -6,7 +6,7 @@ namespace Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 public class Adresboek : AggregateRoot
 {
     #region Navigation properties
-    
+
     public virtual Organisatie Organisatie { get; set; }
     public virtual ICollection<Verzekerde> Verzekerden { get; set; } = new List<Verzekerde>();
 

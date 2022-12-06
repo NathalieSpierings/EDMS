@@ -1,5 +1,4 @@
-﻿using Promeetec.EDMS.Domain.Models.Cov;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
+﻿using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 using Promeetec.EDMS.Events;
 
@@ -17,7 +16,5 @@ public class OrganisatieGewijzigd : EventBase
     public byte[] Logo { get; set; }
     public string AanleverbestandLocatie { get; set; }
     public AanleverStatusNaSchrijvenAanleverbestanden AanleverStatusNaSchrijvenAanleverbestanden { get; set; }
-    public COVControleType COVControleType { get; set; }
-    public COVControleProcessType COVControleProcessType { get; set; }
     public VerwijzerInAdresboekType VerwijzerInAdresboek { get; set; }
 }

@@ -1725,3 +1725,8 @@ C:\Github\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\refin
 C:\Github\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.pdb
 C:\Github\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\Promeetec.EDMS.Web.genruntimeconfig.cache
 C:\Github\Repos\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\ref\Promeetec.EDMS.Web.dll
+F:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\staticwebassets\msbuild.Promeetec.EDMS.Web.Microsoft.AspNetCore.StaticWebAssets.props
+F:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Promeetec.EDMS.Web.props
+F:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Promeetec.EDMS.Web.props
+F:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Promeetec.EDMS.Web.props
+F:\GitHub\EDMS\Source\src\Client\Promeetec.EDMS.Web\obj\Debug\net6.0\staticwebassets.pack.json

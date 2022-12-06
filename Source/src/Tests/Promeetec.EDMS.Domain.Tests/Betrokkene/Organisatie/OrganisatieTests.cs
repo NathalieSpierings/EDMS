@@ -13,6 +13,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
         private EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie _sut;
         private CreateOrganisatie _cmd;
         private Guid _createOrganisatieId;
+
         [SetUp]
         public void Setup()
         {
@@ -38,7 +39,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
                 },
                 ContactpersoonId = Guid.NewGuid(),
                 ZorggroepRelatieId = Guid.NewGuid(),
-                VoorraadId = Guid.NewGuid(),
                 AdresboekId = Guid.NewGuid(),
                 AdresId = Guid.NewGuid()
             };
@@ -60,7 +60,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
             Assert.AreEqual(_cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(_cmd.Zorggroep, _sut.Zorggroep);
             Assert.AreEqual(_cmd.Logo, _sut.Logo);
-            
+
             Assert.AreEqual(_cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
             Assert.AreEqual(_cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
             Assert.AreEqual(_cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
@@ -109,7 +109,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(cmd.Zorggroep, _sut.Zorggroep);
             Assert.AreEqual(cmd.Logo, _sut.Logo);
-            
+
             Assert.AreEqual(cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
             Assert.AreEqual(cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
             Assert.AreEqual(cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);

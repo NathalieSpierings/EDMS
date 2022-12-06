@@ -10,13 +10,13 @@ public class Haarwerk : AggregateRoot
     /// <summary>
     /// The name of the client.
     /// </summary>
-    [Required, MaxLength(256)]
+    [Required, MaxLength(200)]
     public string Naam { get; set; }
 
     /// <summary>
     /// The date of birth of the client.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
+    [Required]
     public DateTime Geboortedatum { get; set; }
 
     /// <summary>
@@ -78,27 +78,32 @@ public class Haarwerk : AggregateRoot
     /// <summary>
     /// The price of the haarwerk.
     /// </summary>
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal PrijsHaarwerk { get; set; }
 
     /// <summary>
     /// The amount of the basic insurance.
     /// </summary>
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal BedragBasisVerzekering { get; set; }
 
     /// <summary>
     /// The amount of the additional insurance.
     /// </summary>
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal BedragAanvullendeVerzekering { get; set; }
 
     /// <summary>
     /// The amount of the contribution (paid by client).
     /// </summary>
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal BedragEigenBijdragen { get; set; }
 
     /// <summary>
     /// The amount wanted to recieve of the insurance company.
     /// </summary>
     [Required]
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal BedragTeOntvangen { get; set; }
 
     /// <summary>
@@ -194,7 +199,7 @@ public class Haarwerk : AggregateRoot
     /// Credits the haarwerk registratie.
     /// </summary>
     /// <param name="cmd">The credit haarwerk command.</param>
-    public void Crediteer(CreditHaarwerk cmd)
+    public void Credit(CreditHaarwerk cmd)
     {
         OrganisatieId = cmd.OrganisatieId;
         Naam = cmd.Naam;

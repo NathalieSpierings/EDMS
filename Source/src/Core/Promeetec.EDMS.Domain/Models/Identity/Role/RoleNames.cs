@@ -84,9 +84,6 @@ public static class RoleNames
     public const string RaadplegenGebruikersGroepen = "Raadplegen gebruikers groepen";
     public const string WijzigenGebruikersGroepen = "Wijzigen gebruikers groepen";
 
-    // Voorraad
-    public const string RaadplegenVoorraad = "Raadplegen voorraad";
-
     // Aanleveringen
     public const string RaadplegenAanleveringen = "Raadplegen aanleveringen";
     public const string ToevoegenAanleveringen = "Toevoegen aanleveringen";

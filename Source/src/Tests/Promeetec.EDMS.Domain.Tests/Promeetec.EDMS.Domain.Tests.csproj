@@ -9,22 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Betrokkene\Land - Copy\**" />
-    <Compile Remove="Betrokkene\Land\CommandHandlers\**" />
-    <Compile Remove="Betrokkene\Land\Rules\**" />
-    <Compile Remove="Betrokkene\Land\Validators\**" />
+    <Compile Remove="Admin\Settings\CommandHandlers\**" />
+    <Compile Remove="Admin\Settings\Rules\**" />
+    <Compile Remove="Admin\Settings\Validators\**" />
+    <Compile Remove="Betrokkene\Land\**" />
     <Compile Remove="Betrokkene\Medewerker\CommandHandlers\**" />
     <Compile Remove="Betrokkene\Medewerker\Rules\**" />
-    <EmbeddedResource Remove="Betrokkene\Land - Copy\**" />
-    <EmbeddedResource Remove="Betrokkene\Land\CommandHandlers\**" />
-    <EmbeddedResource Remove="Betrokkene\Land\Rules\**" />
-    <EmbeddedResource Remove="Betrokkene\Land\Validators\**" />
+    <EmbeddedResource Remove="Admin\Settings\CommandHandlers\**" />
+    <EmbeddedResource Remove="Admin\Settings\Rules\**" />
+    <EmbeddedResource Remove="Admin\Settings\Validators\**" />
+    <EmbeddedResource Remove="Betrokkene\Land\**" />
     <EmbeddedResource Remove="Betrokkene\Medewerker\CommandHandlers\**" />
     <EmbeddedResource Remove="Betrokkene\Medewerker\Rules\**" />
-    <None Remove="Betrokkene\Land - Copy\**" />
-    <None Remove="Betrokkene\Land\CommandHandlers\**" />
-    <None Remove="Betrokkene\Land\Rules\**" />
-    <None Remove="Betrokkene\Land\Validators\**" />
+    <None Remove="Admin\Settings\CommandHandlers\**" />
+    <None Remove="Admin\Settings\Rules\**" />
+    <None Remove="Admin\Settings\Validators\**" />
+    <None Remove="Betrokkene\Land\**" />
     <None Remove="Betrokkene\Medewerker\CommandHandlers\**" />
     <None Remove="Betrokkene\Medewerker\Rules\**" />
   </ItemGroup>
@@ -43,13 +43,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Betrokkene\Land\CommandHandlers\CreateCountryHandlerTests.cs" />
-    <Compile Include="Betrokkene\Land\CommandHandlers\DeleteCountryHandlerTests.cs" />
-    <Compile Include="Betrokkene\Land\CommandHandlers\ReinstateCountryHandlerTests.cs" />
-    <Compile Include="Betrokkene\Land\CommandHandlers\SuspendCountryHandlerTests.cs" />
-    <Compile Include="Betrokkene\Land\CommandHandlers\UpdateCountryHandlerTests.cs" />
-    <Compile Include="Betrokkene\Land\Validators\CreateCountryValidatorTests.cs" />
-    <Compile Include="Betrokkene\Land\Validators\UpdateCountryValidatorTests.cs" />
+    <Compile Include="Admin\Settings\CommandHandlers\UpdateSettingsHandlerTests.cs" />
+    <Compile Include="Admin\Settings\Validators\UpdateSettingsValidatorTests.cs" />
+    <Compile Include="Betrokkene\Land\CommandHandlers\CreateLandHandlerTests.cs" />
+    <Compile Include="Betrokkene\Land\CommandHandlers\DeleteLandHandlerTests.cs" />
+    <Compile Include="Betrokkene\Land\CommandHandlers\ReinstateLandHandlerTests.cs" />
+    <Compile Include="Betrokkene\Land\CommandHandlers\SuspendLandHandlerTests.cs" />
+    <Compile Include="Betrokkene\Land\CommandHandlers\UpdateLandHandlerTests.cs" />
+    <Compile Include="Betrokkene\Land\LandTests.cs" />
+    <Compile Include="Betrokkene\Land\Validators\CreateLandValidatorTests.cs" />
+    <Compile Include="Betrokkene\Land\Validators\UpdateLandValidatorTests.cs" />
     <Compile Include="Betrokkene\Medewerker\CommandHandlers\ActivateGoogleAuthenticatorHandlerTests.cs" />
     <Compile Include="Betrokkene\Medewerker\CommandHandlers\AddMedewerkerToGroupHandlerTests.cs" />
     <Compile Include="Betrokkene\Medewerker\CommandHandlers\ConfirmEmailHandlerTests.cs" />

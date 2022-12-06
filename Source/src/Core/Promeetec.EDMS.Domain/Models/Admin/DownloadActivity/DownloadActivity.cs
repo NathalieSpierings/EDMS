@@ -22,13 +22,11 @@ public class DownloadActivity : AggregateRoot
 
     #region Navigation properties
 
-    public Guid? VoorraadId { get; set; }
     public Guid? AanleveringId { get; set; }
-
 
     public Guid BestandId { get; set; }
     public virtual Bestand Bestand { get; set; }
-    
+
 
     public Guid MedewerkerId { get; set; }
     public virtual Medewerker Medewerker { get; set; }

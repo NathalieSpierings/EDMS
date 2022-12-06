@@ -14,17 +14,16 @@ public class AdresboekMap : IEntityTypeConfiguration<Adresboek>
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id).HasDefaultValueSql("newid()");
 
+        builder.HasOne(e => e.Organisatie)
+            .WithOne(e => e.Adresboek)
+            .HasForeignKey<Organisatie>(e => e.AdresboekId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired(false);
+
         builder.HasMany(e => e.Verzekerden)
             .WithOne(e => e.Adresboek)
             .HasForeignKey(e => e.AdresboekId)
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
-
-
-        builder.HasOne(e => e.Organisatie)
-            .WithOne(e => e.Adresboek)
-            .HasForeignKey<Organisatie>(e => e.AdresboekId)
-            .OnDelete(DeleteBehavior.Restrict)
-            .IsRequired(false);
     }
 }

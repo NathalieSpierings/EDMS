@@ -17,16 +17,16 @@ public class Aanleverbestand : Bestand.Bestand
     /// Indicator if the aanleverbestand is checked yes or no.
     /// </summary>
     public bool Gecontroleerd { get; set; }
-    
+
 
     #region Navigation properties
 
     public Guid? ZorgstraatId { get; set; }
     public virtual Zorgstraat Zorgstraat { get; set; }
-    
+
     public Guid? EiStandaardId { get; set; }
     public virtual EiStandaard EiStandaard { get; set; }
-    
+
     public Guid? AanleveringId { get; set; }
     public virtual Aanlevering Aanlevering { get; set; }
 
@@ -44,12 +44,10 @@ public class Aanleverbestand : Bestand.Bestand
     //public Aanleverbestand(NieuwAanleverbestand cmd)
     //{
     //    Data = cmd.Data;
-    //    WorkFlowState = cmd.WorkFlowState;
     //    Extension = cmd.Extension;
     //    MimeType = cmd.MimeType;
     //    AanleveringId = cmd.AanleveringId;
     //    EigenaarId = cmd.EigenaarId;
-    //    VoorraadId = cmd.VoorraadId;
     //    ZorgstraatId = cmd.ZorgstraatId;
     //    EiStandaardId = cmd.EiStandaardId;
 
@@ -72,7 +70,6 @@ public class Aanleverbestand : Bestand.Bestand
     //{
     //    WorkFlowState = cmd.WorkFlowState;
     //    EigenaarId = cmd.EigenaarId;
-    //    VoorraadId = cmd.VoorraadId;
     //    ZorgstraatId = cmd.ZorgstraatId;
     //    AanleveringId = cmd.AanleveringId;
     //    AddAndApplyEvent(new AanleverbestandGewijzigd
@@ -99,7 +96,6 @@ public class Aanleverbestand : Bestand.Bestand
     //        // UserDisplayName = cmd.UserDisplayName,
 
     //        WorkFlowState = cmd.WorkFlowState.ToString(),
-    //        VoorraadId = cmd.VoorraadId,
     //        AanleveringId = cmd.AanleveringId
     //    });
     //}
@@ -164,12 +160,6 @@ public class Aanleverbestand : Bestand.Bestand
     //    Periode = @event.Periode;
     //    AangepastDoor = @event.UserId;
     //    AangepastOp = DateTime.Now;
-    //}
-
-    //private void Apply(AanleverbestandWorkflowStateGewijzigd @event)
-    //{
-    //    VoorraadId = @event.VoorraadId;
-    //    AanleveringId = @event.AanleveringId;
     //}
 
 

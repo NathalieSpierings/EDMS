@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
@@ -27,95 +28,49 @@ public class Zorgstraat : AggregateRoot
 
     }
 
-    //public Zorgstraat(CreateZorgstraat cmd)
-    //{
-    //    AddAndApplyEvent(new ZorgstraatAangemaakt
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
+    /// <summary>
+    /// Creates a zorgstraat.
+    /// </summary>
+    /// <param name="cmd">The create zorgstraat command.</param>
+    public Zorgstraat(CreateZorgstraat cmd)
+    {
+        Id = cmd.Id;
 
-    //        Status = Shared.Status.Actief.ToString(),
-    //        Naam = cmd.Naam
-    //    });
-    //}
+        Naam = cmd.Naam;
+        Status = Status.Actief;
+    }
 
-    //public void Update(UpdateZorgstraat cmd)
-    //{
-    //    AddAndApplyEvent(new ZorgstraatGewijzigd
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
+    /// <summary>
+    /// Update the details of the zorgstraat.
+    /// </summary>
+    /// <param name="cmd">The update zorgstraat command.</param>
+    public void Update(UpdateZorgstraat cmd)
+    {
+        Naam = cmd.Naam;
+    }
 
-    //        Naam = cmd.Naam
-    //    });
-    //}
+    /// <summary>
+    /// Set the status as deleted.
+    /// </summary>
+    public void Delete()
+    {
+        Status = Status.Verwijderd;
+    }
 
-    //public void Delete(DeleteZorgstraat cmd)
-    //{
-    //    AddAndApplyEvent(new ZorgstraatVerwijderd
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
+    /// <summary>
+    /// Sets the status of the country as suspended.
+    /// The country will no longer be able.
+    /// </summary>
+    public void Suspend()
+    {
+        Status = Status.Inactief;
+    }
 
-    //        Status = Shared.Status.Verwijderd.ToString()
-    //    });
-    //}
-
-    //public void Activate(ActivateZorgstraat cmd)
-    //{
-    //    AddAndApplyEvent(new ZorgstraatGeactiveerd
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-
-    //        Status = Shared.Status.Actief.ToString()
-    //    });
-    //}
-
-    //public void Deactivate(DeactivateZorgstraat cmd)
-    //{
-    //    AddAndApplyEvent(new ZorgstraatGedeactiveerd
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-
-    //        Status = Shared.Status.Inactief.ToString()
-    //    });
-    //}
-
-    //#region Private methods
-
-    //private void Apply(ZorgstraatAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
-    //    Status = Shared.Status.Actief;
-    //    Naam = @event.Naam;
-    //}
-
-    //private void Apply(ZorgstraatGewijzigd @event)
-    //{
-    //    Naam = @event.Naam;
-    //}
-
-    //private void Apply(ZorgstraatVerwijderd @event)
-    //{
-    //    Status = Shared.Status.Verwijderd;
-    //}
-
-    //private void Apply(ZorgstraatGeactiveerd @event)
-    //{
-    //    Status = Shared.Status.Actief;
-    //}
-
-    //private void Apply(ZorgstraatGedeactiveerd @event)
-    //{
-    //    Status = Shared.Status.Inactief;
-    //}
-
-    //#endregion
+    /// <summary>
+    /// Reinstates the country if suspended.
+    /// </summary>
+    public void Reinstate()
+    {
+        Status = Status.Actief;
+    }
 }

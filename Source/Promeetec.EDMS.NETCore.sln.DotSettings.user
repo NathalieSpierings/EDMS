@@ -22,12 +22,20 @@
 	
 	
 	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexRemoved">True</s:Boolean>
 	
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5f3549ee_002D571f_002D452c_002Db788_002Df80dd35f04b4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Zorgstraat" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="F:\GitHub\EDMS\Source\src\Tests\Promeetec.EDMS.Domain.Tests" Presentation="&amp;lt;Src&amp;gt;\&amp;lt;Tests&amp;gt;\&amp;lt;Promeetec.EDMS.Domain.Tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
 	
 	
 	
@@ -53,6 +61,9 @@
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
+	
+	
+	
 	
 	
 	

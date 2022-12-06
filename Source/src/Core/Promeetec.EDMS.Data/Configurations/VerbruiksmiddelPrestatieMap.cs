@@ -16,12 +16,6 @@ public class VerbruiksmiddelPrestatieMap : IEntityTypeConfiguration<Verbruiksmid
         builder.HasIndex(e => e.OrganisatieId);
         builder.HasIndex(e => e.VerzekerdeId);
 
-        builder.HasOne(e => e.Organisatie)
-            .WithMany(e => e.VerbruiksmiddelPrestaties)
-            .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired();
-
         builder.HasOne(e => e.Verzekerde)
             .WithMany(e => e.VerbruiksmiddelPrestaties)
             .HasForeignKey(e => e.VerzekerdeId)
