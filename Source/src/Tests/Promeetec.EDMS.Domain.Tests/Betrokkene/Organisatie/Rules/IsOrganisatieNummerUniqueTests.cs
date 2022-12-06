@@ -5,11 +5,9 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Handlers;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
-using Promeetec.EDMS.Domain.Models.Cov;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.ION;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie.Rules;
 
@@ -46,11 +44,8 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
             Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
             Settings = new OrganisatieSettings
             {
-                IONZoekoptie = IONZoekOptie.ZoekenOpPraktijkEnGekoppeldeZorgverleners,
                 AanleverbestandLocatie = "Test location",
                 AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                COVControleProcessType = COVControleProcessType.COVProcesDoorzettenBijUitval,
-                COVControleType = COVControleType.COVControleBijAanlevering,
                 VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
             },
             ContactpersoonId = Guid.NewGuid(),
@@ -91,11 +86,8 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
             Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
             Settings = new OrganisatieSettings
             {
-                IONZoekoptie = IONZoekOptie.ZoekenOpPraktijkEnGekoppeldeZorgverleners,
                 AanleverbestandLocatie = "Test location",
                 AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                COVControleProcessType = COVControleProcessType.COVProcesDoorzettenBijUitval,
-                COVControleType = COVControleType.COVControleBijAanlevering,
                 VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
             },
             ContactpersoonId = Guid.NewGuid(),
@@ -142,11 +134,8 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
             Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
             Settings = new OrganisatieSettings
             {
-                IONZoekoptie = IONZoekOptie.ZoekenOpPraktijkEnGekoppeldeZorgverleners,
                 AanleverbestandLocatie = "Test location",
                 AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                COVControleProcessType = COVControleProcessType.COVProcesDoorzettenBijUitval,
-                COVControleType = COVControleType.COVControleBijAanlevering,
                 VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
             },
             ContactpersoonId = Guid.NewGuid(),
@@ -185,11 +174,8 @@ public class IsOrganisatieNummerUniqueTests : TestFixtureBase
             Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
             Settings = new OrganisatieSettings
             {
-                IONZoekoptie = IONZoekOptie.ZoekenOpPraktijkEnGekoppeldeZorgverleners,
                 AanleverbestandLocatie = "Test location",
                 AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                COVControleProcessType = COVControleProcessType.COVProcesDoorzettenBijUitval,
-                COVControleType = COVControleType.COVControleBijAanlevering,
                 VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
             },
             ContactpersoonId = Guid.NewGuid(),

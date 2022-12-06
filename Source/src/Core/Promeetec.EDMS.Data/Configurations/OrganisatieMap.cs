@@ -24,11 +24,8 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
         builder.OwnsOne(e => e.Settings,
             sa =>
             {
-                sa.Property(p => p.IONZoekoptie).HasColumnName("IONZoekoptie");
                 sa.Property(p => p.AanleverStatusNaSchrijvenAanleverbestanden).HasColumnName("AanleverStatusNaSchrijvenAanleverbestanden");
                 sa.Property(p => p.AanleverbestandLocatie).HasColumnName("AanleverbestandLocatie");
-                sa.Property(p => p.COVControleProcessType).HasColumnName("COVControleProcessType");
-                sa.Property(p => p.COVControleType).HasColumnName("COVControleType");
                 sa.Property(p => p.VerwijzerInAdresboek).HasColumnName("VerwijzerInAdresboek");
             });
 
@@ -51,15 +48,7 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
             .HasForeignKey(e => e.AdresId)
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired(false);
-
-
-        //builder.HasOne(e => e.Voorraad)
-        //    .WithOne(e => e.Organisatie)
-        //    .HasForeignKey<Voorraad>(e => e.OrganisatieId)
-        //    .OnDelete(DeleteBehavior.Cascade)
-        //    .IsRequired(false);
-
-
+        
         //builder.HasOne(e => e.Adresboek)
         //    .WithOne(e => e.Organisatie)
         //    .HasForeignKey<Adresboek>(e => e.OrganisatieId)

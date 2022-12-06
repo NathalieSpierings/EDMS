@@ -44,11 +44,8 @@ public class CreateOrganisatieHandler : ICommandHandler<CreateOrganisatie>
             Website = organisatie.Website,
             AgbCodeOnderneming = organisatie.AgbCodeOnderneming,
             Zorggroep = organisatie.Zorggroep,
-            IONZoekoptie = organisatie.Settings.IONZoekoptie,
             AanleverbestandLocatie = organisatie.Settings.AanleverbestandLocatie,
             AanleverStatusNaSchrijvenAanleverbestanden = organisatie.Settings.AanleverStatusNaSchrijvenAanleverbestanden,
-            COVControleType = organisatie.Settings.COVControleType,
-            COVControleProcessType = organisatie.Settings.COVControleProcessType,
             VerwijzerInAdresboek = organisatie.Settings.VerwijzerInAdresboek
         };
 

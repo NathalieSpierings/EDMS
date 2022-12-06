@@ -1,10 +1,8 @@
 ﻿using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Cov;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.ION;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
@@ -34,11 +32,8 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
                 Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
                 Settings = new OrganisatieSettings
                 {
-                    IONZoekoptie = IONZoekOptie.ZoekenOpPraktijkEnGekoppeldeZorgverleners,
                     AanleverbestandLocatie = "Test location",
                     AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                    COVControleProcessType = COVControleProcessType.COVProcesDoorzettenBijUitval,
-                    COVControleType = COVControleType.COVControleBijAanlevering,
                     VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
                 },
                 ContactpersoonId = Guid.NewGuid(),
@@ -65,18 +60,14 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
             Assert.AreEqual(_cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(_cmd.Zorggroep, _sut.Zorggroep);
             Assert.AreEqual(_cmd.Logo, _sut.Logo);
-
-            Assert.AreEqual(_cmd.Settings.IONZoekoptie, _sut.Settings.IONZoekoptie);
+            
             Assert.AreEqual(_cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
             Assert.AreEqual(_cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
-            Assert.AreEqual(_cmd.Settings.COVControleType, _sut.Settings.COVControleType);
-            Assert.AreEqual(_cmd.Settings.COVControleProcessType, _sut.Settings.COVControleProcessType);
             Assert.AreEqual(_cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
 
             Assert.AreEqual(_cmd.ZorggroepRelatieId, _sut.ZorggroepRelatieId);
             Assert.AreEqual(_cmd.ContactpersoonId, _sut.ContactpersoonId);
             Assert.AreEqual(_cmd.AdresId, _sut.AdresId);
-            Assert.AreEqual(_cmd.VoorraadId, _sut.VoorraadId);
             Assert.AreEqual(_cmd.AdresboekId, _sut.AdresboekId);
         }
 
@@ -99,11 +90,8 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
                 Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
                 Settings = new OrganisatieSettings
                 {
-                    IONZoekoptie = IONZoekOptie.ZoekenOpPraktijk,
                     AanleverbestandLocatie = "New Test location",
                     AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.Verwerkt,
-                    COVControleProcessType = COVControleProcessType.COVProcesStoppenBijUitval,
-                    COVControleType = COVControleType.COVControleBijVoorraad,
                     VerwijzerInAdresboek = VerwijzerInAdresboekType.VewijzerOptioneel
                 },
                 ContactpersoonId = Guid.NewGuid(),
@@ -121,12 +109,9 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(cmd.Zorggroep, _sut.Zorggroep);
             Assert.AreEqual(cmd.Logo, _sut.Logo);
-
-            Assert.AreEqual(cmd.Settings.IONZoekoptie, _sut.Settings.IONZoekoptie);
+            
             Assert.AreEqual(cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
             Assert.AreEqual(cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
-            Assert.AreEqual(cmd.Settings.COVControleType, _sut.Settings.COVControleType);
-            Assert.AreEqual(cmd.Settings.COVControleProcessType, _sut.Settings.COVControleProcessType);
             Assert.AreEqual(cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
 
             Assert.AreEqual(cmd.ZorggroepRelatieId, _sut.ZorggroepRelatieId);

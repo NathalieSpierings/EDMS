@@ -2,7 +2,6 @@
 using Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
 using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Voorraad;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
 
@@ -18,14 +17,7 @@ public class Aanleverbestand : Bestand.Bestand
     /// Indicator if the aanleverbestand is checked yes or no.
     /// </summary>
     public bool Gecontroleerd { get; set; }
-
-    /// <summary>
-    /// The workflow state of the aanleverbestand.
-    /// </summary>
-    [Required]
-    [Display(Name = "Workflow status")]
-    public AanleverbestandWorkflowState WorkFlowState { get; set; }
-
+    
 
     #region Navigation properties
 
@@ -34,9 +26,6 @@ public class Aanleverbestand : Bestand.Bestand
     
     public Guid? EiStandaardId { get; set; }
     public virtual EiStandaard EiStandaard { get; set; }
-    
-    public Guid? VoorraadId { get; set; }
-    public virtual Voorraad Voorraad { get; set; }
     
     public Guid? AanleveringId { get; set; }
     public virtual Aanlevering Aanlevering { get; set; }

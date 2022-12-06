@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Promeetec.EDMS.Web.props" />
+</Project>

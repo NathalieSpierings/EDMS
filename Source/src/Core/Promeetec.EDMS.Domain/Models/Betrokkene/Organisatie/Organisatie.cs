@@ -1,14 +1,12 @@
-﻿using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Voorraad;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
-using Promeetec.EDMS.Domain.Models.Modules.ION;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Shared;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 
@@ -130,10 +128,7 @@ public class Organisatie : AggregateRoot
 
     public Guid? AdresId { get; set; }
     public virtual Adres.Adres Adres { get; set; }
-
-    public Guid VoorraadId { get; set; }
-    public virtual Voorraad Voorraad { get; set; }
-
+    
     public Guid AdresboekId { get; set; }
     public virtual Adresboek Adresboek { get; set; }
 
@@ -141,7 +136,6 @@ public class Organisatie : AggregateRoot
     public virtual ICollection<Aanlevering> Aanleveringen { get; set; }
     public virtual ICollection<Rapportage> Rapportages { get; set; }
     public virtual ICollection<GliIntake> GliIntakes { get; set; }
-    public virtual ICollection<IONPatientRelatie> IONPatientRelaties { get; set; }
     public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
 
     #endregion
@@ -178,7 +172,6 @@ public class Organisatie : AggregateRoot
         ZorggroepRelatieId = cmd.ZorggroepRelatieId;
         ContactpersoonId = cmd.ContactpersoonId;
         AdresId = cmd.AdresId;
-        VoorraadId = cmd.VoorraadId;
         AdresboekId = cmd.AdresboekId;
     }
 

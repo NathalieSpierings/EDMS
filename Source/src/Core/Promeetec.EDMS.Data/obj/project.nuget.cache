@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/Si68Oa+wRUNV5zYaZcq7djxX5uFC5JQPR7CuBKpIz7wzJ8I4wCDyM1VEIl8EyXQlk45ERb0TOwvW6ZYtf91Bg==",
+  "dgSpecHash": "Cwaxa+RRMOD16fUq7go6CBMPPFy5tniSLm9jcWWI0wpiBVt7GDGDRH4hFbQ2MnDCNYz/Uzo47HNGeEWCa8IiIg==",
   "success": true,
-  "projectFilePath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
+  "projectFilePath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nspierings\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\nspierings\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",

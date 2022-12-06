@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zfqH0gZCMukOX+m/4Suj6cO6W0wIlsAto1HooBd3M9MU4T/vFmCmRvbOgtRImsova8c/4CO9Md8PNiWbOccOqQ==",
+  "dgSpecHash": "TthqQV4Twu/ij4AGI5taEqY1Xw4FxukP4uLwboH8VIKDsiQM48FhHO59CSbjTFiMghZS3YASMnIWNEeJmAYYmQ==",
   "success": true,
-  "projectFilePath": "C:\\TFS\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+  "projectFilePath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nspierings\\.nuget\\packages\\autofixture\\4.17.0\\autofixture.4.17.0.nupkg.sha512",
     "C:\\Users\\nspierings\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",

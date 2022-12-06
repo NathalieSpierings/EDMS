@@ -58,3 +58,15 @@ F:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeet
 F:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\refint\Promeetec.EDMS.Reporting.dll
 F:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.pdb
 F:\GitHub\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\ref\Promeetec.EDMS.Reporting.dll
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\bin\Debug\net6.0\Promeetec.EDMS.Reporting.deps.json
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\bin\Debug\net6.0\Promeetec.EDMS.Reporting.dll
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\bin\Debug\net6.0\Promeetec.EDMS.Reporting.pdb
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.csproj.AssemblyReference.cache
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.AssemblyInfoInputs.cache
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.AssemblyInfo.cs
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.csproj.CoreCompileInputs.cache
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.dll
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\refint\Promeetec.EDMS.Reporting.dll
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\Promeetec.EDMS.Reporting.pdb
+C:\Github\Repos\EDMS\Source\src\Core\Promeetec.EDMS.Reporting\obj\Debug\net6.0\ref\Promeetec.EDMS.Reporting.dll

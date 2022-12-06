@@ -28,10 +28,8 @@ using Promeetec.EDMS.Domain.Models.Menu;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Voorraad;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
-using Promeetec.EDMS.Domain.Models.Modules.ION;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
@@ -65,7 +63,6 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<GroupRole> GroupRoles { get; set; }
     public DbSet<VerzekerdeToAdres> GroupUsers { get; set; }
     public DbSet<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
-    public DbSet<IONPatientRelatie> IONPatientRelaties { get; set; }
     public DbSet<Land> Landen { get; set; }
     public DbSet<Mededeling> Mededelingen { get; set; }
     public DbSet<Medewerker> Medewerkers { get; set; }
@@ -81,7 +78,6 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<Verzekeraar> Verzekeraars { get; set; }
     public DbSet<Verzekerde> Verzekerden { get; set; }
-    public DbSet<Voorraad> Voorraad { get; set; }
     public DbSet<Weegmoment> Weegmoment { get; set; }
     public DbSet<Zorgprofiel> Zorgprofielen { get; set; }
     public DbSet<Zorgstraat> Zorgstraten { get; set; }

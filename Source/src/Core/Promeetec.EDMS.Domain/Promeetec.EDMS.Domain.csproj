@@ -85,9 +85,6 @@
     <Compile Remove="Models\Modules\GLI\Intake\Commands\**" />
     <Compile Remove="Models\Modules\GLI\Intake\Events\**" />
     <Compile Remove="Models\Modules\GLI\Intake\Handlers\**" />
-    <Compile Remove="Models\Modules\ION\Commands\**" />
-    <Compile Remove="Models\Modules\ION\Events\**" />
-    <Compile Remove="Models\Modules\ION\Handlers\**" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Commands\**" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Events\**" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
@@ -103,9 +100,6 @@
     <Compile Remove="Models\Modules\GLI\Intake\Commands\**" />
     <Compile Remove="Models\Modules\GLI\Intake\Events\**" />
     <Compile Remove="Models\Modules\GLI\Intake\Handlers\**" />
-    <Compile Remove="Models\Modules\ION\Commands\**" />
-    <Compile Remove="Models\Modules\ION\Events\**" />
-    <Compile Remove="Models\Modules\ION\Handlers\**" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Commands\**" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Events\**" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
@@ -187,9 +181,6 @@
     <EmbeddedResource Remove="Models\Modules\GLI\Intake\Commands\**" />
     <EmbeddedResource Remove="Models\Modules\GLI\Intake\Events\**" />
     <EmbeddedResource Remove="Models\Modules\GLI\Intake\Handlers\**" />
-    <EmbeddedResource Remove="Models\Modules\ION\Commands\**" />
-    <EmbeddedResource Remove="Models\Modules\ION\Events\**" />
-    <EmbeddedResource Remove="Models\Modules\ION\Handlers\**" />
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Commands\**" />
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Events\**" />
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
@@ -205,9 +196,6 @@
     <EmbeddedResource Remove="Models\Modules\GLI\Intake\Commands\**" />
     <EmbeddedResource Remove="Models\Modules\GLI\Intake\Events\**" />
     <EmbeddedResource Remove="Models\Modules\GLI\Intake\Handlers\**" />
-    <EmbeddedResource Remove="Models\Modules\ION\Commands\**" />
-    <EmbeddedResource Remove="Models\Modules\ION\Events\**" />
-    <EmbeddedResource Remove="Models\Modules\ION\Handlers\**" />
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Commands\**" />
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Events\**" />
     <EmbeddedResource Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
@@ -289,9 +277,6 @@
     <None Remove="Models\Modules\GLI\Intake\Commands\**" />
     <None Remove="Models\Modules\GLI\Intake\Events\**" />
     <None Remove="Models\Modules\GLI\Intake\Handlers\**" />
-    <None Remove="Models\Modules\ION\Commands\**" />
-    <None Remove="Models\Modules\ION\Events\**" />
-    <None Remove="Models\Modules\ION\Handlers\**" />
     <None Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Commands\**" />
     <None Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Events\**" />
     <None Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
@@ -307,9 +292,6 @@
     <None Remove="Models\Modules\GLI\Intake\Commands\**" />
     <None Remove="Models\Modules\GLI\Intake\Events\**" />
     <None Remove="Models\Modules\GLI\Intake\Handlers\**" />
-    <None Remove="Models\Modules\ION\Commands\**" />
-    <None Remove="Models\Modules\ION\Events\**" />
-    <None Remove="Models\Modules\ION\Handlers\**" />
     <None Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Commands\**" />
     <None Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Events\**" />
     <None Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Handlers\**" />
@@ -333,10 +315,10 @@
     <Compile Remove="Models\Modules\Adresboek\IAdresboekRepository.cs" />
     <Compile Remove="Models\Modules\Declaratie\Aanleverbericht\IAanleverberichtRepository.cs" />
     <Compile Remove="Models\Modules\Declaratie\Aanlevering\IAanleveringRepository.cs" />
-    <Compile Remove="Models\Modules\Declaratie\Voorraad\IVoorraadRepository.cs" />
     <Compile Remove="Models\Modules\GLI\Behandelplan\IGliBehandelplanRepository.cs" />
     <Compile Remove="Models\Modules\GLI\Intake\IGliIntakeRepository.cs" />
-    <Compile Remove="Models\Modules\ION\IIONPopulatieRepository.cs" />
+    <Compile Remove="Models\Modules\Haarwerk\Validators\Handlers\IsOrganisatieNummerUniqueHandler.cs" />
+    <Compile Remove="Models\Modules\Haarwerk\Validators\Rules\IsOrganisatieNummerUnique.cs" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\IVerbruiksmiddelPrestatieRepository.cs" />
     <Compile Remove="Models\Modules\Verbruiksmiddelen\Zorgprofiel\IZorgprofielRepository.cs" />
   </ItemGroup>
@@ -416,8 +398,8 @@
     <Folder Include="Models\Modules\GLI\Behandelplan\Validators\" />
     <Folder Include="Models\Modules\GLI\Intake\Rules\" />
     <Folder Include="Models\Modules\GLI\Intake\Validators\" />
-    <Folder Include="Models\Modules\ION\Rules\" />
-    <Folder Include="Models\Modules\ION\Validators\" />
+    <Folder Include="Models\Modules\Haarwerk\Validators\Handlers\" />
+    <Folder Include="Models\Modules\Haarwerk\Validators\Rules\" />
     <Folder Include="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Rules\" />
     <Folder Include="Models\Modules\Verbruiksmiddelen\Verbruiksmiddel\Validators\" />
   </ItemGroup>
