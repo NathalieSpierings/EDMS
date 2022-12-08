@@ -24,24 +24,27 @@ public class ReinstateOrganisatieHandler : ICommandHandler<ReinstateOrganisatie>
     public async Task<IEnumerable<IEvent>> Handle(ReinstateOrganisatie command)
     {
         var organisatie = await _repository.Query()
-            .FirstOrDefaultAsync(x => 
-                x.Id == command.Id && 
+            .FirstOrDefaultAsync(x =>
+                x.Id == command.Id &&
                 x.Status != Status.Verwijderd);
 
         if (organisatie == null)
             throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Reinstate();
-        await _repository.UpdateAsync(organisatie);
 
         var @event = new OrganisatieGeactiveerd
         {
             TargetId = organisatie.Id,
             TargetType = nameof(Organisatie),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Actief.ToString()
         };
 
+        await _repository.UpdateAsync(organisatie);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

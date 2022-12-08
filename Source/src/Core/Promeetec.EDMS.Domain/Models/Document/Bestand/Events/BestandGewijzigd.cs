@@ -1,10 +1,12 @@
-﻿namespace Promeetec.EDMS.Domain.Document.Bestand.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Document.Bestand.Events
 {
-    public class BestandGewijzigd : DomainEvent
+    public class BestandGewijzigd : EventBase
     {
-        public DateTime? AangepastOp { get; set; }
-        public Guid? AangepastDoor { get; set; }
+        public string Bestandsnaam { get; set; }
+        public string Eigenaar { get; set; }
         public Guid EigenaarId { get; set; }
-        public string FileName { get; set; }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Domain.Models.Document.Bestand;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
@@ -136,6 +137,7 @@ public class Organisatie : AggregateRoot
     public virtual ICollection<Medewerker.Medewerker> Medewerkers { get; set; }
     public virtual ICollection<Aanlevering> Aanleveringen { get; set; }
     public virtual ICollection<Haarwerk> HaarwerkPrestaties { get; set; }
+    public virtual ICollection<Bestand> Bestanden { get; set; }
     public virtual ICollection<Rapportage> Rapportages { get; set; }
     public virtual ICollection<GliIntake> GliIntakes { get; set; }
     public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }

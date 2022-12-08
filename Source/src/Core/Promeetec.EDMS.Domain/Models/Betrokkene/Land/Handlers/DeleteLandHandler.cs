@@ -37,6 +37,7 @@ public class DeleteLandHandler : ICommandHandler<DeleteLand>
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Status = Status.Verwijderd.ToString()
         };

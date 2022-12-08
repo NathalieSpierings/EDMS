@@ -55,6 +55,12 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
 
+        builder.HasMany(e => e.Bestanden)
+            .WithOne(e => e.Organisatie)
+            .HasForeignKey(e => e.OrganisatieId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
+
         builder.HasMany(e => e.Aanleveringen)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)

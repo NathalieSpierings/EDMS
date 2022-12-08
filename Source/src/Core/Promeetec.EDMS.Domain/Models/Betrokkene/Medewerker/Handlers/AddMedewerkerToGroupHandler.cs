@@ -35,6 +35,7 @@ public class AddMedewerkerToGroupHandler : ICommandHandler<AddMedewerkerToGroup>
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             GroupName = command.GroupUser.Group.Name
         };

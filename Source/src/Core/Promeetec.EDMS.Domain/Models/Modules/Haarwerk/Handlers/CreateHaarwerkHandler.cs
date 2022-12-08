@@ -35,6 +35,7 @@ public class CreateHaarwerkHandler : ICommandHandler<CreateHaarwerk>
             TargetType = nameof(Haarwerk),
             OrganisatieId = haarwerk.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Naam = haarwerk.Naam,
             Geboortedatum = haarwerk.Geboortedatum,

@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Document.Rapportage
+﻿namespace Promeetec.EDMS.Domain.Models.Document.Rapportage
 {
     public interface IRapportageRepository : IRepository<Rapportage>
     {

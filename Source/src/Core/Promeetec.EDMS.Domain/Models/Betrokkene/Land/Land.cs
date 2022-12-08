@@ -7,27 +7,27 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land;
 public class Land : AggregateRoot
 {
     /// <summary>
-    /// The culture code of the country.
+    /// The culture code of the land.
     /// </summary>
     [Required, MaxLength(50)]
     public string CultureCode { get; set; }
 
 
     /// <summary>
-    /// The native name of the country.
+    /// The native name of the land.
     /// </summary>
     [Required, MaxLength(128)]
     public string NativeName { get; set; }
 
 
     /// <summary>
-    /// The status of the country.
+    /// The status of the land.
     /// </summary>
     public Status Status { get; set; }
 
 
     /// <summary>
-    /// Creates an empty country.
+    /// Creates an empty land.
     /// </summary>
     public Land()
     {
@@ -35,9 +35,9 @@ public class Land : AggregateRoot
     }
 
     /// <summary>
-    /// Creates a country.
+    /// Creates a land.
     /// </summary>
-    /// <param name="cmd">The create country command.</param>
+    /// <param name="cmd">The create land command.</param>
     public Land(CreateLand cmd)
     {
         Id = cmd.Id;
@@ -48,9 +48,9 @@ public class Land : AggregateRoot
     }
 
     /// <summary>
-    /// Update the details of the country.
+    /// Update the details of the land.
     /// </summary>
-    /// <param name="cmd">The update country command.</param>
+    /// <param name="cmd">The update land command.</param>
     public void Update(UpdateLand cmd)
     {
         CultureCode = cmd.CultureCode;
@@ -67,8 +67,8 @@ public class Land : AggregateRoot
 
 
     /// <summary>
-    /// Sets the status of the country as suspended.
-    /// The country will no longer be able.
+    /// Sets the status of the land as suspended.
+    /// The land will no longer be able.
     /// </summary>
     public void Suspend()
     {
@@ -76,7 +76,7 @@ public class Land : AggregateRoot
     }
 
     /// <summary>
-    /// Reinstates the country if suspended.
+    /// Reinstates the land if suspended.
     /// </summary>
     public void Reinstate()
     {

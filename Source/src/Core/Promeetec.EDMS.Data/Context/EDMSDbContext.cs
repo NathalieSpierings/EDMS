@@ -16,6 +16,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Weegmoment;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
+using Promeetec.EDMS.Domain.Models.Changelog;
 using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
 using Promeetec.EDMS.Domain.Models.Document.Bestand;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand;
@@ -54,6 +55,7 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<Adres> Adressen { get; set; }
     public DbSet<Adresboek> Adresboeken { get; set; }
     public DbSet<Bestand> Bestanden { get; set; }
+    public DbSet<Changelog> Changelogs { get; set; }
     public DbSet<DownloadActivity> DownloadActivities { get; set; }
     public DbSet<EiStandaard> EiStandaarden { get; set; }
     public DbSet<Event> Events { get; set; }

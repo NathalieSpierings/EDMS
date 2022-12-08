@@ -4,6 +4,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Events;
 
 public class OrganisatieGeblokkeerd : EventBase
 {
-    public string RedeBlokkade { get; set; }
+    public string Geblokkeerd { get; set; }
+    public string BlokkeerReden { get; set; }
 
 }

@@ -36,6 +36,7 @@ public class CreateZorgstraatHandler : ICommandHandler<CreateZorgstraat>
             TargetType = nameof(Zorgstraat),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Naam = command.Naam,
             Status = Status.Actief.ToString()

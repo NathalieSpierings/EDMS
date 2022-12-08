@@ -18,7 +18,7 @@ public class UpdatePasswordHandler : ICommandHandler<UpdatePassword>
     private readonly IValidator<UpdatePassword> _validator;
 
     public UpdatePasswordHandler(IMedewerkerRepository repository,
-        IEventRepository eventRepository, 
+        IEventRepository eventRepository,
         IValidator<UpdatePassword> validator)
     {
         _repository = repository;
@@ -33,7 +33,7 @@ public class UpdatePasswordHandler : ICommandHandler<UpdatePassword>
         var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
-        
+
         medewerker.UpdatePassword(command);
 
         var @event = new WachtwoordGewijzigd
@@ -42,7 +42,8 @@ public class UpdatePasswordHandler : ICommandHandler<UpdatePassword>
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
-            
+            UserDisplayName = command.UserDisplayName,
+
             Password = "******"
         };
 

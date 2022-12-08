@@ -38,6 +38,7 @@ public class ReactivateGoogleAuthenticatorHandler : ICommandHandler<ReactivateGo
             TargetType = nameof(Organisatie.Organisatie),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             GoogleAuthenticatorAan = "Nee",
             GoogleAuthenticatorSecretKey = null,

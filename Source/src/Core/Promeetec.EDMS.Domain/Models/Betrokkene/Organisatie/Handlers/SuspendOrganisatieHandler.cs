@@ -32,16 +32,19 @@ public class SuspendOrganisatieHandler : ICommandHandler<SuspendOrganisatie>
             throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Suspend();
-        await _repository.UpdateAsync(organisatie);
 
         var @event = new OrganisatieGedeactiveerd
         {
             TargetId = organisatie.Id,
             TargetType = nameof(Organisatie),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Inactief.ToString()
         };
 
+        await _repository.UpdateAsync(organisatie);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

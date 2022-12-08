@@ -34,7 +34,10 @@ public class SuspendMedewerkerHandler : ICommandHandler<SuspendMedewerker>
             TargetId = medewerker.Id,
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Inactief.ToString()
         };
 
         await _repository.UpdateAsync(medewerker);

@@ -41,6 +41,7 @@ public class UpdateZorgstraatHandler : ICommandHandler<UpdateZorgstraat>
             TargetType = nameof(Zorgstraat),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Naam = command.Naam
         };

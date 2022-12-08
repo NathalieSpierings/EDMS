@@ -35,7 +35,10 @@ public class ReinstateZorgstraatHandler : ICommandHandler<ReinstateZorgstraat>
             TargetId = zorgstraat.Id,
             TargetType = nameof(Zorgstraat),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Actief.ToString()
         };
 
         await _repository.UpdateAsync(zorgstraat);

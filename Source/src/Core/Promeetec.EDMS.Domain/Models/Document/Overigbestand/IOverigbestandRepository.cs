@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Document.Overigbestand
+﻿using Promeetec.EDMS.Domain.Models.Identity;
+
+namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand
 {
     public interface IOverigbestandRepository : IRepository<Overigbestand>
     {

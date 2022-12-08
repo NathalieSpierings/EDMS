@@ -34,6 +34,7 @@ public class CreateMemoHandler : ICommandHandler<CreateMemo>
             TargetType = nameof(Memo),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Datum = command.Date.ToString("dd-MM-yyyy"),
             Memo = command.Content

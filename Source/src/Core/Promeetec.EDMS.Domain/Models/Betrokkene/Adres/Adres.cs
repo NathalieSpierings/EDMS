@@ -65,13 +65,13 @@ public class Adres : AggregateRoot
     /// <summary>
     /// Returns the complete address based on VEKTIS.
     /// </summary>
-    public string VektisVolledigAdres => AdresExtensions.VolledigeAdres(Straat, Huisnummer, Huisnummertoevoeging, Postcode, Woonplaats, LandNaam);
+    public string? VektisVolledigAdres => AdresExtensions.VolledigeAdres(Straat, Huisnummer, Huisnummertoevoeging, Postcode, Woonplaats, LandNaam);
 
 
     /// <summary>
     /// Returns the complete address.
     /// </summary>
-    public string VolledigAdres => AdresExtensions.VolledigeAdres(Straat, Huisnummer, Huisnummertoevoeging, Postcode, Woonplaats, Land);
+    public string? VolledigAdres => AdresExtensions.VolledigeAdres(Straat, Huisnummer, Huisnummertoevoeging, Postcode, Woonplaats, Land);
 
 
     #region Navigation properties

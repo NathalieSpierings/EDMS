@@ -12,34 +12,37 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
 
 public class ReinstateMedewerkerHandler : ICommandHandler<ReinstateMedewerker>
 {
-    private readonly IMedewerkerRepository _repository;
-    private readonly IEventRepository _eventRepository;
+	private readonly IMedewerkerRepository _repository;
+	private readonly IEventRepository _eventRepository;
 
-    public ReinstateMedewerkerHandler(IMedewerkerRepository repository, IEventRepository eventRepository)
-    {
-        _repository = repository;
-        _eventRepository = eventRepository;
-    }
+	public ReinstateMedewerkerHandler(IMedewerkerRepository repository, IEventRepository eventRepository)
+	{
+		_repository = repository;
+		_eventRepository = eventRepository;
+	}
 
-    public async Task<IEnumerable<IEvent>> Handle(ReinstateMedewerker command)
-    {
-        var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
-        if (medewerker == null)
-            throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
+	public async Task<IEnumerable<IEvent>> Handle(ReinstateMedewerker command)
+	{
+		var medewerker = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+		if (medewerker == null)
+			throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
 
-        medewerker.Reinstate();
+		medewerker.Reinstate();
 
-        var @event = new MedewerkerGeactiveerd
-        {
-            TargetId = medewerker.Id,
-            TargetType = nameof(Medewerker),
-            OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
-        };
+		var @event = new MedewerkerGeactiveerd
+		{
+			TargetId = medewerker.Id,
+			TargetType = nameof(Medewerker),
+			OrganisatieId = command.OrganisatieId,
+			UserId = command.UserId,
+			UserDisplayName = command.UserDisplayName,
 
-        await _repository.UpdateAsync(medewerker);
-        await _eventRepository.AddAsync(@event.ToDbEntity());
+			Status = Status.Actief.ToString()
+		};
 
-        return new IEvent[] { @event };
-    }
+		await _repository.UpdateAsync(medewerker);
+		await _eventRepository.AddAsync(@event.ToDbEntity());
+
+		return new IEvent[] { @event };
+	}
 }

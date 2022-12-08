@@ -1,12 +1,14 @@
-﻿namespace Promeetec.EDMS.Domain.Document.Bestand.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Document.Bestand.Events
 {
-    public class BestandAangemaakt : DomainEvent
+    public class BestandAangemaakt : EventBase
     {
-        public string Bestandsnaam { get; set; }
+        public string? Bestandsnaam { get; set; }
         public int Bestandsgrootte { get; set; }
-        public string Extensie { get; set; }
-        public string MimeType { get; set; }
-        public byte[] Data { get; set; }
+        public string? Extensie { get; set; }
+        public string? MimeType { get; set; }
         public Guid EigenaarId { get; set; }
+        public string Eigenaar { get; set; }
     }
 }

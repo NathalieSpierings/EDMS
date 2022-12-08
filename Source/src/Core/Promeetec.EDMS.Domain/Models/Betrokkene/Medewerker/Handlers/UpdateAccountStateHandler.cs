@@ -27,12 +27,12 @@ public class UpdateAccountStateHandler : ICommandHandler<UpdateAccountState>
     public async Task<IEnumerable<IEvent>> Handle(UpdateAccountState command)
     {
         var medewerker = await _repository.Query()
-            .FirstOrDefaultAsync(x => x.Id == command.Id && 
+            .FirstOrDefaultAsync(x => x.Id == command.Id &&
                                       x.Status != Status.Verwijderd);
 
         if (medewerker == null)
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
-        
+
         medewerker.UpdateAccountState(command);
 
         var @event = new AccountStateGewijzigd
@@ -41,6 +41,7 @@ public class UpdateAccountStateHandler : ICommandHandler<UpdateAccountState>
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             AccountStatus = command.AccountState.GetDisplayName()
         };

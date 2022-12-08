@@ -1,29 +1,59 @@
-﻿using Promeetec.EDMS.Domain.Document.Aanleverbestand.Aanleverberstand.Commands;
+﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Events;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Document.Aanleverbestand.Aanleverberstand.Handlers
+namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Handlers
 {
-    public class UpdateAanleverbestandHandler : ICommandHandlerAsync<WijzigAanleverbestand>
-    {
-        private readonly IAanleverbestandRepository _repository;
+	public class UpdateAanleverbestandHandler : ICommandHandler<UpdateAanleverbestand>
+	{
+		private readonly IAanleverbestandRepository _repository;
+		private readonly IEventRepository _eventRepository;
+		private readonly IValidator<UpdateAanleverbestand> _validator;
 
-        public UpdateAanleverbestandHandler(IAanleverbestandRepository repository)
-        {
-            _repository = repository;
-        }
 
-        public async Task<CommandResponse> HandleAsync(WijzigAanleverbestand command)
-        {
-            var aanleverbestand = await _repository.GetByIdAsync(command.AggregateRootId);
-            if (aanleverbestand == null)
-                throw new ApplicationException($"Aanleverbestand niet gevonden. Id: {command.AggregateRootId}");
+		public UpdateAanleverbestandHandler(IAanleverbestandRepository repository,
+			IEventRepository eventRepository,
+			IValidator<UpdateAanleverbestand> validator)
+		{
+			_repository = repository;
+			_eventRepository = eventRepository;
+			_validator = validator;
+		}
 
-            aanleverbestand.Update(command);
-            await _repository.UpdateAsync(aanleverbestand);
+		public async Task<IEnumerable<IEvent>> Handle(UpdateAanleverbestand command)
+		{
+			await _validator.ValidateCommand(command);
 
-            return new CommandResponse
-            {
-                Events = aanleverbestand.Events
-            };
-        }
-    }
+			var aanleverbestand = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+			if (aanleverbestand == null)
+				throw new ApplicationException($"Aanleverbestand met Id {command.Id} niet gevonden.");
+
+			aanleverbestand.Update(command);
+
+			var @event = new AanleverbestandGewijzigd
+			{
+				TargetId = aanleverbestand.Id,
+				TargetType = nameof(Bestand.Bestand),
+				OrganisatieId = command.OrganisatieId,
+				UserId = command.UserId,
+				UserDisplayName = command.UserDisplayName,
+
+				Periode = aanleverbestand.Periode,
+				Zorgstraat = aanleverbestand.Zorgstraat.Naam,
+				Eigenaar = aanleverbestand.Eigenaar.Persoon.VolledigeNaam,
+				ZorgstraatId = aanleverbestand.ZorgstraatId,
+				EigenaarId = aanleverbestand.EigenaarId
+			};
+
+			await _repository.UpdateAsync(aanleverbestand);
+			await _eventRepository.AddAsync(@event.ToDbEntity());
+
+			return new IEvent[] { @event };
+		}
+	}
 }

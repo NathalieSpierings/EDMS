@@ -34,6 +34,7 @@ public class CreateLandHandler : ICommandHandler<CreateLand>
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Status = Status.Actief.ToString(),
             CultureCode = command.CultureCode,

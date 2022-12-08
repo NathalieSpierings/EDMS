@@ -40,6 +40,7 @@ public class UpdateSettingsHandler : ICommandHandler<UpdateSettings>
             TargetType = nameof(Settings),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Straat = settings.Straat,
             Huisnummer = settings.Huisnummer,

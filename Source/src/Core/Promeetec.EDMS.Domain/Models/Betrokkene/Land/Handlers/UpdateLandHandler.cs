@@ -17,7 +17,9 @@ public class UpdateLandHandler : ICommandHandler<UpdateLand>
     private readonly IEventRepository _eventRepository;
     private readonly IValidator<UpdateLand> _validator;
 
-    public UpdateLandHandler(ILandRepository repository, IEventRepository eventRepository, IValidator<UpdateLand> validator)
+    public UpdateLandHandler(ILandRepository repository,
+        IEventRepository eventRepository,
+        IValidator<UpdateLand> validator)
     {
         _repository = repository;
         _eventRepository = eventRepository;
@@ -41,6 +43,7 @@ public class UpdateLandHandler : ICommandHandler<UpdateLand>
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             CultureCode = command.CultureCode,
             NativeName = command.NativeName

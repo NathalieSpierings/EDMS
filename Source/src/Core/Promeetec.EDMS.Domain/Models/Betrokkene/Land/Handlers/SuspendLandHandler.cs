@@ -34,7 +34,10 @@ public class SuspendLandHandler : ICommandHandler<SuspendLand>
             TargetId = land.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Inactief.ToString()
         };
 
         await _repository.UpdateAsync(land);

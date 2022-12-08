@@ -1,177 +1,117 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
 using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
 
 public class Aanleverbestand : Bestand.Bestand
 {
-    /// <summary>
-    /// The period of the aanleverbestand.
-    /// </summary>
-    [MaxLength(20)]
-    public string Periode { get; set; }
+	/// <summary>
+	/// The period of the aanleverbestand.
+	/// </summary>
+	[MaxLength(20)]
+	public string Periode { get; set; }
 
-    /// <summary>
-    /// Indicator if the aanleverbestand is checked yes or no.
-    /// </summary>
-    public bool Gecontroleerd { get; set; }
-
-
-    #region Navigation properties
-
-    public Guid? ZorgstraatId { get; set; }
-    public virtual Zorgstraat Zorgstraat { get; set; }
-
-    public Guid? EiStandaardId { get; set; }
-    public virtual EiStandaard EiStandaard { get; set; }
-
-    public Guid? AanleveringId { get; set; }
-    public virtual Aanlevering Aanlevering { get; set; }
+	/// <summary>
+	/// Indicator if the aanleverbestand is checked yes or no.
+	/// </summary>
+	public bool Gecontroleerd { get; set; }
 
 
-    #endregion
+	#region Navigation properties
 
-    /// <summary>
-    /// Creates an empty aanleverbestand.
-    /// </summary>
-    public Aanleverbestand()
-    {
+	public Guid? ZorgstraatId { get; set; }
+	public virtual Zorgstraat Zorgstraat { get; set; }
 
-    }
+	public Guid? EiStandaardId { get; set; }
+	public virtual EiStandaard EiStandaard { get; set; }
 
-    //public Aanleverbestand(NieuwAanleverbestand cmd)
-    //{
-    //    Data = cmd.Data;
-    //    Extension = cmd.Extension;
-    //    MimeType = cmd.MimeType;
-    //    AanleveringId = cmd.AanleveringId;
-    //    EigenaarId = cmd.EigenaarId;
-    //    ZorgstraatId = cmd.ZorgstraatId;
-    //    EiStandaardId = cmd.EiStandaardId;
-
-    //    AddAndApplyEvent(new AanleverbestandAangemaakt
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
-
-    //        Periode = cmd.Periode,
-    //        WorkFlowState = cmd.WorkFlowState.ToString(),
-    //        Bestandsnaam = cmd.FileName,
-    //        Bestandsgrootte = cmd.FileSize,
-    //        Zorgstraat = cmd.Zorgstraat,
-    //        Eigenaar = cmd.Eigenaar
-    //    });
-    //}
-
-    //public void Update(WijzigAanleverbestand cmd)
-    //{
-    //    WorkFlowState = cmd.WorkFlowState;
-    //    EigenaarId = cmd.EigenaarId;
-    //    ZorgstraatId = cmd.ZorgstraatId;
-    //    AanleveringId = cmd.AanleveringId;
-    //    AddAndApplyEvent(new AanleverbestandGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        //  UserDisplayName = cmd.UserDisplayName,
-
-    //        Periode = cmd.Periode,
-    //        Zorgstraat = cmd.Zorgstraat,
-    //        Eigenaar = cmd.Eigenaar
-    //    });
-    //}
+	public Guid? AanleveringId { get; set; }
+	public virtual Aanlevering Aanlevering { get; set; }
 
 
-    //public void UpdateWorkflowState(WijzigAanleverbestandWorkflowState cmd)
-    //{
-    //    WorkFlowState = cmd.WorkFlowState;
+	#endregion
 
-    //    AddAndApplyEvent(new AanleverbestandWorkflowStateGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
+	/// <summary>
+	/// Creates an empty aanleverbestand.
+	/// </summary>
+	public Aanleverbestand()
+	{
 
-    //        WorkFlowState = cmd.WorkFlowState.ToString(),
-    //        AanleveringId = cmd.AanleveringId
-    //    });
-    //}
+	}
 
+	/// <summary>
+	/// Creates an aanleverbestand.
+	/// </summary>
+	/// <param name="cmd">The create aanleverbestand command.</param>
+	public Aanleverbestand(CreateAanleverbestand cmd)
+	{
+		Id = cmd.Id;
 
-    //public void CreateSamenvatting(CreateAanleverbestandSamenvatting cmd)
-    //{
-    //    var samenvatting = new AanleverbestandSamenvatting
-    //    {
-    //        EiStandaard = cmd.EiStandaard,
-    //        AantalVerzekerdeRecords = cmd.AantalVerzekerdeRecords,
-    //        AantalPrestatieRecords = cmd.AantalPrestatieRecords,
-    //        TotaalDeclaratiebedrag = cmd.TotaalDeclaratiebedrag,
-    //        ZorgverlenersCode = cmd.Zorgverlenerscode,
-    //        Praktijkcode = cmd.Praktijkcode,
-    //        Instellingscode = cmd.Instellingscode,
-    //        Processed = cmd.Processed,
-    //        OvergeslagenRows = cmd.OvergeslagenRows,
-    //    };
-    //    Samenvatting = samenvatting;
-    //}
+		FileName = cmd.FileName;
+		Extension = cmd.Extension;
+		FileSize = cmd.FileSize;
+		MimeType = cmd.MimeType;
+		Data = cmd.Data;
+		Periode = cmd.Periode;
+		EigenaarId = cmd.EigenaarId;
+		ZorgstraatId = cmd.ZorgstraatId;
+		AanleveringId = cmd.AanleveringId;
+		EiStandaardId = cmd.EiStandaardId;
+		AangemaaktOp = DateTime.Now;
+		AangemaaktDoor = cmd.UserId;
+		AangemaaktDoorNaam = cmd.UserDisplayName;
+	}
 
-    //public void Controleer(ControleerAanleverbestand cmd)
-    //{
-    //    AddAndApplyEvent(new AanleverbestandGecontroleerd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
-    //        Gecontroleerd = "Ja"
-    //    });
-    //}
+	/// <summary>
+	/// Update the details of the aanleverbestand.
+	/// </summary>
+	/// <param name="cmd">The update aanleverbestand command.</param>
+	public void Update(UpdateAanleverbestand cmd)
+	{
+		Periode = cmd.Periode;
+		ZorgstraatId = cmd.ZorgstraatId;
+		EigenaarId = cmd.EigenaarId;
+		AangepastOp = DateTime.Now;
+		AangepastDoor = cmd.UserId;
+	}
 
-    //public void OnControleer(OnControleerAanleverbestand cmd)
-    //{
-    //    AddAndApplyEvent(new AanleverbestandOngecontroleerd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        Gecontroleerd = "Nee"
-    //    });
-    //}
+	/// <summary>
+	/// Mark the document as checked.
+	/// </summary>
+	public void Check()
+	{
+		Gecontroleerd = true;
+	}
 
-    //#region Private methods
-
-    //private void Apply(AanleverbestandAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
-    //    Periode = @event.Periode;
-    //    FileName = @event.Bestandsnaam;
-    //    FileSize = @event.Bestandsgrootte;
-    //    AangemaaktDoor = @event.UserId;
-    //    AangemaaktOp = DateTime.Now;
-    //    AangemaaktDoorNaam = @event.UserDisplayName;
-    //    AangepastDoor = @event.UserId;
-    //    AangepastOp = DateTime.Now;
-    //}
-
-    //private void Apply(AanleverbestandGewijzigd @event)
-    //{
-    //    Periode = @event.Periode;
-    //    AangepastDoor = @event.UserId;
-    //    AangepastOp = DateTime.Now;
-    //}
+	/// <summary>
+	/// Mark the document as unchecked.
+	/// </summary>
+	public void Uncheck()
+	{
+		Gecontroleerd = false;
+	}
 
 
-    //private void Apply(AanleverbestandGecontroleerd @event)
-    //{
-    //    Gecontroleerd = true;
-    //}
+	public void CreateSamenvatting(CreateAanleverbestandSamenvatting cmd)
+	{
+		var samenvatting = new AanleverbestandSamenvatting
+		{
+			EiStandaard = cmd.EiStandaard,
+			AantalVerzekerdeRecords = cmd.AantalVerzekerdeRecords,
+			AantalPrestatieRecords = cmd.AantalPrestatieRecords,
+			TotaalDeclaratiebedrag = cmd.TotaalDeclaratiebedrag,
+			ZorgverlenersCode = cmd.Zorgverlenerscode,
+			Praktijkcode = cmd.Praktijkcode,
+			Instellingscode = cmd.Instellingscode,
+			Processed = cmd.Processed,
+			OvergeslagenRows = cmd.OvergeslagenRows,
+		};
+		Samenvatting = samenvatting;
+	}
 
-    //private void Apply(AanleverbestandOngecontroleerd @event)
-    //{
-    //    Gecontroleerd = false;
-    //}
-
-    //#endregion
 }

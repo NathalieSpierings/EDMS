@@ -41,6 +41,7 @@ public class UpdateHaarwerkHandler : ICommandHandler<UpdateHaarwerk>
             TargetType = nameof(Haarwerk),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Naam = haarwerk.Naam,
             Geboortedatum = haarwerk.Geboortedatum,

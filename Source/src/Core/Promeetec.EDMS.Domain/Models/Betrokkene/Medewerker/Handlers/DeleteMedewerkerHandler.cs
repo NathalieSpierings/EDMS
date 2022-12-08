@@ -28,13 +28,14 @@ public class DeleteMedewerkerHandler : ICommandHandler<DeleteMedewerker>
             throw new DataException($"Medewerker met Id {command.Id} niet gevonden.");
 
         medewerker.Delete();
-       
+
         var @event = new MedewerkerVerwijderd
         {
             TargetId = medewerker.Id,
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Status = Status.Verwijderd.ToString()
         };

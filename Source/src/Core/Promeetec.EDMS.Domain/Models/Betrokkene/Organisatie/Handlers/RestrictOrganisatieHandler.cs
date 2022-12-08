@@ -33,7 +33,6 @@ public class RestrictOrganisatieHandler : ICommandHandler<RestrictOrganisatie>
             throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Restrict(command.Reason);
-        await _repository.UpdateAsync(organisatie);
 
         var @event = new OrganisatieGeblokkeerd
         {
@@ -41,10 +40,13 @@ public class RestrictOrganisatieHandler : ICommandHandler<RestrictOrganisatie>
             TargetType = nameof(Organisatie),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
-            RedeBlokkade = command.Reason
+            Geblokkeerd = "Ja",
+            BlokkeerReden = command.Reason
         };
 
+        await _repository.UpdateAsync(organisatie);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

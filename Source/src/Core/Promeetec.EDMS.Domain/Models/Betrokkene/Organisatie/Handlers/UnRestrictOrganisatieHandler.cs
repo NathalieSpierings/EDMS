@@ -32,16 +32,19 @@ public class UnRestrictOrganisatieHandler : ICommandHandler<UnrestrictOrganisati
             throw new DataException($"Organisatie met Id {command.Id} niet gevonden.");
 
         organisatie.Unrestrict();
-        await _repository.UpdateAsync(organisatie);
 
         var @event = new OrganisatieGedeblokkeerd
         {
             TargetId = organisatie.Id,
             TargetType = nameof(Organisatie),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Geblokkeerd = "Nee"
         };
 
+        await _repository.UpdateAsync(organisatie);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

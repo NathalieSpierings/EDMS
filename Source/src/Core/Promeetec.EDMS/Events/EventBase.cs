@@ -7,6 +7,7 @@ public abstract class EventBase : IEvent
     public string TargetType { get; set; }
     public Guid OrganisatieId { get; set; }
     public Guid? UserId { get; set; }
+    public string UserDisplayName { get; set; }
     public DateTime TimeStamp { get; set; } = DateTime.Now;
 
     public bool ShouldSerializeId() => false;

@@ -38,6 +38,7 @@ public class ConfirmEmailHandler : ICommandHandler<ConfirmEmail>
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             EmailIsBevestigd = "Ja",
             AccountState = UserAccountState.EmailConfirmed.GetDisplayName(),

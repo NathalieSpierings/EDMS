@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Document.Aanleverbestand.Samenvatting.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands
 {
-    public class CreateAanleverbestandSamenvatting : DomainCommand<Aanleverberstand.Aanleverbestand>
+    public class CreateAanleverbestandSamenvatting : CommandBase
     {
         public string EiStandaard { get; set; }
         public int? AantalVerzekerdeRecords { get; set; }

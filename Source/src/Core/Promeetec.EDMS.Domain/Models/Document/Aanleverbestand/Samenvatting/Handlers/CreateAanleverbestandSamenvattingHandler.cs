@@ -1,37 +1,37 @@
-﻿using Promeetec.EDMS.Domain.Document.Aanleverbestand.Aanleverberstand;
-using Promeetec.EDMS.Domain.Document.Aanleverbestand.Samenvatting.Commands;
+﻿using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
+using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Document.Aanleverbestand.Samenvatting.Handlers
+namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Handlers
 {
-    public class CreateAanleverbestandSamenvattingHandler : ICommandHandler<CreateAanleverbestandSamenvatting>
-    {
-        private readonly IAanleverbestandRepository _repository;
+	public class CreateAanleverbestandSamenvattingHandler : ICommandHandler<CreateAanleverbestandSamenvatting>
+	{
+		private readonly IAanleverbestandRepository _repository;
 
-        public CreateAanleverbestandSamenvattingHandler(IAanleverbestandRepository repository)
-        {
-            _repository = repository;
-        }
+		public CreateAanleverbestandSamenvattingHandler(IAanleverbestandRepository repository)
+		{
+			_repository = repository;
+		}
 
-        public CommandResponse Handle(CreateAanleverbestandSamenvatting command)
-        {
-            var aanleverbestand = _repository.GetById(command.AanleverbestandId);
-            if (aanleverbestand != null)
-            {
-                try
-                {
-                    aanleverbestand.CreateSamenvatting(command);
-                    _repository.Update(aanleverbestand);
-                }
-                catch
-                {
-                    // ignored
-                }
-            }
+		public async Task<IEnumerable<IEvent>> Handle(CreateAanleverbestandSamenvatting command)
+		{
+			var aanleverbestand = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.AanleverbestandId);
+			if (aanleverbestand == null)
+				throw new ApplicationException($"Aanleverbestand met Id {command.Id} niet gevonden.");
 
-            return new CommandResponse
-            {
-                Events = aanleverbestand.Events
-            };
-        }
-    }
+			try
+			{
+				aanleverbestand.CreateSamenvatting(command);
+				await _repository.UpdateAsync(aanleverbestand);
+			}
+			catch (Exception ex)
+			{
+				// TODO: Log exception
+			}
+
+			return new IEvent[] { };
+		}
+	}
 }

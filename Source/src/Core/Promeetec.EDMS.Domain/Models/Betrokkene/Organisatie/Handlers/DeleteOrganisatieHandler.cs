@@ -33,17 +33,20 @@ public class DeleteOrganisatieHandler : ICommandHandler<DeleteOrganisatie>
 
 
         organisatie.Delete();
-        await _repository.UpdateAsync(organisatie);
 
         var @event = new OrganisatieVerwijderd
         {
             TargetId = organisatie.Id,
             TargetType = nameof(Organisatie),
-            OrganisatieId = organisatie.Id,
-            UserId = command.UserId
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Verwijderd.ToString()
         };
 
-       await _eventRepository.AddAsync(@event.ToDbEntity());
+        await _repository.UpdateAsync(organisatie);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };
     }

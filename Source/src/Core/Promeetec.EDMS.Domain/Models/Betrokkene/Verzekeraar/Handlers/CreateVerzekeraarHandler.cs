@@ -34,6 +34,7 @@ public class CreateVerzekeraarHandler : ICommandHandler<CreateVerzekeraar>
             TargetType = nameof(Memo.Memo),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Uzovi = command.Uzovi.ToString(),
             Naam = command.Naam,

@@ -3,13 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting;
 
-public class AanleverbestandSamenvatting 
+public class AanleverbestandSamenvatting : AggregateRoot
 {
-    /// <summary>
-    /// The unique identifier of the samenvatting.
-    /// </summary>
-    public Guid Id { get; set; }
-
     /// <summary>
     /// The EI standaard for the samenvatting.
     /// </summary>

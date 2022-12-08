@@ -10,8 +10,8 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Handlers;
 
 public class CreateOrganisatieHandler : ICommandHandler<CreateOrganisatie>
 {
-    private readonly IEventRepository _eventRepository;
     private readonly IOrganisatieRepository _repository;
+    private readonly IEventRepository _eventRepository;
     private readonly IValidator<CreateOrganisatie> _validator;
 
     public CreateOrganisatieHandler(IOrganisatieRepository repository,
@@ -35,6 +35,7 @@ public class CreateOrganisatieHandler : ICommandHandler<CreateOrganisatie>
             TargetType = nameof(Organisatie),
             OrganisatieId = organisatie.Id,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Nummer = organisatie.Nummer,
             Naam = organisatie.Naam,

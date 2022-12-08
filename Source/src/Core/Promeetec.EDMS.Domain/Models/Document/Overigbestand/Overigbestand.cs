@@ -1,4 +1,5 @@
-﻿using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+﻿using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand;
 
@@ -20,44 +21,26 @@ public class Overigbestand : Bestand.Bestand
 
     }
 
-    //public Overigbestand(NieuwOverigbestand cmd)
-    //{
-    //    Extension = cmd.Extension;
-    //    MimeType = cmd.MimeType;
-    //    Data = cmd.Data;
 
-    //    AddAndApplyEvent(new OverigbestandAangemaakt
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
+    /// <summary>
+    /// Creates an aanleverbestand.
+    /// </summary>
+    /// <param name="cmd">The create aanleverbestand command.</param>
+    public Overigbestand(CreateOverigbestand cmd)
+    {
+        Id = cmd.Id;
 
-    //        AanleveringId = cmd.AanleveringId,
-    //        ReferentiePromeetec = cmd.ReferentiePromeetec,
-    //        Bestandsnaam = cmd.FileName,
-    //        Bestandsgrootte = cmd.FileSize,
-    //        EigenaarId = cmd.EigenaarId,
-    //        Eigenaar = cmd.Eigenaar
-    //    });
-    //}
+        FileName = cmd.FileName;
+        FileSize = cmd.FileSize;
+        Extension = cmd.Extension;
+        MimeType = cmd.MimeType;
+        Data = cmd.Data;
+        OrganisatieId = cmd.OrganisatieId;
+        EigenaarId = cmd.EigenaarId;
+        AangemaaktOp = DateTime.Now;
+        AangemaaktDoor = cmd.UserId;
+        AangemaaktDoorNaam = cmd.UserDisplayName;
 
-
-
-    //#region Private methods
-
-    //private void Apply(OverigbestandAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
-    //    AanleveringId = @event.AanleveringId;
-    //    FileName = @event.Bestandsnaam;
-    //    FileSize = @event.Bestandsgrootte;
-    //    EigenaarId = @event.EigenaarId;
-    //    AangemaaktDoorNaam = @event.UserDisplayName;
-    //    AangemaaktDoor = @event.UserId;
-    //    AangemaaktOp = DateTime.Now;
-    //    AangepastDoor = @event.UserId;
-    //    AangepastOp = DateTime.Now;
-    //}
-
-    //#endregion
+        AanleveringId = cmd.AanleveringId;
+    }
 }

@@ -35,7 +35,10 @@ public class ReinstateLandHandler : ICommandHandler<ReinstateLand>
             TargetId = land.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
-            UserId = command.UserId
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
+
+            Status = Status.Actief.ToString()
         };
 
         await _repository.UpdateAsync(land);

@@ -34,6 +34,7 @@ public class LoginMedewerkerHandler : ICommandHandler<LoginMedewerker>
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             LaatstIngelogdOp = medewerker.LaatstIngelogdOp,
             VorigeLoginOp = medewerker.VorigeLoginOp,

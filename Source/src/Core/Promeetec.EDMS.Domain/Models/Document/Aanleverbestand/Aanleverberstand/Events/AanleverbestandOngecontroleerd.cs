@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Document.Aanleverbestand.Aanleverberstand.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Events
 {
-    public class AanleverbestandOngecontroleerd : DomainEvent
+    public class AanleverbestandOngecontroleerd : EventBase
     {
         public string Gecontroleerd { get; set; }
     }

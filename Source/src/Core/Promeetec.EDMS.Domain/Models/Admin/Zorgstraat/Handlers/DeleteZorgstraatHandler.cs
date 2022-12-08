@@ -37,6 +37,7 @@ public class DeleteZorgstraatHandler : ICommandHandler<DeleteZorgstraat>
             TargetType = nameof(Zorgstraat),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Status = Status.Verwijderd.ToString()
         };

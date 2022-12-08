@@ -23,7 +23,7 @@ public class UpdateMedewerkerHandler : ICommandHandler<UpdateMedewerker>
 
     public UpdateMedewerkerHandler(IMedewerkerRepository repository,
         IAdresRepository adresRepository,
-        IEventRepository eventRepository, 
+        IEventRepository eventRepository,
         IValidator<UpdateMedewerker> validator)
     {
         _repository = repository;
@@ -52,6 +52,7 @@ public class UpdateMedewerkerHandler : ICommandHandler<UpdateMedewerker>
             TargetType = nameof(Medewerker),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Geslacht = medewerker.Persoon.Geslacht.GetDisplayName(),
             Voorletters = medewerker.Persoon.Voorletters,
@@ -67,7 +68,7 @@ public class UpdateMedewerkerHandler : ICommandHandler<UpdateMedewerker>
             AgbCodeZorgverlener = !string.IsNullOrWhiteSpace(medewerker.AgbCodeZorgverlener) ? string.Concat("[", medewerker.AgbCodeZorgverlener.Replace(",", "]-["), "]") : "",
             AgbCodeOnderneming = !string.IsNullOrWhiteSpace(medewerker.AgbCodeOnderneming) ? string.Concat("[", medewerker.AgbCodeOnderneming.Replace(",", "]-["), "]") : "",
             IonToestemmingsverklaringActivatieLink = medewerker.IONToestemmingsverklaringActivatieLink,
-            Adres = medewerker.Adres?.VolledigAdres,
+            Adres = medewerker.Adres.VolledigAdres,
         };
 
         await _repository.UpdateAsync(medewerker);

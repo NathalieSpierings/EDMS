@@ -43,6 +43,7 @@ public class CreditHaarwerkHandler : ICommandHandler<CreditHaarwerk>
             TargetType = nameof(Haarwerk),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
             Naam = haarwerk.Naam,
             Geboortedatum = haarwerk.Geboortedatum,
