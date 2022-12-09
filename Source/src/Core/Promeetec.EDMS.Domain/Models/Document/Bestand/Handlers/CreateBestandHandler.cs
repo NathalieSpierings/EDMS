@@ -42,7 +42,7 @@ namespace Promeetec.EDMS.Domain.Models.Document.Bestand.Handlers
 				Bestandsgrootte = bestand.FileSize,
 				Extensie = bestand.Extension,
 				MimeType = bestand.MimeType,
-				Eigenaar = bestand.Eigenaar.Persoon.VolledigeNaam,
+				Eigenaar = command.EigenaarVolledigeNaam,
 				EigenaarId = bestand.EigenaarId,
 			};
 

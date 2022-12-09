@@ -11,17 +11,5 @@ public class VerzekerdeToUserMap : IEntityTypeConfiguration<VerzekerdeToUser>
         builder.ToTable("VerzekerdeToUser");
 
         builder.HasKey(e => new { e.VerzekerdeId, e.UserId });
-
-        builder.HasOne(e => e.User)
-            .WithMany(e => e.Verzekerden)
-            .HasForeignKey(e => e.UserId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
-
-        builder.HasOne(e => e.Verzekerde)
-            .WithMany(e => e.Users)
-            .HasForeignKey(e => e.VerzekerdeId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
     }
 }

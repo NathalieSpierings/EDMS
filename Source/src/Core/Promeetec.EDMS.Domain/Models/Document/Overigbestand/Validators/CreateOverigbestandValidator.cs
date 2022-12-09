@@ -3,7 +3,7 @@ using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand.Validators;
 
-public class CreateOverigbestandValidator : AbstractValidator<CreateOverigbestand>
+public class CreateOverigbestandValidator : AbstractValidator<CreateOverigBestand>
 {
     public CreateOverigbestandValidator()
     {

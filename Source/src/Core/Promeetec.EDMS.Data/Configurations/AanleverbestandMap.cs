@@ -13,13 +13,13 @@ public class AanleverbestandMap : IEntityTypeConfiguration<Aanleverbestand>
         builder.HasOne(e => e.Zorgstraat)
             .WithMany()
             .HasForeignKey(e => e.ZorgstraatId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 
         builder.HasOne(e => e.EiStandaard)
             .WithMany()
             .HasForeignKey(e => e.EiStandaardId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
     }
 }

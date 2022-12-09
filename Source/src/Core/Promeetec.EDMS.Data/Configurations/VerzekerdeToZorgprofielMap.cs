@@ -11,17 +11,5 @@ public class VerzekerdeToZorgprofielMap : IEntityTypeConfiguration<VerzekerdeToZ
         builder.ToTable("VerzekerdeToZorgprofiel");
 
         builder.HasKey(e => new { e.VerzekerdeId, e.ZorgprofielId });
-
-        builder.HasOne(e => e.Zorgprofiel)
-            .WithMany(e => e.Verzekerden)
-            .HasForeignKey(e => e.ZorgprofielId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
-
-        builder.HasOne(e => e.Verzekerde)
-            .WithMany(e => e.Zorgprofielen)
-            .HasForeignKey(e => e.VerzekerdeId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
     }
 }

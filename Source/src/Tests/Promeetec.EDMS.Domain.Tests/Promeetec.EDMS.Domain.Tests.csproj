@@ -77,6 +77,14 @@
     <Compile Include="Betrokkene\Medewerker\CommandHandlers\UpdateAccountStateHandlerTests.cs" />
     <Compile Include="Betrokkene\Medewerker\CommandHandlers\UpdateMedewerkerHandlerTests.cs" />
     <Compile Include="Betrokkene\Medewerker\CommandHandlers\UpdatePasswordHandlerTests.cs" />
+    <Compile Include="Document\Aanleverbestand\CommandHandlers\CheckAanleverbestandHandlerTests.cs" />
+    <Compile Include="Document\Aanleverbestand\CommandHandlers\CreateAanleverbestandHandlerTests.cs" />
+    <Compile Include="Document\Aanleverbestand\CommandHandlers\UncheckAanleverbestandHandlerTests.cs" />
+    <Compile Include="Document\Aanleverbestand\CommandHandlers\UpdateAanleverbestandHandlerTests.cs" />
+    <Compile Include="Document\Bestand\CommandHandlers\CreateBestandHandlerTests.cs" />
+    <Compile Include="Document\Bestand\CommandHandlers\UpdateBestandHandlerTests.cs" />
+    <Compile Include="Document\Bestand\CommandHandlers\UpdateEigenaarBestandHandlerTests.cs" />
+    <Compile Include="Document\Overigbestand\CommandHandlers\CreateOverigBestandHandlerTests.cs" />
   </ItemGroup>
 
   <ItemGroup>

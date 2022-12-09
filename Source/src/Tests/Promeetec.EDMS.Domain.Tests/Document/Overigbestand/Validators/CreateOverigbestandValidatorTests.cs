@@ -20,7 +20,7 @@ public class CreateOverigbestandValidatorTests : TestFixtureBase
 	[Test]
 	public void Should_have_validation_error_when_filename_is_empty()
 	{
-		var command = Fixture.Build<CreateOverigbestand>().With(x => x.FileName, string.Empty).Create();
+		var command = Fixture.Build<CreateOverigBestand>().With(x => x.FileName, string.Empty).Create();
 		var result = _validator.TestValidate(command);
 		result.ShouldHaveValidationErrorFor(x => x.FileName);
 	}
@@ -28,7 +28,7 @@ public class CreateOverigbestandValidatorTests : TestFixtureBase
 	[Test]
 	public void Should_have_validation_error_when_filename_is_too_long()
 	{
-		var command = Fixture.Build<CreateOverigbestand>().With(x => x.FileName, new string('*', 455)).Create();
+		var command = Fixture.Build<CreateOverigBestand>().With(x => x.FileName, new string('*', 455)).Create();
 		var result = _validator.TestValidate(command);
 		result.ShouldHaveValidationErrorFor(x => x.FileName);
 	}
@@ -36,7 +36,7 @@ public class CreateOverigbestandValidatorTests : TestFixtureBase
 	[Test]
 	public void Should_have_validation_error_when_eigenaar_is_empty()
 	{
-		var command = Fixture.Build<CreateOverigbestand>().With(x => x.EigenaarId, Guid.Empty).Create();
+		var command = Fixture.Build<CreateOverigBestand>().With(x => x.EigenaarId, Guid.Empty).Create();
 		var result = _validator.TestValidate(command);
 		result.ShouldHaveValidationErrorFor(x => x.FileName);
 	}

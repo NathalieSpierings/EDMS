@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
 
@@ -13,13 +11,13 @@ public class GliBehandelplan : AggregateRoot
     /// <summary>
     /// The start date of the behandelplan.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
+    [Required]
     public DateTime Startdatum { get; set; }
 
     /// <summary>
     /// The end date of the behandelplan.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
+    [Required]
     public DateTime Einddatum { get; set; }
 
     /// <summary>
@@ -51,8 +49,6 @@ public class GliBehandelplan : AggregateRoot
     /// <summary>
     /// The premature stop date of the behandelplan.
     /// </summary>
-
-    [Column(TypeName = "datetime2")]
     public DateTime? VoortijdigeStopdatum { get; set; }
 
     /// <summary>
@@ -63,7 +59,6 @@ public class GliBehandelplan : AggregateRoot
     /// <summary>
     /// The verwerkt op date of the behandelplan.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? VerwerktOp { get; set; }
 
     /// <summary>
@@ -76,15 +71,6 @@ public class GliBehandelplan : AggregateRoot
     
     public Guid? RedenEindeZorgId { get; set; }
     public virtual RedenEindeZorg RedenEindeZorg { get; set; }
-
-    public Guid BehandelaarId { get; set; }
-    public virtual Medewerker Behandelaar { get; set; }
-
-    public Guid VerzekerdeId { get; set; }
-    public virtual Verzekerde Verzekerde { get; set; }
-
-    public Guid OrganisatieId { get; set; }
-    public virtual Organisatie Organisatie { get; set; }
 
     public Guid IntakeId { get; set; }
     public virtual GliIntake Intake { get; set; }

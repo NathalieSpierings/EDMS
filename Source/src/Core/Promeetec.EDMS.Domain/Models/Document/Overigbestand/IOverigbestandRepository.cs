@@ -2,7 +2,7 @@
 
 namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand
 {
-    public interface IOverigbestandRepository : IRepository<Overigbestand>
+    public interface IOverigBestandRepository : IRepository<Overigbestand>
     {
         bool DoesFileByFileNameExist(Guid aanleveringId, string fileName, UserPrincipal user);
 

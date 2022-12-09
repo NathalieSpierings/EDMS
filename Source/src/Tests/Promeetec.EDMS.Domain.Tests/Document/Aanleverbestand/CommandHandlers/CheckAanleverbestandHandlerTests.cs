@@ -35,7 +35,7 @@ public class CheckAanleverbestandHandlerTests : TestFixtureBase
 
 		var command = Fixture.Build<CheckAanleverbestand>()
 			.With(x => x.Id, bestand.Id)
-			.With(x => x.OrganisatieId, bestand.OrganisatieId)
+            .With(x => x.OrganisatieId, cmd.OrganisatieId)
 			.With(x => x.UserId, Guid.NewGuid())
 			.With(x => x.UserDisplayName, "Ad de Admin")
 			.Create();

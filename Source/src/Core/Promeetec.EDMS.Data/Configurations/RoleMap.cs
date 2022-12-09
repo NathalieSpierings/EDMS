@@ -13,7 +13,6 @@ public class RoleMap : IEntityTypeConfiguration<Role>
         builder.HasKey(x => x.Id);
         builder.Property(e => e.Id).HasDefaultValueSql("newid()");
 
-
         // Each Role can have many entries in the UserRole join table
         builder.HasMany(e => e.UserRoles)
             .WithOne(e => e.Role)
@@ -25,6 +24,19 @@ public class RoleMap : IEntityTypeConfiguration<Role>
         builder.HasMany(e => e.RoleClaims)
             .WithOne(e => e.Role)
             .HasForeignKey(rc => rc.RoleId)
+            .IsRequired();
+
+
+        builder.HasMany(e => e.Groups)
+            .WithOne(e => e.Role)
+            .HasForeignKey(e => e.RoleId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
+
+        builder.HasMany(e => e.MenuItems)
+            .WithOne(e => e.Role)
+            .HasForeignKey(e => e.RoleId)
+            .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
     }
 }

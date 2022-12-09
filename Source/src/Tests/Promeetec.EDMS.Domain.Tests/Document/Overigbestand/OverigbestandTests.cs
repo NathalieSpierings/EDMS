@@ -8,14 +8,14 @@ namespace Promeetec.EDMS.Domain.Tests.Document.Overigbestand
 	public class OverigbestandTests : TestFixtureBase
 	{
 		private Models.Document.Overigbestand.Overigbestand _sut;
-		private CreateOverigbestand _cmd;
+		private CreateOverigBestand _cmd;
 		private Guid _createId;
 
 		[SetUp]
 		public void Setup()
 		{
 			_createId = Guid.NewGuid();
-			_cmd = Fixture.Build<CreateOverigbestand>().With(x => x.Id, _createId).Create();
+			_cmd = Fixture.Build<CreateOverigBestand>().With(x => x.Id, _createId).Create();
 			_sut = new Models.Document.Overigbestand.Overigbestand(_cmd);
 		}
 
@@ -29,7 +29,6 @@ namespace Promeetec.EDMS.Domain.Tests.Document.Overigbestand
 			Assert.AreEqual(_cmd.MimeType, _sut.MimeType);
 			Assert.AreEqual(_cmd.Data, _sut.Data);
 			Assert.AreEqual(_cmd.EigenaarId, _sut.EigenaarId);
-			Assert.AreEqual(_cmd.OrganisatieId, _sut.OrganisatieId);
 			Assert.AreEqual(_cmd.AanleveringId, _sut.AanleveringId);
 		}
 	}

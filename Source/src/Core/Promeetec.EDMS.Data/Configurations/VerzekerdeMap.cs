@@ -16,12 +16,11 @@ public class VerzekerdeMap : IEntityTypeConfiguration<Verzekerde>
         builder.HasIndex(e => e.AgbCodeVerwijzer);
         builder.HasIndex(e => e.Bsn);
 
-
-        builder.HasOne(e => e.Adres)
-            .WithMany()
-            .HasForeignKey(e => e.AdresId)
+        builder.HasMany(e => e.Adressen)
+            .WithOne(e => e.Verzekerde)
+            .HasForeignKey(e => e.VerzekerdeId)
             .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired(false);
+            .IsRequired();
 
         builder.HasMany(e => e.WeegMomenten)
             .WithOne(e => e.Verzekerde)
@@ -29,22 +28,28 @@ public class VerzekerdeMap : IEntityTypeConfiguration<Verzekerde>
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired(false);
 
-        builder.HasOne(e => e.Zorgverzekering)
-            .WithMany()
-            .HasForeignKey(e => e.ZorgverzekeringId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired(false);
-
-        builder.HasOne(e => e.Zorgprofiel)
-            .WithMany()
-            .HasForeignKey(e => e.ZorgprofielId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired(false);
-
-
-        builder.HasMany(e => e.GliBehandelplannen)
+        builder.HasMany(e => e.Zorgprofielen)
             .WithOne(e => e.Verzekerde)
             .HasForeignKey(e => e.VerzekerdeId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
+
+        builder.HasMany(e => e.Zorgverzekeringen)
+            .WithOne(e => e.Verzekerde)
+            .HasForeignKey(e => e.VerzekerdeId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired(false);
+
+        builder.HasMany(e => e.Users)
+            .WithOne(e => e.Verzekerde)
+            .HasForeignKey(e => e.UserId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
+
+        builder.HasMany(e => e.VerbruiksmiddelPrestaties)
+            .WithOne(e => e.Verzekerde)
+            .HasForeignKey(e => e.VerzekerdeId)
+            .OnDelete(DeleteBehavior.Restrict)
+            .IsRequired(false);
     }
 }

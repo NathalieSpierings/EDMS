@@ -11,17 +11,5 @@ public class VerzekerdeToZorgverzekeringMap : IEntityTypeConfiguration<Verzekerd
         builder.ToTable("VerzekerdeToZorgverzekering");
 
         builder.HasKey(e => new { e.VerzekerdeId, e.ZorgverzekeringId });
-
-        builder.HasOne(e => e.Verzekerde)
-            .WithMany(e => e.Zorgverzekeringen)
-            .HasForeignKey(e => e.VerzekerdeId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
-
-        builder.HasOne(e => e.Zorgverzekering)
-            .WithMany(e => e.Verzekerden)
-            .HasForeignKey(e => e.ZorgverzekeringId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
     }
 }

@@ -11,17 +11,5 @@ public class VerzekerdeToAdresMap : IEntityTypeConfiguration<VerzekerdeToAdres>
         builder.ToTable("VerzekerdeToAdres");
 
         builder.HasKey(e => new { e.VerzekerdeId, e.AdresId });
-
-        builder.HasOne(e => e.Adres)
-            .WithMany(e => e.Verzekerden)
-            .HasForeignKey(e => e.AdresId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
-
-        builder.HasOne(e => e.Verzekerde)
-            .WithMany(e => e.Adressen)
-            .HasForeignKey(e => e.VerzekerdeId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
     }
 }

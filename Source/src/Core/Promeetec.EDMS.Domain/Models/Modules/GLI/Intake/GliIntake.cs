@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
@@ -12,7 +11,6 @@ public class GliIntake : AggregateRoot
     /// <summary>
     /// The date of the intake.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
     public DateTime IntakeDatum { get; set; }
 
     /// <summary>
@@ -29,7 +27,6 @@ public class GliIntake : AggregateRoot
     /// <summary>
     /// The verwerkt op date.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? VerwerktOp { get; set; }
 
     /// <summary>

@@ -32,16 +32,14 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
         builder.HasOne(x => x.ZorggroepRelatie)
             .WithMany()
             .HasForeignKey(x => x.ZorggroepRelatieId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
-
 
         builder.HasOne(e => e.Contactpersoon)
             .WithMany()
             .HasForeignKey(x => x.ContactpersoonId)
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
-
 
         builder.HasOne(e => e.Adres)
             .WithMany()
@@ -52,10 +50,10 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
         builder.HasMany(e => e.Medewerkers)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
-        builder.HasMany(e => e.Bestanden)
+        builder.HasMany(e => e.Rapportages)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
             .OnDelete(DeleteBehavior.Cascade)
@@ -73,12 +71,6 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
 
-        builder.HasMany(c => c.Rapportages)
-            .WithOne(e => e.Organisatie)
-            .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired();
-
         builder.HasMany(e => e.GliIntakes)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
@@ -90,7 +82,5 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
             .HasForeignKey(e => e.OrganisatieId)
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
-
-
     }
 }

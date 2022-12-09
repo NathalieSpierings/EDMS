@@ -18,13 +18,13 @@ public class AanleverberichtMap : IEntityTypeConfiguration<Aanleverbericht>
         builder.HasOne(e => e.Afzender)
             .WithMany()
             .HasForeignKey(e => e.AfzenderId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
         builder.HasOne(e => e.Ontvanger)
             .WithMany()
             .HasForeignKey(e => e.OntvangerId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
     }
 }

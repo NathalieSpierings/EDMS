@@ -12,11 +12,5 @@ public class NotificatieMap : IEntityTypeConfiguration<Notificatie>
 
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id).HasDefaultValueSql("newid()");
-
-        builder.HasOne(e => e.Medewerker)
-            .WithMany()
-            .HasForeignKey(e => e.MedewerkerId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired();
     }
 }

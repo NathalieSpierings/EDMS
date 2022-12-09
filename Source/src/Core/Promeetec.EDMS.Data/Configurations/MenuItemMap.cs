@@ -16,8 +16,8 @@ public class MenuItemMap : IEntityTypeConfiguration<MenuItem>
         builder.HasOne(x => x.Menu)
             .WithMany(x => x.MenuItems)
             .HasForeignKey(x => x.MenuId)
+            .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
-
 
         builder.HasOne(x => x.Parent)
             .WithMany()
@@ -25,6 +25,10 @@ public class MenuItemMap : IEntityTypeConfiguration<MenuItem>
             .OnDelete(DeleteBehavior.NoAction)
             .IsRequired(false);
 
-        builder.HasMany(x => x.Roles);
+        builder.HasMany(e => e.Roles)
+            .WithOne(e => e.MenuItem)
+            .HasForeignKey(e => e.MenuItemId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
     }
 }

@@ -44,11 +44,13 @@ namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand
 				UserDisplayName = command.UserDisplayName,
 
 				Periode = aanleverbestand.Periode,
-				Zorgstraat = aanleverbestand.Zorgstraat.Naam,
-				Eigenaar = aanleverbestand.Eigenaar.Persoon.VolledigeNaam,
+				Zorgstraat = command.ZorgstraatNaam,
 				ZorgstraatId = aanleverbestand.ZorgstraatId,
-				EigenaarId = aanleverbestand.EigenaarId
-			};
+
+				EigenaarId = aanleverbestand.EigenaarId,
+                Eigenaar = command.EigenaarVolledigeNaam,
+
+            };
 
 			await _repository.UpdateAsync(aanleverbestand);
 			await _eventRepository.AddAsync(@event.ToDbEntity());

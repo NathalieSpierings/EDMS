@@ -26,7 +26,7 @@ public class Overigbestand : Bestand.Bestand
     /// Creates an aanleverbestand.
     /// </summary>
     /// <param name="cmd">The create aanleverbestand command.</param>
-    public Overigbestand(CreateOverigbestand cmd)
+    public Overigbestand(CreateOverigBestand cmd)
     {
         Id = cmd.Id;
 
@@ -35,7 +35,6 @@ public class Overigbestand : Bestand.Bestand
         Extension = cmd.Extension;
         MimeType = cmd.MimeType;
         Data = cmd.Data;
-        OrganisatieId = cmd.OrganisatieId;
         EigenaarId = cmd.EigenaarId;
         AangemaaktOp = DateTime.Now;
         AangemaaktDoor = cmd.UserId;

@@ -73,7 +73,7 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<MenuItemRole> MenuItemRoles { get; set; }
     public DbSet<Notificatie> Notificaties { get; set; }
     public DbSet<Organisatie> Organisaties { get; set; }
-    public DbSet<Overigbestand> Overigebestanden { get; set; }
+    public DbSet<Overigbestand> OverigeBestanden { get; set; }
     public DbSet<Rapportage> Rapportages { get; set; }
     public DbSet<Domain.Models.Admin.Settings.Settings> Settings { get; set; }
     public DbSet<UserProfile> UserProfiles { get; set; }

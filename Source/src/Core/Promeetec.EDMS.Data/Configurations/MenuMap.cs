@@ -12,5 +12,11 @@ public class MenuMap : IEntityTypeConfiguration<Menu>
 
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id).HasDefaultValueSql("newid()");
+
+        builder.HasMany(e => e.MenuItems)
+            .WithOne(e => e.Menu)
+            .HasForeignKey(e => e.MenuId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired(false);
     }
 }

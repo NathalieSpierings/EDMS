@@ -11,15 +11,5 @@ public class MenuItemRoleMap : IEntityTypeConfiguration<MenuItemRole>
         builder.ToTable("MenuItemRole");
 
         builder.HasKey(e => new { e.MenuItemId, e.RoleId });
-
-        builder.HasOne(e => e.Role)
-            .WithMany(e => e.MenuItems)
-            .HasForeignKey(e => e.RoleId)
-            .IsRequired();
-
-        builder.HasOne(e => e.MenuItem)
-            .WithMany(e => e.Roles)
-            .HasForeignKey(e => e.MenuItemId)
-            .IsRequired();
     }
 }

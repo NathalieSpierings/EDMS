@@ -19,13 +19,13 @@ public class AanleveringMap : IEntityTypeConfiguration<Aanlevering>
         builder.HasOne(e => e.Eigenaar)
             .WithMany()
             .HasForeignKey(e => e.EigenaarId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
         builder.HasOne(e => e.Behandelaar)
             .WithMany()
             .HasForeignKey(x => x.BehandelaarId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 
         builder.HasMany(e => e.Aanleverberichten)

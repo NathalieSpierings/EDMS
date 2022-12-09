@@ -41,15 +41,18 @@ namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand
 				Bestandsnaam = bestand.FileName,
 				Bestandsgrootte = bestand.FileSize,
 				Periode = bestand.Periode,
-				Zorgstraat = bestand.Zorgstraat.Naam,
-				Eigenaar = bestand.Eigenaar.Persoon.VolledigeNaam,
-				EiStandaardCode = bestand.EiStandaard.Code,
-				EiStandaardNaam = bestand.EiStandaard.Naam,
+
+                EiStandaardId = bestand.EiStandaardId,
+                EiStandaardCode = command.EiStandaardCode,
+				EiStandaardNaam = command.EiStandaardNaam,
+
 				ZorgstraatId = bestand.ZorgstraatId,
-				EiStandaardId = bestand.EiStandaardId,
-				AanleveringId = bestand.AanleveringId,
+                Zorgstraat = command.ZorgstraatNaam,
+
+                AanleveringId = bestand.AanleveringId,
 				EigenaarId = bestand.EigenaarId,
-			};
+                Eigenaar = command.EigenaarVolledigeNaam,
+            };
 
 			await _repository.AddAsync(bestand);
 			await _eventRepository.AddAsync(@event.ToDbEntity());

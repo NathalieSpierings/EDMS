@@ -27,7 +27,6 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
     public void Setup()
     {
         _context = new EDMSDbContext(Shared.CreateContextOptions());
-
         _repository = new OrganisatieRepository(_context);
         _eventRepository = new EventRepository(_context);
     }

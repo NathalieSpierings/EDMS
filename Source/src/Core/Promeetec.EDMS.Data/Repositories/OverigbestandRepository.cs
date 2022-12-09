@@ -6,9 +6,9 @@ using Promeetec.EDMS.Domain.Models.Identity.Role;
 
 namespace Promeetec.EDMS.Data.Repositories;
 
-public class OverigbestandRepository : Repository<Overigbestand>, IOverigbestandRepository
+public class OverigBestandRepository : Repository<Overigbestand>, IOverigBestandRepository
 {
-	public OverigbestandRepository(EDMSDbContext context)
+	public OverigBestandRepository(EDMSDbContext context)
 		: base(context)
 	{
 	}

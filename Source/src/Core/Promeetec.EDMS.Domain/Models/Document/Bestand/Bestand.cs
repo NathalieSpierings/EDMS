@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting;
 using Promeetec.EDMS.Domain.Models.Document.Bestand.Commands;
 
@@ -37,11 +36,12 @@ public class Bestand : AggregateRoot
 	/// </summary>
 	public byte[] Data { get; set; }
 
+    public BestandSoort BestandSoort { get; set; }
 
-	/// <summary>
-	/// The time stamp of when the record has been created.
-	/// </summary>
-	public DateTime AangemaaktOp { get; set; }
+    /// <summary>
+    /// The time stamp of when the record has been created.
+    /// </summary>
+    public DateTime AangemaaktOp { get; set; }
 
 	/// <summary>
 	/// Unique identiefier of the creator of the file.
@@ -64,13 +64,12 @@ public class Bestand : AggregateRoot
 	/// </summary>
 	public Guid? AangepastDoor { get; set; }
 
+
 	#region Navigation properties
 
 	public Guid EigenaarId { get; set; }
 	public virtual Medewerker Eigenaar { get; set; }
-
-	public Guid OrganisatieId { get; set; }
-	public virtual Organisatie Organisatie { get; set; }
+	
 	public virtual AanleverbestandSamenvatting Samenvatting { get; set; }
 
 	#endregion
@@ -97,7 +96,6 @@ public class Bestand : AggregateRoot
 		Extension = cmd.Extension;
 		MimeType = cmd.MimeType;
 		Data = cmd.Data;
-		OrganisatieId = cmd.OrganisatieId;
 		EigenaarId = cmd.EigenaarId;
 		AangemaaktOp = DateTime.Now;
 		AangemaaktDoor = cmd.UserId;

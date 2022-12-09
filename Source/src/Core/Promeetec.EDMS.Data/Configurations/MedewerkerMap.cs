@@ -43,10 +43,15 @@ public class MedewerkerMap : IEntityTypeConfiguration<Medewerker>
             });
 
         builder.HasOne(e => e.ActivationMailSendBy)
-           .WithMany()
-           .OnDelete(DeleteBehavior.NoAction)
-           .IsRequired(false);
+            .WithMany()
+            .OnDelete(DeleteBehavior.NoAction)
+            .IsRequired(false);
 
+        builder.HasMany(e => e.Verzekerden)
+            .WithOne(e => e.User)
+            .HasForeignKey(e => e.UserId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
 
         builder.HasOne(e => e.Adres)
             .WithMany()
@@ -54,13 +59,11 @@ public class MedewerkerMap : IEntityTypeConfiguration<Medewerker>
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired(false);
 
-
         builder.HasMany(e => e.Memos)
             .WithOne(e => e.Medewerker)
             .HasForeignKey(e => e.MedewerkerId)
             .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
-
 
         builder.HasMany(e => e.Claims)
             .WithOne(e => e.User)
@@ -80,6 +83,18 @@ public class MedewerkerMap : IEntityTypeConfiguration<Medewerker>
         builder.HasMany(e => e.UserRoles)
             .WithOne(e => e.User)
             .HasForeignKey(e => e.UserId)
+            .IsRequired();
+
+        builder.HasMany(e => e.Groups)
+            .WithOne(e => e.User)
+            .HasForeignKey(e => e.UserId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
+
+        builder.HasMany(e => e.Notificaties)
+            .WithOne(e => e.Medewerker)
+            .HasForeignKey(e => e.MedewerkerId)
+            .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
     }
 }

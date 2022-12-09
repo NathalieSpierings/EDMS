@@ -16,7 +16,13 @@ public class AdresMap : IEntityTypeConfiguration<Adres>
         builder.HasOne(e => e.Land)
             .WithMany()
             .HasForeignKey(e => e.LandId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
+
+        builder.HasMany(e => e.Verzekerden)
+            .WithOne(e => e.Adres)
+            .HasForeignKey(e => e.AdresId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
     }
 }

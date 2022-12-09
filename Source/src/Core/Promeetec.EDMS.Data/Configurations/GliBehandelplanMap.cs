@@ -16,27 +16,13 @@ public class GliBehandelplanMap : IEntityTypeConfiguration<GliBehandelplan>
         builder.HasOne(e => e.Intake)
             .WithMany(e => e.Behandelplannen)
             .HasForeignKey(e => e.IntakeId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
-
-        builder.HasOne(e => e.Behandelaar)
-            .WithMany()
-            .HasForeignKey(e => e.BehandelaarId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired();
-
 
         builder.HasOne(e => e.RedenEindeZorg)
             .WithMany()
             .HasForeignKey(e => e.RedenEindeZorgId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
-
-
-        builder.HasOne(e => e.Intake)
-            .WithMany(e => e.Behandelplannen)
-            .HasForeignKey(e => e.IntakeId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .IsRequired();
     }
 }

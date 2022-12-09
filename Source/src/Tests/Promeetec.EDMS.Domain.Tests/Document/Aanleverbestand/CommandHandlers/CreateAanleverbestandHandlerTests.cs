@@ -32,7 +32,7 @@ public class CreateAanleverbestandHandlerTests : TestFixtureBase
 
 
 	[Test]
-	public async Task Should_create_new_country_and_add_event()
+	public async Task Should_create_new_aanleverbestand_and_add_event()
 	{
 		var command = Fixture.Create<CreateAanleverbestand>();
 

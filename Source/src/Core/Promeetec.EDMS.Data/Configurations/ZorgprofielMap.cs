@@ -14,5 +14,11 @@ public class ZorgprofielMap : IEntityTypeConfiguration<Zorgprofiel>
         builder.Property(e => e.Id).HasDefaultValueSql("newid()");
 
         builder.HasIndex(e => e.ProfielCode);
+
+        builder.HasMany(e => e.Verzekerden)
+            .WithOne(e => e.Zorgprofiel)
+            .HasForeignKey(e => e.ZorgprofielId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
     }
 }

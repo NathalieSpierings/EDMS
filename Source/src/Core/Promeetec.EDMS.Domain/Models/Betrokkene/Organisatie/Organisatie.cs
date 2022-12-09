@@ -137,7 +137,6 @@ public class Organisatie : AggregateRoot
     public virtual ICollection<Medewerker.Medewerker> Medewerkers { get; set; }
     public virtual ICollection<Aanlevering> Aanleveringen { get; set; }
     public virtual ICollection<Haarwerk> HaarwerkPrestaties { get; set; }
-    public virtual ICollection<Bestand> Bestanden { get; set; }
     public virtual ICollection<Rapportage> Rapportages { get; set; }
     public virtual ICollection<GliIntake> GliIntakes { get; set; }
     public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }

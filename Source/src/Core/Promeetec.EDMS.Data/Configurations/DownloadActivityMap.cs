@@ -16,13 +16,13 @@ public class DownloadActivityMap : IEntityTypeConfiguration<DownloadActivity>
         builder.HasOne(e => e.Medewerker)
             .WithMany()
             .HasForeignKey(e => e.MedewerkerId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
         builder.HasOne(e => e.Bestand)
             .WithMany()
             .HasForeignKey(e => e.BestandId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
     }
 }

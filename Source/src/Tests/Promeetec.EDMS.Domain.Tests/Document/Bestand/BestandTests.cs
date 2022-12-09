@@ -29,7 +29,6 @@ namespace Promeetec.EDMS.Domain.Tests.Document.Bestand
 			Assert.AreEqual(_cmd.MimeType, _sut.MimeType);
 			Assert.AreEqual(_cmd.Data, _sut.Data);
 			Assert.AreEqual(_cmd.EigenaarId, _sut.EigenaarId);
-			Assert.AreEqual(_cmd.OrganisatieId, _sut.OrganisatieId);
 		}
 
 

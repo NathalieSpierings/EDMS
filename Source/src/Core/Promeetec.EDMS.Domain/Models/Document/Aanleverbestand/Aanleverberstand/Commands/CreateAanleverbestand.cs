@@ -10,9 +10,17 @@ namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand
         public string MimeType { get; set; }
         public byte[] Data { get; set; }
         public string Periode { get; set; }
-        public Guid? ZorgstraatId { get; set; }
-        public Guid? EiStandaardId { get; set; }
         public Guid? AanleveringId { get; set; }
+
         public Guid EigenaarId { get; set; }
+        public string EigenaarVolledigeNaam { get; set; }
+
+        public Guid? EiStandaardId { get; set; }
+        public string EiStandaardCode { get; set; }
+        public string EiStandaardNaam { get; set; }
+
+        public Guid? ZorgstraatId { get; set; }
+        public string ZorgstraatNaam { get; set; }
+
     }
 }

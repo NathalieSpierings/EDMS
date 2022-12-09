@@ -16,7 +16,7 @@ namespace Promeetec.EDMS.Data.Configurations
             builder.HasOne(e => e.Eigenaar)
                 .WithMany()
                 .HasForeignKey(e => e.EigenaarId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(e => e.Samenvatting)
                 .WithOne(e => e.Bestand)

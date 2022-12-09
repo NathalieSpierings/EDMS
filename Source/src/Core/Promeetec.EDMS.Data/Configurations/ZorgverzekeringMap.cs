@@ -19,7 +19,13 @@ public class ZorgverzekeringMap : IEntityTypeConfiguration<Zorgverzekering>
         builder.HasOne(e => e.Verzekeraar)
             .WithMany()
             .HasForeignKey(e => e.VerzekeraarId)
-            .OnDelete(DeleteBehavior.NoAction)
+            .OnDelete(DeleteBehavior.Restrict)
+            .IsRequired();
+
+        builder.HasMany(e => e.Verzekerden)
+            .WithOne(e => e.Zorgverzekering)
+            .HasForeignKey(e => e.ZorgverzekeringId)
+            .OnDelete(DeleteBehavior.Cascade)
             .IsRequired();
     }
 }

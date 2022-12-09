@@ -11,15 +11,5 @@ public class GroupRoleMap : IEntityTypeConfiguration<GroupRole>
         builder.ToTable("GroupRole");
 
         builder.HasKey(e => new { e.GroupId, e.RoleId });
-
-        builder.HasOne(e => e.Role)
-            .WithMany(e => e.Groups)
-            .HasForeignKey(e => e.RoleId)
-            .IsRequired();
-
-        builder.HasOne(e => e.Group)
-            .WithMany(e => e.Roles)
-            .HasForeignKey(e => e.GroupId)
-            .IsRequired();
     }
 }

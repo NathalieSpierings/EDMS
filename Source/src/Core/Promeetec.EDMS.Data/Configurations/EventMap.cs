@@ -12,6 +12,6 @@ public class EventMap : IEntityTypeConfiguration<Event>
 
         builder.HasOne(x => x.User)
             .WithMany(x => x.Events)
-            .OnDelete(DeleteBehavior.NoAction);
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

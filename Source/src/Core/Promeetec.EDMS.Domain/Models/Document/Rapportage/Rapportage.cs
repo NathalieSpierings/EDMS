@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Rapportage;
@@ -16,6 +17,13 @@ public class Rapportage : Bestand.Bestand
 	/// </summary>
 	public RapportageSoort RapportageSoort { get; set; }
 
+
+    #region Navigation properties
+
+    public Guid OrganisatieId { get; set; }
+	public virtual Organisatie Organisatie { get; set; }
+
+	#endregion
 
 	/// <summary>
 	/// Creates an empty rapportage file.

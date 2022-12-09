@@ -8,21 +8,21 @@ using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand.Handlers
 {
-	public class CreateOverigbestandHandler : ICommandHandler<CreateOverigbestand>
+	public class CreateOverigBestandHandler : ICommandHandler<CreateOverigBestand>
 	{
-		private readonly IOverigbestandRepository _repository;
+		private readonly IOverigBestandRepository _repository;
 		private readonly IEventRepository _eventRepository;
-		private readonly IValidator<CreateOverigbestand> _validator;
+		private readonly IValidator<CreateOverigBestand> _validator;
 
 
-		public CreateOverigbestandHandler(IOverigbestandRepository repository, IEventRepository eventRepository, IValidator<CreateOverigbestand> validator)
+		public CreateOverigBestandHandler(IOverigBestandRepository repository, IEventRepository eventRepository, IValidator<CreateOverigBestand> validator)
 		{
 			_repository = repository;
 			_eventRepository = eventRepository;
 			_validator = validator;
 		}
 
-		public async Task<IEnumerable<IEvent>> Handle(CreateOverigbestand command)
+		public async Task<IEnumerable<IEvent>> Handle(CreateOverigBestand command)
 		{
 			await _validator.ValidateCommand(command);
 
@@ -38,11 +38,13 @@ namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand.Handlers
 
 				Bestandsnaam = bestand.FileName,
 				Bestandsgrootte = bestand.FileSize,
-				Eigenaar = bestand.Eigenaar.Persoon.VolledigeNaam,
-				ReferentiePromeetec = bestand.Aanlevering.ReferentiePromeetec,
 				AanleveringId = bestand.AanleveringId,
-				EigenaarId = bestand.EigenaarId,
-			};
+                ReferentiePromeetec = command.ReferentiePromeetec,
+
+                EigenaarId = bestand.EigenaarId,
+                Eigenaar = command.EigenaarVolledigeNaam
+
+            };
 
 			await _repository.AddAsync(bestand);
 			await _eventRepository.AddAsync(@event.ToDbEntity());

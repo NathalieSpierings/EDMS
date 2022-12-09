@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using Promeetec.EDMS.Domain.Extensions;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
 using Promeetec.EDMS.Domain.Models.Identity;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
@@ -272,6 +273,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     public virtual ICollection<UserToken> Tokens { get; set; } = new List<UserToken>();
     public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
     public virtual ICollection<Event.Event> Events { get; set; } = new List<Event.Event>();
+    public virtual ICollection<Notificatie> Notificaties { get; set; } = new List<Notificatie>();
 
 
     #endregion

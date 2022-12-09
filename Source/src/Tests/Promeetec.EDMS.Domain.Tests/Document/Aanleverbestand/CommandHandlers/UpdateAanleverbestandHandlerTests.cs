@@ -31,7 +31,7 @@ public class UpdateAanleverbestandHandlerTests : TestFixtureBase
 	}
 
 	[Test]
-	public async Task Should_update_country_and_add_event()
+	public async Task Should_update_aanleverbestand_and_add_event()
 	{
 		var cmd = Fixture.Create<CreateAanleverbestand>();
 
@@ -42,7 +42,7 @@ public class UpdateAanleverbestandHandlerTests : TestFixtureBase
 		var command = Fixture.Build<UpdateAanleverbestand>()
 			.With(x => x.Id, bestand.Id)
 			.With(x => x.UserId, Guid.NewGuid())
-			.With(x => x.OrganisatieId, PromeetecId)
+            .With(x => x.OrganisatieId, cmd.OrganisatieId)
 			.With(x => x.UserDisplayName, "Ad de Admin")
 			.Create();
 

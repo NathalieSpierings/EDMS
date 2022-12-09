@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using AutoFixture;
+using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
+using Promeetec.EDMS.Domain.Models.Changelog.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
@@ -9,26 +11,19 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
     {
         private EDMS.Domain.Models.Betrokkene.Land.Land _sut;
         private CreateLand _cmd;
-        private Guid _createLandId;
+        private Guid _createId;
         [SetUp]
         public void Setup()
         {
-            _createLandId = Guid.NewGuid();
 
-            _cmd = new CreateLand
-            {
-                Id = _createLandId,
-                CultureCode = "nl-NL",
-                NativeName = "Nederland"
-            };
-
+            _cmd = Fixture.Build<CreateLand>().With(x => x.Id, _createId).Create();
             _sut = new Models.Betrokkene.Land.Land(_cmd);
         }
 
         [Test]
         public void New()
         {
-            Assert.AreEqual(_createLandId, _sut.Id);
+            Assert.AreEqual(_createId, _sut.Id);
             Assert.AreEqual(Status.Actief, _sut.Status);
             Assert.AreEqual(_cmd.CultureCode, _sut.CultureCode);
             Assert.AreEqual(_cmd.NativeName, _sut.NativeName);
