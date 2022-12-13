@@ -11,7 +11,7 @@
         /// <param name="geboortedatum">The geboortedatum.</param>
         /// <param name="bsn">The BSN.</param>
         /// <returns></returns>
-        Task<Verzekerde> GetPossibleExisitingVerzekerde(Guid adresboekId, string voorletters, string achternaam, DateTime geboortedatum, string bsn);
+        Task<Verzekerde?> GetPossibleExisitingVerzekerde(Guid adresboekId, string voorletters, string achternaam, DateTime geboortedatum, string bsn);
 
 
         /// <summary>

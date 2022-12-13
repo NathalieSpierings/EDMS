@@ -13,13 +13,13 @@ public class AanleverbestandRepository : Repository<Aanleverbestand>, IAanleverb
 	{
 	}
 
-	public Aanleverbestand GetAanleverbestandById(Guid id)
+	public Aanleverbestand? GetAanleverbestandById(Guid id)
 	{
 		var dbEntity = Query().FirstOrDefault(x => x.Id == id);
 		return dbEntity;
 	}
 
-	public async Task<Aanleverbestand> GetAanleverbestandByIdAsync(Guid id)
+	public async Task<Aanleverbestand?> GetAanleverbestandByIdAsync(Guid id)
 	{
 		var dbQuery = await Query().Include(x => x.Samenvatting).FirstOrDefaultAsync(x => x.Id == id);
 		return dbQuery;

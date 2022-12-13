@@ -11,7 +11,7 @@ public class RapportageRepository : Repository<Rapportage>, IRapportageRepositor
 	{
 	}
 
-	public Task<Rapportage> GetRapportageByIdsAsync(Guid id, Guid organisatieId)
+	public Task<Rapportage?> GetRapportageByIdsAsync(Guid id, Guid organisatieId)
 	{
 		var dbQuery = Query()
 			.Include(i => i.Organisatie)

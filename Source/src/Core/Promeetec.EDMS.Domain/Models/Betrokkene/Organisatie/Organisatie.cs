@@ -70,15 +70,7 @@ public class Organisatie : AggregateRoot
     /// Value indicating whether the organisatie is a zorgroep or not.
     /// </summary>
     public bool Zorggroep { get; set; }
-
-
-    /// <summary>
-    /// The logo of for the organisatie.
-    /// </summary>
-    [MaxLength, Column(TypeName = "varbinary(max)")]
-    public byte[] Logo { get; set; }
-
-
+    
     /// <summary>
     /// The status of the organisatie.
     /// </summary>
@@ -168,10 +160,7 @@ public class Organisatie : AggregateRoot
         Website = cmd.Website;
         AgbCodeOnderneming = cmd.AgbCodeOnderneming;
         Zorggroep = cmd.Zorggroep;
-        Logo = cmd.Logo;
-
         Settings = cmd.Settings;
-
         ZorggroepRelatieId = cmd.ZorggroepRelatieId;
         ContactpersoonId = cmd.ContactpersoonId;
         AdresId = cmd.AdresId;
@@ -191,10 +180,7 @@ public class Organisatie : AggregateRoot
         Website = cmd.Website;
         AgbCodeOnderneming = cmd.AgbCodeOnderneming;
         Zorggroep = cmd.Zorggroep;
-        Logo = cmd.Logo;
-
         Settings = cmd.Settings;
-
         ZorggroepRelatieId = cmd.ZorggroepRelatieId;
         ContactpersoonId = cmd.ContactpersoonId;
         AdresId = cmd.AdresId;

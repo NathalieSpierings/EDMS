@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Menu;
+using Promeetec.EDMS.Domain.Models.Menu.Menu;
 
 namespace Promeetec.EDMS.Data.Configurations;
 

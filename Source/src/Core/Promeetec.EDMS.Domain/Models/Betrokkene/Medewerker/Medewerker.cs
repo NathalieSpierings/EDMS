@@ -66,11 +66,11 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     public string Functie { get; set; }
 
 
-    /// <summary>
-    /// The avatar  for the medewerker.
-    /// </summary>
-    [MaxLength, Column(TypeName = "varbinary(max)")]
-    public byte[] Avatar { get; set; }
+    ///// <summary>
+    ///// The avatar  for the medewerker.
+    ///// </summary>
+    //[MaxLength, Column(TypeName = "varbinary(max)")]
+    //public byte[] Avatar { get; set; }
 
 
     /// <summary>
@@ -315,7 +315,6 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         AgbCodeZorgverlener = cmd.AgbCodeZorgverlener;
         AgbCodeOnderneming = cmd.AgbCodeOnderneming;
         IONToestemmingsverklaringActivatieLink = cmd.IonToestemmingsverklaringActivatieLink;
-        Avatar = cmd.Avatar;
         AccountState = cmd.AccountState;
         UserName = cmd.UserName;
         TempCode = cmd.TempCode;
@@ -356,7 +355,6 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         IONToestemmingsverklaringActivatieLink = cmd.IonToestemmingsverklaringActivatieLink;
         AgbCodeZorgverlener = cmd.AgbCodeZorgverlener;
         AgbCodeOnderneming = cmd.AgbCodeOnderneming;
-        Avatar = cmd.Avatar;
         Adres = cmd.Adres;
     }
 

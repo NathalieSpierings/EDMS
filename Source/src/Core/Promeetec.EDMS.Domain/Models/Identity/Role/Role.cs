@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
-using Promeetec.EDMS.Domain.Models.Menu;
+using Promeetec.EDMS.Domain.Models.Identity.Role.Commands;
+using Promeetec.EDMS.Domain.Models.Menu.MenuItem;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Models.Identity.Role;
@@ -36,12 +37,46 @@ public class Role : IdentityRole<Guid>, IAggregateRoot
         Id = Guid.NewGuid();
     }
 
+    /// <summary>
+    /// Creates an empty role.
+    /// </summary>
     public Role(Guid id) : this()
     {
         if (id == Guid.Empty)
             id = Guid.NewGuid();
 
         Id = id;
+    }
+
+    /// <summary>
+    /// Creates a role.
+    /// </summary>
+    /// <param name="cmd">The create role command.</param>
+    public Role(CreateRole cmd)
+    {
+        Id = cmd.Id;
+
+        Name = cmd.Name;
+        Description = cmd.Description;
+        Status = Status.Actief;
+    }
+
+    /// <summary>
+    /// Update the details of the role.
+    /// </summary>
+    /// <param name="cmd">The update role command.</param>
+    public void Update(UpdateRole cmd)
+    {
+        Name = cmd.Name;
+        Description = cmd.Description;
+    }
+
+    /// <summary>
+    /// Deletes a role.
+    /// </summary>
+    public void Delete()
+    {
+        Status = Status.Verwijderd;
     }
 
     #region AggregateRoot implementations

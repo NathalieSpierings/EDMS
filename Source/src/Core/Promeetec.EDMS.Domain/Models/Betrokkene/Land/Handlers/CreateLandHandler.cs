@@ -15,7 +15,9 @@ public class CreateLandHandler : ICommandHandler<CreateLand>
     private readonly IEventRepository _eventRepository;
     private readonly IValidator<CreateLand> _validator;
 
-    public CreateLandHandler(ILandRepository repository, IEventRepository eventRepository, IValidator<CreateLand> validator)
+    public CreateLandHandler(ILandRepository repository, 
+        IEventRepository eventRepository, 
+        IValidator<CreateLand> validator)
     {
         _repository = repository;
         _eventRepository = eventRepository;
@@ -26,11 +28,11 @@ public class CreateLandHandler : ICommandHandler<CreateLand>
     {
         await _validator.ValidateCommand(command);
 
-        var country = new Land(command);
+        var land = new Land(command);
 
         var @event = new LandAangemaakt
         {
-            TargetId = country.Id,
+            TargetId = land.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
@@ -41,7 +43,7 @@ public class CreateLandHandler : ICommandHandler<CreateLand>
             NativeName = command.NativeName
         };
 
-        await _repository.AddAsync(country);
+        await _repository.AddAsync(land);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };
