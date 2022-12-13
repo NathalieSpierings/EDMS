@@ -32,17 +32,7 @@ public class SuspendZorgstraatHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_suspend_Zorgstraat_and_add_event()
     {
-        var cmd = new CreateZorgstraat
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
-
-            Id = Guid.NewGuid(),
-            OrganisatieId = Guid.NewGuid(),
-
-            Naam = "My zorgstraat"
-        };
-
+        var cmd = Fixture.Create<CreateZorgstraat>();
         var Zorgstraat = new Models.Admin.Zorgstraat.Zorgstraat(cmd);
         _context.Zorgstraten.Add(Zorgstraat);
         await _context.SaveChangesAsync();

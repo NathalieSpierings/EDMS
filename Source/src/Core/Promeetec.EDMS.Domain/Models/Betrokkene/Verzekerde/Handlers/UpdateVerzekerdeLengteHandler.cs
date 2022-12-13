@@ -21,7 +21,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
             if (verzekerde == null)
                 throw new DataException($"Verzekerde met Id {command.Id} niet gevonden.");
 
-            verzekerde.Update(command.Lengte);
+            verzekerde.UpdateLength(command.Lengte);
             await _repository.UpdateAsync(verzekerde);
 
             return new IEvent[] { };

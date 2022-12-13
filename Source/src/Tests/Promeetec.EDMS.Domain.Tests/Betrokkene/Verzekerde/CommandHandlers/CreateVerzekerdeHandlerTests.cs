@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using AutoFixture;
+using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Moq;
@@ -6,7 +7,6 @@ using NUnit.Framework;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers;
@@ -32,76 +32,32 @@ public class CreateVerzekerdeHandlerTests : TestFixtureBase
         _eventRepository = new EventRepository(_context);
     }
 
-    
-
 
     [Test]
     public async Task Should_create_new_verzekerde_and_add_event()
     {
+        var command = Fixture.Build<CreateVerzekerde>()
+                .Without(x => x.Adres)
+                .With(x => x.Adres, Fixture.Build<Adres>()
+                    .Without(x => x.Verzekerden)
+                    .Without(x => x.Land)
+                    .With(x => x.LandId, Guid.NewGuid())
+                    .Create())
+                .With(x => x.Zorgprofiel, Fixture.Build<Zorgprofiel>()
+                    .Without(x => x.Verzekerden)
+                    .Create())
+                .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                    .Without(x => x.Verzekerden)
+                    .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                        .With(x => x.Id, Guid.NewGuid())
+                        .Create())
+                    .Create())
+                .Create();
 
-
-
-        var command = new CreateVerzekerde
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
-
-            Id = Guid.NewGuid(),
-            OrganisatieId = Guid.NewGuid(),
-            AdresboekId = Guid.NewGuid(),
-            Bsn = "054243579",
-            Persoon = new Persoon
-            {
-                Geboortedatum = new DateTime(1975, 07, 22),
-                Geslacht = Geslacht.Vrouwelijk,
-                Voorletters = "J",
-                Voornaam = "Joan",
-                Achternaam = "Do",
-                TelefoonZakelijk = "1234567897",
-                TelefoonPrive = "7894561236",
-                Email = "joan.do@test.com",
-            },
-            Adres = new Adres
-            {
-                Straat = "Koeveringsedijk",
-                Huisnummer = "5",
-                Huisnummertoevoeging = "A",
-                Postcode = "5491SB",
-                Woonplaats = "Sint Oedenrode",
-                LandNaam = "NEDERLAND"
-            },
-            Zorgverzekering = new Zorgverzekering
-            {
-                Id = Guid.NewGuid(),
-                PatientNummer = "154545",
-                VerzekerdeNummer = "987965",
-                VerzekeraarId = Guid.NewGuid(),
-                VerzekerdOp = DateTime.Now.AddYears(-10),
-                Verzekeraar = new Models.Betrokkene.Verzekeraar.Verzekeraar
-                {
-                    Id = Guid.NewGuid(),
-                    Uzovi = 5421,
-                    Naam = "Unilever",
-                    Actief = true
-                }
-            },
-            Zorgprofiel = new Zorgprofiel
-            {
-                ProfielCode = ProfielCode.ProfielCode4,
-                ProfielStartdatum = DateTime.Now.AddYears(-2),
-                ProfielEinddatum = null,
-                TimeStamp = DateTime.Now
-            },
-            AgbCodeVerwijzer = "87654321",
-            NaamVerwijzer = "Henk de Vries",
-            Verwijsdatum = DateTime.Now.AddYears(-1)
-        };
-        
         var validator = new Mock<IValidator<CreateVerzekerde>>();
         validator.Setup(x => x.ValidateAsync(command, new CancellationToken())).ReturnsAsync(new ValidationResult());
 
         var sut = new CreateVerzekerdeHandler(_repository, _eventRepository, validator.Object);
-
         await sut.Handle(command);
 
         var dbEntity = await _context.Verzekerden.FirstOrDefaultAsync(x => x.Id == command.Id);

@@ -37,27 +37,16 @@ public class DeleteLandHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public async Task Should_delete_country_and_add_event()
+    public async Task Should_delete_land_and_add_event()
     {
-        var cmd = new CreateLand
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
-
-            Id = Guid.NewGuid(),
-            OrganisatieId = PromeetecId,
-
-            CultureCode = "nl-NL",
-            NativeName = "Nederland"
-        };
-
-        var country = new Models.Betrokkene.Land.Land(cmd);
-        _context.Landen.Add(country);
+        var cmd = Fixture.Create<CreateLand>();
+        var land = new Models.Betrokkene.Land.Land(cmd);
+        _context.Landen.Add(land);
         await _context.SaveChangesAsync();
 
 
         var command = Fixture.Build<DeleteLand>()
-            .With(x => x.Id, country.Id)
+            .With(x => x.Id, land.Id)
             .With(x => x.OrganisatieId, PromeetecId)
             .Create();
 

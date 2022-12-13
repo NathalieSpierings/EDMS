@@ -39,17 +39,7 @@ public class DeleteZorgstraatHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_delete_zorgstraat_and_add_event()
     {
-        var cmd = new CreateZorgstraat
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
-
-            Id = Guid.NewGuid(),
-            OrganisatieId = PromeetecId,
-
-            Naam = "Test zorgstraat"
-        };
-
+        var cmd = Fixture.Create<CreateZorgstraat>();
         var Zorgstraat = new Models.Admin.Zorgstraat.Zorgstraat(cmd);
         _context.Zorgstraten.Add(Zorgstraat);
         await _context.SaveChangesAsync();

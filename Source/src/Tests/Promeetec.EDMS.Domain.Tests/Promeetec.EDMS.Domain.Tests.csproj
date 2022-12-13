@@ -43,14 +43,12 @@
 
   <ItemGroup>
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\AssingVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\CreateVerzekerdeHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\DeleteVerzekerdeHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\ReinstateVerzekerdeHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\ReinstateVerzekerdeMetZorgprofielHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\SuspendVerzekerdeHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\SuspendVerzekerdeMetZorgprofielHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\UndeleteVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\UpdateVerzekerdeHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\UpdateVerzekerdeLengteHandlerTests.cs" />
   </ItemGroup>
 
@@ -85,6 +83,7 @@
     <Compile Include="Document\Bestand\CommandHandlers\UpdateBestandHandlerTests.cs" />
     <Compile Include="Document\Bestand\CommandHandlers\UpdateEigenaarBestandHandlerTests.cs" />
     <Compile Include="Document\Overigbestand\CommandHandlers\CreateOverigBestandHandlerTests.cs" />
+    <Compile Include="Document\Rapportage\CommandHandlers\CreateRapportageHandlerTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -100,10 +99,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj" />
     <ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Betrokkene\Verzekerde\CommandHandlers\" />
   </ItemGroup>
 
 </Project>

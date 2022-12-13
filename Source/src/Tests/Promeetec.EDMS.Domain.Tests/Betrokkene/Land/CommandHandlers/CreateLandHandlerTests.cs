@@ -32,15 +32,13 @@ public class CreateLandHandlerTests : TestFixtureBase
 
 
     [Test]
-    public async Task Should_create_new_country_and_add_event()
+    public async Task Should_create_new_land_and_add_event()
     {
         var command = Fixture.Create<CreateLand>();
-
         var validator = new Mock<IValidator<CreateLand>>();
         validator.Setup(x => x.ValidateAsync(command, new CancellationToken())).ReturnsAsync(new ValidationResult());
 
         var sut = new CreateLandHandler(_repository, _eventRepository, validator.Object);
-
         await sut.Handle(command);
 
         var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == command.Id);

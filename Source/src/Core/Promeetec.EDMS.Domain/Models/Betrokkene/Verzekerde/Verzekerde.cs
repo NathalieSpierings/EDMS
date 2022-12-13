@@ -78,10 +78,10 @@ public class Verzekerde : AggregateRoot
 
 
     #region Navigation properties
-    
+
     public Guid AdresboekId { get; set; }
     public virtual Adresboek Adresboek { get; set; }
-    
+
     public Guid? AdresId { get; set; }
     public virtual Adres.Adres Adres { get; set; }
 
@@ -91,14 +91,14 @@ public class Verzekerde : AggregateRoot
     public Guid? ZorgverzekeringId { get; set; }
     public virtual Zorgverzekering.Zorgverzekering Zorgverzekering { get; set; }
 
-    public virtual ICollection<VerzekerdeToAdres> Adressen { get; set; }
-    public virtual ICollection<VerzekerdeToZorgprofiel> Zorgprofielen { get; set; }
-    public virtual ICollection<VerzekerdeToUser> Users { get; set; }
-    public virtual ICollection<GliBehandelplan> GliBehandelplannen { get; set; }
-    public virtual ICollection<GliIntake> GliIntakes { get; set; }
-    public virtual ICollection<VerzekerdeToZorgverzekering> Zorgverzekeringen { get; set; }
-    public virtual ICollection<Weegmoment.Weegmoment> WeegMomenten { get; set; }
-    public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
+    public virtual ICollection<VerzekerdeToAdres> Adressen { get; set; } = new List<VerzekerdeToAdres>();
+    public virtual ICollection<VerzekerdeToZorgprofiel> Zorgprofielen { get; set; } = new List<VerzekerdeToZorgprofiel>();
+    public virtual ICollection<VerzekerdeToUser> Users { get; set; } = new List<VerzekerdeToUser>();
+    public virtual ICollection<GliBehandelplan> GliBehandelplannen { get; set; } = new List<GliBehandelplan>();
+    public virtual ICollection<GliIntake> GliIntakes { get; set; } = new List<GliIntake>();
+    public virtual ICollection<VerzekerdeToZorgverzekering> Zorgverzekeringen { get; set; } = new List<VerzekerdeToZorgverzekering>();
+    public virtual ICollection<Weegmoment.Weegmoment> WeegMomenten { get; set; } = new List<Weegmoment.Weegmoment>();
+    public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; } = new List<VerbruiksmiddelPrestatie>();
 
     #endregion
 
@@ -122,24 +122,24 @@ public class Verzekerde : AggregateRoot
         AdresboekId = cmd.AdresboekId;
         Status = Status.Actief;
         Shared = false;
-        
+
         Bsn = cmd.Bsn;
+        Lengte = cmd.Lengte;
         cmd.Persoon.Voorletters = PersoonExtensions.VerwijderPunten(cmd.Persoon.Voorletters);
         cmd.Persoon.VolledigeNaam = PersoonExtensions.SetVolledigeNaam(cmd.Persoon.Voorletters, cmd.Persoon.Tussenvoegsel, cmd.Persoon.Achternaam, cmd.Persoon.Voornaam);
         Persoon = cmd.Persoon;
-        Adres = cmd.Adres;
 
-        cmd.Zorgverzekering = cmd.Zorgverzekering;
-        cmd.Zorgprofiel = cmd.Zorgprofiel;
+        Adres = cmd.Adres;
+        Zorgverzekering = cmd.Zorgverzekering;
+        Zorgprofiel = cmd.Zorgprofiel;
 
         AgbCodeVerwijzer = cmd.AgbCodeVerwijzer;
         NaamVerwijzer = cmd.NaamVerwijzer;
         Verwijsdatum = cmd.Verwijsdatum;
-        
+
         TimeStamp = DateTime.Now;
         AangemaaktDoor = cmd.UserDisplayName;
         AangemaaktDoorId = cmd.UserId;
-
     }
 
 
@@ -230,7 +230,7 @@ public class Verzekerde : AggregateRoot
     /// <summary>
     /// Updates the lenght of the verzekerde.
     /// </summary>
-    public void Update(double lengte)
+    public void UpdateLength(double lengte)
     {
         Lengte = lengte;
     }

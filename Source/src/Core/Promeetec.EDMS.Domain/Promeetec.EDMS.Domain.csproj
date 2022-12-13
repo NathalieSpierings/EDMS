@@ -257,7 +257,6 @@
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\SuspendVerzekerdeMetZorgprofiel.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\CreateVerzekerde.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\AssingVerzekerde.cs" />
-    <Compile Include="Models\Betrokkene\Verzekerde\Commands\UndeleteVerzekerde.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\UpdateVerzekerde.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\UpdateVerzekerdeLengte.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\DeleteVerzekerde.cs" />
@@ -271,7 +270,6 @@
     <Compile Include="Models\Betrokkene\Verzekerde\Handlers\ReinstateVerzekerdeMetZorgprofielHandler.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Handlers\SuspendVerzekerdeHandler.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Handlers\SuspendVerzekerdeMetZorgprofielHandler.cs" />
-    <Compile Include="Models\Betrokkene\Verzekerde\Handlers\UndeleteVerzekerdeHandler.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Handlers\UpdateVerzekerdeHandler.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Handlers\UpdateVerzekerdeLengteHandler.cs" />
     <Compile Include="Models\Document\Aanleverbestand\Aanleverberstand\Handlers\CheckAanleverbestandHandler.cs" />

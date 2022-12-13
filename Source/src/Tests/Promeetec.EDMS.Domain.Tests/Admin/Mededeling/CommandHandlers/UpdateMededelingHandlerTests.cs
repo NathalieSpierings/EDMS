@@ -27,17 +27,7 @@ public class UpdateMededelingHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_update_mededeling()
     {
-        var cmd = new CreateMededeling
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
-
-            Id = Guid.NewGuid(),
-            OrganisatieId = PromeetecId,
-
-            Content = "This is my content"
-        };
-
+        var cmd = Fixture.Create<CreateMededeling>();
         var mededeling = new Models.Admin.Mededeling.Mededeling(cmd);
         _context.Mededelingen.Add(mededeling);
         await _context.SaveChangesAsync();
@@ -47,10 +37,7 @@ public class UpdateMededelingHandlerTests : TestFixtureBase
             .With(x => x.UserId, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .With(x => x.UserDisplayName, "Ad de Admin")
-            .With(x => x.Content, "My new content")
             .Create();
-
-
 
         var sut = new UpdateMededelingHandler(_repository);
         await sut.Handle(command);

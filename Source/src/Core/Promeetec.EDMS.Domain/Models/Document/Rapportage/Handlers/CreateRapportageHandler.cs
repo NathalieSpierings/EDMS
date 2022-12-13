@@ -27,7 +27,7 @@ namespace Promeetec.EDMS.Domain.Models.Document.Rapportage.Handlers
 			await _validator.ValidateCommand(command);
 
 
-			var bestand = new Models.Document.Rapportage.Rapportage(command);
+			var bestand = new Rapportage(command);
 
 			var @event = new RapportageAangemaakt
 			{
@@ -40,10 +40,10 @@ namespace Promeetec.EDMS.Domain.Models.Document.Rapportage.Handlers
 				Bestandsnaam = bestand.FileName,
 				Bestandsgrootte = bestand.FileSize,
 				ReferentiePromeetec = command.Referentie,
-				Eigenaar = bestand.Eigenaar.Persoon.VolledigeNaam,
-				Organisatie = bestand.Organisatie.DisplayName,
+				Organisatie = command.OrganisatieDisplayName,
 				RapportageSoort = bestand.RapportageSoort.GetDisplayName(),
 				EigenaarId = bestand.EigenaarId,
+				Eigenaar = command.EigenaarVolledigeNaam,
 			};
 
 			await _repository.AddAsync(bestand);

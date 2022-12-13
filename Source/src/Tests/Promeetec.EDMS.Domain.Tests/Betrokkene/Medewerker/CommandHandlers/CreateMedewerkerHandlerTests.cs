@@ -74,7 +74,8 @@ public class CreateMedewerkerHandlerTests : TestFixtureBase
                 LandNaam = "NEDERLAND"
             }
         };
-        
+
+
         var validator = new Mock<IValidator<CreateMedewerker>>();
         validator.Setup(x => x.ValidateAsync(command, new CancellationToken())).ReturnsAsync(new ValidationResult());
 

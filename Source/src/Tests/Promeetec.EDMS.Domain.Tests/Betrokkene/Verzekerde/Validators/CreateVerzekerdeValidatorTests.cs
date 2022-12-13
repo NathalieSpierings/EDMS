@@ -7,7 +7,6 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.Validators;
 
@@ -32,7 +31,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -62,7 +60,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -91,7 +88,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -120,7 +116,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -150,7 +145,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -182,7 +176,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -214,7 +207,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
@@ -243,7 +235,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Bsn, string.Empty)
@@ -260,7 +251,7 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                     .Create())
                 .Create())
             .Create();
-        
+
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
@@ -271,7 +262,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Bsn, new string('*', 12))
@@ -321,7 +311,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Adresboek)
             .Without(x => x.Zorgprofiel)
             .Without(x => x.Zorgverzekering)
             .With(x => x.Bsn, "054243579")
