@@ -8,7 +8,9 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Land;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land.CommandHandlers;
 
@@ -30,7 +32,7 @@ public class DeleteLandHandlerTests : TestFixtureBase
 
 
     [Test]
-    public void Should_throw_data_exception_when_organisatie_not_found()
+    public void Should_throw_data_exception_when_land_not_found()
     {
         var sut = new DeleteLandHandler(_repository, _eventRepository);
         Assert.ThrowsAsync<DataException>(async () => await sut.Handle(Fixture.Create<DeleteLand>()));
@@ -39,7 +41,15 @@ public class DeleteLandHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_delete_land_and_add_event()
     {
+<<<<<<< HEAD
         var cmd = Fixture.Create<CreateLand>();
+=======
+        var cmd = Fixture.Build<CreateLand>()
+            .With(x => x.Id, Guid.NewGuid())
+            .With(x => x.OrganisatieId, PromeetecId)
+            .Create();
+
+>>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
         var land = new Models.Betrokkene.Land.Land(cmd);
         _context.Landen.Add(land);
         await _context.SaveChangesAsync();
@@ -48,6 +58,8 @@ public class DeleteLandHandlerTests : TestFixtureBase
         var command = Fixture.Build<DeleteLand>()
             .With(x => x.Id, land.Id)
             .With(x => x.OrganisatieId, PromeetecId)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
         var sut = new DeleteLandHandler(_repository, _eventRepository);

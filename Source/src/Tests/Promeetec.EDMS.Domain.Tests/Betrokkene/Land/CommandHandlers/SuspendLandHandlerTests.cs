@@ -8,6 +8,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land.CommandHandlers;
 
@@ -32,18 +33,34 @@ public class SuspendLandHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_suspend_land_and_add_event()
     {
+<<<<<<< HEAD
         var cmd = Fixture.Create<CreateLand>();
+=======
+        var cmd = Fixture.Build<CreateLand>()
+            .With(x => x.Id, Guid.NewGuid())
+            .With(x => x.OrganisatieId, PromeetecId)
+            .Create();
+
+>>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
         var land = new Models.Betrokkene.Land.Land(cmd);
         _context.Landen.Add(land);
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<SuspendLand>()
+<<<<<<< HEAD
            .With(x => x.Id, land.Id)
            .With(x => x.OrganisatieId, PromeetecId)
            .With(x => x.UserId, Guid.NewGuid())
            .With(x => x.UserDisplayName, "Ad de Admin")
            .Create();
 
+=======
+            .With(x => x.Id, land.Id)
+            .With(x => x.OrganisatieId, PromeetecId)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
+            .Create();
+>>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
 
         var sut = new SuspendLandHandler(_repository, _eventRepository);
         await sut.Handle(command);

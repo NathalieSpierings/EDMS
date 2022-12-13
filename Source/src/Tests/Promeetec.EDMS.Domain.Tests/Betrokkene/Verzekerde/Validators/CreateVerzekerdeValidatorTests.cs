@@ -7,6 +7,11 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
+<<<<<<< HEAD
+=======
+using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Domain.Tests.Helpers;
+>>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.Validators;
 

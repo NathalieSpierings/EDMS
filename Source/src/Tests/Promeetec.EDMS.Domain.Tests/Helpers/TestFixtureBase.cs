@@ -1,7 +1,7 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
 
-namespace Promeetec.EDMS.Domain.Tests;
+namespace Promeetec.EDMS.Domain.Tests.Helpers;
 
 [TestFixture]
 public abstract class TestFixtureBase

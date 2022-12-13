@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Data.Context;
 
-namespace Promeetec.EDMS.Domain.Tests;
+namespace Promeetec.EDMS.Domain.Tests.Helpers;
 
 public static class Shared
 {
