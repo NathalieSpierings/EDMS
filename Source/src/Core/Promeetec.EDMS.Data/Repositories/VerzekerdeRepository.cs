@@ -11,7 +11,7 @@ namespace Promeetec.EDMS.Data.Repositories
         {
         }
 
-        public async Task<Verzekerde> GetPossibleExisitingVerzekerde(Guid adresboekId, string voorletters, string achternaam, DateTime geboortedatum, string bsn)
+        public async Task<Verzekerde?> GetPossibleExisitingVerzekerde(Guid adresboekId, string voorletters, string achternaam, DateTime geboortedatum, string bsn)
         {
             await Task.CompletedTask;
             var verzekerde = Query()
@@ -75,21 +75,21 @@ namespace Promeetec.EDMS.Data.Repositories
         public bool IsZorgprofielEindatumValid(Guid verzekerdeId, DateTime zorgprofielEinddatum)
         {
             var verzekerde = Query().Include(i => i.Zorgprofiel).FirstOrDefault(x => x.Id == verzekerdeId);
-            var isValid = verzekerde.Zorgprofielen.Any(x => x.Zorgprofiel.ProfielEinddatum >= zorgprofielEinddatum);
+            var isValid = verzekerde != null && verzekerde.Zorgprofielen.Any(x => x.Zorgprofiel.ProfielEinddatum >= zorgprofielEinddatum);
             return !isValid;
         }
 
         public bool IsZorgprofielStartdatumValid(Guid verzekerdeId, DateTime zorgprofielStartdatum)
         {
             var verzekerde = Query().Include(i => i.Zorgprofiel).FirstOrDefault(x => x.Id == verzekerdeId);
-            var isValid = verzekerde.Zorgprofielen.Any(x => x.Zorgprofiel.ProfielStartdatum >= zorgprofielStartdatum);
+            var isValid = verzekerde != null && verzekerde.Zorgprofielen.Any(x => x.Zorgprofiel.ProfielStartdatum >= zorgprofielStartdatum);
             return !isValid;
         }
 
         public DateTime GetLaatsteZorgprofielEinddatum(Guid verzekerdeId)
         {
             var verzekerde = Query().Include(i => i.Zorgprofiel).FirstOrDefault(x => x.Id == verzekerdeId);
-            var profiel = verzekerde.Zorgprofielen.LastOrDefault();
+            var profiel = verzekerde?.Zorgprofielen.LastOrDefault();
             if (profiel?.Zorgprofiel.ProfielEinddatum != null)
                 return profiel.Zorgprofiel.ProfielEinddatum.Value;
 
@@ -99,7 +99,7 @@ namespace Promeetec.EDMS.Data.Repositories
         public DateTime GetLaatsteZorgprofielStartdatum(Guid verzekerdeId)
         {
             var verzekerde = Query().Include(i => i.Zorgprofiel).FirstOrDefault(x => x.Id == verzekerdeId);
-            var profiel = verzekerde.Zorgprofielen.LastOrDefault();
+            var profiel = verzekerde?.Zorgprofielen.LastOrDefault();
             if (profiel?.Zorgprofiel.ProfielStartdatum != null)
                 return profiel.Zorgprofiel.ProfielStartdatum;
 

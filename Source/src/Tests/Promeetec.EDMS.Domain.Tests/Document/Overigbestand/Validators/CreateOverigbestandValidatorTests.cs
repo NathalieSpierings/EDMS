@@ -3,8 +3,9 @@ using FluentValidation.TestHelper;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Validators;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Document.OverigBestand.Validators;
+namespace Promeetec.EDMS.Domain.Tests.Document.Overigbestand.Validators;
 
 [TestFixture]
 public class CreateOverigbestandValidatorTests : TestFixtureBase

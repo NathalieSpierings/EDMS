@@ -8,6 +8,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land.CommandHandlers;
 
@@ -30,37 +31,29 @@ public class SuspendLandHandlerTests : TestFixtureBase
 
 
     [Test]
-    public async Task Should_suspend_country_and_add_event()
+    public async Task Should_suspend_land_and_add_event()
     {
-        var cmd = new CreateLand
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
+        var cmd = Fixture.Build<CreateLand>()
+            .With(x => x.Id, Guid.NewGuid())
+            .With(x => x.OrganisatieId, PromeetecId)
+            .Create();
 
-            Id = Guid.NewGuid(),
-            OrganisatieId = Guid.NewGuid(),
-
-            CultureCode = "nl-NL",
-            NativeName = "Nederland"
-        };
-
-        var country = new Models.Betrokkene.Land.Land(cmd);
-        _context.Landen.Add(country);
+        var land = new Models.Betrokkene.Land.Land(cmd);
+        _context.Landen.Add(land);
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<SuspendLand>()
-           .With(x => x.Id, country.Id)
-           .With(x => x.OrganisatieId, PromeetecId)
-           .With(x => x.UserId, Guid.NewGuid())
-           .With(x => x.UserDisplayName, "Ad de Admin")
-           .Create();
-
+            .With(x => x.Id, land.Id)
+            .With(x => x.OrganisatieId, PromeetecId)
+            .With(x => x.UserId, Guid.NewGuid())
+            .With(x => x.UserDisplayName, "Ad de Admin")
+            .Create();
 
         var sut = new SuspendLandHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == country.Id);
-        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == country.Id);
+        var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == land.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == land.Id);
 
         Assert.AreEqual(Status.Inactief, dbEntity.Status);
         Assert.NotNull(@event);

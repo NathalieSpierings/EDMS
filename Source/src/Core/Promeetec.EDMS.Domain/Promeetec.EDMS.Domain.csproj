@@ -46,6 +46,7 @@
     <Compile Remove="Models\Document\Aanleverbestand\Samenvatting\Handlers\**" />
     <Compile Remove="Models\Document\Bestand\Rules\**" />
     <Compile Remove="Models\Document\Rapportage\Handlers\**" />
+    <Compile Remove="Models\Identity\Role\Rules\**" />
     <Compile Remove="Models\Modules\Declaratie\Aanleverbericht\Commands\**" />
     <Compile Remove="Models\Modules\Declaratie\Aanleverbericht\Events\**" />
     <Compile Remove="Models\Modules\Declaratie\Aanleverbericht\Handlers\**" />
@@ -115,6 +116,7 @@
     <EmbeddedResource Remove="Models\Document\Aanleverbestand\Samenvatting\Handlers\**" />
     <EmbeddedResource Remove="Models\Document\Bestand\Rules\**" />
     <EmbeddedResource Remove="Models\Document\Rapportage\Handlers\**" />
+    <EmbeddedResource Remove="Models\Identity\Role\Rules\**" />
     <EmbeddedResource Remove="Models\Modules\Declaratie\Aanleverbericht\Commands\**" />
     <EmbeddedResource Remove="Models\Modules\Declaratie\Aanleverbericht\Events\**" />
     <EmbeddedResource Remove="Models\Modules\Declaratie\Aanleverbericht\Handlers\**" />
@@ -184,6 +186,7 @@
     <None Remove="Models\Document\Aanleverbestand\Samenvatting\Handlers\**" />
     <None Remove="Models\Document\Bestand\Rules\**" />
     <None Remove="Models\Document\Rapportage\Handlers\**" />
+    <None Remove="Models\Identity\Role\Rules\**" />
     <None Remove="Models\Modules\Declaratie\Aanleverbericht\Commands\**" />
     <None Remove="Models\Modules\Declaratie\Aanleverbericht\Events\**" />
     <None Remove="Models\Modules\Declaratie\Aanleverbericht\Handlers\**" />
@@ -222,8 +225,6 @@
     <Compile Remove="Models\Admin\RedenEindeZorg\IRedenEindeZorgRepository.cs" />
     <Compile Remove="Models\Betrokkene\UserProfile\IUserProfileRepository.cs" />
     <Compile Remove="Models\Betrokkene\Weegmoment\IWeegMomentRepository.cs" />
-    <Compile Remove="Models\Menu\IMenuItemRepository.cs" />
-    <Compile Remove="Models\Menu\IMenuRepository.cs" />
     <Compile Remove="Models\Modules\Adresboek\IAdresboekRepository.cs" />
     <Compile Remove="Models\Modules\Declaratie\Aanleverbericht\IAanleverberichtRepository.cs" />
     <Compile Remove="Models\Modules\Declaratie\Aanlevering\IAanleveringRepository.cs" />
@@ -300,9 +301,6 @@
     <Folder Include="Models\Betrokkene\Organisatie\Events\" />
     <Folder Include="Models\Betrokkene\Weegmoment\Rules\" />
     <Folder Include="Models\Betrokkene\Weegmoment\Validators\" />
-    <Folder Include="Models\Identity\Role\Commands\" />
-    <Folder Include="Models\Identity\Role\Rules\" />
-    <Folder Include="Models\Identity\Role\Validators\" />
     <Folder Include="Models\Modules\Declaratie\Aanleverbericht\Rules\" />
     <Folder Include="Models\Modules\Declaratie\Aanleverbericht\Validators\" />
     <Folder Include="Models\Modules\Declaratie\Aanlevering\Rules\" />

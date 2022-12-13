@@ -1,8 +1,8 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
 {
@@ -15,7 +15,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
         [SetUp]
         public void Setup()
         {
-
+            _createId = Guid.NewGuid();
             _cmd = Fixture.Build<CreateLand>().With(x => x.Id, _createId).Create();
             _sut = new Models.Betrokkene.Land.Land(_cmd);
         }

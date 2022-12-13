@@ -1,10 +1,11 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Overigbestand
 {
-	[TestFixture]
+    [TestFixture]
 	public class OverigbestandTests : TestFixtureBase
 	{
 		private Models.Document.Overigbestand.Overigbestand _sut;

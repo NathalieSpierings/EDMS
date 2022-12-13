@@ -49,7 +49,7 @@ public class OverigBestandRepository : Repository<Overigbestand>, IOverigBestand
 		return dbQuery;
 	}
 
-	public Overigbestand GetOverigbestandByFileName(string fileName)
+	public Overigbestand? GetOverigbestandByFileName(string fileName)
 	{
 		var dbQuery = Query()
 			.FirstOrDefault(x => x.FileName == fileName);

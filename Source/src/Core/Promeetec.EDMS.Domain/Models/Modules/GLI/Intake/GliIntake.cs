@@ -16,7 +16,7 @@ public class GliIntake : AggregateRoot
     /// <summary>
     /// The remarks for the intake.
     /// </summary>
-    [MaxLength]
+    [MaxLength(1024)]
     public string Opmerking { get; set; }
 
     /// <summary>

@@ -1,10 +1,11 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Rapportage
 {
-	[TestFixture]
+    [TestFixture]
 	public class RapportageTests : TestFixtureBase
 	{
 		private Models.Document.Rapportage.Rapportage _sut;

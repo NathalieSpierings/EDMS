@@ -10,6 +10,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Land;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land.CommandHandlers;
 
@@ -31,26 +32,19 @@ public class UpdateLandHandlerTests : TestFixtureBase
     }
 
     [Test]
-    public async Task Should_update_country_and_add_event()
+    public async Task Should_update_land_and_add_event()
     {
-        var cmd = new CreateLand
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
+        var cmd = Fixture.Build<CreateLand>()
+            .With(x => x.Id, Guid.NewGuid())
+            .With(x => x.OrganisatieId, PromeetecId)
+            .Create();
 
-            Id = Guid.NewGuid(),
-            OrganisatieId = PromeetecId,
-
-            CultureCode = "nl-NL",
-            NativeName = "Nederland"
-        };
-
-        var country = new Models.Betrokkene.Land.Land(cmd);
-        _context.Landen.Add(country);
+        var land = new Models.Betrokkene.Land.Land(cmd);
+        _context.Landen.Add(land);
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<UpdateLand>()
-            .With(x => x.Id, country.Id)
+            .With(x => x.Id, land.Id)
             .With(x => x.UserId, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .With(x => x.UserDisplayName, "Ad de Admin")
@@ -64,10 +58,11 @@ public class UpdateLandHandlerTests : TestFixtureBase
         var sut = new UpdateLandHandler(_repository, _eventRepository, validator.Object);
         await sut.Handle(command);
 
-        var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == country.Id);
-        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == country.Id);
+        var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == land.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == land.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
+        Assert.NotNull(dbEntity);
         Assert.AreEqual(command.CultureCode, dbEntity.CultureCode);
         Assert.NotNull(@event);
     }

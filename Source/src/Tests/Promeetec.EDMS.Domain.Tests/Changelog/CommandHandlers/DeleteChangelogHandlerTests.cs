@@ -7,6 +7,7 @@ using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Changelog;
 using Promeetec.EDMS.Domain.Models.Changelog.Commands;
 using Promeetec.EDMS.Domain.Models.Changelog.Handlers;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Changelog.CommandHandlers;
 

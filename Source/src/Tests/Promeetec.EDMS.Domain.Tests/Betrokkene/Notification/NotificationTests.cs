@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Notification
 {

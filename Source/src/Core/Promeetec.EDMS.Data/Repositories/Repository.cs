@@ -1,4 +1,5 @@
-﻿using Promeetec.EDMS.Data.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Domain;
 using System.Linq.Expressions;
 
@@ -125,7 +126,7 @@ namespace Promeetec.EDMS.Data.Repositories
         }
 
         /// <inheritdoc />
-        public async Task<T> GetByIdAsync(Guid id)
+        public async Task<T?> GetByIdAsync(Guid id)
         {
             if (id == null)
                 throw new ArgumentNullException($"{nameof(GetByIdAsync)} identifier must not be null");
@@ -160,6 +161,40 @@ namespace Promeetec.EDMS.Data.Repositories
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        
+
+        public int RawSQL(string sql)
+        {
+            var result = _context.Database.ExecuteSqlRaw(sql);
+            return result;
+        }
+
+        public int RawSQL(string sql, params object[] parameters)
+        {
+            var result = _context.Database.ExecuteSqlRaw(sql, parameters);
+            return result;
+        }
+
+
+        public async Task<int> RawSQLAsync(string sql)
+        {
+            try
+            {
+                var result = await _context.Database.ExecuteSqlRawAsync(sql);
+                return result;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public async Task<int> RawSQLAsync(string sql, params object[] parameters)
+        {
+            var result = await _context.Database.ExecuteSqlRawAsync(sql, parameters);
+            return result;
         }
     }
 }

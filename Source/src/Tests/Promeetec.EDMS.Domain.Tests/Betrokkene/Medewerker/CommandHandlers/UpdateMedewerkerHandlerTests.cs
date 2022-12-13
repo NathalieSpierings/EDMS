@@ -12,6 +12,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Identity.Users;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker.CommandHandlers;
 
@@ -39,6 +40,7 @@ public class UpdateMedewerkerHandlerTests : TestFixtureBase
     {
         var userId = Guid.NewGuid();
 
+        // TODO Avatar verwijderen!!
         var cmd = new CreateMedewerker
         {
             UserId = userId,
@@ -64,7 +66,6 @@ public class UpdateMedewerkerHandlerTests : TestFixtureBase
             AgbCodeZorgverlener = "87654321",
             AgbCodeOnderneming = "12345678",
             IonToestemmingsverklaringActivatieLink = "my link",
-            Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
             AccountState = UserAccountState.Test,
             UserName = "0000-jdo",
             TempCode = "1358#$sd%",
@@ -107,7 +108,6 @@ public class UpdateMedewerkerHandlerTests : TestFixtureBase
             AgbCodeOnderneming = medewerker.AgbCodeOnderneming,
             Email = "tvanderzanden@test.com",
             Functie = medewerker.Functie,
-            Avatar = medewerker.Avatar,
             IonToestemmingsverklaringActivatieLink = medewerker.IONToestemmingsverklaringActivatieLink,
             Adres = medewerker.Adres
         };

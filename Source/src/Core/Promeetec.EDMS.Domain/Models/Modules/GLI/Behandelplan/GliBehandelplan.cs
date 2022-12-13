@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
 using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
@@ -38,7 +36,7 @@ public class GliBehandelplan : AggregateRoot
     /// <summary>
     /// The remarks of the behandelplan.
     /// </summary>
-    [MaxLength]
+    [MaxLength(1024)]
     public string Opmerking { get; set; }
 
     /// <summary>

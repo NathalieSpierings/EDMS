@@ -4,6 +4,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
 {
@@ -59,12 +60,9 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
             Assert.AreEqual(_cmd.Website, _sut.Website);
             Assert.AreEqual(_cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(_cmd.Zorggroep, _sut.Zorggroep);
-            Assert.AreEqual(_cmd.Logo, _sut.Logo);
-
             Assert.AreEqual(_cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
             Assert.AreEqual(_cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
             Assert.AreEqual(_cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
-
             Assert.AreEqual(_cmd.ZorggroepRelatieId, _sut.ZorggroepRelatieId);
             Assert.AreEqual(_cmd.ContactpersoonId, _sut.ContactpersoonId);
             Assert.AreEqual(_cmd.AdresId, _sut.AdresId);
@@ -87,7 +85,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
                 Website = "http://www.test.com",
                 AgbCodeOnderneming = "12345677",
                 Zorggroep = true,
-                Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
                 Settings = new OrganisatieSettings
                 {
                     AanleverbestandLocatie = "New Test location",
@@ -108,12 +105,9 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
             Assert.AreEqual(cmd.Website, _sut.Website);
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(cmd.Zorggroep, _sut.Zorggroep);
-            Assert.AreEqual(cmd.Logo, _sut.Logo);
-
             Assert.AreEqual(cmd.Settings.AanleverbestandLocatie, _sut.Settings.AanleverbestandLocatie);
             Assert.AreEqual(cmd.Settings.AanleverStatusNaSchrijvenAanleverbestanden, _sut.Settings.AanleverStatusNaSchrijvenAanleverbestanden);
             Assert.AreEqual(cmd.Settings.VerwijzerInAdresboek, _sut.Settings.VerwijzerInAdresboek);
-
             Assert.AreEqual(cmd.ZorggroepRelatieId, _sut.ZorggroepRelatieId);
             Assert.AreEqual(cmd.ContactpersoonId, _sut.ContactpersoonId);
             Assert.AreEqual(cmd.AdresId, _sut.AdresId);
