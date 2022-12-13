@@ -30,7 +30,7 @@ public class Aanlevering : AggregateRoot
     /// <summary>
     /// The remarks for the aanlevering.
     /// </summary>
-    [MaxLength]
+    [MaxLength(1024)]
     public string Opmerking { get; set; }
 
     /// <summary>
