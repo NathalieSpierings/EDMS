@@ -5,6 +5,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Identity.Users;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
 {
@@ -84,7 +85,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
             Assert.AreEqual(_cmd.AgbCodeZorgverlener, _sut.AgbCodeZorgverlener);
             Assert.AreEqual(_cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(_cmd.Functie, _sut.Functie);
-            Assert.AreEqual(_cmd.Avatar, _sut.Avatar);
             Assert.AreEqual(_cmd.Email, _sut.Email);
             Assert.AreEqual(_cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
             Assert.AreEqual(_cmd.AccountState, _sut.AccountState);
@@ -121,7 +121,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
                 AgbCodeZorgverlener = "85296324",
                 AgbCodeOnderneming = "74136985",
                 IonToestemmingsverklaringActivatieLink ="New link",
-                Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
                 Adres = new Adres
                 {
                     Straat = "Dorpsstraat",
@@ -146,7 +145,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
             Assert.AreEqual(cmd.AgbCodeZorgverlener, _sut.AgbCodeZorgverlener);
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
-            Assert.AreEqual(cmd.Avatar, _sut.Avatar);
             Assert.AreEqual(cmd.Adres, _sut.Adres);
         }
 

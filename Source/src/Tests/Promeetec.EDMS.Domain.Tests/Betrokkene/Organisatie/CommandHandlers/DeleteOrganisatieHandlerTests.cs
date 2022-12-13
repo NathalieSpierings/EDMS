@@ -11,6 +11,7 @@ using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie.CommandHandlers;
 

@@ -46,7 +46,7 @@ namespace Promeetec.EDMS.Domain
         /// </summary>
         /// <param name="id">The unique identifier.</param>
         /// <returns>The aggregate.</returns>
-        Task<T> GetByIdAsync(Guid id);
+        Task<T?> GetByIdAsync(Guid id);
 
         /// <summary>
         /// Get's the aggregate by the expression.

@@ -1,10 +1,11 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Document.Bestand.Commands;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Bestand
 {
-	[TestFixture]
+    [TestFixture]
 	public class BestandTests : TestFixtureBase
 	{
 		private Models.Document.Bestand.Bestand _sut;

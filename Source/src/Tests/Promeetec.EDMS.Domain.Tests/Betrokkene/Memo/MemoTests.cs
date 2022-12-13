@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Memo
 {

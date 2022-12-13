@@ -11,6 +11,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
 using Promeetec.EDMS.Domain.Models.Identity.Users;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker.CommandHandlers;
 

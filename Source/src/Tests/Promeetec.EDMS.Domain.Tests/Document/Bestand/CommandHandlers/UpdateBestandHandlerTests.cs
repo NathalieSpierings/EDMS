@@ -10,6 +10,7 @@ using Promeetec.EDMS.Domain.Models.Document.Bestand;
 using Promeetec.EDMS.Domain.Models.Document.Bestand.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Bestand.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Bestand.CommandHandlers;
 
