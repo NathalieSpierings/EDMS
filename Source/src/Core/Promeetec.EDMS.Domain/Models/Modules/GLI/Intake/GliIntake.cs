@@ -2,159 +2,131 @@
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
+namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
 
 public class GliIntake : AggregateRoot
 {
-    /// <summary>
-    /// The date of the intake.
-    /// </summary>
+    [Required]
     public DateTime IntakeDatum { get; set; }
 
-    /// <summary>
-    /// The remarks for the intake.
-    /// </summary>
     [MaxLength(1024)]
-    public string Opmerking { get; set; }
-
-    /// <summary>
-    /// Indicator if the intake is verwerkt yes or no.
-    /// </summary>
+    public string? Opmerking { get; set; }
     public bool Verwerkt { get; set; }
-
-    /// <summary>
-    /// The verwerkt op date.
-    /// </summary>
     public DateTime? VerwerktOp { get; set; }
-
-    /// <summary>
-    /// The status of the intake.
-    /// </summary>
     public GliStatus GliStatus { get; set; }
-
-    /// <summary>
-    /// The time stamp of when the record has been created.
-    /// </summary>
-    public DateTime TimeStamp { get; set; }
-
 
     #region Navigation properties
 
     public Guid BehandelaarId { get; set; }
     public virtual Medewerker Behandelaar { get; set; }
-    
+
+
     public Guid VerzekerdeId { get; set; }
     public virtual Verzekerde Verzekerde { get; set; }
 
     public Guid OrganisatieId { get; set; }
     public virtual Organisatie Organisatie { get; set; }
 
-    public virtual ICollection<GliBehandelplan> Behandelplannen { get; set; }
+
+    public IList<GliBehandelplan> Behandelplannen { get; set; } = new List<GliBehandelplan>();
+
 
     #endregion
 
 
     /// <summary>
-    /// Creates an empty GLI intake.
+    /// Creates an empty intake.
     /// </summary>
-    public GliIntake()
-    {
+    public GliIntake() { }
 
+    /// <summary>
+    /// Creates an GLI intake.
+    /// </summary>
+    /// <param name="cmd">The create intake command.</param>
+    public GliIntake(CreateIntake cmd)
+    {
+        Id = cmd.Id;
+
+        IntakeDatum = cmd.IntakeDatum;
+        VerzekerdeId = cmd.VerzekerdeId;
+        BehandelaarId = cmd.BehandelaarId;
+        OrganisatieId = cmd.OrganisatieId;
+        GliStatus = GliStatus.NogNietGestart;
+        Opmerking = cmd.Opmerking;
+        //AddAndApplyEvent(new IntakeAangemaakt
+        //{
+        //    AggregateRootId = cmd.AggregateRootId,
+        //    UserId = cmd.UserId,
+        //    UserDisplayName = cmd.UserDisplayName,
+
+        //    Lengte = $"{cmd.Weegmoment.Lengte} cm",
+        //    Gewicht = $"{cmd.Weegmoment.Gewicht} KG",
+        //    Opnamedatum = cmd.Weegmoment.Opnamedatum.ToString("dd-MM-yyyy"),
+        //    IntakeDatum = cmd.IntakeDatum.ToString("dd-MM-yyyy"),
+        //    Opmerking = cmd.Opmerking
+        //});
     }
 
-    //public GliIntake(NieuweIntake cmd)
-    //{
-    //    IntakeDatum = cmd.IntakeDatum;
-    //    VerzekerdeId = cmd.VerzekerdeId;
-    //    BehandelaarId = cmd.BehandelaarId;
-    //    OrganisatieId = cmd.OrganisatieId;
-    //    GliStatus = GliStatus.NogNietGestart;
+    /// <summary>
+    /// Update the details of the GLI intake.
+    /// </summary>
+    /// <param name="cmd">The update intake command.</param>
+    public void UpdateIntake(UpdateIntake cmd)
+    {
+        IntakeDatum = cmd.IntakeDatum;
+        BehandelaarId = cmd.BehandelaarId;
+        Opmerking = cmd.Opmerking;
+        //AddAndApplyEvent(new IntakeGewijzigd
+        //{
+        //    AggregateRootId = cmd.AggregateRootId,
+        //    UserId = cmd.UserId,
+        //    UserDisplayName = cmd.UserDisplayName,
 
-    //    AddAndApplyEvent(new IntakeAangemaakt
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
+        //    Lengte = $"{cmd.Weegmoment.Lengte} cm",
+        //    Gewicht = $"{cmd.Weegmoment.Gewicht} KG",
+        //    Opnamedatum = cmd.Weegmoment.Opnamedatum.ToString("dd-MM-yyyy"),
+        //    IntakeDatum = cmd.IntakeDatum.ToString("dd-MM-yyyy"),
+        //    Opmerking = cmd.Opmerking
+        //});
+    }
 
-    //        Lengte = $"{cmd.WeegMoment.Lengte} cm",
-    //        Gewicht = $"{cmd.WeegMoment.Gewicht} KG",
-    //        Opnamedatum = cmd.WeegMoment.Opnamedatum.ToString("dd-MM-yyyy"),
-    //        IntakeDatum = cmd.IntakeDatum.ToString("dd-MM-yyyy"),
-    //        Opmerking = cmd.Opmerking
-    //    });
-    //}
+    /// <summary>
+    /// Sets the status of the GLI intake as verwerkt.
+    /// <param name="cmd">The process intake command.</param>
+    /// </summary>
+    public void Verwerk(ProcessIntake cmd)
+    {
+        VerwerktOp = cmd.VerwerktOp;
+        Verwerkt = true;
+        //AddAndApplyEvent(new IntakeVerwerkt
+        //{
+        //    AggregateRootId = cmd.AggregateRootId,
+        //    UserId = cmd.UserId,
+        //    UserDisplayName = cmd.UserDisplayName,
 
-    //public void UpdateIntake(WijzigIntake cmd)
-    //{
-    //    IntakeDatum = cmd.IntakeDatum;
-    //    BehandelaarId = cmd.BehandelaarId;
+        //    Verwerkt = "Ja",
+        //    VerwerktOp = cmd.VerwerktOp.ToString("dd-MM-yyyy")
+        //});
+    }
 
-    //    AddAndApplyEvent(new IntakeGewijzigd
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
+    /// <summary>
+    /// Update the status of the GLI intake.
+    /// </summary>
+    /// <param name="cmd">The update intake status command.</param>
+    public void UpdateIntakeStatus(UpdateIntakeStatus cmd)
+    {
+        GliStatus = cmd.GliStatus;
 
-    //        Lengte = $"{cmd.WeegMoment.Lengte} cm",
-    //        Gewicht = $"{cmd.WeegMoment.Gewicht} KG",
-    //        Opnamedatum = cmd.WeegMoment.Opnamedatum.ToString("dd-MM-yyyy"),
-    //        IntakeDatum = cmd.IntakeDatum.ToString("dd-MM-yyyy"),
-    //        Opmerking = cmd.Opmerking
-    //    });
-    //}
+        //AddAndApplyEvent(new IntakeStatusGewijzigd
+        //{
+        //    AggregateRootId = cmd.AggregateRootId,
+        //    UserId = cmd.UserId,
+        //    UserDisplayName = cmd.UserDisplayName,
 
-    //public void Verwerk(VerwerkIntake cmd)
-    //{
-    //    VerwerktOp = cmd.VerwerktOp;
-
-    //    AddAndApplyEvent(new IntakeVerwerkt
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
-
-    //        Verwerkt = "Ja",
-    //        VerwerktOp = cmd.VerwerktOp.ToString("dd-MM-yyyy")
-    //    });
-    //}
-
-    //public void UpdateIntakeStatus(WijzigIntakeStatus cmd)
-    //{
-    //    GliStatus = cmd.GliStatus;
-
-    //    AddAndApplyEvent(new IntakeStatusGewijzigd
-    //    {
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-
-    //        Status = cmd.GliStatus.ToString()
-    //    });
-    //}
-
-    //#region Private methods
-
-    //private void Apply(IntakeAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
-    //    Opmerking = @event.Opmerking;
-    //}
-
-    //private void Apply(IntakeGewijzigd @event)
-    //{
-    //    Opmerking = @event.Opmerking;
-    //}
-
-    //private void Apply(IntakeStatusGewijzigd @event)
-    //{
-    //}
-
-    //private void Apply(IntakeVerwerkt @event)
-    //{
-    //    Verwerkt = true;
-    //}
-
-    //#endregion
+        //    Status = cmd.GliStatus.ToString()
+        //});
+    }
 }

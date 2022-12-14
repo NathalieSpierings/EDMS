@@ -1244,7 +1244,7 @@ namespace Promeetec.EDMS.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Aanleverbericht_LaasteLezerId",
                 table: "Aanleverbericht",
-                column: "LaasteLezerId");
+                column: "LaatsteLezerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Aanleverbericht_Onderwerp",

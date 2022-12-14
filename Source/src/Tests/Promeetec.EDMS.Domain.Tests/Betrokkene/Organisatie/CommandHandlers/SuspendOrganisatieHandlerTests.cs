@@ -76,7 +76,8 @@ public class SuspendOrganisatieHandlerTests : TestFixtureBase
         var dbEntity = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == organisatie.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == organisatie.Id);
 
-        Assert.AreEqual(Status.Inactief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Inactief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

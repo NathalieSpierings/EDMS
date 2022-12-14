@@ -70,7 +70,9 @@ public class UpdateSettingsHandlerTests : TestFixtureBase
 
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.AreEqual(command.Straat, dbEntity.Straat);
+
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.Straat, dbEntity?.Straat);
         Assert.NotNull(@event);
     }
 }

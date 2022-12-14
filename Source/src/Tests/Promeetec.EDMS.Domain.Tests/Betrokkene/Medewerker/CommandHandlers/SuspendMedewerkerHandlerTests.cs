@@ -93,7 +93,8 @@ public class SuspendMedewerkerHandlerTests : TestFixtureBase
         var dbEntity = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == medewerker.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == medewerker.Id);
 
-        Assert.AreEqual(Status.Inactief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Inactief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

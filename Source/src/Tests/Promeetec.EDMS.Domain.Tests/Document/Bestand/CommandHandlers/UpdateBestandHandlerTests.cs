@@ -56,8 +56,9 @@ public class UpdateBestandHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.AreEqual(command.FileName, dbEntity.FileName);
+
         Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.FileName, dbEntity?.FileName);
         Assert.NotNull(@event);
     }
 }

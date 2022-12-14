@@ -5,6 +5,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde
 {
@@ -18,6 +19,8 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde
         [SetUp]
         public void Setup()
         {
+            _createId = Guid.NewGuid();
+
             _cmd = Fixture.Build<CreateVerzekerde>()
                 .Without(x => x.Adres)
                 .With(x => x.Adres, Fixture.Build<Adres>()

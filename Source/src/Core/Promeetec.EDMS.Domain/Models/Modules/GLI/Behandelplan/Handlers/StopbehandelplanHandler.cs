@@ -1,29 +1,29 @@
-﻿using Promeetec.EDMS.Domain.Modules.GLI.Behandelplan.Commands;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Modules.GLI.Behandelplan.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Handlers;
+
+public class StopbehandelplanHandler : ICommandHandler<StopBehandelplan>
 {
-    public class StopbehandelplanHandler : ICommandHandlerAsync<StopBehandelplan>
+    private readonly IGliBehandelplanRepository _repository;
+
+    public StopbehandelplanHandler(IGliBehandelplanRepository repository)
     {
-        private readonly IGliBehandelplanRepository _repository;
+        _repository = repository;
+    }
 
-        public StopbehandelplanHandler(IGliBehandelplanRepository repository)
-        {
-            _repository = repository;
-        }
+    public async Task<IEnumerable<IEvent>> Handle(StopBehandelplan command)
+    {
+        var behandelplan = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+        if (behandelplan == null)
+            throw new DataException($"GLI behandelplan met Id {command.Id} niet gevonden.");
 
-        public async Task<CommandResponse> HandleAsync(StopBehandelplan command)
-        {
-            var behandelplan = await _repository.GetByIdAsync(command.Id);
-            if (behandelplan == null)
-                throw new ApplicationException($"GLI behandelplan niet gevonden. Id: {command.Id}");
+        behandelplan.Stopbehandelplan(command);
+        await _repository.UpdateAsync(behandelplan);
 
-            behandelplan.Stopbehandelplan(command);
-            await _repository.UpdateAsync(behandelplan);
-
-            return new CommandResponse
-            {
-                Events = behandelplan.Events
-            };
-        }
+        return new IEvent[] { };
     }
 }

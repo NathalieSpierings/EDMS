@@ -12,7 +12,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Events
         public string Geslacht { get; set; }
         public string? Geboortedatum { get; set; }
         public string VolledigeNaam { get; set; }
-        public string VolledigAdres { get; set; }
+        public string? VolledigAdres { get; set; }
 
         public string AgbCodeVerwijzer { get; set; }
         public string NaamVerwijzer { get; set; }

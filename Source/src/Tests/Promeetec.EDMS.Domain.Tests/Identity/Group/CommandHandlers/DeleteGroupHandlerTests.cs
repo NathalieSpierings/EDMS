@@ -57,7 +57,8 @@ public class DeleteGroupHandlerTests : TestFixtureBase
         var dbEntity = await _context.Groups.FirstOrDefaultAsync(x => x.Id == command.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
-        Assert.AreEqual(Status.Verwijderd, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Verwijderd, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

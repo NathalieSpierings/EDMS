@@ -33,15 +33,11 @@ public class ReinstateLandHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_reinstate_land_and_add_event()
     {
-<<<<<<< HEAD
-        var cmd = Fixture.Create<CreateLand>();
-=======
         var cmd = Fixture.Build<CreateLand>()
             .With(x => x.Id, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .Create();
 
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
         var land = new Models.Betrokkene.Land.Land(cmd);
         _context.Landen.Add(land);
         await _context.SaveChangesAsync();
@@ -59,7 +55,8 @@ public class ReinstateLandHandlerTests : TestFixtureBase
         var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == land.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == land.Id);
 
-        Assert.AreEqual(Status.Actief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Actief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

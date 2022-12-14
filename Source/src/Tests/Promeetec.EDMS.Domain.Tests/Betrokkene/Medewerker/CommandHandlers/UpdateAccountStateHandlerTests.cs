@@ -80,7 +80,7 @@ public class UpdateAccountStateHandlerTests : TestFixtureBase
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<UpdateAccountState>()
-            .With(x => x.AccountState,UserAccountState.Activated)
+            .With(x => x.AccountState, UserAccountState.Activated)
             .With(x => x.Id, medewerker.Id)
             .With(x => x.OrganisatieId, medewerker.OrganisatieId)
             .With(x => x.UserId, Guid.NewGuid())
@@ -92,8 +92,9 @@ public class UpdateAccountStateHandlerTests : TestFixtureBase
 
         var dbEntity = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == medewerker.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == medewerker.Id);
-        
-        Assert.AreEqual(command.AccountState, dbEntity.AccountState);
+
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.AccountState, dbEntity?.AccountState);
         Assert.NotNull(@event);
     }
 }

@@ -57,7 +57,9 @@ public class UpdateZorgstraatHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == Zorgstraat.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.AreEqual(command.Naam, dbEntity.Naam);
+
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.Naam, dbEntity?.Naam);
         Assert.NotNull(@event);
     }
 }

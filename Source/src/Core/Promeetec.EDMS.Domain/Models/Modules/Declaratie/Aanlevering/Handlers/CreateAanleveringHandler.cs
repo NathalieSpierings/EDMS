@@ -1,25 +1,59 @@
-﻿using Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Commands;
+﻿using FluentValidation;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Events;
+using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Handlers;
+
+public class CreateAanleveringHandler : ICommandHandler<CreateAanlevering>
 {
-    public class CreateAanleveringHandler : ICommandHandlerAsync<CreateAanlevering>
+    private readonly IAanleveringRepository _repository;
+    private readonly IEventRepository _eventRepository;
+    private readonly IValidator<CreateAanlevering> _validator;
+
+    public CreateAanleveringHandler(IAanleveringRepository repository,
+        IEventRepository eventRepository,
+        IValidator<CreateAanlevering> validator)
     {
-        private readonly IAanleveringRepository _repository;
+        _repository = repository;
+        _eventRepository = eventRepository;
+        _validator = validator;
+    }
 
-        public CreateAanleveringHandler(IAanleveringRepository repository)
+    public async Task<IEnumerable<IEvent>> Handle(CreateAanlevering command)
+    {
+        await _validator.ValidateCommand(command);
+
+        var aanlevering = new Aanlevering(command);
+
+        var @event = new AanleveringAangemaakt
         {
-            _repository = repository;
-        }
+            TargetId = aanlevering.Id,
+            TargetType = nameof(Aanlevering),
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
-        public async Task<CommandResponse> HandleAsync(CreateAanlevering command)
-        {
-            var aanlevering = new Aanlevering(command);
-            await _repository.AddAsync(aanlevering);
+            Status = Status.Actief.ToString(),
+            Organisatie = command.Organisatie,
+            Behandelaar = command.Behandelaar,
+            Eigenaar = command.Eigenaar,
+            Jaar = DateTime.Now.Year.ToString(),
+            Aanleverdatum = DateTime.Now.ToString("dd-MM-yyyy"),
+            Referentie = command.Referentie,
+            ReferentiePromeetec = command.ReferentiePromeetec,
+            AanleverStatus = AanleverStatus.Aangemaakt.ToString(),
+            ToevoegenBestand = command.ToevoegenBestand ? "Ja" : "Nee",
+            Opmerking = command.Opmerking
+        };
 
-            return new CommandResponse
-            {
-                Events = aanlevering.Events
-            };
-        }
+        await _repository.AddAsync(aanlevering);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
+
+        return new IEvent[] { @event };
     }
 }

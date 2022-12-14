@@ -35,7 +35,7 @@ public class UpdateOrganisatieValidator : AbstractValidator<UpdateOrganisatie>
 
     private static bool BeAValidUrl(string arg)
     {
-        Uri result;
+        Uri? result;
         return Uri.TryCreate(arg, UriKind.Absolute, out result);
     }
 }

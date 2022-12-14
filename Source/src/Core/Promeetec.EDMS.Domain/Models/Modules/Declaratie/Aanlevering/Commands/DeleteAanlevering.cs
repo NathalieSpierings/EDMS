@@ -1,7 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+
+public class DeleteAanlevering : CommandBase
 {
-    public class DeleteAanlevering : DomainCommand<Aanlevering>
-    {
-        public Shared.Status Status { get; set; }
-    }
+    public Shared.Status Status { get; set; }
 }

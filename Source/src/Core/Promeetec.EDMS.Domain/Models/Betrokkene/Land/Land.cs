@@ -29,10 +29,8 @@ public class Land : AggregateRoot
     /// <summary>
     /// Creates an empty land.
     /// </summary>
-    public Land()
-    {
+    public Land() { }
 
-    }
 
     /// <summary>
     /// Creates a land.

@@ -36,7 +36,7 @@ public class UncheckAanleverbestandHandlerTests : TestFixtureBase
 
 		var command = Fixture.Build<UncheckAanleverbestand>()
 			.With(x => x.Id, bestand.Id)
-            .With(x => x.OrganisatieId, cmd.OrganisatieId)
+			.With(x => x.OrganisatieId, cmd.OrganisatieId)
 			.With(x => x.UserId, Guid.NewGuid())
 			.With(x => x.UserDisplayName, "Ad de Admin")
 			.Create();
@@ -46,7 +46,7 @@ public class UncheckAanleverbestandHandlerTests : TestFixtureBase
 
 		var dbEntity = await _context.Aanleverbestanden.FirstOrDefaultAsync(x => x.Id == bestand.Id);
 
-		Assert.AreEqual(false, dbEntity.Gecontroleerd);
 		Assert.NotNull(dbEntity);
+		Assert.AreEqual(false, dbEntity?.Gecontroleerd);
 	}
 }

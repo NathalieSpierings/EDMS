@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Verbruiksmiddelen.Verbruiksmiddel.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Events;
+
+public class VerbruiksmiddelPrestatieVerwerkt : EventBase
 {
-    public class VerbruiksmiddelPrestatieVerwerkt : DomainEvent
-    {
-    }
+    public string Status { get; set; }
 }

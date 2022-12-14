@@ -6,7 +6,6 @@ using Moq;
 using NUnit.Framework;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
 using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
@@ -39,7 +38,7 @@ public class UpdateGroupHandlerTests : TestFixtureBase
             .With(x => x.Id, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .Create();
-        
+
         var group = new Models.Identity.Group.Group(cmd);
         _context.Groups.Add(group);
         await _context.SaveChangesAsync();
@@ -61,8 +60,9 @@ public class UpdateGroupHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == group.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
+
         Assert.NotNull(dbEntity);
-        Assert.AreEqual(command.Name, dbEntity.Name);
+        Assert.AreEqual(command.Name, dbEntity?.Name);
         Assert.NotNull(@event);
     }
 }

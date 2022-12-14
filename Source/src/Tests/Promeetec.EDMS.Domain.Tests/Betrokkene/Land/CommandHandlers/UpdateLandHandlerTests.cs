@@ -33,15 +33,11 @@ public class UpdateLandHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_update_land_and_add_event()
     {
-<<<<<<< HEAD
-        var cmd = Fixture.Create<CreateLand>();
-=======
         var cmd = Fixture.Build<CreateLand>()
             .With(x => x.Id, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .Create();
 
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
         var land = new Models.Betrokkene.Land.Land(cmd);
         _context.Landen.Add(land);
         await _context.SaveChangesAsync();
@@ -65,8 +61,9 @@ public class UpdateLandHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == land.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
+
         Assert.NotNull(dbEntity);
-        Assert.AreEqual(command.CultureCode, dbEntity.CultureCode);
+        Assert.AreEqual(command.CultureCode, dbEntity?.CultureCode);
         Assert.NotNull(@event);
     }
 }

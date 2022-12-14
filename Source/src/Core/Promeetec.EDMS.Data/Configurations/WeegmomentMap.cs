@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Weegmoment;
+using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment;
 
 namespace Promeetec.EDMS.Data.Configurations;
 

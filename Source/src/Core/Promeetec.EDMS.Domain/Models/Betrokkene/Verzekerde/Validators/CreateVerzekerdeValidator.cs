@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators.Rules;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
 
@@ -30,47 +31,24 @@ public class CreateVerzekerdeValidator : AbstractValidator<CreateVerzekerde>
 
         RuleFor(c => c.Persoon.Geboortedatum)
             .NotEmpty().WithMessage("Geboortedatum is verplicht.")
-            .InclusiveBetween(new DateTime(1900, 1, 1), DateTime.Now);
+            .InclusiveBetween(new DateTime(1900, 1, 1), DateTime.Now)
+            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsGeboortedatumValid { Geboortedatum = c.Persoon.Geboortedatum }))
+            .WithMessage(c => "De geboortedatum kan niet in de toekomst liggen!");
 
 
         RuleFor(c => c.Bsn)
             .NotEmpty().WithMessage("Bsn is verplicht.")
             .Length(8, 9).WithMessage("Bsn bestaat uit 9 cijfers.")
-           .Must(BeAValidBsn).WithMessage(c => $"{c.Bsn} is geen geldig burgerservicenummer.");
+            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsBsnValid { Bsn = c.Bsn }))
+            .WithMessage(c => $"{c.Bsn} is geen geldig burgerservicenummer.")
+            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsBsnUnique { Bsn = c.Bsn }))
+            .WithMessage(c => "Er bestaat al een cliënt met hetzelfde burgerservicenummer!");
 
-        
+
         RuleFor(c => c.Adres.LandId)
             .NotEmpty().WithMessage("Land is verplicht.");
 
         RuleFor(c => c.Zorgverzekering.VerzekeraarId)
             .NotEmpty().WithMessage("Verzekeraar is verplicht.");
-    }
-
-    private static bool BeAValidBsn(string bsn)
-    {
-        if (bsn.Length == 8)
-            bsn = "0" + bsn;
-
-        var isValid = IsValidBSN(bsn);
-        return isValid;
-    }
-
-    private static bool IsValidBSN(string bsn)
-    {
-        int.TryParse(bsn, out var bsnNummer);
-        if (bsnNummer <= 9999999 || bsnNummer > 999999999)
-        {
-            return false;
-        }
-
-        int sum = -1 * bsnNummer % 10;
-
-        for (int multiplier = 2; bsnNummer > 0; multiplier++)
-        {
-            int val = (bsnNummer /= 10) % 10;
-            sum += multiplier * val;
-        }
-
-        return sum != 0 && sum % 11 == 0;
     }
 }

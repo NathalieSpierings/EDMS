@@ -1,29 +1,29 @@
-﻿using Promeetec.EDMS.Domain.Modules.GLI.Intake.Commands;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Modules.GLI.Intake.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Handlers;
+
+public class UpdateIntakeStatusHandler : ICommandHandler<UpdateIntakeStatus>
 {
-    public class UpdateIntakeStatusHandler : ICommandHandlerAsync<WijzigIntakeStatus>
+    private readonly IGliIntakeRepository _repository;
+
+    public UpdateIntakeStatusHandler(IGliIntakeRepository repository)
     {
-        private readonly IGliIntakeRepository _repository;
+        _repository = repository;
+    }
 
-        public UpdateIntakeStatusHandler(IGliIntakeRepository repository)
-        {
-            _repository = repository;
-        }
+    public async Task<IEnumerable<IEvent>> Handle(UpdateIntakeStatus command)
+    {
+        var intake = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Verwerkt == false);
+        if (intake == null)
+            throw new DataException($"GLI intake met Id {command.Id} niet gevonden.");
 
-        public async Task<CommandResponse> HandleAsync(WijzigIntakeStatus command)
-        {
-            var intake = await _repository.GetByIdAsync(command.Id);
-            if (intake == null)
-                throw new ApplicationException($"GLI intake niet gevonden. Id: {command.Id}");
+        intake.UpdateIntakeStatus(command);
+        await _repository.UpdateAsync(intake);
 
-            intake.UpdateIntakeStatus(command);
-            await _repository.UpdateAsync(intake);
-
-            return new CommandResponse
-            {
-                Events = intake.Events
-            };
-        }
+        return new IEvent[] { };
     }
 }

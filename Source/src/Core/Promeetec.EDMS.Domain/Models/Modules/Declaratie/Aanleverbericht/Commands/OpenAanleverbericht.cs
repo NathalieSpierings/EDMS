@@ -1,6 +1,7 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanleverbericht.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+
+public class OpenAanleverbericht : CommandBase
 {
-    public class OpenAanleverbericht : DomainCommand<Aanleverbericht>
-    {
-    }
 }

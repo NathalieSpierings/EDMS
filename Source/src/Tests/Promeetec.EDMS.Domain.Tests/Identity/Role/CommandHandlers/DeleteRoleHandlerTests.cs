@@ -88,7 +88,8 @@ public class DeleteRoleHandlerTests : TestFixtureBase
         var dbEntity = await _context.Roles.FirstOrDefaultAsync(x => x.Id == command.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
-        Assert.AreEqual(Status.Verwijderd, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Verwijderd, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

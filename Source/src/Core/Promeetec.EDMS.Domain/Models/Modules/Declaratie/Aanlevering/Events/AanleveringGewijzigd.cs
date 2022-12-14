@@ -1,12 +1,15 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Events;
+
+public class AanleveringGewijzigd : EventBase
 {
-    public class AanleveringGewijzigd : DomainEvent
-    {
-        public string ReferentiePromeetec { get; set; }
-        public string AanleverStatus { get; set; }
-        public string ToevoegenBestand { get; set; }
-        public string Behandelaar { get; set; }
-        public string Eigenaar { get; set; }
-        public string Opmerking { get; set; }
-    }
+    public string ReferentiePromeetec { get; set; }
+    public string AanleverStatus { get; set; }
+    public string ToevoegenBestand { get; set; }
+    public string Behandelaar { get; set; }
+    public string Eigenaar { get; set; }
+    public string Opmerking { get; set; }
+    public Guid? BehandelaarId { get; set; }
+    public Guid EigenaarId { get; set; }
 }

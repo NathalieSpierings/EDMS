@@ -1,11 +1,12 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.GLI.Intake.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Events;
+
+public class IntakeGewijzigd : EventBase
 {
-    public class IntakeGewijzigd : DomainEvent
-    {
-        public string IntakeDatum { get; set; }
-        public string Opmerking { get; set; }
-        public string Lengte { get; set; }
-        public string Gewicht { get; set; }
-        public string Opnamedatum { get; set; }
-    }
+    public string IntakeDatum { get; set; }
+    public string? Opmerking { get; set; }
+    public string? Lengte { get; set; }
+    public string? Gewicht { get; set; }
+    public string? Opnamedatum { get; set; }
 }

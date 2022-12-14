@@ -9,20 +9,20 @@ public class Notificatie : AggregateRoot
     /// <summary>
     /// The title of the notification.
     /// </summary>
-    [Required, MaxLength(450)]
+    [Required, MaxLength(256)]
     public string Titel { get; set; }
 
     /// <summary>
     /// The message of the notification.
     /// </summary>
-    [Required, MaxLength]
+    [Required, MaxLength(450)]
     public string Bericht { get; set; }
 
 
     /// <summary>
     /// The url for the notification.
     /// </summary>
-    [MaxLength(450)]
+    [MaxLength(256)]
     public string Url { get; set; }
 
     /// <summary>

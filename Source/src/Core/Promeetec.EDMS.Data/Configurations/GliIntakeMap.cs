@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
 
 namespace Promeetec.EDMS.Data.Configurations;
 

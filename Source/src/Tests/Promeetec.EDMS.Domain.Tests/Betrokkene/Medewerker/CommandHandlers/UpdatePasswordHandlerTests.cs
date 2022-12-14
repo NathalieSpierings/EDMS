@@ -101,11 +101,12 @@ public class UpdatePasswordHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        
+
+        Assert.NotNull(dbEntity);
         var hasher = new PasswordHasher<Models.Betrokkene.Medewerker.Medewerker>();
-        var hash = dbEntity.PasswordHash;
+        var hash = dbEntity?.PasswordHash;
         var isCurrentHashValid = hasher.VerifyHashedPassword(dbEntity, hash, "Vliegerronde!22");
-        
+
         Assert.AreEqual(isCurrentHashValid, PasswordVerificationResult.Success);
         Assert.NotNull(@event);
     }

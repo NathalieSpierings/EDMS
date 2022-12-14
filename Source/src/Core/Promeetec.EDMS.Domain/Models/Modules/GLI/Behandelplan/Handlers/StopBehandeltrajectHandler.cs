@@ -1,29 +1,51 @@
-﻿using Promeetec.EDMS.Domain.Modules.GLI.Behandelplan.Commands;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Events;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Modules.GLI.Behandelplan.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Handlers;
+
+public class StopBehandeltrajectHandler : ICommandHandler<StopBehandeltraject>
 {
-    public class StopBehandeltrajectHandler : ICommandHandlerAsync<StopBehandeltraject>
+    private readonly IGliBehandelplanRepository _repository;
+    private readonly IEventRepository _eventRepository;
+
+    public StopBehandeltrajectHandler(IGliBehandelplanRepository repository, IEventRepository eventRepository)
     {
-        private readonly IGliBehandelplanRepository _repository;
+        _repository = repository;
+        _eventRepository = eventRepository;
+    }
 
-        public StopBehandeltrajectHandler(IGliBehandelplanRepository repository)
+    public async Task<IEnumerable<IEvent>> Handle(StopBehandeltraject command)
+    {
+        var behandelplan = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+        if (behandelplan == null)
+            throw new DataException($"GLI behandelplan met Id {command.Id} niet gevonden.");
+
+        behandelplan.StopBehandeltraject(command);
+
+        var @event = new BehandeltrajectGestopt
         {
-            _repository = repository;
-        }
+            TargetId = behandelplan.Id,
+            TargetType = nameof(GliBehandelplan),
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
-        public async Task<CommandResponse> HandleAsync(StopBehandeltraject command)
-        {
-            var behandelplan = await _repository.GetByIdAsync(command.Id);
-            if (behandelplan == null)
-                throw new ApplicationException($"GLI behandelplan niet gevonden. Id: {command.Id}");
+            VoortijdigGestopt = "Ja",
+            VoortijdigeStopdatum = command.VoortijdigeStopdatum.ToString("dd-MM-yyyy"),
+            VoortijdigeStopCode = command.VoortijdigeStopCode,
+            VoortijdigeStopReden = command.VoortijdigeStopReden,
+            Opmerking = command.Opmerking
+        };
 
-            behandelplan.StopBehandeltraject(command);
-            await _repository.UpdateAsync(behandelplan);
+        await _repository.UpdateAsync(behandelplan);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
 
-            return new CommandResponse
-            {
-                Events = behandelplan.Events
-            };
-        }
+        return new IEvent[] { @event };
     }
 }

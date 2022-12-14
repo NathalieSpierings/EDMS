@@ -3,8 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Extensions;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
+using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 using Promeetec.EDMS.Domain.Models.Shared;
@@ -86,7 +87,7 @@ public class Verzekerde : AggregateRoot
     public virtual Adres.Adres Adres { get; set; }
 
     public Guid? ZorgprofielId { get; set; }
-    public virtual Zorgprofiel Zorgprofiel { get; set; }
+    public virtual Zorgprofiel? Zorgprofiel { get; set; }
 
     public Guid? ZorgverzekeringId { get; set; }
     public virtual Zorgverzekering.Zorgverzekering Zorgverzekering { get; set; }
@@ -97,7 +98,7 @@ public class Verzekerde : AggregateRoot
     public virtual ICollection<GliBehandelplan> GliBehandelplannen { get; set; } = new List<GliBehandelplan>();
     public virtual ICollection<GliIntake> GliIntakes { get; set; } = new List<GliIntake>();
     public virtual ICollection<VerzekerdeToZorgverzekering> Zorgverzekeringen { get; set; } = new List<VerzekerdeToZorgverzekering>();
-    public virtual ICollection<Weegmoment.Weegmoment> WeegMomenten { get; set; } = new List<Weegmoment.Weegmoment>();
+    public virtual ICollection<Weegmoment> WeegMomenten { get; set; } = new List<Weegmoment>();
     public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; } = new List<VerbruiksmiddelPrestatie>();
 
     #endregion

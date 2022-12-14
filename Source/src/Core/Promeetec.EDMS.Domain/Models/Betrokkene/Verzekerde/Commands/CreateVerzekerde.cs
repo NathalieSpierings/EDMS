@@ -14,7 +14,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands
         public Persoon.Persoon Persoon { get; set; }
 
         public Zorgverzekering.Zorgverzekering Zorgverzekering { get; set; }
-        public Zorgprofiel Zorgprofiel { get; set; }
+        public Zorgprofiel? Zorgprofiel { get; set; }
 
         public string AgbCodeVerwijzer { get; set; }
         public string NaamVerwijzer { get; set; }

@@ -51,7 +51,8 @@ public class UpdateNotificationHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == noti.Id);
 
 
-        Assert.AreEqual(command.NotificatieStatus, dbEntity.NotificatieStatus);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.NotificatieStatus, dbEntity?.NotificatieStatus);
         Assert.Null(@event);
     }
 }

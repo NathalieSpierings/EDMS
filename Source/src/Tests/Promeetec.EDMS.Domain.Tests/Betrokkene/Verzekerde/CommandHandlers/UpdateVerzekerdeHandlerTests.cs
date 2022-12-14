@@ -12,6 +12,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.CommandHandlers;
 
@@ -85,7 +86,9 @@ public class UpdateVerzekerdeHandlerTests : TestFixtureBase
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == verzekerde.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.AreEqual(command.Bsn, dbEntity.Bsn);
+
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.Bsn, dbEntity?.Bsn);
         Assert.NotNull(@event);
     }
 }

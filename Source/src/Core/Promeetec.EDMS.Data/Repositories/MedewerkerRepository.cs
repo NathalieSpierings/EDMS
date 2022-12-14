@@ -498,7 +498,7 @@ public class MedewerkerRepository : Repository<Medewerker>, IMedewerkerRepositor
 		  //                      SELECT  A.Id 
 		  //                      FROM Aanlevering A
 		  //                      WHERE A.EigenaarId = @id
-	   //                     ) OR AB.LaasteLezerId = @id OR AB.OntvangerId = @id OR AB.AfzenderId = @id
+	   //                     ) OR AB.LaatsteLezerId = @id OR AB.OntvangerId = @id OR AB.AfzenderId = @id
 
                                                
 	   //                     SELECT DISTINCT E.CommandId 

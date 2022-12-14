@@ -1,29 +1,61 @@
-using Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Commands;
+using System.Data;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Events;
+using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Extensions;
 
-namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Handlers;
+
+public class UpdateAanleveringHandler : ICommandHandler<UpdateAanlevering>
 {
-    public class UpdateAanleveringHandler : ICommandHandlerAsync<UpdateAanlevering>
+    private readonly IAanleveringRepository _repository;
+    private readonly IEventRepository _eventRepository;
+    private readonly IValidator<UpdateAanlevering> _validator;
+
+    public UpdateAanleveringHandler(IAanleveringRepository repository, IEventRepository eventRepository, IValidator<UpdateAanlevering> validator)
     {
-        private readonly IAanleveringRepository _repository;
+        _repository = repository;
+        _eventRepository = eventRepository;
+        _validator = validator;
+    }
 
-        public UpdateAanleveringHandler(IAanleveringRepository repository)
+    public async Task<IEnumerable<IEvent>> Handle(UpdateAanlevering command)
+    {
+        await _validator.ValidateCommand(command);
+
+        var aanlevering = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+        if (aanlevering == null)
+            throw new DataException($"Land met Id {command.Id} niet gevonden.");
+
+        aanlevering.Update(command);
+
+        var @event = new AanleveringGewijzigd
         {
-            _repository = repository;
-        }
+            TargetId = aanlevering.Id,
+            TargetType = nameof(Aanlevering),
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
-        public async Task<CommandResponse> HandleAsync(UpdateAanlevering command)
-        {
-            var aanlevering = await _repository.GetByIdAsync(command.AggregateRootId);
-            if (aanlevering == null)
-                throw new ApplicationException($"Aanlevering niet gevonden. Id: {command.AggregateRootId}");
+            ReferentiePromeetec = command.ReferentiePromeetec,
+            AanleverStatus = command.AanleverStatus.GetDisplayName(),
+            ToevoegenBestand = command.ToevoegenBestand.ToString(),
+            Behandelaar = command.BehandelaarVolledigeNaam,
+            Eigenaar = command.EigenaarVolledigeNaam,
+            Opmerking = command.Opmerking,
+            BehandelaarId = command.BehandelaarId,
+            EigenaarId = command.EigenaarId
+        };
 
-            aanlevering.Update(command);
-            await _repository.UpdateAsync(aanlevering);
+        await _repository.UpdateAsync(aanlevering);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
 
-            return new CommandResponse
-            {
-                Events = aanlevering.Events
-            };
-        }
+        return new IEvent[] { @event };
     }
 }

@@ -10,6 +10,7 @@ using Promeetec.EDMS.Domain.Models.Document.Rapportage;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Rapportage.CommandHandlers;
 

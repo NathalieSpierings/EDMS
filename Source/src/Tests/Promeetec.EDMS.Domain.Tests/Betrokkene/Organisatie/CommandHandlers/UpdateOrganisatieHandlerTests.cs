@@ -79,11 +79,13 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
         await sut.Handle(command);
 
 
-        var updatedOrganisatie = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
+        var dbEntity = await _context.Organisaties.FirstOrDefaultAsync(x => x.Id == command.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == command.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.AreEqual(command.Naam, updatedOrganisatie.Naam);
+
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.Naam, dbEntity?.Naam);
         Assert.NotNull(@event);
     }
 }

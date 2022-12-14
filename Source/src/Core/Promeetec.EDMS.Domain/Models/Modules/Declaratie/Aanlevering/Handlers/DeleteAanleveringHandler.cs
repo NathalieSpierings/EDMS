@@ -1,29 +1,48 @@
-﻿using Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Commands;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Events;
+using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Handlers;
+
+public class DeleteAanleveringHandler : ICommandHandler<DeleteAanlevering>
 {
-    public class DeleteAanleveringHandler : ICommandHandlerAsync<DeleteAanlevering>
+    private readonly IAanleveringRepository _repository;
+    private readonly IEventRepository _eventRepository;
+
+    public DeleteAanleveringHandler(IAanleveringRepository repository, IEventRepository eventRepository)
     {
-        private readonly IAanleveringRepository _repository;
+        _repository = repository;
+        _eventRepository = eventRepository;
+    }
 
-        public DeleteAanleveringHandler(IAanleveringRepository repository)
+    public async Task<IEnumerable<IEvent>> Handle(DeleteAanlevering command)
+    {
+        var aanlevering = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+        if (aanlevering == null)
+            throw new DataException($"Aanlevering met Id {command.Id} niet gevonden.");
+
+        aanlevering.Delete(command);
+
+        var @event = new AanleveringVerwijderd
         {
-            _repository = repository;
-        }
+            TargetId = aanlevering.Id,
+            TargetType = nameof(Aanlevering),
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
-        public async Task<CommandResponse> HandleAsync(DeleteAanlevering command)
-        {
-            var aanlevering = await _repository.GetByIdAsync(command.AggregateRootId);
-            if (aanlevering == null)
-                throw new ApplicationException($"Aanlevering niet gevonden. Id: {command.AggregateRootId}");
+            Status = Status.Verwijderd.ToString()
+        };
 
-            aanlevering.Delete(command);
-            await _repository.UpdateAsync(aanlevering);
+        await _repository.UpdateAsync(aanlevering);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
 
-            return new CommandResponse
-            {
-                Events = aanlevering.Events
-            };
-        }
+        return new IEvent[] { @event };
     }
 }

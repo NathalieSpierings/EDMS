@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Bestand;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
 using Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
 using Promeetec.EDMS.Domain.Models.Shared;
@@ -70,7 +68,7 @@ public class Organisatie : AggregateRoot
     /// Value indicating whether the organisatie is a zorgroep or not.
     /// </summary>
     public bool Zorggroep { get; set; }
-    
+
     /// <summary>
     /// The status of the organisatie.
     /// </summary>

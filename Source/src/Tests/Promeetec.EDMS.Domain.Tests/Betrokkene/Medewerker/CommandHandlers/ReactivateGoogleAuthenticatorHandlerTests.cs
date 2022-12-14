@@ -92,10 +92,11 @@ public class ReactivateGoogleAuthenticatorHandlerTests : TestFixtureBase
         var dbEntity = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == medewerker.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == medewerker.Id);
 
-        Assert.AreEqual(UserAccountState.ReactivateGoogleAuthenticator, dbEntity.AccountState);
-        Assert.AreEqual(false, dbEntity.GoogleAuthenticatorEnabled);
-        Assert.AreEqual(null, dbEntity.GoogleAuthenticatorSecretKey);
-        Assert.AreEqual(false, dbEntity.TwoFactorEnabled);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(UserAccountState.ReactivateGoogleAuthenticator, dbEntity?.AccountState);
+        Assert.AreEqual(false, dbEntity?.GoogleAuthenticatorEnabled);
+        Assert.AreEqual(null, dbEntity?.GoogleAuthenticatorSecretKey);
+        Assert.AreEqual(false, dbEntity?.TwoFactorEnabled);
         Assert.NotNull(@event);
     }
 }

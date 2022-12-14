@@ -4,13 +4,14 @@ using NUnit.Framework;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
 using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Identity.Users;
+using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.CommandHandlers;
 
@@ -19,7 +20,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.CommandHandlers;
 public class ReinstateVerzekerdeHandlerTests : TestFixtureBase
 {
     private EDMSDbContext _context;
-    private IMedewerkerRepository _repository;
+    private IVerzekerdeRepository _repository;
     private IEventRepository _eventRepository;
 
     [SetUp]
@@ -27,73 +28,53 @@ public class ReinstateVerzekerdeHandlerTests : TestFixtureBase
     {
         _context = new EDMSDbContext(Shared.CreateContextOptions());
 
-        _repository = new MedewerkerRepository(_context);
+        _repository = new VerzekerdeRepository(_context);
         _eventRepository = new EventRepository(_context);
     }
 
     [Test]
-    public async Task Should_reinstate_mMedewerker_and_add_event()
+    public async Task Should_reinstate_verzekerde_and_add_event()
     {
-        var cmd = new CreateMedewerker
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
+        var cmd = Fixture.Build<CreateVerzekerde>()
+            .Without(x => x.Adres)
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgprofiel, Fixture.Build<Zorgprofiel>()
+                .Without(x => x.Verzekerden)
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
+                .Create())
+            .With(x => x.Id, Guid.NewGuid())
+            .With(x => x.OrganisatieId, PromeetecId)
+            .Create();
 
-            Id = Guid.NewGuid(),
-            OrganisatieId = Guid.NewGuid(),
-            OrganisatieDisplayName = "Test organisatie",
-            MedewerkerSoort = MedewerkerSoort.Extern,
-            Persoon = new Persoon
-            {
-                Geboortedatum = new DateTime(1975, 07, 22),
-                Geslacht = Geslacht.Vrouwelijk,
-                Voorletters = "J",
-                Voornaam = "Joan",
-                Achternaam = "Do",
-                TelefoonZakelijk = "1234567897",
-                TelefoonPrive = "7894561236",
-                Email = "joan.do@test.com",
-            },
-            Email = "joan.do@test.com",
-            Functie = "Recruter",
-            AgbCodeZorgverlener = "87654321",
-            AgbCodeOnderneming = "12345678",
-            IonToestemmingsverklaringActivatieLink = "my link",
-            Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
-            AccountState = UserAccountState.Test,
-            UserName = "0000-jdo",
-            TempCode = "1358#$sd%",
-            PukCode = "ASD345H78",
-            Adres = new Adres
-            {
-                Straat = "Koeveringsedijk",
-                Huisnummer = "5",
-                Huisnummertoevoeging = "A",
-                Postcode = "5491SB",
-                Woonplaats = "Sint Oedenrode",
-                LandNaam = "NEDERLAND"
-            }
-        };
-
-        var medewerker = new Models.Betrokkene.Medewerker.Medewerker(cmd);
-        _context.Medewerkers.Add(medewerker);
+        var verzekerde = new Models.Betrokkene.Verzekerde.Verzekerde(cmd);
+        _context.Verzekerden.Add(verzekerde);
         await _context.SaveChangesAsync();
 
 
-        var command = Fixture.Build<ReinstateMedewerker>()
-            .With(x => x.Id, medewerker.Id)
-            .With(x => x.OrganisatieId, medewerker.OrganisatieId)
+        var command = Fixture.Build<ReinstateVerzekerde>()
+            .With(x => x.Id, verzekerde.Id)
+            .With(x => x.OrganisatieId, PromeetecId)
             .With(x => x.UserId, Guid.NewGuid())
             .With(x => x.UserDisplayName, "Ad de Admin")
             .Create();
 
-        var sut = new ReinstateMedewerkerHandler(_repository, _eventRepository);
+        var sut = new ReinstateVerzekerdeHandler(_repository, _eventRepository);
         await sut.Handle(command);
 
-        var dbEntity = await _context.Medewerkers.FirstOrDefaultAsync(x => x.Id == medewerker.Id);
-        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == medewerker.Id);
+        var dbEntity = await _context.Verzekerden.FirstOrDefaultAsync(x => x.Id == verzekerde.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == verzekerde.Id);
 
-        Assert.AreEqual(Status.Actief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Actief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

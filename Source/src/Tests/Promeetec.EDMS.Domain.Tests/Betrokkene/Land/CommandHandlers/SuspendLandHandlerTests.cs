@@ -33,34 +33,20 @@ public class SuspendLandHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_suspend_land_and_add_event()
     {
-<<<<<<< HEAD
-        var cmd = Fixture.Create<CreateLand>();
-=======
         var cmd = Fixture.Build<CreateLand>()
             .With(x => x.Id, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .Create();
-
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
         var land = new Models.Betrokkene.Land.Land(cmd);
         _context.Landen.Add(land);
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<SuspendLand>()
-<<<<<<< HEAD
-           .With(x => x.Id, land.Id)
+            .With(x => x.Id, land.Id)
            .With(x => x.OrganisatieId, PromeetecId)
            .With(x => x.UserId, Guid.NewGuid())
            .With(x => x.UserDisplayName, "Ad de Admin")
            .Create();
-
-=======
-            .With(x => x.Id, land.Id)
-            .With(x => x.OrganisatieId, PromeetecId)
-            .With(x => x.UserId, Guid.NewGuid())
-            .With(x => x.UserDisplayName, "Ad de Admin")
-            .Create();
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
 
         var sut = new SuspendLandHandler(_repository, _eventRepository);
         await sut.Handle(command);
@@ -68,7 +54,8 @@ public class SuspendLandHandlerTests : TestFixtureBase
         var dbEntity = await _context.Landen.FirstOrDefaultAsync(x => x.Id == land.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == land.Id);
 
-        Assert.AreEqual(Status.Inactief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Inactief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

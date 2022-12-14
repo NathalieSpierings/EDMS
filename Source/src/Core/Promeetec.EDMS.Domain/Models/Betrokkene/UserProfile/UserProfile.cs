@@ -51,7 +51,7 @@ public class UserProfile : AggregateRoot
     /// <summary>
     /// The carbon copy addresses comma seperated.
     /// </summary>
-    [MaxLength]
+    [MaxLength(450)]
     public string? CarbonCopyAdressen { get; set; }
 
 

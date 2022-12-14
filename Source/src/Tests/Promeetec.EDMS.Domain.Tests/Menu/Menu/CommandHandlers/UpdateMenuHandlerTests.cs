@@ -38,12 +38,12 @@ public class UpdateMenuHandlerTests : TestFixtureBase
             .With(x => x.OrganisatieId, PromeetecId)
             .Create();
 
-        var Menu = new Models.Menu.Menu.Menu(cmd);
-        _context.Menus.Add(Menu);
+        var menu = new Models.Menu.Menu.Menu(cmd);
+        _context.Menus.Add(menu);
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<UpdateMenu>()
-            .With(x => x.Id, Menu.Id)
+            .With(x => x.Id, menu.Id)
             .With(x => x.UserId, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
             .With(x => x.UserDisplayName, "Ad de Admin")
@@ -56,12 +56,13 @@ public class UpdateMenuHandlerTests : TestFixtureBase
         var sut = new UpdateMenuHandler(_repository, _eventRepository, validator.Object);
         await sut.Handle(command);
 
-        var dbEntity = await _context.Menus.FirstOrDefaultAsync(x => x.Id == Menu.Id);
-        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == Menu.Id);
+        var dbEntity = await _context.Menus.FirstOrDefaultAsync(x => x.Id == menu.Id);
+        var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == menu.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
+
         Assert.NotNull(dbEntity);
-        Assert.AreEqual(command.Name, dbEntity.Name);
+        Assert.AreEqual(command.Name, dbEntity?.Name);
         Assert.NotNull(@event);
     }
 }

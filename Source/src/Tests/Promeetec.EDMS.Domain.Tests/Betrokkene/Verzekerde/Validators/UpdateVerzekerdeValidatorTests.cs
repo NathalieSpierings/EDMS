@@ -1,9 +1,12 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
+using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Validators;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
 using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.Validators;
@@ -11,28 +14,38 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.Validators;
 [TestFixture]
 public class UpdateVerzekerdeValidatorTests : TestFixtureBase
 {
-    private UpdateMedewerkerValidator _validator;
+    private Mock<IDispatcher> _dispachter;
+    private UpdateVerzekerdeValidator _validator;
 
     [SetUp]
     public void Setup()
     {
-        _validator = new UpdateMedewerkerValidator();
+        _dispachter = new Mock<IDispatcher>();
+        _validator = new UpdateVerzekerdeValidator(_dispachter.Object);
     }
-
 
 
     [Test]
     public void Should_have_validation_error_when_geslacht_is_empty()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
-                .Without(x => x.TelefoonZakelijk)
-                .Without(x => x.Email)
                 .With(x => x.Geslacht, (Geslacht)(-1))
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
@@ -44,15 +57,24 @@ public class UpdateVerzekerdeValidatorTests : TestFixtureBase
     [Test]
     public void Should_have_validation_error_when_voorletters_is_empty()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
-                .Without(x => x.TelefoonZakelijk)
-                .Without(x => x.Email)
                 .With(x => x.Voorletters, String.Empty)
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
@@ -63,15 +85,24 @@ public class UpdateVerzekerdeValidatorTests : TestFixtureBase
     [Test]
     public void Should_have_validation_error_when_voorletters_is_too_long()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
-                .Without(x => x.TelefoonZakelijk)
-                .Without(x => x.Email)
-                .With(x => x.Voorletters, new string('*', 22))
+               .With(x => x.Voorletters, new string('*', 22))
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
@@ -79,19 +110,27 @@ public class UpdateVerzekerdeValidatorTests : TestFixtureBase
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
     }
 
-
     [Test]
     public void Should_have_validation_error_when_tussenvoegsel_is_too_long()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
-                .Without(x => x.TelefoonZakelijk)
-                .Without(x => x.Email)
                 .With(x => x.Tussenvoegsel, new string('*', 22))
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
@@ -103,15 +142,27 @@ public class UpdateVerzekerdeValidatorTests : TestFixtureBase
     [Test]
     public void Should_have_validation_error_when_achternaam_is_empty()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
+                 .Without(x => x.TelefoonPrive)
                 .Without(x => x.TelefoonZakelijk)
                 .Without(x => x.Email)
                 .With(x => x.Achternaam, String.Empty)
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
@@ -122,15 +173,27 @@ public class UpdateVerzekerdeValidatorTests : TestFixtureBase
     [Test]
     public void Should_have_validation_error_when_achternaam_is_too_long()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
+                 .Without(x => x.TelefoonPrive)
                 .Without(x => x.TelefoonZakelijk)
                 .Without(x => x.Email)
                 .With(x => x.Achternaam, new string('*', 22))
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
@@ -139,108 +202,204 @@ public class UpdateVerzekerdeValidatorTests : TestFixtureBase
     }
 
     [Test]
-    public void Should_have_validation_error_when_telefoon_zakelijk_is_too_long()
+    public void Should_have_validation_error_when_geboortedatum_is_empty()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
-                .Without(x => x.Email)
-                .With(x => x.TelefoonZakelijk, new string('*', 22))
+                .With(x => x.Geboortedatum, DateTime.MinValue)
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonZakelijk);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Geboortedatum);
     }
 
     [Test]
-    public void Should_have_validation_error_when_telefoon_zakelijk__is_not_valid()
+    public void Should_have_validation_error_when_geboortedatum_is_in_feature()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
             .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonPrive)
-                .Without(x => x.Email)
-                .With(x => x.TelefoonZakelijk, new string('*', 22))
+                .With(x => x.Geboortedatum, DateTime.Now.AddDays(1))
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonZakelijk);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Geboortedatum);
     }
 
-
     [Test]
-    public void Should_have_validation_error_when_telefoon_prive_is_too_long()
+    public void Should_have_validation_error_when_bsn_is_empty()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
-            .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonZakelijk)
-                .Without(x => x.Email)
-                .With(x => x.TelefoonPrive, new string('*', 16))
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
+            .With(x => x.Bsn, string.Empty)
+            .With(x => x.Persoon, Fixture.Build<Persoon>().Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonPrive);
+        result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
     [Test]
-    public void Should_have_validation_error_when_telefoon_prive__is_not_valid()
+    public void Should_have_validation_error_when_bsn_is_not_valid()
     {
-        var command = Fixture.Build<UpdateMedewerker>()
+        var command = Fixture.Build<UpdateVerzekerde>()
             .Without(x => x.Persoon)
             .Without(x => x.Adres)
-            .Without(x => x.Email)
-            .With(x => x.Persoon, Fixture.Build<Persoon>()
-                .Without(x => x.TelefoonZakelijk)
-                .Without(x => x.Email)
-                .With(x => x.TelefoonPrive, new string('*', 22))
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
+            .With(x => x.Bsn, new string('*', 12))
+            .With(x => x.Persoon, Fixture.Build<Persoon>().Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
                 .Create())
             .Create();
 
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonPrive);
+        result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
     [Test]
-    public void Should_have_validation_error_when_email_is_too_long()
+    public void Should_have_validation_error_when_bsn_is_not_unique()
     {
-        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.Email, new string('*', 460)).Create();
+        var cmd = Fixture.Build<UpdateVerzekerde>()
+            .With(x => x.Bsn, "432127331")
+            .Without(x => x.Adres)
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .Without(x => x.Zorgprofiel)
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
+                .Create())
+            .Create();
+
+
+
+        var command = Fixture.Build<UpdateVerzekerde>()
+            .With(x => x.Id, cmd.Id)
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
+            .With(x => x.Bsn, "432127331")
+            .With(x => x.Persoon, Fixture.Build<Persoon>().Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
+                .Create())
+            .Create();
+
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Email);
+        result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
-    [Test]
-    public void Should_have_validation_error_when_email_is_not_valid()
-    {
-        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.Email, "email").Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Email);
-    }
+    //[Test]
+    //public void Should_have_Validation_error_when_landid_is_empty()
+    //{
+    //    var command = Fixture.Build<UpdateVerzekerde>()
+    //        .Without(x => x.Zorgprofiel)
+    //        .Without(x => x.Zorgverzekering)
+    //        .With(x => x.Bsn, "054243579")
+    //        .Without(x => x.Adres)
+    //        .With(x => x.Adres, Fixture.Build<Adres>()
+    //            .Without(x => x.Verzekerden)
+    //            .Without(x => x.Land)
+    //            .With(x => x.LandId, Guid.Empty)
+    //            .Create())
+    //        .Create();
 
+    //    var result = _validator.TestValidate(command);
+    //    result.ShouldHaveValidationErrorFor(x => x.Adres.LandId);
+    //}
 
     [Test]
-    public void Should_have_validation_error_when_agbcode_onderneming_is_empty()
+    public void Should_have_Validation_error_when_verzekeraarid_is_empty()
     {
-        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.AgbCodeOnderneming, string.Empty).Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.AgbCodeOnderneming);
-    }
+        var command = Fixture.Build<UpdateVerzekerde>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
+            .With(x => x.Bsn, "054243579")
+            .With(x => x.Persoon, Fixture.Build<Persoon>().Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .Create())
+                .With(x => x.VerzekeraarId, Guid.Empty)
+                .Create())
+            .Create();
 
-    [Test]
-    public void Should_have_validation_error_when_functie_is_too_long()
-    {
-        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.Functie, new string('*', 201)).Create();
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Functie);
+        result.ShouldHaveValidationErrorFor(x => x.Zorgverzekering.VerzekeraarId);
     }
 }

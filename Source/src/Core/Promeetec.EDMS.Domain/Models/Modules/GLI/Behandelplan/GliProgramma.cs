@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan;
+﻿namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
 
 public enum GliProgramma
 {

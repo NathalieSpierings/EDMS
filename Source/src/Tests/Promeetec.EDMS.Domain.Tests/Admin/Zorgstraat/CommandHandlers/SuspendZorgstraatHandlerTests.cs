@@ -52,7 +52,8 @@ public class SuspendZorgstraatHandlerTests : TestFixtureBase
         var dbEntity = await _context.Zorgstraten.FirstOrDefaultAsync(x => x.Id == Zorgstraat.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == Zorgstraat.Id);
 
-        Assert.AreEqual(Status.Inactief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Inactief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

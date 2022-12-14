@@ -45,14 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\AssingVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\DeleteVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\ReinstateVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\ReinstateVerzekerdeMetZorgprofielHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\SuspendVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\SuspendVerzekerdeMetZorgprofielHandlerTests.cs" />
     <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\UndeleteVerzekerdeHandlerTests.cs" />
-    <Compile Remove="Betrokkene\Verzekerde\CommandHandlers\UpdateVerzekerdeLengteHandlerTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,12 +79,11 @@
     <Compile Include="Document\Bestand\CommandHandlers\UpdateBestandHandlerTests.cs" />
     <Compile Include="Document\Bestand\CommandHandlers\UpdateEigenaarBestandHandlerTests.cs" />
     <Compile Include="Document\Overigbestand\CommandHandlers\CreateOverigBestandHandlerTests.cs" />
-<<<<<<< HEAD
     <Compile Include="Document\Rapportage\CommandHandlers\CreateRapportageHandlerTests.cs" />
-=======
+    <Compile Include="Menu\MenuItem\CommandHandlers\AddMenuItemHandlerTests.cs" />
     <Compile Include="Menu\MenuItem\MenuItemTests.cs" />
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
   </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.17.0" />
@@ -103,9 +95,14 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj" />
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj" />
+		<ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
+	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Modules\GLI\Behandelplan\Validators\" />
+	  <Folder Include="Modules\GLI\Intake\Validators\" />
+	  <Folder Include="Modules\Verbruiksmiddelen\Validators\" />
+	</ItemGroup>
 </Project>

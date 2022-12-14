@@ -7,11 +7,8 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
-<<<<<<< HEAD
-=======
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 using Promeetec.EDMS.Domain.Tests.Helpers;
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
+
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.Validators;
 
@@ -235,6 +232,34 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
     }
 
     [Test]
+    public void Should_have_validation_error_when_geboortedatum_is_in_feature()
+    {
+        var command = Fixture.Build<CreateVerzekerde>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .With(x => x.Geboortedatum, DateTime.Now.AddDays(1))
+                .Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
+                .Create())
+            .Create();
+
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Geboortedatum);
+    }
+
+    [Test]
     public void Should_have_validation_error_when_bsn_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
@@ -288,23 +313,67 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
+    [Test]
+    public void Should_have_validation_error_when_bsn_is_not_unique()
+    {
+        var cmd = Fixture.Build<CreateVerzekerde>()
+            .With(x => x.Bsn, "432127331")
+            .Without(x => x.Adres)
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .Without(x => x.Zorgprofiel)
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
+                .Create())
+            .Create();
+
+
+
+        var command = Fixture.Build<CreateVerzekerde>()
+            .With(x => x.Id, cmd.Id)
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Zorgprofiel)
+            .Without(x => x.Zorgverzekering)
+            .With(x => x.Bsn, "432127331")
+            .With(x => x.Persoon, Fixture.Build<Persoon>().Create())
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
+                .Without(x => x.Verzekerden)
+                .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
+                    .With(x => x.Id, Guid.NewGuid())
+                    .Create())
+                .Create())
+            .Create();
+
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Bsn);
+    }
+
     //[Test]
     //public void Should_have_Validation_error_when_landid_is_empty()
     //{
     //    var command = Fixture.Build<CreateVerzekerde>()
-    //        .Without(x => x.Persoon)
-    //        .Without(x => x.Adres)
-    //        .Without(x => x.Adresboek)
     //        .Without(x => x.Zorgprofiel)
     //        .Without(x => x.Zorgverzekering)
     //        .With(x => x.Bsn, "054243579")
-    //        .With(x => x.Persoon, Fixture.Build<Persoon>().With(x => x.Geboortedatum, new DateTime(1975,07,22)).Create())
-    //        .With(x => x.Adres, Fixture.Build<Adres>().Without(x => x.Verzekerden).With(x => x.LandId, Guid.NewGuid()).Create())
-    //        .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>().Without(x => x.Verzekerden)
-    //            .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>().Create())
-    //            .With(x => x.VerzekeraarId, Guid.NewGuid).Create())
+    //        .Without(x => x.Adres)
+    //        .With(x => x.Adres, Fixture.Build<Adres>()
+    //            .Without(x => x.Verzekerden)
+    //            .Without(x => x.Land)
+    //            .With(x => x.LandId, Guid.Empty)
+    //            .Create())
     //        .Create();
-
 
     //    var result = _validator.TestValidate(command);
     //    result.ShouldHaveValidationErrorFor(x => x.Adres.LandId);

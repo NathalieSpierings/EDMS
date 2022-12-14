@@ -56,6 +56,8 @@ public class UpdateChangelogHandlerTests : TestFixtureBase
         var dbEntity = await _context.Changelogs.FirstOrDefaultAsync(x => x.Id == post.Id);
 
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
-        Assert.AreEqual(command.Title, dbEntity.Title);
+
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(command.Title, dbEntity?.Title);
     }
 }

@@ -1,22 +1,23 @@
-﻿using Promeetec.EDMS.Domain.Modules.Verbruiksmiddelen.Zorgprofiel;
+﻿using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Modules.Verbruiksmiddelen.Verbruiksmiddel.Events
+namespace Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Events;
+
+public class VerbruiksmiddelPrestatieAangemaakt : EventBase
 {
-    public class VerbruiksmiddelPrestatieAangemaakt : DomainEvent
-    {
-        public string AgbCodeOnderneming { get; set; }
-        public HulpmiddelenSoort HulpmiddelenSoort { get; set; }
-        public VerbruiksmiddelPrestatieStatus Status { get; set; }
-        public int? VerwerkMaand { get; set; }
-        public int? VerwerkJaar { get; set; }
-        public ProfielCode? ProfielCode { get; set; }
-        public DateTime? ProfielStartdatum { get; set; }
-        public DateTime? ProfielEinddatum { get; set; }
-        public int? ZIndex { get; set; }
-        public DateTime? PrestatieDatum { get; set; }
-        public int? Hoeveelheid { get; set; }
-        public Guid EigenaarId { get; set; }
-        public Guid VerzekerdeId { get; set; }
-        public Guid OrganisatieId { get; set; }
-    }
+    public string AgbCodeOnderneming { get; set; }
+    public string HulpmiddelenSoort { get; set; }
+    public string Status { get; set; }
+    public string? VerwerkMaand { get; set; }
+    public string? VerwerkJaar { get; set; }
+    public string? ProfielCode { get; set; }
+    public string? ProfielStartdatum { get; set; }
+    public string? ProfielEinddatum { get; set; }
+    public string? ZIndex { get; set; }
+    public string? PrestatieDatum { get; set; }
+    public string? Hoeveelheid { get; set; }
+    public Guid EigenaarId { get; set; }
+    public string EigenaarVolledigeNaam { get; set; }
+    public Guid VerzekerdeId { get; set; }
+    public string VerzekerdeVolledigeNaam { get; set; }
+    public string OrganisatieDisplayName { get; set; }
 }

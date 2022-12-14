@@ -66,7 +66,7 @@ public static class PersoonExtensions
     }
 
 
-    public static string SetFormeleNaam(string voorletters, string tussenvoegsel, string achternaam, string? voornaam = default)
+    public static string SetFormeleNaam(string voorletters, string? tussenvoegsel, string achternaam, string? voornaam = default)
     {
         string naam;
         if (!string.IsNullOrWhiteSpace(voornaam))
@@ -151,7 +151,7 @@ public static class PersoonExtensions
         return sb.ToString();
     }
 
-    public static string GenerateUserName(string organisatieNummer, string voorletters, string tussenvoegsel, string achternaam)
+    public static string GenerateUserName(string organisatieNummer, string voorletters, string? tussenvoegsel, string achternaam)
     {
         voorletters = voorletters.Replace(".", "");
         tussenvoegsel = tussenvoegsel?.Replace(" ", string.Empty).Replace("'", string.Empty);

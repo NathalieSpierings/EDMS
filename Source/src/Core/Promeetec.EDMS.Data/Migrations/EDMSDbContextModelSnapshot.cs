@@ -1387,7 +1387,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<DateTime?>("LaastGelezenOp")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("LaasteLezerId")
+                    b.Property<Guid?>("LaatsteLezerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Onderwerp")
@@ -1410,7 +1410,7 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.HasIndex("AfzenderId");
 
-                    b.HasIndex("LaasteLezerId");
+                    b.HasIndex("LaatsteLezerId");
 
                     b.HasIndex("Onderwerp");
 
@@ -2469,9 +2469,9 @@ namespace Promeetec.EDMS.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "LaasteLezer")
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "LaatsteLezer")
                         .WithMany()
-                        .HasForeignKey("LaasteLezerId");
+                        .HasForeignKey("LaatsteLezerId");
 
                     b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "Ontvanger")
                         .WithMany()
@@ -2487,7 +2487,7 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Navigation("Afzender");
 
-                    b.Navigation("LaasteLezer");
+                    b.Navigation("LaatsteLezer");
 
                     b.Navigation("Ontvanger");
 

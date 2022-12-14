@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
@@ -32,13 +32,11 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
     /// <summary>
     /// The start date of the profiel.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? ProfielStartdatum { get; set; }
 
     /// <summary>
     /// The end date of the profiel.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? ProfielEinddatum { get; set; }
 
     /// <summary>
@@ -49,7 +47,6 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
     /// <summary>
     /// The prestatie date.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? PrestatieDatum { get; set; }
 
     /// <summary>
@@ -75,10 +72,10 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
 
 
     #region Navigation properties
-    
+
     public Guid VerzekerdeId { get; set; }
     public virtual Verzekerde Verzekerde { get; set; }
-    
+
     public Guid OrganisatieId { get; set; }
     public virtual Organisatie Organisatie { get; set; }
 
@@ -93,81 +90,48 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
 
     }
 
-    //public VerbruiksmiddelPrestatie(NieuweVerbruiksmiddelPrestatie cmd)
-    //{
-    //    TimeStamp = DateTime.Now;
-    //    AangemaaktDoorId = cmd.UserId;
-    //    AangemaaktDoor = cmd.UserDisplayName;
+    /// <summary>
+    /// Creates a verbruiksmiddel prestatie.
+    /// </summary>
+    /// <param name="cmd">The create verbruiksmiddel prestatie command.</param>
+    public VerbruiksmiddelPrestatie(CreateVerbruiksmiddelPrestatie cmd)
+    {
+        Id = cmd.Id;
 
-    //    AddAndApplyEvent(new VerbruiksmiddelPrestatieAangemaakt
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
+        AgbCodeOnderneming = cmd.AgbCodeOnderneming;
+        HulpmiddelenSoort = cmd.HulpmiddelenSoort;
+        Status = cmd.Status;
+        ProfielCode = cmd.ProfielCode;
+        ProfielStartdatum = cmd.ProfielStartdatum;
+        ProfielEinddatum = cmd.ProfielEinddatum;
+        ZIndex = cmd.ZIndex;
+        PrestatieDatum = cmd.PrestatieDatum;
+        Hoeveelheid = cmd.Hoeveelheid;
+        VerzekerdeId = cmd.VerzekerdeId;
+        OrganisatieId = cmd.OrganisatieId;
+        TimeStamp = DateTime.Now;
+        AangemaaktDoorId = cmd.UserId;
+        AangemaaktDoor = cmd.UserDisplayName;
+    }
 
-    //        AgbCodeOnderneming = cmd.AgbCodeOnderneming,
-    //        HulpmiddelenSoort = cmd.HulpmiddelenSoort,
-    //        Status = cmd.Status,
-    //        VerwerkJaar = cmd.VerwerkJaar,
-    //        VerwerkMaand = cmd.VerwerkMaand,
-    //        ProfielCode = cmd.ProfielCode,
-    //        ProfielStartdatum = cmd.ProfielStartdatum,
-    //        ProfielEinddatum = cmd.ProfielEinddatum,
-    //        ZIndex = cmd.ZIndex,
-    //        PrestatieDatum = cmd.PrestatieDatum,
-    //        Hoeveelheid = cmd.Hoeveelheid,
-    //        EigenaarId = cmd.EigenaarId,
-    //        VerzekerdeId = cmd.VerzekerdeId,
-    //        OrganisatieId = cmd.OrganisatieId
-    //    });
-    //}
+    /// <summary>
+    /// Update the details of the verbruiksmiddel prestatie.
+    /// </summary>
+    /// <param name="cmd">The update verbruiksmiddel prestatie command.</param>
+    public void Update(UpdateVerbruiksmiddelPrestatie cmd)
+    {
+        AgbCodeOnderneming = cmd.AgbCodeOnderneming;
+        ZIndex = cmd.ZIndex;
+        PrestatieDatum = cmd.PrestatieDatum;
+        Hoeveelheid = cmd.Hoeveelheid;
+        VerzekerdeId = cmd.VerzekerdeId;
+    }
 
-    //public void Update(WijzigVerbruiksmiddelPrestatie cmd)
-    //{
-    //    AgbCodeOnderneming = cmd.AgbCodeOnderneming;
-    //    ZIndex = cmd.ZIndex;
-    //    PrestatieDatum = cmd.PrestatieDatum;
-    //    Hoeveelheid = cmd.Hoeveelheid;
-    //    VerzekerdeId = cmd.VerzekerdeId;
-    //}
-
-
-    //public void Process(VerwerkVerbruiksmiddelPrestatie cmd)
-    //{
-    //    if (Status == VerbruiksmiddelPrestatieStatus.Verwerkt)
-    //        throw new Exception("Deze verbruiksmiddel prestatie is al verwerkt");
-
-    //    AddAndApplyEvent(new VerbruiksmiddelPrestatieVerwerkt
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
-    //    });
-    //}
-
-
-    //#region Private methods
-
-    //private void Apply(VerbruiksmiddelPrestatieAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
-    //    AgbCodeOnderneming = @event.AgbCodeOnderneming;
-    //    HulpmiddelenSoort = @event.HulpmiddelenSoort;
-    //    Status = @event.Status;
-    //    ProfielCode = @event.ProfielCode;
-    //    ProfielStartdatum = @event.ProfielStartdatum;
-    //    ProfielEinddatum = @event.ProfielEinddatum;
-    //    ZIndex = @event.ZIndex;
-    //    PrestatieDatum = @event.PrestatieDatum;
-    //    Hoeveelheid = @event.Hoeveelheid;
-    //    VerzekerdeId = @event.VerzekerdeId;
-    //    OrganisatieId = @event.OrganisatieId;
-    //}
-
-    //private void Apply(VerbruiksmiddelPrestatieVerwerkt @event)
-    //{
-    //    Status = VerbruiksmiddelPrestatieStatus.Verwerkt;
-    //}
-
-    //#endregion
+    /// <summary>
+    /// Sets the status of the verbruiksmiddel prestatie as verwerkt.
+    /// </summary>
+    public void Process()
+    {
+        Status = VerbruiksmiddelPrestatieStatus.Verwerkt;
+    }
 }

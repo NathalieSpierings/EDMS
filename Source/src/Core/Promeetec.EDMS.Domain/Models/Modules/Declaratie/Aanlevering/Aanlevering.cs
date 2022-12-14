@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
@@ -46,7 +48,6 @@ public class Aanlevering : AggregateRoot
     /// <summary>
     /// The status of the aanlevering.
     /// </summary>
-    [Required]
     public Status Status { get; set; }
 
     /// <summary>
@@ -81,10 +82,10 @@ public class Aanlevering : AggregateRoot
 
     public Guid EigenaarId { get; set; }
     public virtual Medewerker Eigenaar { get; set; }
-    
+
     public Guid? BehandelaarId { get; set; }
     public virtual Medewerker Behandelaar { get; set; }
-    
+
     public Guid OrganisatieId { get; set; }
     public virtual Organisatie Organisatie { get; set; }
 
@@ -100,140 +101,91 @@ public class Aanlevering : AggregateRoot
     /// </summary>
     public Aanlevering()
     {
-
     }
 
-    //public Aanlevering(CreateAanlevering cmd)
-    //{
-    //    ToevoegenBestand = cmd.ToevoegenBestand;
-    //    OrganisatieId = cmd.OrganisatieId;
-    //    BehandelaarId = cmd.BehandelaarId;
-    //    EigenaarId = cmd.EigenaarId;
 
-    //    AddAndApplyEvent(new AanleveringAangemaakt
-    //    {
-    //        Source = cmd.Source,
-    //        AggregateRootId = cmd.AggregateRootId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        UserId = cmd.UserId,
+    /// <summary>
+    /// Creates an aanlevering.
+    /// </summary>
+    /// <param name="cmd">The create aanlevering command.</param>
+    public Aanlevering(CreateAanlevering cmd)
+    {
+        Id = cmd.Id;
 
-    //        Organisatie = cmd.Organisatie,
-    //        Behandelaar = cmd.Behandelaar,
-    //        Eigenaar = cmd.Eigenaar,
-    //        Status = Status.Actief.ToString(),
-    //        Jaar = DateTime.Now.Year,
-    //        Aanleverdatum = DateTime.Now,
-    //        Referentie = cmd.Referentie,
-    //        ReferentiePromeetec = cmd.ReferentiePromeetec,
-    //        AanleverStatus = AanleverStatus.Aangemaakt.ToString(),
-    //        ToevoegenBestand = cmd.ToevoegenBestand ? "Ja" : "Nee",
-    //        Opmerking = cmd.Opmerking
-    //    });
-    //}
-
-    //public void Update(UpdateAanlevering cmd)
-    //{
-    //    AanleverStatus = cmd.AanleverStatus;
-    //    ToevoegenBestand = cmd.ToevoegenBestand;
-    //    BehandelaarId = cmd.BehandelaarId;
-    //    EigenaarId = cmd.EigenaarId;
-
-    //    AddAndApplyEvent(new AanleveringGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        // UserDisplayName = cmd.UserDisplayName,
-
-    //        ReferentiePromeetec = cmd.ReferentiePromeetec,
-    //        AanleverStatus = cmd.AanleverStatus.ToString(),
-    //        ToevoegenBestand = cmd.ToevoegenBestand ? "Ja" : "Nee",
-    //        Behandelaar = cmd.Behandelaar,
-    //        Eigenaar = cmd.Eigenaar,
-    //        Opmerking = cmd.Opmerking
-    //    });
-    //}
+        Referentie = cmd.Referentie;
+        ReferentiePromeetec = cmd.ReferentiePromeetec;
+        Opmerking = cmd.Opmerking;
+        ToevoegenBestand = cmd.ToevoegenBestand;
+        OrganisatieId = cmd.OrganisatieId;
+        BehandelaarId = cmd.BehandelaarId;
+        EigenaarId = cmd.EigenaarId;
+        Status = Status.Actief;
+        AanleverStatus = AanleverStatus.Aangemaakt;
+        Jaar = DateTime.Now.Year;
+        Aanleverdatum = DateTime.Now;
+        TimeStamp = DateTime.Now;
+        AangemaaktDoor = cmd.UserId;
+    }
 
 
-    //public void WijzigEigenaar(ChangeEigenaarAanlevering cmd)
-    //{
-    //    AddAndApplyEvent(new EigenaarAanleveringGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        UserId = cmd.UserId,
-    //        Eigenaar = cmd.Eigenaar,
-    //        EigenaarId = cmd.EigenaarId
-    //    });
-    //}
-
-    //public void Delete(DeleteAanlevering cmd)
-    //{
-    //    AddAndApplyEvent(new AanleveringVerwijderd
-    //    {
-    //        AggregateRootId = Id,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        UserId = cmd.UserId,
-
-    //        Status = Status.Verwijderd.ToString()
-    //    });
-    //}
-
-    //public int BerichtSortOrder(CreateAanleverbericht cmd)
-    //{
-    //    if (Aanleverberichten.FirstOrDefault(x => x.Id == cmd.Id) != null)
-    //        return 0;
-
-    //    int sortOrder;
-    //    if (cmd.ParentId == null || cmd.ParentId == Guid.Empty)
-    //    {
-    //        sortOrder = Aanleverberichten.Count(x => x.ParentId == Guid.Empty || x.ParentId == null) + 1;
-    //    }
-    //    else
-    //    {
-    //        sortOrder = Aanleverberichten.Count(x => x.ParentId == cmd.ParentId) + 1;
-    //    }
-
-    //    return sortOrder;
-    //}
+    /// <summary>
+    /// Update the details of the aanlevering.
+    /// </summary>
+    /// <param name="cmd">The update aanlevering command.</param>
+    public void Update(UpdateAanlevering cmd)
+    {
+        ReferentiePromeetec = cmd.ReferentiePromeetec;
+        Opmerking = cmd.Opmerking;
+        AanleverStatus = cmd.AanleverStatus;
+        ToevoegenBestand = cmd.ToevoegenBestand;
+        BehandelaarId = cmd.BehandelaarId;
+        EigenaarId = cmd.EigenaarId;
+        AangepastOp = DateTime.Now;
+        AangepastDoor = cmd.UserId;
+    }
 
 
-    //#region Private methods
+    /// <summary>
+    /// Set the status as deleted.
+    /// </summary>
+    /// <param name="cmd">The delete aanlevering command.</param>
+    public void Delete(DeleteAanlevering cmd)
+    {
+        Status = Status.Verwijderd;
+        AangepastOp = DateTime.Now;
+        AangepastDoor = cmd.UserId;
+    }
 
-    //private void Apply(AanleveringAangemaakt @event)
-    //{
-    //    Id = @event.AggregateRootId;
 
-    //    Status = Status.Actief;
-    //    AanleverStatus = AanleverStatus.Aangemaakt;
-    //    Jaar = DateTime.Now.Year;
-    //    Aanleverdatum = DateTime.Now;
-    //    Referentie = @event.Referentie;
-    //    ReferentiePromeetec = @event.ReferentiePromeetec;
-    //    Opmerking = @event.Opmerking;
-    //    AangemaaktDoor = @event.UserId;
-    //    AangepastOp = DateTime.Now;
-    //    AangepastDoor = @event.UserId;
-    //}
+    /// <summary>
+    /// Update the owner of the aanlevering.
+    /// </summary>
+    /// <param name="cmd">The change owner command.</param>
+    public void WijzigEigenaar(ChangeEigenaarAanlevering cmd)
+    {
+        EigenaarId = cmd.EigenaarId;
+    }
 
-    //private void Apply(AanleveringGewijzigd @event)
-    //{
-    //    ReferentiePromeetec = @event.ReferentiePromeetec;
-    //    Opmerking = @event.Opmerking;
-    //    AangepastOp = DateTime.Now;
-    //    AangepastDoor = @event.UserId;
-    //}
+    /// <summary>
+    /// Sorts the aanleverberichten.
+    /// </summary>
+    /// <param name="cmd">The create aanleverbericht command.</param>
+    public int BerichtSortOrder(CreateAanleverbericht cmd)
+    {
+        if (Aanleverberichten.FirstOrDefault(x => x.Id == cmd.Id) != null)
+            return 0;
 
-    //private void Apply(EigenaarAanleveringGewijzigd @event)
-    //{
-    //    EigenaarId = @event.EigenaarId;
-    //}
+        int sortOrder;
+        if (cmd.ParentId == null || cmd.ParentId == Guid.Empty)
+        {
+            sortOrder = Aanleverberichten.Count(x => x.ParentId == Guid.Empty || x.ParentId == null) + 1;
+        }
+        else
+        {
+            sortOrder = Aanleverberichten.Count(x => x.ParentId == cmd.ParentId) + 1;
+        }
 
-    //private void Apply(AanleveringVerwijderd @event)
-    //{
-    //    Status = Shared.Status.Verwijderd;
-    //    AangepastOp = DateTime.Now;
-    //    AangepastDoor = @event.UserId;
-    //}
+        return sortOrder;
+    }
 
-    //#endregion
 }

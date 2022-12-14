@@ -25,7 +25,7 @@ namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Handlers
 
         public async Task<IEnumerable<IEvent>> Handle(AddMenuItem command)
         {
-            var menu = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+            var menu = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.MenuId && x.Status != Status.Verwijderd);
             if (menu == null)
                 throw new DataException($"Menu met Id {command.Id} niet gevonden.");
 

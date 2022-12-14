@@ -1,8 +1,9 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Events
+﻿using Promeetec.EDMS.Events;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Events;
+
+public class EigenaarAanleveringGewijzigd : EventBase
 {
-    public class EigenaarAanleveringGewijzigd : DomainEvent
-    {
-        public string Eigenaar { get; set; }
-        public Guid EigenaarId { get; set; }
-    }
+    public string Eigenaar { get; set; }
+    public Guid EigenaarId { get; set; }
 }

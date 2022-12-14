@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Domain;
-using System.Linq.Expressions;
 
 namespace Promeetec.EDMS.Data.Repositories
 {
@@ -9,7 +9,7 @@ namespace Promeetec.EDMS.Data.Repositories
     public class Repository<T> : IRepository<T> where T : class, IAggregateRoot
     {
         protected readonly EDMSDbContext _context;
-       
+
         public Repository(EDMSDbContext context)
         {
             _context = context;
@@ -28,7 +28,7 @@ namespace Promeetec.EDMS.Data.Repositories
                 throw new Exception($"Couldn't retrieve entities: {ex.Message}");
             }
         }
-        
+
         /// <inheritdoc />
         public async Task<T> AddAsync(T aggregate)
         {
@@ -47,7 +47,7 @@ namespace Promeetec.EDMS.Data.Repositories
                 throw new Exception($"{nameof(aggregate)} could not be saved: {ex.Message}");
             }
         }
-        
+
         /// <inheritdoc />
         public async Task<IQueryable<T>> AddRangeAsync(IQueryable<T> aggregates)
         {
@@ -73,7 +73,7 @@ namespace Promeetec.EDMS.Data.Repositories
         {
             if (aggregate == null)
                 throw new ArgumentNullException($"{nameof(AddAsync)} entity must not be null");
-            
+
             try
             {
                 _context.Update(aggregate);
@@ -140,7 +140,7 @@ namespace Promeetec.EDMS.Data.Repositories
                 throw new Exception($"{nameof(id)} could not be found: {ex.Message}");
             }
         }
-        
+
         /// <inheritdoc />
         public IQueryable<T> Find(Expression<Func<T, bool>> expression)
         {
@@ -156,14 +156,14 @@ namespace Promeetec.EDMS.Data.Repositories
                 throw new Exception($"{nameof(expression)} could not be found: {ex.Message}");
             }
         }
-        
+
         /// <inheritdoc />
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
         }
 
-        
+
 
         public int RawSQL(string sql)
         {

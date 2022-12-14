@@ -53,7 +53,8 @@ public class SuspendMenuHandlerTests : TestFixtureBase
         var dbEntity = await _context.Menus.FirstOrDefaultAsync(x => x.Id == Menu.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == Menu.Id);
 
-        Assert.AreEqual(Status.Inactief, dbEntity.Status);
+        Assert.NotNull(dbEntity);
+        Assert.AreEqual(Status.Inactief, dbEntity?.Status);
         Assert.NotNull(@event);
     }
 }

@@ -6,7 +6,7 @@ using Promeetec.EDMS.Events;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
 {
-    public class UpdateVerzekerdeLengteHandler : ICommandHandler<UpdateVerzekerdeLengte>
+    public class UpdateVerzekerdeLengteHandler : ICommandHandler<UpdateVerzekerdeLength>
     {
         private readonly IVerzekerdeRepository _repository;
 
@@ -15,7 +15,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
             _repository = repository;
         }
 
-        public async Task<IEnumerable<IEvent>> Handle(UpdateVerzekerdeLengte command)
+        public async Task<IEnumerable<IEvent>> Handle(UpdateVerzekerdeLength command)
         {
             var verzekerde = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
             if (verzekerde == null)

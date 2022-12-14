@@ -1,25 +1,52 @@
-﻿using Promeetec.EDMS.Domain.Modules.GLI.Behandelplan.Commands;
+﻿using FluentValidation;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Events;
+using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Extensions;
 
-namespace Promeetec.EDMS.Domain.Modules.GLI.Behandelplan.Handlers
+namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Handlers;
+
+public class StartBehandeltrajectHandler : ICommandHandler<StartBehandeltraject>
 {
-    public class StartBehandeltrajectHandler : ICommandHandlerAsync<StartBehandeltraject>
+    private readonly IGliBehandelplanRepository _repository;
+    private readonly IEventRepository _eventRepository;
+    private readonly IValidator<StartBehandeltraject> _validator;
+
+    public StartBehandeltrajectHandler(IGliBehandelplanRepository repository, IEventRepository eventRepository, IValidator<StartBehandeltraject> validator)
     {
-        private readonly IGliBehandelplanRepository _repository;
+        _repository = repository;
+        _eventRepository = eventRepository;
+        _validator = validator;
+    }
 
-        public StartBehandeltrajectHandler(IGliBehandelplanRepository repository)
+    public async Task<IEnumerable<IEvent>> Handle(StartBehandeltraject command)
+    {
+        await _validator.ValidateCommand(command);
+
+        var behandelplan = new GliBehandelplan(command);
+
+        var @event = new BehandeltrajectGestart
         {
-            _repository = repository;
-        }
+            TargetId = behandelplan.Id,
+            TargetType = nameof(GliBehandelplan),
+            OrganisatieId = command.OrganisatieId,
+            UserId = command.UserId,
+            UserDisplayName = command.UserDisplayName,
 
-        public async Task<CommandResponse> HandleAsync(StartBehandeltraject command)
-        {
-            var behandelplan = new GliBehandelplan(command);
-            await _repository.AddAsync(behandelplan);
+            Startdatum = command.Startdatum.ToString("dd-MM-yyyy"),
+            Einddatum = command.Einddatum.ToString("dd-MM-yyyy"),
+            GliProgramma = command.Programma.ToString(),
+            Fase = command.Fase.GetDisplayName(),
+            Opmerking = command.Opmerking
+        };
 
-            return new CommandResponse
-            {
-                Events = behandelplan.Events
-            };
-        }
+        await _repository.AddAsync(behandelplan);
+        await _eventRepository.AddAsync(@event.ToDbEntity());
+
+        return new IEvent[] { @event };
+
     }
 }

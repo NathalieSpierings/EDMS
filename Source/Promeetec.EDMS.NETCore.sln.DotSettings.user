@@ -3,11 +3,20 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=03a281f4_002D9e42_002D465b_002D8154_002Dc7838da45342/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=03a281f4_002D9e42_002D465b_002D8154_002Dc7838da45342/@EntryIndexRemoved">True</s:Boolean>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1b57e079_002D35e6_002D414f_002Db8c9_002D2889231683f9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_add_menu_item #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Menu.MenuItem.MenuItemTests.Should_add_menu_item&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -28,32 +37,24 @@
 	
 	
 	
+	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexRemoved">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=518366cf_002D8385_002D4af9_002Dacd9_002Ddc4e104a6d53/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateVerzekerdeHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.CommandHandlers.UpdateVerzekerdeHandlerTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
 	
 	
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexRemoved">True</s:Boolean>
-	
-	
-	
-	
-	
-	
-<<<<<<< HEAD
-=======
-	
-	
-	
-	
-	
->>>>>>> 00d8b6b82bfb9370a94aceef6da6c0a6617b3c34
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5eed714e_002De388_002D4daa_002Dae90_002D3633ee4699bc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;Src&amp;gt;\&amp;lt;Tests&amp;gt;\&amp;lt;Promeetec.EDMS.Domain.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="F:\GitHub\EDMS\Source\src\Tests\Promeetec.EDMS.Domain.Tests" Presentation="&amp;lt;Src&amp;gt;\&amp;lt;Tests&amp;gt;\&amp;lt;Promeetec.EDMS.Domain.Tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	
@@ -64,11 +65,6 @@
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d1fe61c3_002Db811_002D41e6_002D9e9e_002Dcb36adefc5bc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_add_menu_item" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net6.0::Promeetec.EDMS.Domain.Tests.Menu.MenuItem.MenuItemTests.Should_add_menu_item&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
 	
 	
 	
@@ -77,4 +73,11 @@
 	
 	
 	
-	</wpf:ResourceDictionary>
+	
+	
+	
+	
+	
+	
+	
+</wpf:ResourceDictionary>

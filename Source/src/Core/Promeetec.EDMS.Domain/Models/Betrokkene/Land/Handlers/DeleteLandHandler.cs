@@ -24,16 +24,16 @@ public class DeleteLandHandler : ICommandHandler<DeleteLand>
 
     public async Task<IEnumerable<IEvent>> Handle(DeleteLand command)
     {
-        var country = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
-        if (country == null)
+        var land = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id && x.Status != Status.Verwijderd);
+        if (land == null)
             throw new DataException($"Land met Id {command.Id} niet gevonden.");
 
 
-        country.Delete();
+        land.Delete();
 
         var @event = new LandVerwijderd
         {
-            TargetId = country.Id,
+            TargetId = land.Id,
             TargetType = nameof(Land),
             OrganisatieId = command.OrganisatieId,
             UserId = command.UserId,
@@ -42,7 +42,7 @@ public class DeleteLandHandler : ICommandHandler<DeleteLand>
             Status = Status.Verwijderd.ToString()
         };
 
-        await _repository.UpdateAsync(country);
+        await _repository.UpdateAsync(land);
         await _eventRepository.AddAsync(@event.ToDbEntity());
 
         return new IEvent[] { @event };

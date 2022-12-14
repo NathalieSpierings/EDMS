@@ -1,8 +1,9 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanlevering.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+
+public class ChangeEigenaarAanlevering : CommandBase
 {
-    public class ChangeEigenaarAanlevering : DomainCommand<Aanlevering>
-    {
-        public string Eigenaar { get; set; }
-        public Guid EigenaarId { get; set; }
-    }
+    public string EigenaarVolledigeNaam { get; set; }
+    public Guid EigenaarId { get; set; }
 }

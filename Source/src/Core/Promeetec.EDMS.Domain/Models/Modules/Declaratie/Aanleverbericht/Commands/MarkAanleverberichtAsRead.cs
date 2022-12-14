@@ -1,8 +1,9 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Declaratie.Aanleverbericht.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+
+public class MarkAanleverberichtAsRead : CommandBase
 {
-    public class MarkAanleverberichtAsRead : DomainCommand<Aanleverbericht>
-    {
-        public DateTime? LaastGelezenOp { get; set; }
-        public Guid LaatsteLezerId { get; set; }
-    }
+    public DateTime? LaastGelezenOp { get; set; }
+    public Guid LaatsteLezerId { get; set; }
 }

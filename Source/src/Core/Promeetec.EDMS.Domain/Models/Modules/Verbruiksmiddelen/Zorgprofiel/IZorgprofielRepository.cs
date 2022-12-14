@@ -1,6 +1,5 @@
-﻿namespace Promeetec.EDMS.Domain.Modules.Verbruiksmiddelen.Zorgprofiel
+﻿namespace Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+
+public interface IZorgprofielRepository : IRepository<Zorgprofiel>
 {
-    public interface IZorgprofielRepository : IRepository<Zorgprofiel>
-    {
-    }
 }
