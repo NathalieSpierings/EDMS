@@ -1,35 +1,35 @@
-﻿using FluentValidation;
+﻿using System.Text.RegularExpressions;
+using FluentValidation;
 using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan.Validators.Rules;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan.Validators;
 
 public class StartBehandeltrajectValidator : AbstractValidator<StartBehandeltraject>
 {
-    public StartBehandeltrajectValidator(IDispatcher dispatcher)
+    public StartBehandeltrajectValidator()
     {
-
-        RuleFor(c => c.Startdatum)
-            .NotEmpty().WithMessage("Startdatum is verplicht.")
-            .InclusiveBetween(new DateTime(1900, 1, 1), DateTime.Now)
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsStartdatumValid { Startdatum = c.Startdatum }))
-            .WithMessage(c => "Dit is geen geldige datum!")
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsStartdatumAfterIntakedatum { Intakedatum = p, Startdatum = c.Startdatum }))
-            .WithMessage(c => "De startdatum kan niet voor de intake datum liggen!");
-
-
-        RuleFor(c => c.Einddatum)
-            .InclusiveBetween(new DateTime(1900, 1, 1), DateTime.Now)
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsEinddatumValid { Einddatum = c.Startdatum }))
-            .WithMessage(c => "Dit is geen geldige datum!");
+        RuleFor(x => x.Startdatum)
+            .NotEmpty()
+            .WithMessage("Startdatum is verplicht.")
+            .LessThanOrEqualTo(x => x.Intakedatum)
+            .WithMessage("De startdatum kan niet voor de intake datum liggen!")
+            .Must(BeValidDate)
+            .WithMessage("Startdatum is ongeldig!");
 
         RuleFor(c => c.Programma)
             .IsInEnum().WithMessage("Programma is verplicht.");
 
         RuleFor(c => c.VerzekerdeId)
-            .NotEmpty().WithMessage("Verzekerde is verplicht.");
+            .NotEmpty().WithMessage("Cliënt is verplicht.");
 
         RuleFor(c => c.BehandelaarId)
             .NotEmpty().WithMessage("Behandelaar is verplicht.");
+        
+    }
+    private bool BeValidDate(DateTime date)
+    {
+        var regex = new Regex("^(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-](19|20)\\d\\d$");
+        var match = regex.Match(date.ToString());
+        return match.Success;
     }
 }

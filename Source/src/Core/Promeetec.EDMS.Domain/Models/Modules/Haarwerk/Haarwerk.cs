@@ -146,6 +146,8 @@ public class Haarwerk : AggregateRoot
     /// <param name="cmd">The create haarwerk command.</param>
     public Haarwerk(CreateHaarwerk cmd)
     {
+        Id = cmd.Id;
+
         OrganisatieId = cmd.OrganisatieId;
         Naam = cmd.Naam;
         Geboortedatum = cmd.Geboortedatum;

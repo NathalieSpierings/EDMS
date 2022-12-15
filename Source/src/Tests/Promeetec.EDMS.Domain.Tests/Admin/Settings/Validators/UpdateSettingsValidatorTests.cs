@@ -4,6 +4,7 @@ using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Admin.Settings;
 using Promeetec.EDMS.Domain.Models.Admin.Settings.Commands;
 using Promeetec.EDMS.Domain.Models.Admin.Settings.Validators;
+using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
 using Promeetec.EDMS.Domain.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Admin.Settings.Validators;
@@ -142,13 +143,28 @@ public class UpdateSettingsValidatorTests : TestFixtureBase
         result.ShouldHaveValidationErrorFor(x => x.Email);
     }
 
+   
     [Test]
-    public void Should_have_validation_error_when_bedrag_basis_verzekering_is_empty()
+    public void Should_have_validation_error_when_bedrag_basis_verzekering_is_zero()
     {
         var command = Fixture.Build<UpdateSettings>()
             .Without(x => x.Haarwerk)
             .With(x => x.Haarwerk, Fixture.Build<SettingsHaarwerk>()
-                .With(x => x.BedragBasisVerzekeringHaarwerk, (decimal)(0))
+                .With(x => x.BedragBasisVerzekeringHaarwerk, new decimal(0.00))
+                .Create())
+            .Create();
+        
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Haarwerk.BedragBasisVerzekeringHaarwerk);
+    }
+
+    [Test]
+    public void Should_have_validation_error_when_bedrag_basis_verzekering_is_negative()
+    {
+        var command = Fixture.Build<UpdateSettings>()
+            .Without(x => x.Haarwerk)
+            .With(x => x.Haarwerk, Fixture.Build<SettingsHaarwerk>()
+                .With(x => x.BedragBasisVerzekeringHaarwerk, new decimal(-25.50))
                 .Create())
             .Create();
 

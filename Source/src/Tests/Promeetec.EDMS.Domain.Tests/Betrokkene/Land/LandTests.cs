@@ -33,12 +33,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
         [Test]
         public void Update_details()
         {
-            var cmd = new UpdateLand
-            {
-                CultureCode = "en-EN",
-                NativeName = "United Kingdom"
-            };
-
+            var cmd = Fixture.Create<UpdateLand>();
             _sut.Update(cmd);
 
             Assert.AreEqual(cmd.CultureCode, _sut.CultureCode);

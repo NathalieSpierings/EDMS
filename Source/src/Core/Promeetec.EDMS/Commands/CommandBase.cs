@@ -8,6 +8,7 @@ public abstract class CommandBase : ICommand
     /// The unique identifier of the Organisatie whose the request belongs to.
     /// </summary>
     public Guid OrganisatieId { get; set; }
+    public string OrganisatieDisplayName { get; set; }
 
     /// <summary>
     /// The unique identifier of the User who initiated the request.

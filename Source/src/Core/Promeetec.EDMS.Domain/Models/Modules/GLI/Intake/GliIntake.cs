@@ -56,18 +56,6 @@ public class GliIntake : AggregateRoot
         OrganisatieId = cmd.OrganisatieId;
         GliStatus = GliStatus.NogNietGestart;
         Opmerking = cmd.Opmerking;
-        //AddAndApplyEvent(new IntakeAangemaakt
-        //{
-        //    AggregateRootId = cmd.AggregateRootId,
-        //    UserId = cmd.UserId,
-        //    UserDisplayName = cmd.UserDisplayName,
-
-        //    Lengte = $"{cmd.Weegmoment.Lengte} cm",
-        //    Gewicht = $"{cmd.Weegmoment.Gewicht} KG",
-        //    Opnamedatum = cmd.Weegmoment.Opnamedatum.ToString("dd-MM-yyyy"),
-        //    IntakeDatum = cmd.IntakeDatum.ToString("dd-MM-yyyy"),
-        //    Opmerking = cmd.Opmerking
-        //});
     }
 
     /// <summary>
@@ -79,37 +67,16 @@ public class GliIntake : AggregateRoot
         IntakeDatum = cmd.IntakeDatum;
         BehandelaarId = cmd.BehandelaarId;
         Opmerking = cmd.Opmerking;
-        //AddAndApplyEvent(new IntakeGewijzigd
-        //{
-        //    AggregateRootId = cmd.AggregateRootId,
-        //    UserId = cmd.UserId,
-        //    UserDisplayName = cmd.UserDisplayName,
-
-        //    Lengte = $"{cmd.Weegmoment.Lengte} cm",
-        //    Gewicht = $"{cmd.Weegmoment.Gewicht} KG",
-        //    Opnamedatum = cmd.Weegmoment.Opnamedatum.ToString("dd-MM-yyyy"),
-        //    IntakeDatum = cmd.IntakeDatum.ToString("dd-MM-yyyy"),
-        //    Opmerking = cmd.Opmerking
-        //});
     }
 
     /// <summary>
     /// Sets the status of the GLI intake as verwerkt.
     /// <param name="cmd">The process intake command.</param>
     /// </summary>
-    public void Verwerk(ProcessIntake cmd)
+    public void Process(ProcessIntake cmd)
     {
         VerwerktOp = cmd.VerwerktOp;
         Verwerkt = true;
-        //AddAndApplyEvent(new IntakeVerwerkt
-        //{
-        //    AggregateRootId = cmd.AggregateRootId,
-        //    UserId = cmd.UserId,
-        //    UserDisplayName = cmd.UserDisplayName,
-
-        //    Verwerkt = "Ja",
-        //    VerwerktOp = cmd.VerwerktOp.ToString("dd-MM-yyyy")
-        //});
     }
 
     /// <summary>
@@ -119,14 +86,5 @@ public class GliIntake : AggregateRoot
     public void UpdateIntakeStatus(UpdateIntakeStatus cmd)
     {
         GliStatus = cmd.GliStatus;
-
-        //AddAndApplyEvent(new IntakeStatusGewijzigd
-        //{
-        //    AggregateRootId = cmd.AggregateRootId,
-        //    UserId = cmd.UserId,
-        //    UserDisplayName = cmd.UserDisplayName,
-
-        //    Status = cmd.GliStatus.ToString()
-        //});
     }
 }

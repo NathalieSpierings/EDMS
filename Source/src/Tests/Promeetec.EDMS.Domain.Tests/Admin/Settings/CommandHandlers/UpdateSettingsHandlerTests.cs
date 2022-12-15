@@ -67,8 +67,7 @@ public class UpdateSettingsHandlerTests : TestFixtureBase
 
         var dbEntity = await _context.Settings.FirstOrDefaultAsync(x => x.Id == settings.Id);
         var @event = await _context.Events.FirstOrDefaultAsync(x => x.TargetId == settings.Id);
-
-
+        
         validator.Verify(x => x.ValidateAsync(command, new CancellationToken()));
 
         Assert.NotNull(dbEntity);

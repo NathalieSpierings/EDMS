@@ -7,8 +7,12 @@ public class CreateAanleverberichtValidator : AbstractValidator<CreateAanleverbe
 {
     public CreateAanleverberichtValidator()
     {
+        RuleFor(c => c.Onderwerp)
+            .NotEmpty().WithMessage("Onderwerp is verplicht.")
+            .MaximumLength(450).WithMessage("Onderwerp kan maximaal 450 tekens lang zijn.");
+
         RuleFor(c => c.Bericht)
             .NotEmpty().WithMessage("Bericht is verplicht.")
-            .Length(10000).WithMessage("Bericht kan maximaal 10000 tekens lang zijn.");
+            .MaximumLength(10000).WithMessage("Bericht kan maximaal 10000 tekens lang zijn.");
     }
 }

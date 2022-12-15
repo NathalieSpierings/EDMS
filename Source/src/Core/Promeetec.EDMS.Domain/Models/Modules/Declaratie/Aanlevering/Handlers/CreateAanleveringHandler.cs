@@ -35,20 +35,24 @@ public class CreateAanleveringHandler : ICommandHandler<CreateAanlevering>
             TargetId = aanlevering.Id,
             TargetType = nameof(Aanlevering),
             OrganisatieId = command.OrganisatieId,
+            OrganisatieDisplayName = command.OrganisatieDisplayName,
             UserId = command.UserId,
             UserDisplayName = command.UserDisplayName,
 
             Status = Status.Actief.ToString(),
-            Organisatie = command.Organisatie,
-            Behandelaar = command.Behandelaar,
-            Eigenaar = command.Eigenaar,
+           
             Jaar = DateTime.Now.Year.ToString(),
             Aanleverdatum = DateTime.Now.ToString("dd-MM-yyyy"),
+           
             Referentie = command.Referentie,
             ReferentiePromeetec = command.ReferentiePromeetec,
             AanleverStatus = AanleverStatus.Aangemaakt.ToString(),
             ToevoegenBestand = command.ToevoegenBestand ? "Ja" : "Nee",
-            Opmerking = command.Opmerking
+            Opmerking = command.Opmerking,
+            Behandelaar = command.Behandelaar,
+            Eigenaar = command.Eigenaar,
+            BehandelaarId = command.BehandelaarId,
+            EigenaarId = command.EigenaarId
         };
 
         await _repository.AddAsync(aanlevering);

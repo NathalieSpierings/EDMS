@@ -112,16 +112,6 @@ public class GliBehandelplan : AggregateRoot
         VerwerktOp = cmd.VerwerktOp;
         GliStatus = cmd.Status;
         Verwerkt = true;
-        //AddAndApplyEvent(new BehandelplanVerwerkt
-        //{
-        //    AggregateRootId = cmd.AggregateRootId,
-        //    UserId = cmd.UserId,
-        //    UserDisplayName = cmd.UserDisplayName,
-
-        //    Verwerkt = "Ja",
-        //    VerwerktOp = cmd.VerwerktOp.ToString("dd-MM-yyyy"),
-        //    Status = cmd.Status.ToString()
-        //});
     }
 
     /// <summary>

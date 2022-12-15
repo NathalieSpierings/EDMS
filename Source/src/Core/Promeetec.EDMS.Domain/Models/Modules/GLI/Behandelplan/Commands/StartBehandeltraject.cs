@@ -13,5 +13,6 @@ public class StartBehandeltraject : CommandBase
     public Guid BehandelaarId { get; set; }
     public Guid VerzekerdeId { get; set; }
     public Guid IntakeId { get; set; }
+    public DateTime Intakedatum { get; set; }
 
 }

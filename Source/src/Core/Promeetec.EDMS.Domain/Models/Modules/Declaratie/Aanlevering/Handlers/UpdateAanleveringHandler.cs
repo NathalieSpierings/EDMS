@@ -40,15 +40,17 @@ public class UpdateAanleveringHandler : ICommandHandler<UpdateAanlevering>
             TargetId = aanlevering.Id,
             TargetType = nameof(Aanlevering),
             OrganisatieId = command.OrganisatieId,
+            OrganisatieDisplayName = command.OrganisatieDisplayName,
             UserId = command.UserId,
             UserDisplayName = command.UserDisplayName,
-
+            
             ReferentiePromeetec = command.ReferentiePromeetec,
             AanleverStatus = command.AanleverStatus.GetDisplayName(),
             ToevoegenBestand = command.ToevoegenBestand.ToString(),
-            Behandelaar = command.BehandelaarVolledigeNaam,
-            Eigenaar = command.EigenaarVolledigeNaam,
             Opmerking = command.Opmerking,
+
+            Behandelaar = command.Behandelaar,
+            Eigenaar = command.Eigenaar,
             BehandelaarId = command.BehandelaarId,
             EigenaarId = command.EigenaarId
         };

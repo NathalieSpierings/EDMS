@@ -9,9 +9,8 @@ public class CreateAanlevering : CommandBase
     public bool ToevoegenBestand { get; set; }
     public string Opmerking { get; set; }
 
-    public string Organisatie { get; set; }
 
-    public Guid? BehandelaarId { get; set; }
+    public Guid BehandelaarId { get; set; }
     public string Behandelaar { get; set; }
 
     public Guid EigenaarId { get; set; }

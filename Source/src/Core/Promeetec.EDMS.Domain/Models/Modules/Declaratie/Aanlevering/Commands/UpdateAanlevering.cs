@@ -11,6 +11,11 @@ public class UpdateAanlevering : CommandBase
     public string BehandelaarVolledigeNaam { get; set; }
     public string EigenaarVolledigeNaam { get; set; }
     public string Opmerking { get; set; }
-    public Guid? BehandelaarId { get; set; }
+    
+
+    public Guid BehandelaarId { get; set; }
+    public string Behandelaar { get; set; }
+
     public Guid EigenaarId { get; set; }
+    public string Eigenaar { get; set; }
 }

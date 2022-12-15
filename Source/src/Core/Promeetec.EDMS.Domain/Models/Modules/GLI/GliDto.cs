@@ -10,14 +10,14 @@
         public string Geslacht { get; set; }
         public DateTime? Geboortedatum { get; set; }
         public string Voorletters { get; set; }
-        public string Tussenvoegsel { get; set; }
+        public string? Tussenvoegsel { get; set; }
         public string Achternaam { get; set; }
         public string AgbCodeVerwijzer { get; set; }
         public string NaamVerwijzer { get; set; }
         public short Uzovi { get; set; }
         public Guid? IntakeId { get; set; }
         public DateTime? IntakeDatum { get; set; }
-        public string IntakeOpmerking { get; set; }
+        public string? IntakeOpmerking { get; set; }
         public Guid BehandelplanId { get; set; }
         public string Fase { get; set; }
         public DateTime? StartdatumBehandelplan { get; set; }

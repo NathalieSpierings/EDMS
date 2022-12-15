@@ -16,5 +16,4 @@ public class UpdateVerbruiksmiddelPrestatie : CommandBase
     public DateTime? PrestatieDatum { get; set; }
     public int? Hoeveelheid { get; set; }
     public Guid VerzekerdeId { get; set; }
-    public Guid OrganisatieId { get; set; }
 }

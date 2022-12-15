@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -139,15 +139,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\Admin\DownloadActivity\IDownloadActivityRepository.cs" />
-    <Compile Remove="Models\Admin\EiStandaard\IEiStandaardRepository.cs" />
-    <Compile Remove="Models\Admin\RedenEindeZorg\IRedenEindeZorgRepository.cs" />
-    <Compile Remove="Models\Betrokkene\UserProfile\IUserProfileRepository.cs" />
-    <Compile Remove="Models\Modules\Haarwerk\Validators\Handlers\IsOrganisatieNummerUniqueHandler.cs" />
-    <Compile Remove="Models\Modules\Haarwerk\Validators\Rules\IsOrganisatieNummerUnique.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Include="Models\Admin\Mededeling\Commands\CreateMededeling.cs" />
     <Compile Include="Models\Admin\Mededeling\Commands\UpdateMededeling.cs" />
     <Compile Include="Models\Admin\Mededeling\Handlers\CreateMededelingHandler.cs" />
@@ -198,12 +189,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.3.6" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -211,10 +202,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Models\Admin\PushMessage\" />
     <Folder Include="Models\Betrokkene\Organisatie\Handlers\" />
     <Folder Include="Models\Betrokkene\Organisatie\Events\" />
-    <Folder Include="Models\Modules\Haarwerk\Validators\Handlers\" />
-    <Folder Include="Models\Modules\Haarwerk\Validators\Rules\" />
   </ItemGroup>
 
 </Project>

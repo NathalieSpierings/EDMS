@@ -14,5 +14,5 @@ public interface IWeegMomentRepository : IRepository<Weegmoment>
     /// </summary>
     /// <param name="verzekerdeId">The verzekerde identifier.</param>
     /// <returns>The laatste weegmoment of the verzekerde.</returns>
-    Task<Weegmoment> GetLaasteWeegmomentVanVerzekerdeAsync(Guid verzekerdeId);
+    Task<Weegmoment?> GetLaasteWeegmomentVanVerzekerdeAsync(Guid verzekerdeId);
 }

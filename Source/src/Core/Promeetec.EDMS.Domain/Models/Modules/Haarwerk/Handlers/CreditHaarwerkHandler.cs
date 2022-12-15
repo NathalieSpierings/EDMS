@@ -1,5 +1,4 @@
 ﻿using System.Data;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Extensions;
@@ -14,21 +13,15 @@ public class CreditHaarwerkHandler : ICommandHandler<CreditHaarwerk>
 {
     private readonly IHaarwerkRepository _repository;
     private readonly IEventRepository _eventRepository;
-    private readonly IValidator<CreditHaarwerk> _validator;
 
-    public CreditHaarwerkHandler(IHaarwerkRepository repository,
-        IEventRepository eventRepository,
-        IValidator<CreditHaarwerk> validator)
+    public CreditHaarwerkHandler(IHaarwerkRepository repository, IEventRepository eventRepository)
     {
         _repository = repository;
         _eventRepository = eventRepository;
-        _validator = validator;
     }
 
     public async Task<IEnumerable<IEvent>> Handle(CreditHaarwerk command)
     {
-        await _validator.ValidateCommand(command);
-
         var haarwerk = await _repository.Query()
             .FirstOrDefaultAsync(x => x.Id == command.Id);
 

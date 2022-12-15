@@ -1,22 +1,28 @@
-﻿using FluentValidation;
+﻿using System.Text.RegularExpressions;
+using FluentValidation;
 using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.Validators.Rules;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.Validators;
 
 public class UpdateIntakeValidator : AbstractValidator<UpdateIntake>
 {
-    public UpdateIntakeValidator(IDispatcher dispatcher)
+    public UpdateIntakeValidator()
     {
-
-        RuleFor(c => c.IntakeDatum)
-            .NotEmpty().WithMessage("Intake datum is verplicht.")
-            .InclusiveBetween(new DateTime(1900, 1, 1), DateTime.Now)
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsIntakedatumValid { Intakedatum = c.IntakeDatum }))
-            .WithMessage(c => "De intake datum kan niet in de toekomst liggen!");
-
+        RuleFor(x => x.IntakeDatum)
+            .NotEmpty().WithMessage("Intakedatum is verplicht.")
+            .LessThanOrEqualTo(DateTime.Now)
+            .WithMessage(c => "De intake datum kan niet in de toekomst liggen!")
+            .Must(BeValidDate)
+            .WithMessage("Intakedatum is ongeldig!");
+        
         RuleFor(c => c.BehandelaarId)
             .NotEmpty().WithMessage("Behandelaar is verplicht.");
+    }
 
+    private bool BeValidDate(DateTime date)
+    {
+        var regex = new Regex("^(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-](19|20)\\d\\d$");
+        var match = regex.Match(date.ToString());
+        return match.Success;
     }
 }

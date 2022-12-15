@@ -6,6 +6,8 @@ public abstract class EventBase : IEvent
     public Guid TargetId { get; set; }
     public string TargetType { get; set; }
     public Guid OrganisatieId { get; set; }
+    public string OrganisatieDisplayName { get; set; }
+
     public Guid? UserId { get; set; }
     public string UserDisplayName { get; set; }
     public DateTime TimeStamp { get; set; } = DateTime.Now;

@@ -18,6 +18,21 @@ public class CreateAanleverberichtValidatorTests : TestFixtureBase
         _validator = new CreateAanleverberichtValidator();
     }
 
+    [Test]
+    public void Should_have_validation_error_when_onderwerp_is_empty()
+    {
+        var command = Fixture.Build<CreateAanleverbericht>().With(x => x.Onderwerp, string.Empty).Create();
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Onderwerp);
+    }
+
+    [Test]
+    public void Should_have_validation_error_when_onderwerp_is_too_long()
+    {
+        var command = Fixture.Build<CreateAanleverbericht>().With(x => x.Onderwerp, new string('*', 460)).Create();
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Onderwerp);
+    }
 
     [Test]
     public void Should_have_validation_error_when_bericht_is_empty()
