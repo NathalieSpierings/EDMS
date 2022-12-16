@@ -10,9 +10,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie.CommandHandlers;
 
@@ -35,34 +33,10 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_update_organisatie_and_add_event()
     {
-        var cmd = new CreateOrganisatie
-        {
-            Id = Guid.NewGuid(),
-            Nummer = "1234",
-            Naam = "Test org 1",
-            TelefoonZakelijk = "1234567897",
-            TelefoonPrive = "7894561236",
-            Email = "email@test.com",
-            Website = "http://www.test.com",
-            AgbCodeOnderneming = "12345678",
-            Zorggroep = false,
-            Logo = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
-            Settings = new OrganisatieSettings
-            {
-                AanleverbestandLocatie = "Test location",
-                AanleverStatusNaSchrijvenAanleverbestanden = AanleverStatusNaSchrijvenAanleverbestanden.InBehandeling,
-                VerwijzerInAdresboek = VerwijzerInAdresboekType.VerwijzerVerplicht
-            },
-            ContactpersoonId = Guid.NewGuid(),
-            ZorggroepRelatieId = Guid.NewGuid(),
-            AdresboekId = Guid.NewGuid(),
-            AdresId = Guid.NewGuid()
-        };
-
+        var cmd = Fixture.Create<CreateOrganisatie>();
         var organisatie = new Models.Betrokkene.Organisatie.Organisatie(cmd);
         _context.Organisaties.Add(organisatie);
         await _context.SaveChangesAsync();
-
 
         var command = Fixture.Build<UpdateOrganisatie>()
             .With(x => x.Id, organisatie.Id)
@@ -75,7 +49,6 @@ public class UpdateOrganisatieHandlerTests : TestFixtureBase
         validator.Setup(x => x.ValidateAsync(command, new CancellationToken())).ReturnsAsync(new ValidationResult());
 
         var sut = new UpdateOrganisatieHandler(_repository, _eventRepository, validator.Object);
-
         await sut.Handle(command);
 
 

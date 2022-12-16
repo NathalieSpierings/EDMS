@@ -8,7 +8,7 @@ using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
 using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Admin.Zorgstraat.CommandHandlers;
 

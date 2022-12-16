@@ -49,29 +49,21 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     /// The Vektis agbcode zorgverlener for the medewerker.
     /// </summary>
     [MaxLength(200)]
-    public string AgbCodeZorgverlener { get; set; }
+    public string? AgbCodeZorgverlener { get; set; }
 
 
     /// <summary>
     /// The Vektis agbcode onderneming for the medewerker.
     /// </summary>
     [MaxLength(200)]
-    public string AgbCodeOnderneming { get; set; }
+    public string? AgbCodeOnderneming { get; set; }
 
 
     /// <summary>
     /// The job title  for the medewerker.
     /// </summary>
     [MaxLength(200)]
-    public string Functie { get; set; }
-
-
-    ///// <summary>
-    ///// The avatar  for the medewerker.
-    ///// </summary>
-    //[MaxLength, Column(TypeName = "varbinary(max)")]
-    //public byte[] Avatar { get; set; }
-
+    public string? Functie { get; set; }
 
     /// <summary>
     /// The suspension reason for the medewerker.
@@ -79,24 +71,15 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     [MaxLength(450)]
     public string? DeactivatieReden { get; set; }
 
-
-    /// <summary>
-    /// The ION toestemmingsverklaring activation link for this medewerker.
-    /// </summary>
-    public string IONToestemmingsverklaringActivatieLink { get; set; }
-
-
     /// <summary>
     /// The time stamp of the last login for this user.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? LaatstIngelogdOp { get; set; }
 
 
     /// <summary>
     /// The time stamp of the previous login for this user.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? VorigeLoginOp { get; set; }
 
 
@@ -143,44 +126,42 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
     /// The temporary password for this medewerker.
     /// </summary>
     [MaxLength(200)]
-    public string TempCode { get; set; }
+    public string? TempCode { get; set; }
 
 
     /// <summary>
     /// The PUK-code for this medewerker.
     /// </summary>
     [MaxLength(200)]
-    public string PukCode { get; set; }
+    public string? PukCode { get; set; }
 
 
     /// <summary>
     /// Value indicating if the activation email has been send.
     /// </summary>
-    public bool ActivationMailSend { get; set; }
+    public bool? ActivationMailSend { get; set; }
 
 
     /// <summary>
     /// The time stamp of when the activation email has been send.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? ActivationMailSendOn { get; set; }
-    
+
     /// <summary>
     /// The time stamp of when the record has been created.
     /// </summary>
-    public DateTime TimeStamp { get; set; }
+    public DateTime AangemaaktOp { get; set; }
 
     /// <summary>
     /// The unique identifier of the creator of the medewerker.
     /// </summary>
-    public Guid? CreatedById { get; set; }
+    public Guid? AangemaaktDoorId { get; set; }
 
 
     /// <summary>
     /// The name of the creator of the medewerker.
     /// </summary>
-    public string CreatedBy { get; set; }
-
+    public string? AangemaaktDoor { get; set; }
 
     public bool IsInterneMedewerker => MedewerkerSoort != MedewerkerSoort.Extern;
     public bool IsAdmin => IsInRole(RoleNames.Administrator);
@@ -231,7 +212,7 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         var hasAccess = false;
         try
         {
-            if(Groups.Any(g => g.Group?.Name == groupName))
+            if (Groups.Any(g => g.Group?.Name == groupName))
                 hasAccess = true;
         }
         catch
@@ -314,30 +295,29 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         Functie = cmd.Functie;
         AgbCodeZorgverlener = cmd.AgbCodeZorgverlener;
         AgbCodeOnderneming = cmd.AgbCodeOnderneming;
-        IONToestemmingsverklaringActivatieLink = cmd.IonToestemmingsverklaringActivatieLink;
         AccountState = cmd.AccountState;
         UserName = cmd.UserName;
         TempCode = cmd.TempCode;
         PukCode = cmd.PukCode;
 
         Adres = cmd.Adres;
-        
+
         Status = Status.Inactief;
         UserProfile = new UserProfile.UserProfile();
 
         EmailConfirmed = false;
         PhoneNumberConfirmed = true;
         GoogleAuthenticatorEnabled = false;
- 
+
         // TODO: hasher testen
         var hasher = new PasswordHasher<Medewerker>();
         var hashedPassword = hasher.HashPassword(this, cmd.TempCode);
 
         PasswordHash = hashedPassword;
         SecurityStamp = Guid.NewGuid().ToString();
-        
-        CreatedById = cmd.UserId;
-        CreatedBy = cmd.UserDisplayName;
+
+        AangemaaktDoorId = cmd.UserId;
+        AangemaaktDoor = cmd.UserDisplayName;
     }
 
     /// <summary>
@@ -352,7 +332,6 @@ public class Medewerker : IdentityUser<Guid>, IAggregateRoot
         Persoon = cmd.Persoon;
         Functie = cmd.Functie;
         Email = cmd.Email;
-        IONToestemmingsverklaringActivatieLink = cmd.IonToestemmingsverklaringActivatieLink;
         AgbCodeZorgverlener = cmd.AgbCodeZorgverlener;
         AgbCodeOnderneming = cmd.AgbCodeOnderneming;
         Adres = cmd.Adres;

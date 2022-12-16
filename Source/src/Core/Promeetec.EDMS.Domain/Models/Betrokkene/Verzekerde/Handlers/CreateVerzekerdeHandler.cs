@@ -45,7 +45,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
 				Status = verzekerde.Status.ToString(),
 				Bsn = verzekerde.Bsn,
 				Lengte = verzekerde.Lengte.ToString(),
-				Geslacht = verzekerde.Persoon.Geslacht.GetDisplayName(),
+				Geslacht = verzekerde.Persoon.Geslacht?.GetDisplayName(),
 				Geboortedatum = verzekerde.Persoon.Geboortedatum?.ToString("dd-MM-yyyy"),
 				VolledigeNaam = verzekerde.Persoon.VolledigeNaam,
 				VolledigAdres = verzekerde.Adres.VolledigAdres,

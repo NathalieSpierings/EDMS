@@ -7,7 +7,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.Validators;
@@ -25,10 +25,8 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
         _validator = new CreateVerzekerdeValidator(_dispachter.Object);
     }
 
-
-
     [Test]
-    public void Should_have_validation_error_when_geslacht_is_empty()
+    public async Task Should_have_validation_error_when_geslacht_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -51,13 +49,13 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Geslacht);
     }
 
 
     [Test]
-    public void Should_have_validation_error_when_voorletters_is_empty()
+    public async Task Should_have_validation_error_when_voorletters_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -80,12 +78,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
     }
 
     [Test]
-    public void Should_have_validation_error_when_voorletters_is_too_long()
+    public async Task Should_have_validation_error_when_voorletters_is_too_long()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -108,12 +106,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
     }
 
     [Test]
-    public void Should_have_validation_error_when_tussenvoegsel_is_too_long()
+    public async Task Should_have_validation_error_when_tussenvoegsel_is_too_long()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -136,13 +134,13 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Tussenvoegsel);
     }
 
 
     [Test]
-    public void Should_have_validation_error_when_achternaam_is_empty()
+    public async Task Should_have_validation_error_when_achternaam_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -168,12 +166,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Achternaam);
     }
 
     [Test]
-    public void Should_have_validation_error_when_achternaam_is_too_long()
+    public async Task Should_have_validation_error_when_achternaam_is_too_long()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -199,12 +197,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Achternaam);
     }
 
     [Test]
-    public void Should_have_validation_error_when_geboortedatum_is_empty()
+    public async Task Should_have_validation_error_when_geboortedatum_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -227,12 +225,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Geboortedatum);
     }
 
     [Test]
-    public void Should_have_validation_error_when_geboortedatum_is_in_feature()
+    public async Task Should_have_validation_error_when_geboortedatum_is_in_feature()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -255,12 +253,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Geboortedatum);
     }
 
     [Test]
-    public void Should_have_validation_error_when_bsn_is_empty()
+    public async Task Should_have_validation_error_when_bsn_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -282,12 +280,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
     [Test]
-    public void Should_have_validation_error_when_bsn_is_not_valid()
+    public async Task Should_have_validation_error_when_bsn_is_not_valid()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -309,12 +307,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
     [Test]
-    public void Should_have_validation_error_when_bsn_is_not_unique()
+    public async Task Should_have_validation_error_when_bsn_is_not_unique()
     {
         var cmd = Fixture.Build<CreateVerzekerde>()
             .With(x => x.Bsn, "432127331")
@@ -332,8 +330,6 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                     .Create())
                 .Create())
             .Create();
-
-
 
         var command = Fixture.Build<CreateVerzekerde>()
             .With(x => x.Id, cmd.Id)
@@ -356,12 +352,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Bsn);
     }
 
     //[Test]
-    //public void Should_have_Validation_error_when_landid_is_empty()
+    //public async Task Should_have_Validation_error_when_landid_is_empty()
     //{
     //    var command = Fixture.Build<CreateVerzekerde>()
     //        .Without(x => x.Zorgprofiel)
@@ -375,12 +371,12 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
     //            .Create())
     //        .Create();
 
-    //    var result = _validator.TestValidate(command);
+    // var result = await _validator.TestValidateAsync(command);
     //    result.ShouldHaveValidationErrorFor(x => x.Adres.LandId);
     //}
 
     [Test]
-    public void Should_have_Validation_error_when_verzekeraarid_is_empty()
+    public async Task Should_have_Validation_error_when_verzekeraarid_is_empty()
     {
         var command = Fixture.Build<CreateVerzekerde>()
             .Without(x => x.Persoon)
@@ -401,7 +397,7 @@ public class CreateVerzekerdeValidatorTests : TestFixtureBase
                 .Create())
             .Create();
 
-        var result = _validator.TestValidate(command);
+        var result = await _validator.TestValidateAsync(command);
         result.ShouldHaveValidationErrorFor(x => x.Zorgverzekering.VerzekeraarId);
     }
 }

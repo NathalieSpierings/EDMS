@@ -10,7 +10,7 @@ using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Menu.Menu;
 using Promeetec.EDMS.Domain.Models.Menu.Menu.Commands;
 using Promeetec.EDMS.Domain.Models.Menu.Menu.Handlers;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Menu.Menu.CommandHandlers;
 

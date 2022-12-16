@@ -2163,6 +2163,23 @@
         "runtime": {
           "bin/placeholder/Promeetec.EDMS.Domain.dll": {}
         }
+      },
+      "Promeetec.EDMS.Tests/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoFixture": "4.17.0",
+          "Microsoft.EntityFrameworkCore": "7.0.1",
+          "Microsoft.EntityFrameworkCore.InMemory": "7.0.1",
+          "NUnit": "3.13.3",
+          "Promeetec.EDMS.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Promeetec.EDMS.Tests.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Promeetec.EDMS.Tests.dll": {}
+        }
       }
     }
   },
@@ -6022,6 +6039,11 @@
       "type": "project",
       "path": "../../Core/Promeetec.EDMS.Domain/Promeetec.EDMS.Domain.csproj",
       "msbuildProject": "../../Core/Promeetec.EDMS.Domain/Promeetec.EDMS.Domain.csproj"
+    },
+    "Promeetec.EDMS.Tests/1.0.0": {
+      "type": "project",
+      "path": "../Promeetec.EDMS.Tests/Promeetec.EDMS.Tests.csproj",
+      "msbuildProject": "../Promeetec.EDMS.Tests/Promeetec.EDMS.Tests.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6034,23 +6056,24 @@
       "NUnit >= 3.13.3",
       "NUnit3TestAdapter >= 4.3.1",
       "Promeetec.EDMS.Data >= 1.0.0",
-      "Promeetec.EDMS.Domain >= 1.0.0"
+      "Promeetec.EDMS.Domain >= 1.0.0",
+      "Promeetec.EDMS.Tests >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nspierings\\.nuget\\packages\\": {}
+    "C:\\Users\\Talsja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+      "projectUniqueName": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
       "projectName": "Promeetec.EDMS.Domain.Tests",
-      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
-      "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\obj\\",
+      "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+      "packagesPath": "C:\\Users\\Talsja\\.nuget\\packages\\",
+      "outputPath": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Talsja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6064,11 +6087,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
-              "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
+            "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+              "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
             },
-            "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-              "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+            "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+              "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+            },
+            "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Tests\\Promeetec.EDMS.Tests.csproj": {
+              "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Tests\\Promeetec.EDMS.Tests.csproj"
             }
           }
         }

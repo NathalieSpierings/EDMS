@@ -10,17 +10,56 @@ namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
 
 public class GliBehandelplan : AggregateRoot
 {
+    /// <summary>
+    /// The startdate of the behandelplan.
+    /// </summary>
     public DateTime Startdatum { get; set; }
+
+    /// <summary>
+    /// The enddate of the behandelplan.
+    /// </summary>
     public DateTime Einddatum { get; set; }
+
+    /// <summary>
+    /// The programma of the behandelplan.
+    /// </summary>
     public GliProgramma GliProgramma { get; set; }
+
+    /// <summary>
+    /// The fase of the behandelplan.
+    /// </summary>
     public GliBehandelfase Fase { get; set; }
 
+    /// <summary>
+    /// The remarks for the behandelplan.
+    /// </summary>
     [MaxLength(1024)]
     public string Opmerking { get; set; }
+
+    /// <summary>
+    /// Indicator if early stopped.
+    /// </summary>
     public bool VoortijdigGestopt { get; set; }
+
+    /// <summary>
+    /// The early stopped date.
+    /// </summary>
     public DateTime? VoortijdigeStopdatum { get; set; }
+
+
+    /// <summary>
+    /// Indicator if the record is verwerkt.
+    /// </summary>
     public bool Verwerkt { get; set; }
+
+    /// <summary>
+    /// The verwerkt date.
+    /// </summary>
     public DateTime? VerwerktOp { get; set; }
+
+    /// <summary>
+    /// The status of the behandelplan.
+    /// </summary>
     public GliStatus GliStatus { get; set; }
 
     #region Navigation properties

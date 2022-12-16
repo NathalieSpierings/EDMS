@@ -1,102 +1,215 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
-using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Validators;
+using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker.Validators;
 
 [TestFixture]
 public class UpdateMedewerkerValidatorTests : TestFixtureBase
 {
-    private Mock<IDispatcher> _dispachter;
-    private CreateOrganisatieValidator _validator;
+    private UpdateMedewerkerValidator _validator;
 
     [SetUp]
     public void Setup()
     {
-        _dispachter = new Mock<IDispatcher>();
-        _validator = new CreateOrganisatieValidator(_dispachter.Object);
+        _validator = new UpdateMedewerkerValidator();
     }
 
 
     [Test]
-    public void Should_have_validation_error_when_name_is_empty()
+    public void Should_have_validation_error_when_geslacht_is_empty()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.Naam, string.Empty).Create();
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.Geslacht, (Geslacht)(-1))
+                .Create())
+            .Create();
+
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Naam);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Geslacht);
     }
 
     [Test]
-    public void Should_have_validation_error_when_name_is_too_long()
+    public void Should_have_validation_error_when_voorletters_is_empty()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.Naam, new string('*', 201)).Create();
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.Voorletters, String.Empty)
+                .Create())
+            .Create();
+
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Naam);
-    }
-
-
-
-    [Test]
-    public void Should_have_validation_error_when_agbcodeonderneming_is_empty()
-    {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.AgbCodeOnderneming, string.Empty).Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.AgbCodeOnderneming);
-    }
-
-    [Test]
-    public void Should_have_validation_error_when_agbcodeonderneming_is_too_long()
-    {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.AgbCodeOnderneming, new string('*', 201)).Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.AgbCodeOnderneming);
-    }
-
-
-    [Test]
-    public void Should_have_validation_error_when_telefoonzakelijk_is_empty()
-    {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonZakelijk, string.Empty).Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.TelefoonZakelijk);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
     }
 
     [Test]
-    public void Should_have_validation_error_when_telefoonzakelijk_is_too_long()
+    public void Should_have_validation_error_when_voorletters_is_too_long()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonZakelijk, new string('*', 16)).Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.TelefoonZakelijk);
-    }
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.Voorletters, new string('*', 22))
+                .Create())
+            .Create();
 
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
+    }
 
     [Test]
-    public void Should_have_validation_error_when_telefoonprive_is_empty()
+    public void Should_have_validation_error_when_tussenvoegsel_is_too_long()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonPrive, string.Empty).Create();
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.Tussenvoegsel, new string('*', 22))
+                .Create())
+            .Create();
+
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.TelefoonPrive);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Tussenvoegsel);
     }
 
     [Test]
-    public void Should_have_validation_error_when_telefoonprive_is_too_long()
+    public void Should_have_validation_error_when_achternaam_is_empty()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.TelefoonPrive, new string('*', 16)).Create();
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.Achternaam, String.Empty)
+                .Create())
+            .Create();
+
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.TelefoonPrive);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Achternaam);
     }
 
+    [Test]
+    public void Should_have_validation_error_when_achternaam_is_too_long()
+    {
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.Achternaam, new string('*', 22))
+                .Create())
+            .Create();
 
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.Achternaam);
+    }
 
+    [Test]
+    public void Should_have_validation_error_when_telefoon_zakelijk_is_too_long()
+    {
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.Email)
+                .With(x => x.TelefoonZakelijk, new string('*', 22))
+                .Create())
+            .Create();
+
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonZakelijk);
+    }
+
+    [Test]
+    public void Should_have_validation_error_when_telefoon_zakelijk__is_not_valid()
+    {
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonPrive)
+                .Without(x => x.Email)
+                .With(x => x.TelefoonZakelijk, new string('*', 22))
+                .Create())
+            .Create();
+
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonZakelijk);
+    }
+
+    [Test]
+    public void Should_have_validation_error_when_telefoon_prive_is_too_long()
+    {
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.TelefoonPrive, new string('*', 16))
+                .Create())
+            .Create();
+
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonPrive);
+    }
+
+    [Test]
+    public void Should_have_validation_error_when_telefoon_prive__is_not_valid()
+    {
+        var command = Fixture.Build<UpdateMedewerker>()
+            .Without(x => x.Persoon)
+            .Without(x => x.Adres)
+            .Without(x => x.Email)
+            .With(x => x.Persoon, Fixture.Build<Persoon>()
+                .Without(x => x.TelefoonZakelijk)
+                .Without(x => x.Email)
+                .With(x => x.TelefoonPrive, new string('*', 22))
+                .Create())
+            .Create();
+
+        var result = _validator.TestValidate(command);
+        result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonPrive);
+    }
 
     [Test]
     public void Should_have_validation_error_when_email_is_too_long()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.Email, new string('*', 451)).Create();
+        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.Email, new string('*', 460)).Create();
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Email);
     }
@@ -104,34 +217,24 @@ public class UpdateMedewerkerValidatorTests : TestFixtureBase
     [Test]
     public void Should_have_validation_error_when_email_is_not_valid()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.Email, "email").Create();
+        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.Email, "email").Create();
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Email);
     }
 
-
     [Test]
-    public void Should_have_validation_error_when_website_is_too_long()
+    public void Should_have_validation_error_when_agbcode_onderneming_is_empty()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.Website, new string('*', 257)).Create();
+        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.AgbCodeOnderneming, string.Empty).Create();
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Website);
+        result.ShouldHaveValidationErrorFor(x => x.AgbCodeOnderneming);
     }
 
     [Test]
-    public void Should_have_validation_error_when_website_is_not_valid()
+    public void Should_have_validation_error_when_functie_is_too_long()
     {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.Website, "test.nl").Create();
+        var command = Fixture.Build<UpdateMedewerker>().Without(x => x.Adres).With(x => x.Functie, new string('*', 201)).Create();
         var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.Website);
-    }
-
-
-    [Test]
-    public void Should_have_validation_error_when_contactpersoon_is_empty()
-    {
-        var command = Fixture.Build<CreateOrganisatie>().With(x => x.ContactpersoonId, Guid.Empty).Create();
-        var result = _validator.TestValidate(command);
-        result.ShouldHaveValidationErrorFor(x => x.ContactpersoonId);
+        result.ShouldHaveValidationErrorFor(x => x.Functie);
     }
 }

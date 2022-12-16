@@ -4,16 +4,19 @@
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=03a281f4_002D9e42_002D465b_002D8154_002Dc7838da45342/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=03a281f4_002D9e42_002D465b_002D8154_002Dc7838da45342/@EntryIndexRemoved">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0b2d7a36_002Dff29_002D4f47_002D8a0b_002Df3f0bcc359ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="StopbehandelplanHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net7.0::Promeetec.EDMS.Domain.Tests.Modules.GLI.Behandelplan.CommandHandlers.StopbehandelplanHandlerTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=209bd39c_002D5b2c_002D4772_002Da6c4_002D1c4beff93dd7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateSettingsValidatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net7.0::Promeetec.EDMS.Domain.Tests.Admin.Settings.Validators.UpdateSettingsValidatorTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -83,17 +86,20 @@
 	
 	
 	
+	
+	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c0c48a0_002D628e_002D4018_002Da1d9_002D9c345a4d6888/@EntryIndexRemoved">True</s:Boolean>
 	
 	
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=572e1fe5_002Df624_002D42b7_002D87ef_002D19a841843d17/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateVerbruiksmiddelPrestatieHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net7.0::Promeetec.EDMS.Domain.Tests.Modules.Verbruiksmiddelen.CommandHandlers.CreateVerbruiksmiddelPrestatieHandlerTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
 	
 	
 	
@@ -150,6 +156,21 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
 	
@@ -160,20 +181,6 @@
 	
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c19c4163_002D45a3_002D46b0_002D8487_002D227e3fdcf941/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="WijzigBehandelplanStatusHandlerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net7.0::Promeetec.EDMS.Domain.Tests.Modules.GLI.Behandelplan.CommandHandlers.WijzigBehandelplanStatusHandlerTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	
-	
-	
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d2b9b734_002D4ad5_002D4789_002Dbe98_002D9730f5b23b8b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="StopbehandelplanHandlerTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net7.0::Promeetec.EDMS.Domain.Tests.Modules.GLI.Behandelplan.CommandHandlers.StopbehandelplanHandlerTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
 	
 	
 	
@@ -187,11 +194,29 @@
 	
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f0705941_002D7a4d_002D45f9_002Db4a1_002D541fcaf3fe79/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Testje" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::126BC4A2-424A-4DEA-B37F-9526C4E2E7D6::net7.0::Promeetec.EDMS.Domain.Tests.Modules.Haarwerk.HaarwerkTests.Testje&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

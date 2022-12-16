@@ -10,7 +10,7 @@ using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Identity.Group;
 using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
 using Promeetec.EDMS.Domain.Models.Identity.Group.Handlers;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Identity.Group.CommandHandlers;
 

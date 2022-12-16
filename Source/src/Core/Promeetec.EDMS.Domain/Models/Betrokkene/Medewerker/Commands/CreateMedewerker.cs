@@ -5,8 +5,6 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
 
 public class CreateMedewerker : CommandBase
 {
-    public string OrganisatieDisplayName { get; set; }
-    
     public MedewerkerSoort MedewerkerSoort { get; set; }
     public Persoon.Persoon Persoon { get; set; } = new Persoon.Persoon();
     public string Email { get; set; }

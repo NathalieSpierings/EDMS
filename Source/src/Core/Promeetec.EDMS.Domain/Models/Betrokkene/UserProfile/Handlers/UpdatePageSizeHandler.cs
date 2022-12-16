@@ -1,8 +1,12 @@
-﻿using Promeetec.EDMS.Domain.Betrokkene.UserProfile.Commands;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Promeetec.EDMS.Commands;
+using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Commands;
+using Promeetec.EDMS.Events;
 
-namespace Promeetec.EDMS.Domain.Betrokkene.UserProfile.Handlers
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Handlers
 {
-    public class UpdatePageSizeHandler : ICommandHandlerAsync<UpdatePageSize>
+    public class UpdatePageSizeHandler : ICommandHandler<UpdatePageSize>
     {
         private readonly IUserProfileRepository _repository;
 
@@ -11,19 +15,16 @@ namespace Promeetec.EDMS.Domain.Betrokkene.UserProfile.Handlers
             _repository = repository;
         }
 
-        public async Task<CommandResponse> HandleAsync(UpdatePageSize command)
+        public async Task<IEnumerable<IEvent>> Handle(UpdatePageSize command)
         {
-            var userProfile = await _repository.GetByIdAsync(command.AggregateRootId);
-            if (userProfile == null)
-                throw new ApplicationException($"Profiel niet gevonden. Id: {command.AggregateRootId}");
+            var profile = await _repository.Query().FirstOrDefaultAsync(x => x.Id == command.Id);
+            if (profile == null)
+                throw new DataException($"Profiel met Id {command.Id} niet gevonden.");
 
-            userProfile.UpdatePageSize(command);
-            await _repository.UpdateAsync(userProfile);
+            profile.UpdatePageSize(command);
+            await _repository.UpdateAsync(profile);
 
-            return new CommandResponse
-            {
-                Events = userProfile.Events
-            };
+            return new IEvent[] { };
         }
     }
 }

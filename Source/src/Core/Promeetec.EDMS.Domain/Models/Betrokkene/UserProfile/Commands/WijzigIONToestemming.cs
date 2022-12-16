@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.UserProfile.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Commands
 {
-    public class WijzigIONToestemming : DomainCommand<Medewerker.Medewerker>
+    public class WijzigIONToestemming : CommandBase
     {
         public bool IONToestemmingsverlaringGetekend { get; set; }
         public bool IONVecozoToestemming { get; set; }

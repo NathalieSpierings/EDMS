@@ -14,41 +14,72 @@ public class CreateVerzekerdeValidator : AbstractValidator<CreateVerzekerde>
 
         RuleFor(c => c.Persoon.Voorletters)
             .NotEmpty().WithMessage("Voorletters is verplicht.")
-            .Length(1, 20).WithMessage("Voorletters kan maximaal 20 tekens lang zijn.");
+            .MaximumLength(20).WithMessage("Voorletters kan maximaal 20 tekens lang zijn.");
 
         RuleFor(c => c.Persoon.Tussenvoegsel)
-            .Length(1, 20).WithMessage("Tussenvoegsel kan maximaal 20 tekens lang zijn.");
+            .MaximumLength(20).WithMessage("Tussenvoegsel kan maximaal 20 tekens lang zijn.");
 
         RuleFor(c => c.Persoon.Voornaam)
-            .Length(1, 200).WithMessage("Voornaam kan maximaal 200 tekens lang zijn.")
+            .MaximumLength(200).WithMessage("Voornaam kan maximaal 200 tekens lang zijn.")
             .Matches(new Regex(@"^(?:[u00C0-\u017Fa-zA-Z\-]+\s?)+[u00C0-\u017Fa-zA-Z\-]+$")).WithMessage("Alleen letters, spaties en koppeltekens zijn toegestaan.");
 
         RuleFor(c => c.Persoon.Achternaam)
             .NotEmpty().WithMessage("Achternaam is verplicht.")
-            .Length(1, 256).WithMessage("Achternaam kan maximaal 256 tekens lang zijn.")
+            .MaximumLength(256).WithMessage("Achternaam kan maximaal 256 tekens lang zijn.")
             .Matches(new Regex(@"^(?:[u00C0-\u017Fa-zA-Z\-]+\s?)+[u00C0-\u017Fa-zA-Z\-]+$")).WithMessage("Alleen letters, spaties en koppeltekens zijn toegestaan.");
-
 
         RuleFor(c => c.Persoon.Geboortedatum)
             .NotEmpty().WithMessage("Geboortedatum is verplicht.")
-            .InclusiveBetween(new DateTime(1900, 1, 1), DateTime.Now)
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsGeboortedatumValid { Geboortedatum = c.Persoon.Geboortedatum }))
-            .WithMessage(c => "De geboortedatum kan niet in de toekomst liggen!");
-
+            .LessThanOrEqualTo(DateTime.Now)
+            .WithMessage("Geboortedatum kan niet in de toekomst liggen!")
+            .Must(BeValidDate)
+            .WithMessage("Geboortedatum is ongeldig!");
 
         RuleFor(c => c.Bsn)
-            .NotEmpty().WithMessage("Bsn is verplicht.")
-            .Length(8, 9).WithMessage("Bsn bestaat uit 9 cijfers.")
-            .MustAsync((c, p, cancellation) => dispatcher.Get(new IsBsnValid { Bsn = c.Bsn }))
-            .WithMessage(c => $"{c.Bsn} is geen geldig burgerservicenummer.")
+            .NotEmpty().WithMessage("Burgerservicenummer is verplicht.")
+            .Must(BeValidBsn)
+            .WithMessage("Dit is geen geldig burgerservicenummer!")
             .MustAsync((c, p, cancellation) => dispatcher.Get(new IsBsnUnique { Bsn = c.Bsn }))
             .WithMessage(c => "Er bestaat al een cliënt met hetzelfde burgerservicenummer!");
-
 
         RuleFor(c => c.Adres.LandId)
             .NotEmpty().WithMessage("Land is verplicht.");
 
         RuleFor(c => c.Zorgverzekering.VerzekeraarId)
             .NotEmpty().WithMessage("Verzekeraar is verplicht.");
+    }
+
+    private bool BeValidBsn(string clientBsn)
+    {
+        if (string.IsNullOrWhiteSpace(clientBsn))
+            return false;
+
+        var bsn = clientBsn;
+        if (bsn.Length == 8)
+            bsn = "0" + bsn;
+
+        int.TryParse(bsn, out var bsnNummer);
+        if (bsnNummer <= 9999999 || bsnNummer > 999999999)
+            return false;
+
+        int sum = -1 * bsnNummer % 10;
+
+        for (int multiplier = 2; bsnNummer > 0; multiplier++)
+        {
+            int val = (bsnNummer /= 10) % 10;
+            sum += multiplier * val;
+        }
+
+        return sum != 0 && sum % 11 == 0;
+    }
+
+    private bool BeValidDate(DateTime? date)
+    {
+        if (!date.HasValue)
+            return true;
+
+        var regex = new Regex("^(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-](19|20)\\d\\d$");
+        var match = regex.Match(date.Value.ToString());
+        return match.Success;
     }
 }

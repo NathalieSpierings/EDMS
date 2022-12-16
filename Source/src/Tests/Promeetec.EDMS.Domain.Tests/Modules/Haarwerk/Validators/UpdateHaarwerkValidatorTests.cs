@@ -4,7 +4,7 @@ using FluentValidation.TestHelper;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Validators;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Modules.Haarwerk.Validators;
 

@@ -7,7 +7,7 @@ public class AddMenuItemValidator : AbstractValidator<AddMenuItem>
 {
     public AddMenuItemValidator()
     {
-       RuleFor(c => c.ParentId)
-            .NotEmpty().WithMessage("Parent id is required.");
+        RuleFor(c => c.ParentId)
+             .NotEmpty().WithMessage("Parent is verplicht.");
     }
 }

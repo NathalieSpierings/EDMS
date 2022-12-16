@@ -11,7 +11,7 @@ public class Role : IdentityRole<Guid>, IAggregateRoot
     /// <summary>
     /// The discription of the role.
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// The status of the role.

@@ -3,7 +3,7 @@ using FluentValidation.TestHelper;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Validators;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Modules.Declaratie.Aanleverbericht.Validators;
 

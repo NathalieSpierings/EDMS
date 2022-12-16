@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
 using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
 
@@ -17,7 +16,7 @@ public class Group : AggregateRoot
     /// The description of the group.
     /// </summary>
     [MaxLength(1024)]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     public Status Status { get; set; }
 

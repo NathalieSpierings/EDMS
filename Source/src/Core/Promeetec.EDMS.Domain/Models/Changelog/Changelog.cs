@@ -41,7 +41,8 @@ public class Changelog : AggregateRoot
     /// The tags describing the domain of the release notes.
     /// </summary>
     [MaxLength(128)]
-    public string Tag { get; set; }
+    public string? Tag { get; set; }
+
 
 
     /// <summary>

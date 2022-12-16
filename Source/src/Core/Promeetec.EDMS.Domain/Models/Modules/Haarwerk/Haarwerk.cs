@@ -29,13 +29,13 @@ public class Haarwerk : AggregateRoot
     /// The optional insurance number of the client.
     /// </summary>
     [MaxLength(50)]
-    public string Verzekeringsnummer { get; set; }
+    public string? Verzekeringsnummer { get; set; }
 
     /// <summary>
     /// The optional machtigings number.
     /// </summary>
     [MaxLength(50)]
-    public string Machtigingsnummer { get; set; }
+    public string? Machtigingsnummer { get; set; }
 
     /// <summary>
     /// The kind of hulpmiddel.

@@ -7,10 +7,9 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Handlers;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Identity.Users;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker.CommandHandlers;
 
@@ -34,58 +33,26 @@ public class ActivateGoogleAuthenticatorHandlerTests : TestFixtureBase
     [Test]
     public async Task Should_activate_google_authenticator_and_add_event()
     {
-        var cmd = new CreateMedewerker
-        {
-            UserId = Guid.NewGuid(),
-            UserDisplayName = "Ad de Admin",
-
-            Id = Guid.NewGuid(),
-            OrganisatieId = Guid.NewGuid(),
-            OrganisatieDisplayName = "Test organisatie",
-            MedewerkerSoort = MedewerkerSoort.Extern,
-            Persoon = new Persoon
-            {
-                Geboortedatum = new DateTime(1975, 07, 22),
-                Geslacht = Geslacht.Vrouwelijk,
-                Voorletters = "J",
-                Voornaam = "Joan",
-                Achternaam = "Do",
-                TelefoonZakelijk = "1234567897",
-                TelefoonPrive = "7894561236",
-                Email = "joan.do@test.com",
-            },
-            Email = "joan.do@test.com",
-            Functie = "Recruter",
-            AgbCodeZorgverlener = "87654321",
-            AgbCodeOnderneming = "12345678",
-            IonToestemmingsverklaringActivatieLink = "my link",
-            Avatar = Convert.FromBase64String("R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="),
-            AccountState = UserAccountState.GoogleAuthenticatorAcivated,
-            UserName = "0000-jdo",
-            TempCode = "1358#$sd%",
-            PukCode = "ASD345H78",
-            Adres = new Adres
-            {
-                Straat = "Koeveringsedijk",
-                Huisnummer = "5",
-                Huisnummertoevoeging = "A",
-                Postcode = "5491SB",
-                Woonplaats = "Sint Oedenrode",
-                LandNaam = "NEDERLAND"
-            }
-        };
+        var cmd = Fixture.Build<CreateMedewerker>()
+            .Without(x => x.Adres)
+            .With(x => x.Adres, Fixture.Build<Adres>()
+                .Without(x => x.Verzekerden)
+                .Without(x => x.Land)
+                .With(x => x.LandId, Guid.NewGuid())
+                .Create())
+            .Create();
 
         var medewerker = new Models.Betrokkene.Medewerker.Medewerker(cmd);
         _context.Medewerkers.Add(medewerker);
         await _context.SaveChangesAsync();
 
         var command = Fixture.Build<ActivateGoogleAuthenticator>()
-            .With(x => x.AccountState, UserAccountState.GoogleAuthenticatorAcivated)
-            .With(x => x.SecretKey, "SecretKey")
             .With(x => x.Id, medewerker.Id)
             .With(x => x.OrganisatieId, medewerker.OrganisatieId)
             .With(x => x.UserId, Guid.NewGuid())
             .With(x => x.UserDisplayName, "Ad de Admin")
+            .With(x => x.AccountState, UserAccountState.GoogleAuthenticatorAcivated)
+            .With(x => x.SecretKey, "SecretKey")
             .Create();
 
         var sut = new ActivateGoogleAuthenticatorHandler(_repository, _eventRepository);

@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
@@ -33,7 +32,7 @@ public class Aanlevering : AggregateRoot
     /// The remarks for the aanlevering.
     /// </summary>
     [MaxLength(1024)]
-    public string Opmerking { get; set; }
+    public string? Opmerking { get; set; }
 
     /// <summary>
     /// Indicator if the user is allowed to add documents to the aanlevering.
@@ -53,30 +52,57 @@ public class Aanlevering : AggregateRoot
     /// <summary>
     /// The aanlever date of the aanlevering.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
+    [Required]
     public DateTime Aanleverdatum { get; set; }
 
     /// <summary>
     /// The time stamp of when the record has been created.
     /// </summary>
-    public DateTime TimeStamp { get; set; }
+    public DateTime AangemaaktOp { get; set; }
 
     /// <summary>
-    /// The unique identifier of the creator of the aanlevering.
+    /// Unique identiefier of the creator of the file.
     /// </summary>
-    public Guid? AangemaaktDoor { get; set; }
+    public Guid AangemaaktDoorId { get; set; }
 
     /// <summary>
-    /// The last update date of the aanlevering.
+    /// Name of the creator of the file.
     /// </summary>
-    [Column(TypeName = "datetime2")]
+    [MaxLength(450)]
+    public string? AangemaaktDoor { get; set; }
+
+
+    /// <summary>
+    /// The last edit date of the file.
+    /// </summary>
     public DateTime? AangepastOp { get; set; }
 
     /// <summary>
-    /// The unique identifier of the last updater of the aanlevering.
+    /// Name of the last editor for the file.
     /// </summary>
-    public Guid? AangepastDoor { get; set; }
+    public Guid? AangepastDoorId { get; set; }
 
+    /// <summary>
+    /// Name of the last editor of the file.
+    /// </summary>
+    [MaxLength(450)]
+    public string? AangepastDoor { get; set; }
+
+
+    /// <summary>
+    /// The date the status has been set to Verwijderd.
+    /// </summary>
+    public DateTime? VerwijderdOp { get; set; }
+
+    /// <summary>
+    /// The unique identifier of the deleter.
+    /// </summary>
+    public Guid? VerwijderdDoorId { get; set; }
+
+    /// <summary>
+    /// The name of the deleter.
+    /// </summary>
+    public string VerwijderdDoor { get; set; }
 
     #region Navigation properties
 
@@ -123,8 +149,9 @@ public class Aanlevering : AggregateRoot
         AanleverStatus = AanleverStatus.Aangemaakt;
         Jaar = DateTime.Now.Year;
         Aanleverdatum = DateTime.Now;
-        TimeStamp = DateTime.Now;
-        AangemaaktDoor = cmd.UserId;
+        AangemaaktOp = DateTime.Now;
+        AangemaaktDoorId = cmd.UserId;
+        AangemaaktDoor = cmd.UserDisplayName;
     }
 
 
@@ -141,7 +168,8 @@ public class Aanlevering : AggregateRoot
         BehandelaarId = cmd.BehandelaarId;
         EigenaarId = cmd.EigenaarId;
         AangepastOp = DateTime.Now;
-        AangepastDoor = cmd.UserId;
+        AangepastDoorId = cmd.UserId;
+        AangepastDoor = cmd.UserDisplayName;
     }
 
 
@@ -153,7 +181,12 @@ public class Aanlevering : AggregateRoot
     {
         Status = Status.Verwijderd;
         AangepastOp = DateTime.Now;
-        AangepastDoor = cmd.UserId;
+        AangepastDoorId = cmd.UserId;
+        AangepastDoor = cmd.UserDisplayName;
+
+        VerwijderdOp = DateTime.Now;
+        VerwijderdDoorId = cmd.UserId;
+        VerwijderdDoor = cmd.UserDisplayName;
     }
 
 
@@ -164,6 +197,9 @@ public class Aanlevering : AggregateRoot
     public void WijzigEigenaar(ChangeEigenaarAanlevering cmd)
     {
         EigenaarId = cmd.EigenaarId;
+        AangepastOp = DateTime.Now;
+        AangepastDoorId = cmd.UserId;
+        AangepastDoor = cmd.UserDisplayName;
     }
 
     /// <summary>

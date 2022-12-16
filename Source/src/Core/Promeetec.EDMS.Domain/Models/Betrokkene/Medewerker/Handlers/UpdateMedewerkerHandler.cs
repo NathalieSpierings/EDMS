@@ -54,7 +54,7 @@ public class UpdateMedewerkerHandler : ICommandHandler<UpdateMedewerker>
             UserId = command.UserId,
             UserDisplayName = command.UserDisplayName,
 
-            Geslacht = medewerker.Persoon.Geslacht.GetDisplayName(),
+            Geslacht = medewerker.Persoon.Geslacht?.GetDisplayName(),
             Voorletters = medewerker.Persoon.Voorletters,
             Tussenvoegsel = medewerker.Persoon.Tussenvoegsel,
             Voornaam = medewerker.Persoon.Voornaam,
@@ -67,7 +67,6 @@ public class UpdateMedewerkerHandler : ICommandHandler<UpdateMedewerker>
             Email = medewerker.Email,
             AgbCodeZorgverlener = !string.IsNullOrWhiteSpace(medewerker.AgbCodeZorgverlener) ? string.Concat("[", medewerker.AgbCodeZorgverlener.Replace(",", "]-["), "]") : "",
             AgbCodeOnderneming = !string.IsNullOrWhiteSpace(medewerker.AgbCodeOnderneming) ? string.Concat("[", medewerker.AgbCodeOnderneming.Replace(",", "]-["), "]") : "",
-            IonToestemmingsverklaringActivatieLink = medewerker.IONToestemmingsverklaringActivatieLink,
             Adres = medewerker.Adres.VolledigAdres,
         };
 

@@ -17,8 +17,6 @@ public class CreateVerbruiksmiddelPrestatie : CommandBase
     public DateTime? PrestatieDatum { get; set; }
     public int? Hoeveelheid { get; set; }
 
-    public string OrganisatieDisplayName { get; set; }
-
     public Guid EigenaarId { get; set; }
     public string EigenaarVolledigeNaam { get; set; }
 

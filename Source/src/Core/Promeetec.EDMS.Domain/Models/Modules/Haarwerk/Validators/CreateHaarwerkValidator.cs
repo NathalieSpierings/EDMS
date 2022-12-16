@@ -22,9 +22,9 @@ public class CreateHaarwerkValidator : AbstractValidator<CreateHaarwerk>
             .WithMessage("Geboortedatum is ongeldig!");
 
         RuleFor(c => c.Bsn)
-            .NotEmpty().WithMessage("BSN is verplicht.")
+            .NotEmpty().WithMessage("Burgerservicenummer is verplicht.")
             .Must(BeValidBsn)
-            .WithMessage("BSN is ongeldig!");
+            .WithMessage("Dit is geen geldig burgerservicenummer!");
 
         RuleFor(c => c.Afleverdatum)
             .NotEmpty().WithMessage("Afleverdatum is verplicht.")

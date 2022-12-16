@@ -74,7 +74,13 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
         builder.HasMany(e => e.GliIntakes)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
+            .IsRequired();
+
+        builder.HasMany(e => e.GliBehandelplannen)
+            .WithOne(e => e.Organisatie)
+            .HasForeignKey(e => e.OrganisatieId)
+            .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
         builder.HasMany(c => c.VerbruiksmiddelPrestaties)

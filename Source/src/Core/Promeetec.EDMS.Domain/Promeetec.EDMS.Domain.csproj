@@ -15,8 +15,6 @@
     <Compile Remove="Models\Betrokkene\Memo\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Notification\Commands\**" />
     <Compile Remove="Models\Betrokkene\Notification\Handlers\**" />
-    <Compile Remove="Models\Betrokkene\UserProfile\Commands\**" />
-    <Compile Remove="Models\Betrokkene\UserProfile\Events\**" />
     <Compile Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
     <Compile Remove="Models\Betrokkene\Verzekeraar\Rules\**" />
@@ -32,8 +30,6 @@
     <Compile Remove="Models\Betrokkene\Memo\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Notification\Commands\**" />
     <Compile Remove="Models\Betrokkene\Notification\Handlers\**" />
-    <Compile Remove="Models\Betrokkene\UserProfile\Commands\**" />
-    <Compile Remove="Models\Betrokkene\UserProfile\Events\**" />
     <Compile Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <Compile Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
     <Compile Remove="Models\Betrokkene\Verzekerde\Commands\**" />
@@ -58,8 +54,6 @@
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Handlers\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Commands\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Events\**" />
     <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekeraar\Rules\**" />
@@ -75,8 +69,6 @@
     <EmbeddedResource Remove="Models\Betrokkene\Memo\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Notification\Handlers\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Commands\**" />
-    <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Events\**" />
     <EmbeddedResource Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
     <EmbeddedResource Remove="Models\Betrokkene\Verzekerde\Commands\**" />
@@ -101,8 +93,6 @@
     <None Remove="Models\Betrokkene\Memo\Handlers\**" />
     <None Remove="Models\Betrokkene\Notification\Commands\**" />
     <None Remove="Models\Betrokkene\Notification\Handlers\**" />
-    <None Remove="Models\Betrokkene\UserProfile\Commands\**" />
-    <None Remove="Models\Betrokkene\UserProfile\Events\**" />
     <None Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <None Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
     <None Remove="Models\Betrokkene\Verzekeraar\Rules\**" />
@@ -118,8 +108,6 @@
     <None Remove="Models\Betrokkene\Memo\Handlers\**" />
     <None Remove="Models\Betrokkene\Notification\Commands\**" />
     <None Remove="Models\Betrokkene\Notification\Handlers\**" />
-    <None Remove="Models\Betrokkene\UserProfile\Commands\**" />
-    <None Remove="Models\Betrokkene\UserProfile\Events\**" />
     <None Remove="Models\Betrokkene\UserProfile\Handlers\**" />
     <None Remove="Models\Betrokkene\Verzekeraar\Commands\**" />
     <None Remove="Models\Betrokkene\Verzekerde\Commands\**" />
@@ -153,6 +141,10 @@
     <Compile Include="Models\Betrokkene\Notification\Commands\UpdateNotificatie.cs" />
     <Compile Include="Models\Betrokkene\Notification\Handlers\CreateNotificatieHandler.cs" />
     <Compile Include="Models\Betrokkene\Notification\Handlers\UpdateNotificatieHandler.cs" />
+    <Compile Include="Models\Betrokkene\UserProfile\Handlers\UpdateEmailBijRapportageHandler.cs" />
+    <Compile Include="Models\Betrokkene\UserProfile\Handlers\UpdatePageSizeHandler.cs" />
+    <Compile Include="Models\Betrokkene\UserProfile\Handlers\CreateUserProfileHandler.cs" />
+    <Compile Include="Models\Betrokkene\UserProfile\Handlers\UpdateUserProfileHandler.cs" />
     <Compile Include="Models\Betrokkene\Verzekeraar\Commands\CreateVerzekeraar.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\ReinstateVerzekerde.cs" />
     <Compile Include="Models\Betrokkene\Verzekerde\Commands\ReinstateVerzekerdeMetZorgprofiel.cs" />

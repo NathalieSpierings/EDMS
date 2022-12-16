@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Extensions;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
@@ -18,7 +17,7 @@ public class Verzekerde : AggregateRoot
     /// The Bsn  of the insured person.
     /// </summary>
     [MaxLength(128)]
-    public string Bsn { get; set; }
+    public string? Bsn { get; set; }
 
 
     /// <summary>
@@ -33,18 +32,17 @@ public class Verzekerde : AggregateRoot
     /// The AGBcode verijzer of the insured person.
     /// </summary>
     [MaxLength(20)]
-    public string AgbCodeVerwijzer { get; set; }
+    public string? AgbCodeVerwijzer { get; set; }
 
     /// <summary>
     /// The name of the referrer.
     /// </summary>
     [MaxLength(256)]
-    public string NaamVerwijzer { get; set; }
+    public string? NaamVerwijzer { get; set; }
 
     /// <summary>
     /// The referral date.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? Verwijsdatum { get; set; }
 
     /// <summary>
@@ -56,26 +54,26 @@ public class Verzekerde : AggregateRoot
     /// <summary>
     /// Indicator if the insured person is shared with collegaues.
     /// </summary>
-    public bool Shared { get; set; }
+    public bool? Shared { get; set; }
 
 
     /// <summary>
     /// The time stamp of when the record has been created.
     /// </summary>
-    public DateTime TimeStamp { get; set; }
+    public DateTime AangemaaktOp { get; set; }
 
 
     /// <summary>
-    /// The unique identifier of medewerker who created the insured person.
+    /// The unique identifier of the record creator.
     /// </summary>
     [Required]
     public Guid AangemaaktDoorId { get; set; }
 
 
     /// <summary>
-    /// The name of medewerker who created the insured person.
+    /// Name of the record creator.
     /// </summary>
-    public string AangemaaktDoor { get; set; }
+    public string? AangemaaktDoor { get; set; }
 
 
     #region Navigation properties
@@ -138,7 +136,7 @@ public class Verzekerde : AggregateRoot
         NaamVerwijzer = cmd.NaamVerwijzer;
         Verwijsdatum = cmd.Verwijsdatum;
 
-        TimeStamp = DateTime.Now;
+        AangemaaktOp = DateTime.Now;
         AangemaaktDoor = cmd.UserDisplayName;
         AangemaaktDoorId = cmd.UserId;
     }
@@ -162,6 +160,7 @@ public class Verzekerde : AggregateRoot
         AgbCodeVerwijzer = cmd.AgbCodeVerwijzer;
         NaamVerwijzer = cmd.NaamVerwijzer;
         Verwijsdatum = cmd.Verwijsdatum;
+
     }
 
 

@@ -5,7 +5,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
 using Promeetec.EDMS.Domain.Models.Identity.Users;
 using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
 {
@@ -86,14 +86,11 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
             Assert.AreEqual(_cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
             Assert.AreEqual(_cmd.Functie, _sut.Functie);
             Assert.AreEqual(_cmd.Email, _sut.Email);
-            Assert.AreEqual(_cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
             Assert.AreEqual(_cmd.AccountState, _sut.AccountState);
             Assert.AreEqual(_cmd.UserName, _sut.UserName);
             Assert.AreEqual(_cmd.TempCode, _sut.TempCode);
             Assert.AreEqual(_cmd.PukCode, _sut.PukCode);
             Assert.AreEqual(_cmd.Adres, _sut.Adres);
-            Assert.AreEqual(_cmd.UserId, _sut.CreatedById);
-            Assert.AreEqual(_cmd.UserDisplayName, _sut.CreatedBy);
             Assert.AreEqual(_cmd.Adres, _sut.Adres);
         }
 
@@ -120,7 +117,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
                 Email = "abc@test.com",
                 AgbCodeZorgverlener = "85296324",
                 AgbCodeOnderneming = "74136985",
-                IonToestemmingsverklaringActivatieLink ="New link",
+                IonToestemmingsverklaringActivatieLink = "New link",
                 Adres = new Adres
                 {
                     Straat = "Dorpsstraat",
@@ -144,7 +141,6 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
             Assert.AreEqual(cmd.Email, _sut.Email);
             Assert.AreEqual(cmd.AgbCodeZorgverlener, _sut.AgbCodeZorgverlener);
             Assert.AreEqual(cmd.AgbCodeOnderneming, _sut.AgbCodeOnderneming);
-            Assert.AreEqual(cmd.IonToestemmingsverklaringActivatieLink, _sut.IONToestemmingsverklaringActivatieLink);
             Assert.AreEqual(cmd.Adres, _sut.Adres);
         }
 
@@ -158,7 +154,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
         [Test]
         public void Suspend()
         {
-            _sut.Suspend(new SuspendMedewerker{DeactivatieReden = "Test deactivatie reden"});
+            _sut.Suspend(new SuspendMedewerker { DeactivatieReden = "Test deactivatie reden" });
             Assert.AreEqual(Status.Inactief, _sut.Status);
         }
 

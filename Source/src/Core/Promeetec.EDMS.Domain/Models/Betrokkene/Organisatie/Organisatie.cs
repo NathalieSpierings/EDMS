@@ -3,6 +3,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Rapportage;
 using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
 using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
 using Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
@@ -23,7 +24,6 @@ public class Organisatie : AggregateRoot
     [Required, MaxLength(50)]
     public string Nummer { get; set; }
 
-
     /// <summary>
     /// The name of the organisatie.
     /// </summary>
@@ -35,7 +35,6 @@ public class Organisatie : AggregateRoot
     /// </summary>
     [MaxLength(50)]
     public string? TelefoonZakelijk { get; set; }
-
 
     /// <summary>
     /// The private phonenumber of the organisatie.
@@ -49,20 +48,17 @@ public class Organisatie : AggregateRoot
     [MaxLength(450)]
     public string? Email { get; set; }
 
-
     /// <summary>
     /// The website for the organisatie.
     /// </summary>
     [MaxLength(450)]
     public string? Website { get; set; }
 
-
     /// <summary>
     /// The vektis agbcode for the organisatie.
     /// </summary>
     [MaxLength(200)]
-    public string AgbCodeOnderneming { get; set; }
-
+    public string? AgbCodeOnderneming { get; set; }
 
     /// <summary>
     /// Value indicating whether the organisatie is a zorgroep or not.
@@ -80,7 +76,6 @@ public class Organisatie : AggregateRoot
     /// </summary>
     public bool Beperkt { get; set; }
 
-
     /// <summary>
     /// The reason why the organisatie is limitid.
     /// </summary>
@@ -88,9 +83,19 @@ public class Organisatie : AggregateRoot
     public string? BeperktReden { get; set; }
 
     /// <summary>
-    /// The time stamp of when the record has been created.
+    /// The date the status has been set to Verwijderd.
     /// </summary>
-    public DateTime TimeStamp { get; set; }
+    public DateTime? VerwijderdOp { get; set; }
+
+    /// <summary>
+    /// The unique identifier of the deleter.
+    /// </summary>
+    public Guid? VerwijderdDoorId { get; set; }
+
+    /// <summary>
+    /// The name of the deleter.
+    /// </summary>
+    public string? VerwijderdDoorNaam { get; set; }
 
 
     public string DisplayName => !string.IsNullOrEmpty(Nummer) ? $"{Naam} ({Nummer})" : $"{Naam}";
@@ -129,6 +134,7 @@ public class Organisatie : AggregateRoot
     public virtual ICollection<Haarwerk> HaarwerkPrestaties { get; set; }
     public virtual ICollection<Rapportage> Rapportages { get; set; }
     public virtual ICollection<GliIntake> GliIntakes { get; set; }
+    public virtual ICollection<GliBehandelplan> GliBehandelplannen { get; set; }
     public virtual ICollection<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
 
     #endregion

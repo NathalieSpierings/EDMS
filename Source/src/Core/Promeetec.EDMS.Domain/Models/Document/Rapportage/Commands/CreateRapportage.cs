@@ -11,7 +11,6 @@ namespace Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands
         public byte[] Data { get; set; }
         public RapportageSoort RapportageSoort { get; set; }
         public string Referentie { get; set; }
-        public string OrganisatieDisplayName { get; set; }
         public Guid EigenaarId { get; set; }
         public string EigenaarVolledigeNaam { get; set; }
     }

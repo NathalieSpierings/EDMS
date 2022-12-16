@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
@@ -23,7 +22,7 @@ public class Notificatie : AggregateRoot
     /// The url for the notification.
     /// </summary>
     [MaxLength(256)]
-    public string Url { get; set; }
+    public string? Url { get; set; }
 
     /// <summary>
     /// The type of notification.
@@ -51,7 +50,7 @@ public class Notificatie : AggregateRoot
     /// <summary>
     /// The date of the notification.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
+    [Required]
     public DateTime Datum { get; set; }
 
 
@@ -71,7 +70,6 @@ public class Notificatie : AggregateRoot
     /// <summary>
     /// The date the notification has been readed.
     /// </summary>
-    [Column(TypeName = "datetime2")]
     public DateTime? GelezenOp { get; set; }
 
 

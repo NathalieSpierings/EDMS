@@ -47,16 +47,5 @@ public class Weegmoment : AggregateRoot
         VerzekerdeId = cmd.VerzekerdeId;
         Gewicht = cmd.Gewicht;
         Opnamedatum = cmd.Opnamedatum;
-
-        //AddAndApplyEvent(new WeegMomentToegevoegd
-        //{
-        //    AggregateRootId = cmd.AggregateRootId,
-        //    UserId = cmd.UserId,
-        //    UserDisplayName = cmd.UserDisplayName,
-
-        //    Lengte = $"{cmd.Lengte} cm",
-        //    Gewicht = $"{cmd.Gewicht} KG",
-        //    Opnamedatum = cmd.Opnamedatum.ToString("dd-MM-yyyy")
-        //});
     }
 }

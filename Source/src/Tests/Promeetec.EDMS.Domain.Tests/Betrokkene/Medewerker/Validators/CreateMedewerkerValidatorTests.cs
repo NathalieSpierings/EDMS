@@ -4,7 +4,7 @@ using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Validators;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker.Validators;
 
@@ -38,7 +38,6 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Geslacht);
     }
-
 
     [Test]
     public void Should_have_validation_error_when_voorletters_is_empty()
@@ -78,7 +77,6 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Voorletters);
     }
 
-
     [Test]
     public void Should_have_validation_error_when_tussenvoegsel_is_too_long()
     {
@@ -97,7 +95,6 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Persoon.Tussenvoegsel);
     }
-
 
     [Test]
     public void Should_have_validation_error_when_achternaam_is_empty()
@@ -173,7 +170,6 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
         result.ShouldHaveValidationErrorFor(x => x.Persoon.TelefoonZakelijk);
     }
 
-
     [Test]
     public void Should_have_validation_error_when_telefoon_prive_is_too_long()
     {
@@ -225,7 +221,6 @@ public class CreateMedewerkerValidatorTests : TestFixtureBase
         var result = _validator.TestValidate(command);
         result.ShouldHaveValidationErrorFor(x => x.Email);
     }
-
 
     [Test]
     public void Should_have_validation_error_when_agbcode_onderneming_is_empty()

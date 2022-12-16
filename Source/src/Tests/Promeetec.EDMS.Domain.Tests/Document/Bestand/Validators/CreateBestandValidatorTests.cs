@@ -3,7 +3,7 @@ using FluentValidation.TestHelper;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Document.Bestand.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Bestand.Validators;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Bestand.Validators;
 

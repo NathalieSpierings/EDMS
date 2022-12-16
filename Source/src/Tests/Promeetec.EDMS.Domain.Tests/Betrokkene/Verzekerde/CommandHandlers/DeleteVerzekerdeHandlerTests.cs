@@ -11,7 +11,7 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
 using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.CommandHandlers;
 

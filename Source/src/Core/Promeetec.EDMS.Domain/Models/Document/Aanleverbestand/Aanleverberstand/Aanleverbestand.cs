@@ -14,12 +14,12 @@ public class Aanleverbestand : Bestand.Bestand
 	/// The period of the aanleverbestand.
 	/// </summary>
 	[MaxLength(20)]
-	public string Periode { get; set; }
+	public string? Periode { get; set; }
 
 	/// <summary>
 	/// Indicator if the aanleverbestand is checked yes or no.
 	/// </summary>
-	public bool Gecontroleerd { get; set; }
+	public bool? Gecontroleerd { get; set; }
 
 
 	#region Navigation properties
@@ -63,8 +63,8 @@ public class Aanleverbestand : Bestand.Bestand
 		AanleveringId = cmd.AanleveringId;
 		EiStandaardId = cmd.EiStandaardId;
 		AangemaaktOp = DateTime.Now;
-		AangemaaktDoor = cmd.UserId;
-		AangemaaktDoorNaam = cmd.UserDisplayName;
+		AangemaaktDoorId = cmd.UserId;
+		AangemaaktDoor = cmd.UserDisplayName;
 	}
 
 	/// <summary>
@@ -77,7 +77,8 @@ public class Aanleverbestand : Bestand.Bestand
 		ZorgstraatId = cmd.ZorgstraatId;
 		EigenaarId = cmd.EigenaarId;
 		AangepastOp = DateTime.Now;
-		AangepastDoor = cmd.UserId;
+		AangepastDoorId = cmd.UserId;
+		AangepastDoor = cmd.UserDisplayName;
 	}
 
 	/// <summary>

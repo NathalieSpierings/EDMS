@@ -1,7 +1,7 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Admin.Settings.Commands;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Admin.Settings
 {

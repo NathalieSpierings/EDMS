@@ -9,13 +9,33 @@ namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
 
 public class GliIntake : AggregateRoot
 {
+    /// <summary>
+    /// The date of the intake.
+    /// </summary>
     [Required]
     public DateTime IntakeDatum { get; set; }
 
+
+    /// <summary>
+    /// The remarks for the intake.
+    /// </summary>
     [MaxLength(1024)]
     public string? Opmerking { get; set; }
+
+
+    /// <summary>
+    /// Indicator if the intake is verwerkt.
+    /// </summary>
     public bool Verwerkt { get; set; }
+
+    /// <summary>
+    /// The verwerkt date.
+    /// </summary>
     public DateTime? VerwerktOp { get; set; }
+
+    /// <summary>
+    /// The status of the intake.
+    /// </summary>
     public GliStatus GliStatus { get; set; }
 
     #region Navigation properties

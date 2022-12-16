@@ -19,5 +19,4 @@ public class VerbruiksmiddelPrestatieAangemaakt : EventBase
     public string EigenaarVolledigeNaam { get; set; }
     public Guid VerzekerdeId { get; set; }
     public string VerzekerdeVolledigeNaam { get; set; }
-    public string OrganisatieDisplayName { get; set; }
 }

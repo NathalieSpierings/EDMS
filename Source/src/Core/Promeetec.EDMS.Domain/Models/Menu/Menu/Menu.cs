@@ -11,9 +11,15 @@ public class Menu : AggregateRoot
     public string Name { get; set; }
 
     public MenuType MenuType { get; set; }
+
     public Status Status { get; set; }
 
+
+    #region Navigation properties
+
     public IList<MenuItem.MenuItem> MenuItems { get; set; } = new List<MenuItem.MenuItem>();
+
+    #endregion
 
 
     /// <summary>

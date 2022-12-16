@@ -6,7 +6,7 @@ using Promeetec.EDMS.Data.Repositories;
 using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
 using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Handlers;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Modules.GLI.Behandelplan.CommandHandlers;
 

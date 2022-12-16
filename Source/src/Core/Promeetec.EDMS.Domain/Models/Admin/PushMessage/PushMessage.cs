@@ -14,7 +14,7 @@ public class PushMessage : AggregateRoot
     /// <summary>
     /// The content of the Message.
     /// </summary>
-    [Required, MaxLength(10000)]
+    [Required, MaxLength(15000)]
     public string Message { get; set; }
 
     /// <summary>
@@ -31,7 +31,7 @@ public class PushMessage : AggregateRoot
     /// <summary>
     /// The commaseparated string of group id's.
     /// </summary>
-    public string GroupIds { get; set; }
+    public string? GroupIds { get; set; }
 
     #region Navigation properties
 

@@ -16,9 +16,10 @@ namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands
         public string ControllerName { get; set; }
         public string RouteVariables { get; set; }
         public string Url { get; set; }
-        public bool Disabled { get; set; }
-        public Status Status { get; set; }
+        public int SortOrder { get; set; }
         public MenuItemType MenuItemType { get; set; }
+        public Status Status { get; set; }
+
         public List<MenuItemRole> Roles { get; set; } = new List<MenuItemRole>();
     }
 }

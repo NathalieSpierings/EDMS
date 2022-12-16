@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Domain.Models.Admin.DownloadActivity;
 using Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
 using Promeetec.EDMS.Domain.Models.Admin.Mededeling;
+using Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
 using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Land;
@@ -76,14 +77,14 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<Organisatie> Organisaties { get; set; }
     public DbSet<Overigbestand> OverigeBestanden { get; set; }
     public DbSet<Rapportage> Rapportages { get; set; }
+    public DbSet<RedenEindeZorg> RedenenEindeZorg { get; set; }
     public DbSet<Domain.Models.Admin.Settings.Settings> Settings { get; set; }
     public DbSet<UserProfile> UserProfiles { get; set; }
-    public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<VerbruiksmiddelPrestatie> VerbruiksmiddelPrestaties { get; set; }
     public DbSet<Verzekeraar> Verzekeraars { get; set; }
     public DbSet<Verzekerde> Verzekerden { get; set; }
     public DbSet<VerzekerdeToAdres> GroupUsers { get; set; }
-    public DbSet<Weegmoment> Weegmoment { get; set; }
+    public DbSet<Weegmoment> Weegmomenten { get; set; }
     public DbSet<Zorgprofiel> Zorgprofielen { get; set; }
     public DbSet<Zorgstraat> Zorgstraten { get; set; }
     public DbSet<Zorgverzekering> Zorgverzekeringen { get; set; }

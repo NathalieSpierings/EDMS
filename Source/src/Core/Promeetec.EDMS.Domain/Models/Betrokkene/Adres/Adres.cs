@@ -32,7 +32,7 @@ public class Adres : AggregateRoot
     /// The house number addition of the address.
     /// </summary>
     [MaxLength(50)]
-    public string Huisnummertoevoeging { get; set; }
+    public string? Huisnummertoevoeging { get; set; }
 
 
     /// <summary>
@@ -45,7 +45,7 @@ public class Adres : AggregateRoot
     /// <summary>
     /// The country name of the address.
     /// </summary>
-    public string LandNaam { get; set; }
+    public string? LandNaam { get; set; }
 
 
     /// <summary>
@@ -60,7 +60,6 @@ public class Adres : AggregateRoot
     /// </summary>
     [Column(TypeName = "datetime2")]
     public DateTime? WoonachtigTot { get; set; }
-
 
     /// <summary>
     /// Returns the complete address based on VEKTIS.

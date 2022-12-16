@@ -3,7 +3,7 @@ using FluentValidation.TestHelper;
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Changelog.Commands;
 using Promeetec.EDMS.Domain.Models.Changelog.Validators;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Changelog.Validators;
 

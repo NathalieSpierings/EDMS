@@ -11,8 +11,7 @@ public class Persoon
     /// <summary>
     /// The gender of the person.
     /// </summary>
-    public Geslacht Geslacht { get; set; }
-
+    public Geslacht? Geslacht { get; set; }
 
     /// <summary>
     /// The date of birth of the person.
@@ -35,7 +34,7 @@ public class Persoon
     /// The first name of the person.
     /// </summary>
     [MaxLength(200)]
-    public string Voornaam { get; set; }
+    public string? Voornaam { get; set; }
 
     /// <summary>
     /// The last name of the person.
@@ -47,14 +46,14 @@ public class Persoon
     /// The business phonenumber of the person.
     /// </summary>
     [MaxLength(50)]
-    public string TelefoonZakelijk { get; set; }
+    public string? TelefoonZakelijk { get; set; }
 
 
     /// <summary>
     /// The private phonenumber of the person.
     /// </summary>
     [MaxLength(50)]
-    public string TelefoonPrive { get; set; }
+    public string? TelefoonPrive { get; set; }
 
 
     /// <summary>
@@ -77,7 +76,7 @@ public class Persoon
     /// The full name of the person.
     /// </summary>
     [MaxLength(450)]
-    public string VolledigeNaam
+    public string? VolledigeNaam
     {
         get
         {
@@ -97,7 +96,7 @@ public class Persoon
     /// The formal name of the person.
     /// </summary>
     [MaxLength(450)]
-    public string FormeleNaam
+    public string? FormeleNaam
     {
         get
         {

@@ -8,14 +8,14 @@ public class EiStandaard : AggregateRoot
     /// The name of the EI-standaard.
     /// </summary>
     [MaxLength(128)]
-    public string Naam { get; set; }
+    public string? Naam { get; set; }
 
 
     /// <summary>
     /// The EI bericht codes of the EI-standaard.
     /// </summary>
     [MaxLength(50)]
-    public string EiBerichtCodes { get; set; }
+    public string? EiBerichtCodes { get; set; }
 
     /// <summary>
     /// The version of the EI-standaard.
@@ -38,7 +38,7 @@ public class EiStandaard : AggregateRoot
     /// The description of the EI-standaard.
     /// </summary>
     [MaxLength(200)]
-    public string Omschrijving { get; set; }
+    public string? Omschrijving { get; set; }
 
 
     /// <summary>

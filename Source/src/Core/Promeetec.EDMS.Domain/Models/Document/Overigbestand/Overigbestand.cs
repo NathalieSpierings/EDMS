@@ -37,8 +37,8 @@ public class Overigbestand : Bestand.Bestand
         Data = cmd.Data;
         EigenaarId = cmd.EigenaarId;
         AangemaaktOp = DateTime.Now;
-        AangemaaktDoor = cmd.UserId;
-        AangemaaktDoorNaam = cmd.UserDisplayName;
+        AangemaaktDoorId = cmd.UserId;
+        AangemaaktDoor = cmd.UserDisplayName;
 
         AanleveringId = cmd.AanleveringId;
     }

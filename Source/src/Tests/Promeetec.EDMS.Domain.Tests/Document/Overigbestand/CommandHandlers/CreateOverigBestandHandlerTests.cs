@@ -10,7 +10,7 @@ using Promeetec.EDMS.Domain.Models.Document.Overigbestand;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
 using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Handlers;
 using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Document.Overigbestand.CommandHandlers;
 

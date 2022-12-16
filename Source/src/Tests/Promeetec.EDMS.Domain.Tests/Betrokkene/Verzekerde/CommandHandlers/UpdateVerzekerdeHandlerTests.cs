@@ -12,7 +12,8 @@ using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
 using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde.CommandHandlers;
 
@@ -42,7 +43,9 @@ public class UpdateVerzekerdeHandlerTests : TestFixtureBase
                 .Without(x => x.Land)
                 .With(x => x.LandId, Guid.NewGuid())
                 .Create())
-            .Without(x => x.Zorgprofiel)
+            .With(x => x.Zorgprofiel, Fixture.Build<Zorgprofiel>()
+                .Without(x => x.Verzekerden)
+                .Create())
             .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
                 .Without(x => x.Verzekerden)
                 .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()
@@ -60,6 +63,7 @@ public class UpdateVerzekerdeHandlerTests : TestFixtureBase
             .With(x => x.Id, verzekerde.Id)
             .With(x => x.UserId, Guid.NewGuid())
             .With(x => x.OrganisatieId, PromeetecId)
+            .With(x => x.OrganisatieDisplayName, "Promeetec (0000)")
             .With(x => x.UserDisplayName, "Ad de Admin")
             .Without(x => x.Adres)
             .With(x => x.Adres, Fixture.Build<Adres>()
@@ -67,7 +71,9 @@ public class UpdateVerzekerdeHandlerTests : TestFixtureBase
                 .Without(x => x.Land)
                 .With(x => x.LandId, Guid.NewGuid())
                 .Create())
-            .Without(x => x.Zorgprofiel)
+            .With(x => x.Zorgprofiel, Fixture.Build<Zorgprofiel>()
+                .Without(x => x.Verzekerden)
+                .Create())
             .With(x => x.Zorgverzekering, Fixture.Build<Zorgverzekering>()
                 .Without(x => x.Verzekerden)
                 .With(x => x.Verzekeraar, Fixture.Build<Models.Betrokkene.Verzekeraar.Verzekeraar>()

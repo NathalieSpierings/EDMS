@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Promeetec.EDMS.Domain.Models.Menu.Menu.Commands;
 using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Menu.Menu
 {

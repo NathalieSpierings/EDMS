@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
 
@@ -73,88 +74,49 @@ public class UserProfile : AggregateRoot
     public bool EmailBijRapportage { get; set; } = true;
 
 
-    /// <summary>
-    /// Indicator whether ION statement of consent is singned.
-    /// </summary>
-    public bool IONToestemmingsverlaringGetekend { get; set; }
-
-
-    /// <summary>
-    /// Indicator whether ION statement of consent is revoked.
-    /// </summary>
-    public bool IONToestemmingIngetrokken { get; set; }
-
-
-    /// <summary>
-    /// Indicator whether VECOZO has approved ION.
-    /// </summary>
-    public bool IONVecozoToestemming { get; set; }
-
-
 
     /// <summary>
     /// Creates an empty user profile.
     /// </summary>
-    public UserProfile()
-    {
+    public UserProfile() { }
 
+    /// <summary>
+    /// Creates a user profile.
+    /// </summary>
+    /// <param name="cmd">The create user profile command.</param>
+    public UserProfile(CreateUserProfile cmd)
+    {
+        Id = cmd.Id;
+
+        PageSize = cmd.PageSize;
+        TableLayout = cmd.TableLayout;
+        SidebarLayout = cmd.SidebarLayout;
+        AanleverstatusIds = cmd.AanleverstatusIds;
+        CarbonCopyAdressen = cmd.CarbonCopyAdressen;
+        EmailBijAanleverbericht = cmd.EmailBijAanleverbericht;
+        EmailBijToevoegenDocument = cmd.EmailBijToevoegenDocument;
+        EmailBijRapportage = cmd.EmailBijRapportage;
     }
 
-    //public void Update(UpdateUserProfile cmd)
-    //{
-    //    PageSize = cmd.PageSize;
-    //    TableLayout = cmd.TableLayout;
-    //    SidebarLayout = cmd.SidebarLayout;
-    //    AanleverstatusIds = cmd.AanleverstatusIds;
-    //    EmailBijAanleverbericht = cmd.EmailBijAanleverbericht;
-    //    EmailBijToevoegenDocument = cmd.EmailBijToevoegenDocument;
-    //    EmailBijRapportage = cmd.EmailBijRapportage;
-    //    CarbonCopyAdressen = cmd.CarbonCopyAdressen;
+    public void Update(UpdateUserProfile cmd)
+    {
+        PageSize = cmd.PageSize;
+        TableLayout = cmd.TableLayout;
+        SidebarLayout = cmd.SidebarLayout;
+        AanleverstatusIds = cmd.AanleverstatusIds;
+        EmailBijAanleverbericht = cmd.EmailBijAanleverbericht;
+        EmailBijToevoegenDocument = cmd.EmailBijToevoegenDocument;
+        EmailBijRapportage = cmd.EmailBijRapportage;
+        CarbonCopyAdressen = cmd.CarbonCopyAdressen;
+    }
 
-    //    AddAndApplyEvent(new UserProfileGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        IONToestemmingIngetrokken = cmd.IONToestemmingIngetrokken
-    //    });
-    //}
+    public void UpdatePageSize(UpdatePageSize cmd)
+    {
+        PageSize = cmd.PageSize;
+    }
 
-    //public void UpdatePageSize(UpdatePageSize cmd)
-    //{
-    //    PageSize = cmd.PageSize;
-    //}
-
-    //public void UpdateEmailBijRapportage(UpdateEmailBijRapportage cmd)
-    //{
-    //    EmailBijRapportage = cmd.EmailBijRapportage;
-    //}
-
-    //public void TekenIONToestemming(WijzigIONToestemming cmd)
-    //{
-    //    AddAndApplyEvent(new IONToestemmingGewijzigd
-    //    {
-    //        AggregateRootId = Id,
-    //        UserId = cmd.UserId,
-    //        //UserDisplayName = cmd.UserDisplayName,
-    //        IONVecozoToestemming = cmd.IONVecozoToestemming,
-    //        IONToestemmingsverlaringGetekend = cmd.IONToestemmingsverlaringGetekend
-    //    });
-    //}
-
-    //private void Apply(UserProfileGewijzigd @event)
-    //{
-    //    IONToestemmingIngetrokken = @event.IONToestemmingIngetrokken;
-    //}
-
-    //private void Apply(IONToestemmingGewijzigd @event)
-    //{
-    //    IONVecozoToestemming = @event.IONVecozoToestemming;
-    //    IONToestemmingsverlaringGetekend = @event.IONToestemmingsverlaringGetekend;
-    //}
-
-    //private void Apply(EmailBijRapportageGewijzigd @event)
-    //{
-    //    EmailBijRapportage = @event.EmailBijRapportage;
-    //}
+    public void UpdateEmailBijRapportage(UpdateEmailBijRapportage cmd)
+    {
+        EmailBijRapportage = cmd.EmailBijRapportage;
+    }
 }

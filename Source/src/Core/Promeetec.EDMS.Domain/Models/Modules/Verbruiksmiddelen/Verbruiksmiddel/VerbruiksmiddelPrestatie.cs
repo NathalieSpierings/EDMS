@@ -57,7 +57,7 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
     /// <summary>
     /// The time stamp of when the record has been created.
     /// </summary>
-    public DateTime TimeStamp { get; set; }
+    public DateTime AangemaaktOp { get; set; }
 
     /// <summary>
     /// The unique identifier of the creator.
@@ -66,7 +66,7 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
     public Guid AangemaaktDoorId { get; set; }
 
     /// <summary>
-    /// The creation by name.
+    /// The name of the record creator.
     /// </summary>
     public string AangemaaktDoor { get; set; }
 
@@ -109,7 +109,7 @@ public class VerbruiksmiddelPrestatie : AggregateRoot
         Hoeveelheid = cmd.Hoeveelheid;
         VerzekerdeId = cmd.VerzekerdeId;
         OrganisatieId = cmd.OrganisatieId;
-        TimeStamp = DateTime.Now;
+        AangemaaktOp = DateTime.Now;
         AangemaaktDoorId = cmd.UserId;
         AangemaaktDoor = cmd.UserDisplayName;
     }

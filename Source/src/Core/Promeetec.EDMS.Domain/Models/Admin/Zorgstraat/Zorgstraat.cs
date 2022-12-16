@@ -10,7 +10,7 @@ public class Zorgstraat : AggregateRoot
     /// The name of the zorgstraat.
     /// </summary>
     [Required, MaxLength(200)]
-    public string? Naam { get; set; }
+    public string Naam { get; set; }
 
 
     /// <summary>

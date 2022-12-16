@@ -21,7 +21,7 @@ public class Settings : AggregateRoot
     /// The house number addition of the address.
     /// </summary>
     [MaxLength(50)]
-    public string Huisnummertoevoeging { get; set; }
+    public string? Huisnummertoevoeging { get; set; }
 
     /// <summary>
     /// The zip code of the address.
@@ -39,13 +39,13 @@ public class Settings : AggregateRoot
     /// The business phonenumber of the person.
     /// </summary>
     [MaxLength(50)]
-    public string Telefoon { get; set; }
+    public string? Telefoon { get; set; }
 
     /// <summary>
     /// The business phonenumber of the person.
     /// </summary>
     [MaxLength(450)]
-    public string Email { get; set; }
+    public string? Email { get; set; }
 
     public SettingsHaarwerk Haarwerk { get; set; }
 

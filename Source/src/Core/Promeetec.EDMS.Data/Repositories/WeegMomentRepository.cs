@@ -4,9 +4,9 @@ using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment;
 
 namespace Promeetec.EDMS.Data.Repositories;
 
-public class WeegMomentRepository : Repository<Weegmoment>, IWeegMomentRepository
+public class WeegmomentRepository : Repository<Weegmoment>, IWeegmomentRepository
 {
-    public WeegMomentRepository(EDMSDbContext context)
+    public WeegmomentRepository(EDMSDbContext context)
         : base(context)
     {
     }
@@ -14,16 +14,21 @@ public class WeegMomentRepository : Repository<Weegmoment>, IWeegMomentRepositor
     /// <inheritdoc />
     public async Task<List<Weegmoment>> GetWeegmomentenVanVerzekerdeAsync(Guid verzekerdeId)
     {
-        var dbQuery = await Query().AsNoTracking().Where(x => x.VerzekerdeId == verzekerdeId).ToListAsync();
+        var dbQuery = await Query()
+            .AsNoTracking()
+            .Where(x => x.VerzekerdeId == verzekerdeId)
+            .ToListAsync();
         return dbQuery;
     }
 
     /// <inheritdoc/>
     public async Task<Weegmoment?> GetLaasteWeegmomentVanVerzekerdeAsync(Guid verzekerdeId)
     {
-        var dbQuery = await Query().AsNoTracking()
+        var dbQuery = await Query()
+            .AsNoTracking()
             .Where(x => x.VerzekerdeId == verzekerdeId)
-            .OrderByDescending(o => o.Opnamedatum).FirstOrDefaultAsync();
+            .OrderByDescending(o => o.Opnamedatum)
+            .FirstOrDefaultAsync();
 
         return dbQuery;
     }

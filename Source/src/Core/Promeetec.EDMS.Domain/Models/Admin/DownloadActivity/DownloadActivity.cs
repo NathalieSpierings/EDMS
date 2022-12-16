@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using Promeetec.EDMS.Domain.Models.Document.Bestand;
 
@@ -10,7 +9,7 @@ public class DownloadActivity : AggregateRoot
     /// <summary>
     /// The download date.
     /// </summary>
-    [Required, Column(TypeName = "datetime2")]
+    [Required]
     public DateTime GedownloadOp { get; set; }
 
 

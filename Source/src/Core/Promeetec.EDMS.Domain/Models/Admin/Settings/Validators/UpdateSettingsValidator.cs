@@ -28,7 +28,7 @@ public class UpdateSettingsValidator : AbstractValidator<UpdateSettings>
             .MaximumLength(200).WithMessage("Woonplaats kan maximaal 200 tekens lang zijn.");
 
         RuleFor(c => c.Telefoon)
-            .MaximumLength(15).WithMessage("Telefoon kan maximaal 15 tekens lang zijn.");
+            .Length(10, 15).WithMessage("Telefoonnummer moet minimaal 10 cijfers bevatten en mag niet langer zijn dan 15 cijfers.");
 
         RuleFor(c => c.Email)
             .EmailAddress().WithMessage("Dit is geen geldig e-mail adres!")

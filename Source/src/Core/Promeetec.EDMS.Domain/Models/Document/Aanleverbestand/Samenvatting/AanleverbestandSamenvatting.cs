@@ -9,7 +9,7 @@ public class AanleverbestandSamenvatting : AggregateRoot
     /// The EI standaard for the samenvatting.
     /// </summary>
     [MaxLength(200)]
-    public string EiStandaard { get; set; }
+    public string? EiStandaard { get; set; }
 
 
     /// <summary>
@@ -52,13 +52,13 @@ public class AanleverbestandSamenvatting : AggregateRoot
     /// <summary>
     /// The instellingscode for the samenvatting.
     /// </summary>
-    public bool Processed { get; set; } = true;
+    public bool? Processed { get; set; } = true;
 
 
     /// <summary>
     /// The skipped rows for the samenvatting.
     /// </summary>
-    public int OvergeslagenRows { get; set; }
+    public int? OvergeslagenRows { get; set; }
 
 
     #region Navigation properties

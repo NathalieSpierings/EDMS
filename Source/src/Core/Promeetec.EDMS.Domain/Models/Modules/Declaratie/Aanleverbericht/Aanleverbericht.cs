@@ -10,7 +10,7 @@ public class Aanleverbericht : AggregateRoot
     /// The subject of the aanleverbericht.
     /// </summary>
     [MaxLength(450)]
-    public string Onderwerp { get; set; }
+    public string? Onderwerp { get; set; }
 
     /// <summary>
     /// The message of the aanleverbericht.
@@ -27,7 +27,7 @@ public class Aanleverbericht : AggregateRoot
     /// <summary>
     /// Indicator if the aanleverbericht is readed yes or no.
     /// </summary>
-    public bool Gelezen { get; set; }
+    public bool? Gelezen { get; set; }
 
     /// <summary>
     /// The placement date of the aanleverbericht.

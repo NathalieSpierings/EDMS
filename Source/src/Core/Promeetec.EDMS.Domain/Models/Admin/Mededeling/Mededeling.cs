@@ -1,5 +1,5 @@
-﻿using Promeetec.EDMS.Domain.Models.Admin.Mededeling.Commands;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Domain.Models.Admin.Mededeling.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Admin.Mededeling;
 
@@ -9,9 +9,9 @@ public class Mededeling : AggregateRoot
     /// The content for the notice.
     /// </summary>
     [MaxLength(1024)]
-    public string Content { get; set; }
+    public string? Content { get; set; }
 
-    
+
 
     /// <summary>
     /// Creates an empty mededeling.

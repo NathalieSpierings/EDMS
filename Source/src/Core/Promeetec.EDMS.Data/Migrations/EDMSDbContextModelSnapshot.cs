@@ -17,10 +17,10 @@ namespace Promeetec.EDMS.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "7.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.DownloadActivity.DownloadActivity", b =>
                 {
@@ -66,17 +66,14 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("EiBerichtCodes")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Naam")
-                        .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Omschrijving")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -99,7 +96,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasDefaultValueSql("newid()");
 
                     b.Property<string>("Content")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -121,7 +117,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(2)");
 
                     b.Property<string>("Omschrijving")
-                        .IsRequired()
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
@@ -141,7 +136,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasDefaultValueSql("newid()");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
@@ -151,7 +145,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Huisnummertoevoeging")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -166,7 +159,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Telefoon")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -215,7 +207,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Huisnummertoevoeging")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -223,7 +214,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LandNaam")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Postcode")
@@ -289,13 +279,22 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
 
+                    b.Property<string>("AangemaaktDoor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("AangemaaktDoorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AangemaaktOp")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
                     b.Property<int>("AccountState")
                         .HasColumnType("int");
 
-                    b.Property<bool>("ActivationMailSend")
+                    b.Property<bool?>("ActivationMailSend")
                         .HasColumnType("bit");
 
                     b.Property<Guid?>("ActivationMailSendById")
@@ -308,29 +307,16 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AgbCodeOnderneming")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("AgbCodeZorgverlener")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
-
-                    b.Property<byte[]>("Avatar")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("CreatedById")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DeactivatieReden")
                         .HasMaxLength(450)
@@ -338,14 +324,12 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)")
-                        .HasColumnName("Medewerker_Email");
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
                     b.Property<string>("Functie")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -355,10 +339,6 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<string>("GoogleAuthenticatorSecretKey")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("IONToestemmingsverklaringActivatieLink")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LaatstIngelogdOp")
                         .HasColumnType("datetime2");
@@ -393,7 +373,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("PukCode")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -404,12 +383,8 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TempCode")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("datetime2");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -450,7 +425,11 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.HasIndex("UserProfileId");
 
-                    b.ToTable("Medewerkers", (string)null);
+                    b.ToTable("Medewerkers", null, t =>
+                        {
+                            t.Property("Email")
+                                .HasColumnName("Medewerker_Email");
+                        });
                 });
 
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Memo", b =>
@@ -486,7 +465,8 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<string>("Bericht")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime2");
@@ -505,13 +485,12 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<string>("Titel")
                         .IsRequired()
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Url")
-                        .IsRequired()
-                        .HasMaxLength(450)
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -534,7 +513,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AgbCodeOnderneming")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -551,10 +529,6 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<byte[]>("Logo")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Naam")
                         .IsRequired()
@@ -577,7 +551,13 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("TimeStamp")
+                    b.Property<Guid?>("VerwijderdDoorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("VerwijderdDoorNaam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("VerwijderdOp")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Website")
@@ -622,7 +602,8 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("CarbonCopyAdressen")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("EmailBijAanleverbericht")
                         .HasColumnType("int");
@@ -632,15 +613,6 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<int>("EmailBijToevoegenDocument")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IONToestemmingIngetrokken")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IONToestemmingsverlaringGetekend")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IONVecozoToestemming")
-                        .HasColumnType("bit");
 
                     b.Property<int>("PageSize")
                         .HasColumnType("int");
@@ -691,11 +663,13 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasDefaultValueSql("newid()");
 
                     b.Property<string>("AangemaaktDoor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("AangemaaktDoorId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AangemaaktOp")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AdresId")
                         .HasColumnType("uniqueidentifier");
@@ -704,12 +678,10 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AgbCodeVerwijzer")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Bsn")
-                        .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
@@ -717,18 +689,14 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("NaamVerwijzer")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<bool>("Shared")
+                    b.Property<bool?>("Shared")
                         .HasColumnType("bit");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("Verwijsdatum")
                         .HasColumnType("datetime2");
@@ -816,29 +784,6 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.ToTable("VerzekerdeToZorgverzekering", (string)null);
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Weegmoment.Weegmoment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("newid()");
-
-                    b.Property<double>("Gewicht")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("Opnamedatum")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("VerzekerdeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("VerzekerdeId");
-
-                    b.ToTable("Weegmoment", (string)null);
-                });
-
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering.Zorgverzekering", b =>
                 {
                     b.Property<Guid>("Id")
@@ -847,7 +792,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasDefaultValueSql("newid()");
 
                     b.Property<string>("PatientNummer")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
 
@@ -861,7 +805,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("VerzekerdeNummer")
-                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
@@ -896,7 +839,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Tag")
-                        .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
@@ -929,20 +871,19 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("EiStandaard")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<int?>("Instellingscode")
                         .HasColumnType("int");
 
-                    b.Property<int>("OvergeslagenRows")
+                    b.Property<int?>("OvergeslagenRows")
                         .HasColumnType("int");
 
                     b.Property<int?>("Praktijkcode")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Processed")
+                    b.Property<bool?>("Processed")
                         .HasColumnType("bit");
 
                     b.Property<decimal?>("TotaalDeclaratiebedrag")
@@ -967,18 +908,21 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
 
-                    b.Property<Guid?>("AangemaaktDoor")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AangemaaktDoorNaam")
-                        .IsRequired()
+                    b.Property<string>("AangemaaktDoor")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("AangemaaktDoorId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("AangemaaktOp")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("AangepastDoor")
+                    b.Property<string>("AangepastDoor")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid?>("AangepastDoorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("AangepastOp")
@@ -1016,6 +960,8 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.HasIndex("EigenaarId");
 
                     b.ToTable("Bestand", (string)null);
+
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Event.Event", b =>
@@ -1064,7 +1010,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasDefaultValueSql("newid()");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -1072,6 +1017,9 @@ namespace Promeetec.EDMS.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -1120,7 +1068,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -1150,7 +1097,7 @@ namespace Promeetec.EDMS.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -1174,7 +1121,7 @@ namespace Promeetec.EDMS.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -1252,75 +1199,85 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.Menu", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.Menu.Menu", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
+
+                    b.Property<int>("MenuType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Menu", (string)null);
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
 
-                    b.Property<string>("Action")
-                        .IsRequired()
+                    b.Property<string>("ActionName")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Controller")
-                        .IsRequired()
+                    b.Property<string>("ClientName")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("ControllerName")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("GlyphIcon")
-                        .IsRequired()
+                    b.Property<string>("Icon")
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("MenuId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ModuleNaam")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MenuItemType")
+                        .HasColumnType("int");
 
                     b.Property<Guid?>("ParentId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("RouteVariables")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("SortOrder")
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<string>("Titel")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Tooltip")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Volgorde")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -1331,7 +1288,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.ToTable("MenuItem", (string)null);
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItemRole", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItemRole", b =>
                 {
                     b.Property<Guid>("MenuItemId")
                         .HasColumnType("uniqueidentifier");
@@ -1376,9 +1333,10 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<string>("Bericht")
                         .IsRequired()
+                        .HasMaxLength(10000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Gelezen")
+                    b.Property<bool?>("Gelezen")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("GeplaatstOp")
@@ -1391,7 +1349,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Onderwerp")
-                        .IsRequired()
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
@@ -1428,10 +1385,21 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
 
-                    b.Property<Guid?>("AangemaaktDoor")
+                    b.Property<string>("AangemaaktDoor")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("AangemaaktDoorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AangepastDoor")
+                    b.Property<DateTime>("AangemaaktOp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("AangepastDoor")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid?>("AangepastDoorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("AangepastOp")
@@ -1453,8 +1421,8 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Opmerking")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1024)
+                        .HasColumnType("nvarchar(1024)");
 
                     b.Property<Guid>("OrganisatieId")
                         .HasColumnType("uniqueidentifier");
@@ -1472,11 +1440,18 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("ToevoegenBestand")
                         .HasColumnType("bit");
+
+                    b.Property<string>("VerwijderdDoor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("VerwijderdDoorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("VerwijderdOp")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -1493,12 +1468,38 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.ToTable("Aanlevering", (string)null);
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan.GliBehandelplan", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment.Weegmoment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("newid()");
+
+                    b.Property<double>("Gewicht")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("Opnamedatum")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("VerzekerdeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VerzekerdeId");
+
+                    b.ToTable("Weegmoment", (string)null);
+                });
+
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.GliBehandelplan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("newid()");
+
+                    b.Property<Guid>("BehandelaarId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Einddatum")
                         .HasColumnType("datetime2");
@@ -1517,15 +1518,16 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<string>("Opmerking")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1024)
+                        .HasColumnType("nvarchar(1024)");
+
+                    b.Property<Guid>("OrganisatieId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("RedenEindeZorgId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Startdatum")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TimeStamp")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("Verwerkt")
@@ -1534,7 +1536,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<DateTime?>("VerwerktOp")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("VerzekerdeId")
+                    b.Property<Guid>("VerzekerdeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("VoortijdigGestopt")
@@ -1545,7 +1547,11 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BehandelaarId");
+
                     b.HasIndex("IntakeId");
+
+                    b.HasIndex("OrganisatieId");
 
                     b.HasIndex("RedenEindeZorgId");
 
@@ -1554,7 +1560,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.ToTable("GliBehandelplan", (string)null);
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.GliIntake", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.GliIntake", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1571,14 +1577,11 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Opmerking")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1024)
+                        .HasColumnType("nvarchar(1024)");
 
                     b.Property<Guid>("OrganisatieId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Verwerkt")
                         .HasColumnType("bit");
@@ -1615,16 +1618,16 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("BedragAanvullendeVerzekering")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("BedragBasisVerzekering")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("BedragEigenBijdragen")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("BedragTeOntvangen")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("Bsn")
                         .IsRequired()
@@ -1653,7 +1656,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Machtigingsnummer")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -1666,7 +1668,7 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("PrijsHaarwerk")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -1675,7 +1677,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Verzekeringsnummer")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -1699,6 +1700,9 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<Guid>("AangemaaktDoorId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AangemaaktOp")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("AgbCodeOnderneming")
                         .IsRequired()
@@ -1728,9 +1732,6 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("VerzekerdeId")
                         .HasColumnType("uniqueidentifier");
@@ -1763,9 +1764,6 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<DateTime>("ProfielStartdatum")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProfielCode");
@@ -1784,11 +1782,10 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Property<Guid?>("EiStandaardId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("Gecontroleerd")
+                    b.Property<bool?>("Gecontroleerd")
                         .HasColumnType("bit");
 
                     b.Property<string>("Periode")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
@@ -1863,7 +1860,7 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<decimal>("BedragBasisVerzekeringHaarwerk")
-                                .HasColumnType("decimal(18,2)");
+                                .HasColumnType("decimal(18, 2)");
 
                             b1.HasKey("SettingsId");
 
@@ -1934,7 +1931,6 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnName("Email");
 
                             b1.Property<string>("FormeleNaam")
-                                .IsRequired()
                                 .HasMaxLength(450)
                                 .HasColumnType("nvarchar(450)")
                                 .HasColumnName("FormeleNaam");
@@ -1943,18 +1939,16 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnType("datetime2")
                                 .HasColumnName("Geboortedatum");
 
-                            b1.Property<int>("Geslacht")
+                            b1.Property<int?>("Geslacht")
                                 .HasColumnType("int")
                                 .HasColumnName("Geslacht");
 
                             b1.Property<string>("TelefoonPrive")
-                                .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)")
                                 .HasColumnName("TelefoonPrive");
 
                             b1.Property<string>("TelefoonZakelijk")
-                                .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)")
                                 .HasColumnName("TelefoonZakelijk");
@@ -1965,7 +1959,6 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnName("Tussenvoegsel");
 
                             b1.Property<string>("VolledigeNaam")
-                                .IsRequired()
                                 .HasMaxLength(450)
                                 .HasColumnType("nvarchar(450)")
                                 .HasColumnName("VolledigeNaam");
@@ -1977,7 +1970,6 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnName("Voorletters");
 
                             b1.Property<string>("Voornaam")
-                                .IsRequired()
                                 .HasMaxLength(200)
                                 .HasColumnType("nvarchar(200)")
                                 .HasColumnName("Voornaam");
@@ -2125,23 +2117,20 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnType("nvarchar(450)");
 
                             b1.Property<string>("FormeleNaam")
-                                .IsRequired()
                                 .HasMaxLength(450)
                                 .HasColumnType("nvarchar(450)");
 
                             b1.Property<DateTime?>("Geboortedatum")
                                 .HasColumnType("datetime2");
 
-                            b1.Property<int>("Geslacht")
+                            b1.Property<int?>("Geslacht")
                                 .HasColumnType("int");
 
                             b1.Property<string>("TelefoonPrive")
-                                .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("TelefoonZakelijk")
-                                .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
@@ -2150,7 +2139,6 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnType("nvarchar(20)");
 
                             b1.Property<string>("VolledigeNaam")
-                                .IsRequired()
                                 .HasMaxLength(450)
                                 .HasColumnType("nvarchar(450)");
 
@@ -2160,7 +2148,6 @@ namespace Promeetec.EDMS.Data.Migrations
                                 .HasColumnType("nvarchar(20)");
 
                             b1.Property<string>("Voornaam")
-                                .IsRequired()
                                 .HasMaxLength(200)
                                 .HasColumnType("nvarchar(200)");
 
@@ -2259,16 +2246,6 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Navigation("Verzekerde");
 
                     b.Navigation("Zorgverzekering");
-                });
-
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Weegmoment.Weegmoment", b =>
-                {
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Verzekerde", "Verzekerde")
-                        .WithMany("WeegMomenten")
-                        .HasForeignKey("VerzekerdeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Verzekerde");
                 });
 
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering.Zorgverzekering", b =>
@@ -2419,14 +2396,14 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItem", b =>
                 {
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Menu.Menu", "Menu")
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Menu.Menu.Menu", "Menu")
                         .WithMany("MenuItems")
                         .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Menu.MenuItem", "Parent")
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItem", "Parent")
                         .WithMany()
                         .HasForeignKey("ParentId")
                         .OnDelete(DeleteBehavior.NoAction);
@@ -2436,9 +2413,9 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItemRole", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItemRole", b =>
                 {
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Menu.MenuItem", "MenuItem")
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItem", "MenuItem")
                         .WithMany("Roles")
                         .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2520,12 +2497,34 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Navigation("Organisatie");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan.GliBehandelplan", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment.Weegmoment", b =>
                 {
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.GliIntake", "Intake")
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Verzekerde", "Verzekerde")
+                        .WithMany("WeegMomenten")
+                        .HasForeignKey("VerzekerdeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Verzekerde");
+                });
+
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.GliBehandelplan", b =>
+                {
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "Behandelaar")
+                        .WithMany()
+                        .HasForeignKey("BehandelaarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.GliIntake", "Intake")
                         .WithMany("Behandelplannen")
                         .HasForeignKey("IntakeId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie", "Organisatie")
+                        .WithMany("GliBehandelplannen")
+                        .HasForeignKey("OrganisatieId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg.RedenEindeZorg", "RedenEindeZorg")
@@ -2533,16 +2532,24 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasForeignKey("RedenEindeZorgId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Verzekerde", null)
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Verzekerde", "Verzekerde")
                         .WithMany("GliBehandelplannen")
-                        .HasForeignKey("VerzekerdeId");
+                        .HasForeignKey("VerzekerdeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Behandelaar");
 
                     b.Navigation("Intake");
 
+                    b.Navigation("Organisatie");
+
                     b.Navigation("RedenEindeZorg");
+
+                    b.Navigation("Verzekerde");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.GliIntake", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.GliIntake", b =>
                 {
                     b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "Behandelaar")
                         .WithMany()
@@ -2553,7 +2560,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie", "Organisatie")
                         .WithMany("GliIntakes")
                         .HasForeignKey("OrganisatieId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Verzekerde", "Verzekerde")
@@ -2614,7 +2621,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.HasOne("Promeetec.EDMS.Domain.Models.Document.Bestand.Bestand", null)
                         .WithOne()
                         .HasForeignKey("Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Aanleverbestand", "Id")
-                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Zorgstraat", "Zorgstraat")
@@ -2632,7 +2639,7 @@ namespace Promeetec.EDMS.Data.Migrations
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Document.Overigbestand.Overigbestand", b =>
                 {
                     b.HasOne("Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Aanlevering", "Aanlevering")
-                        .WithMany("OverigeBestanden")
+                        .WithMany("Overigebestanden")
                         .HasForeignKey("AanleveringId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -2640,7 +2647,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.HasOne("Promeetec.EDMS.Domain.Models.Document.Bestand.Bestand", null)
                         .WithOne()
                         .HasForeignKey("Promeetec.EDMS.Domain.Models.Document.Overigbestand.Overigbestand", "Id")
-                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Aanlevering");
@@ -2651,7 +2658,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.HasOne("Promeetec.EDMS.Domain.Models.Document.Bestand.Bestand", null)
                         .WithOne()
                         .HasForeignKey("Promeetec.EDMS.Domain.Models.Document.Rapportage.Rapportage", "Id")
-                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie", "Organisatie")
@@ -2694,6 +2701,8 @@ namespace Promeetec.EDMS.Data.Migrations
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie", b =>
                 {
                     b.Navigation("Aanleveringen");
+
+                    b.Navigation("GliBehandelplannen");
 
                     b.Navigation("GliIntakes");
 
@@ -2754,12 +2763,12 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Navigation("UserRoles");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.Menu", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.Menu.Menu", b =>
                 {
                     b.Navigation("MenuItems");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Menu.MenuItem.MenuItem", b =>
                 {
                     b.Navigation("Roles");
                 });
@@ -2778,10 +2787,10 @@ namespace Promeetec.EDMS.Data.Migrations
 
                     b.Navigation("Aanleverbestanden");
 
-                    b.Navigation("OverigeBestanden");
+                    b.Navigation("Overigebestanden");
                 });
 
-            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.GliIntake", b =>
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.GliIntake", b =>
                 {
                     b.Navigation("Behandelplannen");
                 });

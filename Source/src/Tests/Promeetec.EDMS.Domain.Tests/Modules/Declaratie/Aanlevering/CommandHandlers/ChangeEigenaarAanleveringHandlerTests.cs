@@ -10,7 +10,7 @@ using Promeetec.EDMS.Domain.Models.Event;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Handlers;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Modules.Declaratie.Aanlevering.CommandHandlers;
 

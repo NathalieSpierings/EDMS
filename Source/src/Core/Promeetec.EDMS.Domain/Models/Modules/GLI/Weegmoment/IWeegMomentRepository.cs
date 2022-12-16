@@ -1,6 +1,6 @@
 ﻿namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment;
 
-public interface IWeegMomentRepository : IRepository<Weegmoment>
+public interface IWeegmomentRepository : IRepository<Weegmoment>
 {
     /// <summary>
     /// Gets all weegmomenten for the verzekerde.

@@ -9,7 +9,7 @@ using Promeetec.EDMS.Domain.Models.Menu.Menu;
 using Promeetec.EDMS.Domain.Models.Menu.Menu.Commands;
 using Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands;
 using Promeetec.EDMS.Domain.Models.Menu.MenuItem.Handlers;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Menu.MenuItem.CommandHandlers;
 

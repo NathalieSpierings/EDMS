@@ -18,9 +18,9 @@ public class Rapportage : Bestand.Bestand
 	public RapportageSoort RapportageSoort { get; set; }
 
 
-    #region Navigation properties
+	#region Navigation properties
 
-    public Guid OrganisatieId { get; set; }
+	public Guid OrganisatieId { get; set; }
 	public virtual Organisatie Organisatie { get; set; }
 
 	#endregion
@@ -49,8 +49,8 @@ public class Rapportage : Bestand.Bestand
 		EigenaarId = cmd.EigenaarId;
 		OrganisatieId = cmd.OrganisatieId;
 		AangemaaktOp = DateTime.Now;
-		AangemaaktDoor = cmd.UserId;
-		AangemaaktDoorNaam = cmd.UserDisplayName;
+		AangemaaktDoorId = cmd.UserId;
+		AangemaaktDoor = cmd.UserDisplayName;
 
 		RapportageSoort = cmd.RapportageSoort;
 		Referentie = cmd.Referentie;

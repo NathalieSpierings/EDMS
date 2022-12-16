@@ -14,7 +14,7 @@ using Promeetec.EDMS.Domain.Models.Identity.Role;
 using Promeetec.EDMS.Domain.Models.Identity.Role.Commands;
 using Promeetec.EDMS.Domain.Models.Identity.Role.Handlers;
 using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Domain.Tests.Helpers;
+using Promeetec.EDMS.Tests.Helpers;
 
 namespace Promeetec.EDMS.Domain.Tests.Identity.Role.CommandHandlers;
 

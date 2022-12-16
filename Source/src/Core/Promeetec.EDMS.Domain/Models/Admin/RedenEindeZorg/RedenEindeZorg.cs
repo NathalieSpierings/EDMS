@@ -14,7 +14,7 @@ public class RedenEindeZorg : AggregateRoot
     /// The description for the reden einde zorg.
     /// </summary>
     [MaxLength(450)]
-    public string Omschrijving { get; set; }
+    public string? Omschrijving { get; set; }
 
 
     /// <summary>

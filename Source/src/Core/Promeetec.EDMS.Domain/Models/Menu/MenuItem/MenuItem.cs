@@ -7,38 +7,36 @@ namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem;
 public class MenuItem : AggregateRoot
 {
     [MaxLength(200)]
-    public string ClientName { get; set; }
+    public string? ClientName { get; set; }
 
-    public string Key { get; set; }
+    public string? Key { get; set; }
 
 
-    [MaxLength(200)]
+    [Required, MaxLength(200)]
     public string Title { get; set; }
 
 
     [MaxLength(200)]
-    public string Tooltip { get; set; }
+    public string? Tooltip { get; set; }
 
 
     [MaxLength(128)]
-    public string Icon { get; set; }
+    public string? Icon { get; set; }
 
 
     [MaxLength(450)]
-    public string ActionName { get; set; }
+    public string? ActionName { get; set; }
 
 
     [MaxLength(450)]
-    public string ControllerName { get; set; }
+    public string? ControllerName { get; set; }
 
-
-    public string RouteVariables { get; set; }
+    public string? RouteVariables { get; set; }
 
     [MaxLength(450)]
-    public string Url { get; set; }
+    public string? Url { get; set; }
 
-
-    public int SortOrder { get; set; }
+    public int? SortOrder { get; set; }
 
     public MenuItemType MenuItemType { get; set; }
 
@@ -76,7 +74,9 @@ public class MenuItem : AggregateRoot
     {
         MenuId = cmd.MenuId;
         ParentId = cmd.ParentId;
-
+        ClientName = cmd.ClientName;
+        Key = cmd.Key;
+        Title = cmd.Title;
         Tooltip = cmd.Tooltip;
         Icon = cmd.Icon;
         ActionName = cmd.ActionName;
@@ -84,8 +84,9 @@ public class MenuItem : AggregateRoot
         RouteVariables = cmd.RouteVariables;
         Url = cmd.Url;
         SortOrder = sortOrder;
-        Title = cmd.Title;
+        MenuItemType = cmd.MenuItemType;
         Status = cmd.Status;
+
     }
 
     /// <summary>

@@ -48,7 +48,6 @@ namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Handlers
                 ControllerName = command.ControllerName,
                 RouteVariables = command.RouteVariables,
                 Url = command.Url,
-                Disabled = command.Disabled ? "Ja" : "Nee",
                 Status = command.Status.ToString(),
                 Soort = command.MenuItemType.GetDisplayName(),
                 MenuId = command.MenuId,

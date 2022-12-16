@@ -1,6 +1,8 @@
-﻿namespace Promeetec.EDMS.Domain.Betrokkene.UserProfile.Commands
+﻿using Promeetec.EDMS.Commands;
+
+namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Commands
 {
-    public class UpdateUserProfile : DomainCommand<UserProfile>
+    public class UpdateUserProfile : CommandBase
     {
         public int PageSize { get; set; }
         public TableLayout TableLayout { get; set; }
