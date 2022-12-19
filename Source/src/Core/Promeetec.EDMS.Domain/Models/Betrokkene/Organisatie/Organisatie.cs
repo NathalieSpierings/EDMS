@@ -13,11 +13,7 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
 
 public class Organisatie : AggregateRoot
 {
-    /// <summary>
-    /// The preferences of the organisatie.
-    /// </summary>
-    public OrganisatieSettings Settings { get; set; }
-
+   
     /// <summary>
     /// The number of the organisatie.
     /// </summary>
@@ -82,8 +78,15 @@ public class Organisatie : AggregateRoot
     [MaxLength(450)]
     public string? BeperktReden { get; set; }
 
+
     /// <summary>
-    /// The date the status has been set to Verwijderd.
+    /// The preferences of the organisatie.
+    /// </summary>
+    public OrganisatieSettings Settings { get; set; }
+
+
+    /// <summary>
+    /// The date the Status has been set to Verwijderd.
     /// </summary>
     public DateTime? VerwijderdOp { get; set; }
 
@@ -95,7 +98,7 @@ public class Organisatie : AggregateRoot
     /// <summary>
     /// The name of the deleter.
     /// </summary>
-    public string? VerwijderdDoorNaam { get; set; }
+    public string? VerwijderdDoor { get; set; }
 
 
     public string DisplayName => !string.IsNullOrEmpty(Nummer) ? $"{Naam} ({Nummer})" : $"{Naam}";

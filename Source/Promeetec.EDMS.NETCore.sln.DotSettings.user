@@ -65,8 +65,14 @@
 	
 	
 	
+	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34d35756_002D558e_002D449b_002D8e80_002Db2bfa1b07484/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34d35756_002D558e_002D449b_002D8e80_002Db2bfa1b07484/@EntryIndexRemoved">True</s:Boolean>
+	
+	
+	
 	
 	
 	
@@ -109,8 +115,24 @@
 	
 	
 	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=697d57c6_002D3d83_002D4e77_002D983d_002D49117b9e5616/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Seed" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7B045140-F8CF-485E-9DE5-46FA1FFF35BE::net7.0::Promeetec.EDMS.Tests.DbSeed.Seed&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -173,6 +195,16 @@
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

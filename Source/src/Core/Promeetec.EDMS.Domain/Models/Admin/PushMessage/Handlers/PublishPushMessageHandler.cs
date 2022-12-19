@@ -1,3 +1,4 @@
+using System.Data;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
 using Promeetec.EDMS.Events;
@@ -17,7 +18,7 @@ public class PublishPushMessageHandler : ICommandHandler<PublishPushMessage>
     {
         var message = await _repository.GetByIdAsync(command.PushMessageId);
         if (message == null)
-            throw new ApplicationException($"Bericht niet gevonden. Id: {command.PushMessageId}");
+            throw new DataException($"Bericht niet gevonden. Id: {command.PushMessageId}");
 
         message.Publish();
         await _repository.UpdateAsync(message);

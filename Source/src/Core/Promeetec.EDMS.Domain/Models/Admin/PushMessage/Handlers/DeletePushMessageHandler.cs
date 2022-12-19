@@ -1,3 +1,4 @@
+using System.Data;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
 using Promeetec.EDMS.Events;
@@ -17,7 +18,7 @@ namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage.Handlers
         {
             var message = await _repository.GetByIdAsync(command.PushMessageId);
             if (message == null)
-                throw new ApplicationException($"Bericht niet gevonden. Id: {command.PushMessageId}");
+                throw new DataException($"Bericht niet gevonden. Id: {command.PushMessageId}");
 
             await _repository.RemoveAsync(message);
 

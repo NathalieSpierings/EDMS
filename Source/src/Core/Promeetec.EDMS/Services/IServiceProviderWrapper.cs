@@ -2,6 +2,6 @@
 
 public interface IServiceProviderWrapper
 {
-    T GetService<T>();
+    T? GetService<T>();
     IEnumerable<T> GetServices<T>();
 }

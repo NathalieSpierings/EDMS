@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 using Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
 
 namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage;
@@ -52,11 +53,13 @@ public class PushMessage : AggregateRoot
     /// <param name="cmd">The create push message command.</param>
     public PushMessage(CreatePushMessage cmd)
     {
+        Id = cmd.Id;
+
         Date = DateTime.Now;
         Status = PushMessageStatus.Concept;
         Title = cmd.Title;
         Message = cmd.Message;
-        GroupIds = string.Join(",", cmd.SelectedGroupIds.ToArray());
+        GroupIds = string.Join(",", cmd.GroupIds.ToArray());
     }
 
     /// <summary>
@@ -67,7 +70,7 @@ public class PushMessage : AggregateRoot
     {
         var user = Users.FirstOrDefault(x => x.UserId == cmd.MedewerkerId);
         if (user == null)
-            throw new Exception("Gebruiker voor bericht niet gevonden");
+            throw new DataException("Gebruiker voor bericht niet gevonden");
 
         user.RemoveUser(cmd);
     }

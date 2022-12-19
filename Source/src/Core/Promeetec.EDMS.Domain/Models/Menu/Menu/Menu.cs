@@ -155,7 +155,7 @@ public class Menu : AggregateRoot
         MarkMenuItemAsDeleted(menuItemToRemove);
     }
 
-    private void MarkMenuItemAsDeleted(MenuItem.MenuItem menuItem)
+    private void MarkMenuItemAsDeleted(MenuItem.MenuItem? menuItem)
     {
         menuItem.Delete();
 

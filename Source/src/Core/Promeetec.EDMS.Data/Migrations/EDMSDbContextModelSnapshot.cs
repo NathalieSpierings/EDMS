@@ -104,6 +104,57 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.ToTable("Mededeling", (string)null);
                 });
 
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.PushMessage.PushMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GroupIds")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(15000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PushMessage", (string)null);
+                });
+
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.PushMessage.PushMessageToUser", b =>
+                {
+                    b.Property<Guid>("MessageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Read")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ReadedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MessageId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("PushMessageToUser", (string)null);
+                });
+
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg.RedenEindeZorg", b =>
                 {
                     b.Property<Guid>("Id")
@@ -551,11 +602,11 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("VerwijderdDoor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid?>("VerwijderdDoorId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("VerwijderdDoorNaam")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("VerwijderdOp")
                         .HasColumnType("datetime2");
@@ -1336,7 +1387,7 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasMaxLength(10000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Gelezen")
+                    b.Property<bool>("Gelezen")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("GeplaatstOp")
@@ -1444,7 +1495,6 @@ namespace Promeetec.EDMS.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("VerwijderdDoor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("VerwijderdDoorId")
@@ -1850,6 +1900,25 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.Navigation("Bestand");
 
                     b.Navigation("Medewerker");
+                });
+
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.PushMessage.PushMessageToUser", b =>
+                {
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Admin.PushMessage.PushMessage", "Message")
+                        .WithMany("Users")
+                        .HasForeignKey("MessageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Message");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.Settings.Settings", b =>
@@ -2285,7 +2354,7 @@ namespace Promeetec.EDMS.Data.Migrations
                     b.HasOne("Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker", "User")
                         .WithMany("Events")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("User");
@@ -2668,6 +2737,11 @@ namespace Promeetec.EDMS.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Organisatie");
+                });
+
+            modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Admin.PushMessage.PushMessage", b =>
+                {
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Promeetec.EDMS.Domain.Models.Betrokkene.Adres.Adres", b =>

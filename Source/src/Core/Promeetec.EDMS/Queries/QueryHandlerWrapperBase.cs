@@ -4,7 +4,7 @@ namespace Promeetec.EDMS.Queries;
 
 internal abstract class QueryHandlerWrapperBase<TResult>
 {
-    protected static THandler GetHandler<THandler>(IServiceProviderWrapper serviceProvider)
+    protected static THandler? GetHandler<THandler>(IServiceProviderWrapper serviceProvider)
     {
         return serviceProvider.GetService<THandler>();
     }

@@ -27,7 +27,7 @@ public class Aanleverbericht : AggregateRoot
     /// <summary>
     /// Indicator if the aanleverbericht is readed yes or no.
     /// </summary>
-    public bool? Gelezen { get; set; }
+    public bool Gelezen { get; set; }
 
     /// <summary>
     /// The placement date of the aanleverbericht.

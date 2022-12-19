@@ -90,7 +90,7 @@ public class Aanlevering : AggregateRoot
 
 
     /// <summary>
-    /// The date the status has been set to Verwijderd.
+    /// The date the Status has been set to Verwijderd.
     /// </summary>
     public DateTime? VerwijderdOp { get; set; }
 
@@ -102,7 +102,7 @@ public class Aanlevering : AggregateRoot
     /// <summary>
     /// The name of the deleter.
     /// </summary>
-    public string VerwijderdDoor { get; set; }
+    public string? VerwijderdDoor { get; set; }
 
     #region Navigation properties
 

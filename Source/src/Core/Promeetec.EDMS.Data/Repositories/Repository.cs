@@ -1,5 +1,9 @@
 ﻿using System.Linq.Expressions;
+using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Domain;
 
@@ -163,6 +167,20 @@ namespace Promeetec.EDMS.Data.Repositories
             return await _context.SaveChangesAsync();
         }
 
+
+        public IQueryable<T> FromSqlRaw(string sql, params object[] parameters)
+        {
+            return _context.Set<T>().FromSqlRaw(sql, parameters);
+        }
+
+        public IQueryable<TElement> SqlQuery<TElement>(FormattableString sql)
+        {
+            return _context.Database.SqlQuery<TElement>(sql);
+        }
+        public IQueryable<TElement> SqlQueryRaw<TElement>(string sql, params object[] parameters)
+        {
+            return _context.Database.SqlQueryRaw<TElement>(sql, parameters);
+        }
 
 
         public int RawSQL(string sql)

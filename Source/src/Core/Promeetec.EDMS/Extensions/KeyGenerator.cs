@@ -11,9 +11,9 @@ public class KeyGenerator
     public static string GeneratePukCode(int size)
     {
         byte[] data = new byte[4 * size];
-        using (var crypto = new RNGCryptoServiceProvider())
+        using (var rng = RandomNumberGenerator.Create())
         {
-            crypto.GetBytes(data);
+            rng.GetBytes(data);
         }
 
         var result = new StringBuilder(size);
@@ -41,9 +41,9 @@ public class KeyGenerator
     public static string GenerateUniqueKey(int size)
     {
         byte[] data = new byte[4 * size];
-        using (var crypto = new RNGCryptoServiceProvider())
+        using (var rng = RandomNumberGenerator.Create())
         {
-            crypto.GetBytes(data);
+            rng.GetBytes(data);
         }
 
         var result = new StringBuilder(size);

@@ -2,5 +2,5 @@
 
 public interface IPushMessageRepository : IRepository<PushMessage>
 {
-    Task<PushMessage?> GetByIdWithUsersAsync(Guid messageId);
+    Task<PushMessage?> GetPushmessageByIdAsync(Guid messageId);
 }
