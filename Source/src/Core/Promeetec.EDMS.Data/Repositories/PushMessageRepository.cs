@@ -11,7 +11,7 @@ public class PushMessageRepository : Repository<PushMessage>, IPushMessageReposi
     {
     }
 
-    public async Task<PushMessage?> GetByIdWithUsersAsync(Guid messageId)
+    public async Task<PushMessage?> GetPushmessageByIdAsync(Guid messageId)
     {
         var message = await Query()
             .Include(i => i.Users)

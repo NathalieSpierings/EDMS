@@ -10,6 +10,6 @@ public class CreatePushMessage : CommandBase
     public DateTime Date { get; set; }
     public Guid? MedewerkerId { get; set; }
     public PushMessageStatus Status { get; set; }
-    public List<Guid> SelectedGroupIds { get; set; }
+    public List<Guid> GroupIds { get; set; }
     public IEnumerable<Group> Groups { get; set; }
 }

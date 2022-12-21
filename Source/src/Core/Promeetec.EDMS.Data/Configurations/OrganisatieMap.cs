@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
 
 namespace Promeetec.EDMS.Data.Configurations;
 
@@ -29,10 +30,18 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
                 sa.Property(p => p.VerwijzerInAdresboek).HasColumnName("VerwijzerInAdresboek");
             });
 
+
+        builder.HasOne(e => e.Adresboek)
+            .WithOne(e => e.Organisatie)
+            .HasForeignKey<Organisatie>(e => e.AdresboekId)
+            .OnDelete(DeleteBehavior.NoAction)
+            .IsRequired(false);
+
         builder.HasOne(x => x.ZorggroepRelatie)
             .WithMany()
             .HasForeignKey(x => x.ZorggroepRelatieId)
-            .OnDelete(DeleteBehavior.Restrict)
+            .HasPrincipalKey(x => x.Id)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired(false);
 
         builder.HasOne(e => e.Contactpersoon)
@@ -44,49 +53,49 @@ public class OrganisatieMap : IEntityTypeConfiguration<Organisatie>
         builder.HasOne(e => e.Adres)
             .WithMany()
             .HasForeignKey(e => e.AdresId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired(false);
 
         builder.HasMany(e => e.Medewerkers)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Restrict)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
 
         builder.HasMany(e => e.Rapportages)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
 
         builder.HasMany(e => e.Aanleveringen)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
 
         builder.HasMany(c => c.HaarwerkPrestaties)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
 
         builder.HasMany(e => e.GliIntakes)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Restrict)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
 
         builder.HasMany(e => e.GliBehandelplannen)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Restrict)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
 
         builder.HasMany(c => c.VerbruiksmiddelPrestaties)
             .WithOne(e => e.Organisatie)
             .HasForeignKey(e => e.OrganisatieId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.NoAction)
             .IsRequired();
     }
 }

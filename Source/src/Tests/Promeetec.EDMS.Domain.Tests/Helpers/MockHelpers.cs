@@ -2,14 +2,15 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Moq;
+using NUnit.Framework;
 
 namespace Promeetec.EDMS.Domain.Tests.Helpers;
 
 public class MockHelpers
 {
-    public static UserManager<TUser> TestUserManager<TUser>(IUserStore<TUser> store = null) where TUser : class
+    public static UserManager<TUser> TestUserManager<TUser>(IUserStore<TUser>? store = null) where TUser : class
     {
-        store = store ?? new Mock<IUserStore<TUser>>().Object;
+        store = store ?? new Mock<IUserStore<TUser>?>().Object;
         var options = new Mock<IOptions<IdentityOptions>>();
         var idOptions = new IdentityOptions
         {

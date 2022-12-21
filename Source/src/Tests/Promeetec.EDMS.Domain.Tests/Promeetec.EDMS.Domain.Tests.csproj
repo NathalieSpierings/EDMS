@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Admin\PushMessage\**" />
     <Compile Remove="Admin\Settings\CommandHandlers\**" />
     <Compile Remove="Admin\Settings\Rules\**" />
     <Compile Remove="Admin\Settings\Validators\**" />
@@ -20,6 +21,7 @@
     <Compile Remove="Document\Overigbestand\CommandHandlers\**" />
     <Compile Remove="Document\Rapportage\CommandHandlers\**" />
     <Compile Remove="Menu\MenuItem\**" />
+    <EmbeddedResource Remove="Admin\PushMessage\**" />
     <EmbeddedResource Remove="Admin\Settings\CommandHandlers\**" />
     <EmbeddedResource Remove="Admin\Settings\Rules\**" />
     <EmbeddedResource Remove="Admin\Settings\Validators\**" />
@@ -31,6 +33,7 @@
     <EmbeddedResource Remove="Document\Overigbestand\CommandHandlers\**" />
     <EmbeddedResource Remove="Document\Rapportage\CommandHandlers\**" />
     <EmbeddedResource Remove="Menu\MenuItem\**" />
+    <None Remove="Admin\PushMessage\**" />
     <None Remove="Admin\Settings\CommandHandlers\**" />
     <None Remove="Admin\Settings\Rules\**" />
     <None Remove="Admin\Settings\Validators\**" />
@@ -89,7 +92,7 @@
     <PackageReference Include="AutoFixture" Version="4.17.0" />
     <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
     <PackageReference Include="Moq" Version="4.18.3" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Promeetec.EDMS.Domain.Models.Admin.DownloadActivity;
 using Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
 using Promeetec.EDMS.Domain.Models.Admin.Mededeling;
+using Promeetec.EDMS.Domain.Models.Admin.PushMessage;
 using Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
 using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
 using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
@@ -76,6 +77,7 @@ public class EDMSDbContext : IdentityDbContext<Medewerker, Role, Guid, UserClaim
     public DbSet<Notificatie> Notificaties { get; set; }
     public DbSet<Organisatie> Organisaties { get; set; }
     public DbSet<Overigbestand> OverigeBestanden { get; set; }
+    public DbSet<PushMessage> PushMessages { get; set; }
     public DbSet<Rapportage> Rapportages { get; set; }
     public DbSet<RedenEindeZorg> RedenenEindeZorg { get; set; }
     public DbSet<Domain.Models.Admin.Settings.Settings> Settings { get; set; }

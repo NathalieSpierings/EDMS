@@ -11,7 +11,7 @@ public class ServiceProviderWrapper : IServiceProviderWrapper
         _serviceProvider = serviceProvider;
     }
 
-    public T GetService<T>()
+    public T? GetService<T>()
     {
         return _serviceProvider.GetService<T>();
     }

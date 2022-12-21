@@ -10,7 +10,7 @@ namespace Promeetec.EDMS.Domain.Tests.Menu.MenuItem
     {
         private Models.Menu.Menu.Menu _sut;
         private AddMenuItem _cmd;
-        private Models.Menu.MenuItem.MenuItem _menuItem;
+        private Models.Menu.MenuItem.MenuItem? _menuItem;
         private Guid _createId;
 
 

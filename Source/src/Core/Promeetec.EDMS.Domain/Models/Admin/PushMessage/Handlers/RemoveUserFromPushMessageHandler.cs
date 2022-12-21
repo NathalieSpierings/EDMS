@@ -1,3 +1,4 @@
+using System.Data;
 using Promeetec.EDMS.Commands;
 using Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
 using Promeetec.EDMS.Events;
@@ -15,9 +16,9 @@ namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage.Handlers
 
         public async Task<IEnumerable<IEvent>> Handle(RemoveUserFromPushMessage command)
         {
-            var message = await _repository.GetByIdWithUsersAsync(command.PushMessageId);
+            var message = await _repository.GetPushmessageByIdAsync(command.PushMessageId);
             if (message == null)
-                throw new ApplicationException($"Bericht niet gevonden. Id: {command.PushMessageId}");
+                throw new DataException($"Bericht niet gevonden. Id: {command.PushMessageId}");
 
             if (message.Users.Any())
             {

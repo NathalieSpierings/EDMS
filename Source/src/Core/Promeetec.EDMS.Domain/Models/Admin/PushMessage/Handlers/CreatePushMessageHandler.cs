@@ -21,11 +21,11 @@ public class CreatePushMessageHandler : ICommandHandler<CreatePushMessage>
 
     public async Task<IEnumerable<IEvent>> Handle(CreatePushMessage command)
     {
-        var message = new Admin.PushMessage.PushMessage(command);
+        var message = new PushMessage(command);
 
-        if (command.SelectedGroupIds.Any())
+        if (command.GroupIds.Any())
         {
-            var groups = _groupRepository.GetGroups(command.SelectedGroupIds);
+            var groups = _groupRepository.GetGroups(command.GroupIds);
             if (groups.Any())
             {
                 // Attach message only to users of the chosen groups

@@ -435,7 +435,7 @@
           }
         }
       },
-      "Microsoft.CodeCoverage/17.4.0": {
+      "Microsoft.CodeCoverage/17.4.1": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
@@ -1034,11 +1034,11 @@
           }
         }
       },
-      "Microsoft.NET.Test.Sdk/17.4.0": {
+      "Microsoft.NET.Test.Sdk/17.4.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeCoverage": "17.4.0",
-          "Microsoft.TestPlatform.TestHost": "17.4.0"
+          "Microsoft.CodeCoverage": "17.4.1",
+          "Microsoft.TestPlatform.TestHost": "17.4.1"
         },
         "compile": {
           "lib/netcoreapp3.1/_._": {}
@@ -1085,7 +1085,7 @@
           }
         }
       },
-      "Microsoft.TestPlatform.ObjectModel/17.4.0": {
+      "Microsoft.TestPlatform.ObjectModel/17.4.1": {
         "type": "package",
         "dependencies": {
           "NuGet.Frameworks": "5.11.0",
@@ -1182,10 +1182,10 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/17.4.0": {
+      "Microsoft.TestPlatform.TestHost/17.4.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.TestPlatform.ObjectModel": "17.4.0",
+          "Microsoft.TestPlatform.ObjectModel": "17.4.1",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -2171,6 +2171,7 @@
           "AutoFixture": "4.17.0",
           "Microsoft.EntityFrameworkCore": "7.0.1",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.1",
+          "Microsoft.NET.Test.Sdk": "17.4.1",
           "NUnit": "3.13.3",
           "Promeetec.EDMS.Data": "1.0.0"
         },
@@ -2580,10 +2581,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.CodeCoverage/17.4.0": {
-      "sha512": "2oZbSVTC2nAvQ2DnbXLlXS+c25ZyZdWeNd+znWwAxwGaPh9dwQ5NBsYyqQB7sKmJKIUdkKGmN3rzFzjVC81Dtg==",
+    "Microsoft.CodeCoverage/17.4.1": {
+      "sha512": "T21KxaiFawbrrjm0uXjxAStXaBm5P9H6Nnf8BUtBTvIpd8q57lrChVBCY2dnazmSu9/kuX4z5+kAOT78Dod7vA==",
       "type": "package",
-      "path": "microsoft.codecoverage/17.4.0",
+      "path": "microsoft.codecoverage/17.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2640,7 +2641,7 @@
         "build/netstandard2.0/zh-Hant/Microsoft.VisualStudio.TraceDataCollector.resources.dll",
         "lib/net462/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
         "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
-        "microsoft.codecoverage.17.4.0.nupkg.sha512",
+        "microsoft.codecoverage.17.4.1.nupkg.sha512",
         "microsoft.codecoverage.nuspec"
       ]
     },
@@ -3447,10 +3448,10 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NET.Test.Sdk/17.4.0": {
-      "sha512": "VtNZQ83ntG2aEUjy1gq6B4HNdn96se6FmdY/03At8WiqDReGrApm6OB2fNiSHz9D6IIEtWtNZ2FSH0RJDVXl/w==",
+    "Microsoft.NET.Test.Sdk/17.4.1": {
+      "sha512": "kJ5/v2ad+VEg1fL8UH18nD71Eu+Fq6dM4RKBVqlV2MLSEK/AW4LUkqlk7m7G+BrxEDJVwPjxHam17nldxV80Ow==",
       "type": "package",
-      "path": "microsoft.net.test.sdk/17.4.0",
+      "path": "microsoft.net.test.sdk/17.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3466,7 +3467,7 @@
         "buildMultiTargeting/Microsoft.NET.Test.Sdk.props",
         "lib/net462/_._",
         "lib/netcoreapp3.1/_._",
-        "microsoft.net.test.sdk.17.4.0.nupkg.sha512",
+        "microsoft.net.test.sdk.17.4.1.nupkg.sha512",
         "microsoft.net.test.sdk.nuspec"
       ]
     },
@@ -3521,10 +3522,10 @@
         "microsoft.sqlserver.server.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.ObjectModel/17.4.0": {
-      "sha512": "oWe7A0wrZhxagTOcaxJ9r0NXTbgkiBQQuCpCXxnP06NsGV/qOoaY2oaangAJbOUrwEx0eka1do400NwNCjfytw==",
+    "Microsoft.TestPlatform.ObjectModel/17.4.1": {
+      "sha512": "v2CwoejusooZa/DZYt7UXo+CJOvwAmqg6ZyFJeIBu+DCRDqpEtf7WYhZ/AWii0EKzANPPLU9+m148aipYQkTuA==",
       "type": "package",
-      "path": "microsoft.testplatform.objectmodel/17.4.0",
+      "path": "microsoft.testplatform.objectmodel/17.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3617,14 +3618,14 @@
         "lib/netstandard2.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-        "microsoft.testplatform.objectmodel.17.4.0.nupkg.sha512",
+        "microsoft.testplatform.objectmodel.17.4.1.nupkg.sha512",
         "microsoft.testplatform.objectmodel.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.TestHost/17.4.0": {
-      "sha512": "sUx48fu9wgQF1JxzXeSVtzb7KoKpJrdtIzsFamxET3ZYOKXj+Ej13HWZ0U2nuMVZtZVHBmE+KS3Vv5cIdTlycQ==",
+    "Microsoft.TestPlatform.TestHost/17.4.1": {
+      "sha512": "K7QXM4P4qrDKdPs/VSEKXR08QEru7daAK8vlIbhwENM3peXJwb9QgrAbtbYyyfVnX+F1m+1hntTH6aRX+h/f8g==",
       "type": "package",
-      "path": "microsoft.testplatform.testhost/17.4.0",
+      "path": "microsoft.testplatform.testhost/17.4.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3687,7 +3688,7 @@
         "lib/netcoreapp3.1/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
         "lib/netcoreapp3.1/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll",
         "lib/netcoreapp3.1/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll",
-        "microsoft.testplatform.testhost.17.4.0.nupkg.sha512",
+        "microsoft.testplatform.testhost.17.4.1.nupkg.sha512",
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
@@ -6051,7 +6052,7 @@
       "AutoFixture >= 4.17.0",
       "FluentValidation >= 11.4.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.1",
-      "Microsoft.NET.Test.Sdk >= 17.4.0",
+      "Microsoft.NET.Test.Sdk >= 17.4.1",
       "Moq >= 4.18.3",
       "NUnit >= 3.13.3",
       "NUnit3TestAdapter >= 4.3.1",
@@ -6061,19 +6062,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Talsja\\.nuget\\packages\\": {}
+    "C:\\Users\\nspierings\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
       "projectName": "Promeetec.EDMS.Domain.Tests",
-      "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
-      "packagesPath": "C:\\Users\\Talsja\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\obj\\",
+      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\Promeetec.EDMS.Domain.Tests.csproj",
+      "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
+      "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Domain.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Talsja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6087,14 +6088,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
-              "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
+            "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+              "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
             },
-            "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-              "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+            "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+              "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
             },
-            "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Tests\\Promeetec.EDMS.Tests.csproj": {
-              "projectPath": "F:\\GitHub\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Tests\\Promeetec.EDMS.Tests.csproj"
+            "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Tests\\Promeetec.EDMS.Tests.csproj": {
+              "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Tests\\Promeetec.EDMS.Tests\\Promeetec.EDMS.Tests.csproj"
             }
           }
         }
@@ -6123,7 +6124,7 @@
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "[17.4.0, )"
+            "version": "[17.4.1, )"
           },
           "Moq": {
             "target": "Package",

@@ -19,7 +19,6 @@ namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands
         public bool Disabled { get; set; }
         public Status Status { get; set; }
         public MenuItemType MenuItemType { get; set; }
-        public List<MenuItemRole> Roles { get; set; } = new List<MenuItemRole>();
 
     }
 }
