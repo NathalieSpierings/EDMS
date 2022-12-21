@@ -1,5 +1,5 @@
-﻿using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Identity;
+﻿using System.Security.Claims;
+using Promeetec.EDMS.Data.Context;
 using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 
 namespace Promeetec.EDMS.Data.Repositories;
@@ -264,7 +264,7 @@ public class AanleveringRepository : Repository<Aanlevering>, IAanleveringReposi
         throw new NotImplementedException();
     }
 
-    public Task<string> GetReferentieByMedewerkerSoortAsync(Guid aanleveringId, UserPrincipal user)
+    public Task<string> GetReferentieByMedewerkerSoortAsync(Guid aanleveringId, ClaimsPrincipal user)
     {
         throw new NotImplementedException();
     }

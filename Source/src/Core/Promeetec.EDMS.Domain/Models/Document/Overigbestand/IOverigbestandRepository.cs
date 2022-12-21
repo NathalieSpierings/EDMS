@@ -1,16 +1,16 @@
-﻿using Promeetec.EDMS.Domain.Models.Identity;
+﻿using System.Security.Claims;
 
 namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand
 {
     public interface IOverigBestandRepository : IRepository<Overigbestand>
     {
-        bool DoesFileByFileNameExist(Guid aanleveringId, string fileName, UserPrincipal user);
+        bool DoesFileByFileNameExist(Guid aanleveringId, string fileName, ClaimsPrincipal user);
 
         Overigbestand? GetOverigbestandByFileName(string fileName);
 
-        bool CheckIfNameUnique(Guid aanleveringId, string filename, UserPrincipal user);
+        bool CheckIfNameUnique(Guid aanleveringId, string filename, ClaimsPrincipal user);
         Task<List<Overigbestand>> GetOverigbestandenByFileNameAsync(string fileName, Guid aanleveringId);
         Task<IList<Overigbestand>> GetOverigebestandenByIdsAsync(List<Guid> ids);
-        Task<IList<Overigbestand>> GetOverigebestandenByAanleveringId(Guid aanleveringId, UserPrincipal user);
+        Task<IList<Overigbestand>> GetOverigebestandenByAanleveringId(Guid aanleveringId, ClaimsPrincipal user);
     }
 }

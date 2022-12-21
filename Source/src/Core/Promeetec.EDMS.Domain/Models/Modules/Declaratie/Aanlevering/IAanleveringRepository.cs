@@ -1,4 +1,4 @@
-﻿using Promeetec.EDMS.Domain.Models.Identity;
+﻿using System.Security.Claims;
 
 namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
 
@@ -43,7 +43,7 @@ public interface IAanleveringRepository : IRepository<Aanlevering>
     /// <param name="aanleveringId">The aanlevering identifier.</param>
     /// <param name="user">The user.</param>
     /// <returns>Referentie promeetec voor internemedewerkers en referentie voor externe medewerkers.</returns>
-    Task<string> GetReferentieByMedewerkerSoortAsync(Guid aanleveringId, UserPrincipal user);
+    Task<string> GetReferentieByMedewerkerSoortAsync(Guid aanleveringId, ClaimsPrincipal user);
 
     /// <summary>
     /// Bepaal of er documenten mogen worden toegevoegd aan de aanlevering.

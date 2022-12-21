@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AOP/yz412S2VWN7LDmqFNvfr+3y56h1JxpIUVxL3OeOiqs8lDU8lelQVv/I7+ety9J1eR9qvQiLf9T0rkdPwvw==",
+  "dgSpecHash": "bRHxbIgXS968MjhJ4urWCWTh/2v64pGM7p8sVjmizp+qU3gwKsXA+mY5QOfawVd/0D+/d6KpZ0RQgPiIdc1a9Q==",
   "success": true,
   "projectFilePath": "F:\\GitHub\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\Promeetec.EDMS.Web.csproj",
   "expectedPackageFiles": [
@@ -130,6 +130,7 @@
     "C:\\Users\\Talsja\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Talsja\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Talsja\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Talsja\\.nuget\\packages\\scrutor\\4.2.0\\scrutor.4.2.0.nupkg.sha512",
     "C:\\Users\\Talsja\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Talsja\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Talsja\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",

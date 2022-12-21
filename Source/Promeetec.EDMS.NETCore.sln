@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Domain.Tests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B8F5A64-170F-4A0E-A5E9-FFB07C663E66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promeetec.EDMS.Data.Tests", "src\Tests\Promeetec.EDMS.Data.Tests\Promeetec.EDMS.Data.Tests.csproj", "{C3AA6BE9-44FB-41B6-B9A1-C6740D044DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Data.Tests", "src\Tests\Promeetec.EDMS.Data.Tests\Promeetec.EDMS.Data.Tests.csproj", "{C3AA6BE9-44FB-41B6-B9A1-C6740D044DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promeetec.EDMS.Tests", "src\Tests\Promeetec.EDMS.Tests\Promeetec.EDMS.Tests.csproj", "{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Tests", "src\Tests\Promeetec.EDMS.Tests\Promeetec.EDMS.Tests.csproj", "{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promeetec.EDMS.Reporting.Tests", "src\Tests\Promeetec.EDMS.Reporting.Tests\Promeetec.EDMS.Reporting.Tests.csproj", "{324555D1-1206-4B09-98DD-FF2FE9568492}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{324555D1-1206-4B09-98DD-FF2FE9568492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324555D1-1206-4B09-98DD-FF2FE9568492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{324555D1-1206-4B09-98DD-FF2FE9568492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324555D1-1206-4B09-98DD-FF2FE9568492}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{126BC4A2-424A-4DEA-B37F-9526C4E2E7D6} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
 		{C3AA6BE9-44FB-41B6-B9A1-C6740D044DF4} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
 		{7B045140-F8CF-485E-9DE5-46FA1FFF35BE} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
+		{324555D1-1206-4B09-98DD-FF2FE9568492} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D0636F9-E8A4-44A5-B8E0-ED141CECE8BF}

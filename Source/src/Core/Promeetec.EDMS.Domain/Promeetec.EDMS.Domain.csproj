@@ -127,6 +127,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Identity\Users\UserPrincipal.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="Models\Admin\Mededeling\Commands\CreateMededeling.cs" />
     <Compile Include="Models\Admin\Mededeling\Commands\UpdateMededeling.cs" />
     <Compile Include="Models\Admin\Mededeling\Handlers\CreateMededelingHandler.cs" />
