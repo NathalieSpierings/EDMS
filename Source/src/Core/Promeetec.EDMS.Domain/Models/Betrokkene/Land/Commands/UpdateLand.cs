@@ -6,6 +6,6 @@ namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
 public class UpdateLand : CommandBase
 {
     public string CultureCode { get; set; }
-    public string NativeName { get; set; }
+    public string? NativeName { get; set; }
     public Status Status { get; set; }
 }

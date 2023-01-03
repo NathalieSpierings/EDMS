@@ -17,7 +17,7 @@ public class Land : AggregateRoot
     /// The native name of the land.
     /// </summary>
     [Required, MaxLength(128)]
-    public string NativeName { get; set; }
+    public string? NativeName { get; set; }
 
 
     /// <summary>

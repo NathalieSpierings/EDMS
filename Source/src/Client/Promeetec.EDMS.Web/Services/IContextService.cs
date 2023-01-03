@@ -1,10 +1,9 @@
-﻿using Promeetec.EDMS.Reporting.Models.Public.Models;
+﻿using Promeetec.EDMS.Reporting.Public.User.Models;
 
 namespace Promeetec.EDMS.Web.Services
 {
     public interface IContextService
     {
-        //Task<CurrentOrganisatieModel> CurrentOrganisatieAsync();
         Task<CurrentUserModel> CurrentUserAsync();
     }
 }

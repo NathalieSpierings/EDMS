@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Promeetec.EDMS.Services;
+﻿using Promeetec.EDMS.Services;
 
 namespace Promeetec.EDMS.Queries;
 

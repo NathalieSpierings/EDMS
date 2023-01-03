@@ -101,7 +101,7 @@ public class Organisatie : AggregateRoot
     public string? VerwijderdDoor { get; set; }
 
 
-    public string DisplayName => !string.IsNullOrEmpty(Nummer) ? $"{Naam} ({Nummer})" : $"{Naam}";
+    public string? DisplayName => !string.IsNullOrEmpty(Nummer) ? $"{Naam} ({Nummer})" : $"{Naam}";
 
     public bool IsPromeetec
     {

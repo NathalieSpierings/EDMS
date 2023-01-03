@@ -7,7 +7,36 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Betrokenne\" />
+    <Compile Remove="Private\**" />
+    <Compile Remove="Shared\Models\**" />
+    <Compile Remove="Shared\Queries\**" />
+    <Compile Remove="Shared\QueryHandlers\**" />
+    <EmbeddedResource Remove="Private\**" />
+    <EmbeddedResource Remove="Shared\Models\**" />
+    <EmbeddedResource Remove="Shared\Queries\**" />
+    <EmbeddedResource Remove="Shared\QueryHandlers\**" />
+    <None Remove="Private\**" />
+    <None Remove="Shared\Models\**" />
+    <None Remove="Shared\Queries\**" />
+    <None Remove="Shared\QueryHandlers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Private\Betrokkene\Adres\Models\AdresModel.cs" />
+    <Compile Include="Private\Betrokkene\Land\Models\LandModel.cs" />
+    <Compile Include="Private\Betrokkene\Organisatie\Models\GekoppeldeOrganisatiesModel.cs" />
+    <Compile Include="Private\Betrokkene\Organisatie\Models\OrganisatieModel.cs" />
+    <Compile Include="Shared\Models\ModelBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
+    <ProjectReference Include="..\Promeetec.EDMS\Promeetec.EDMS.csproj" />
   </ItemGroup>
 
 </Project>

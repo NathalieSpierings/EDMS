@@ -5,17 +5,17 @@ namespace Promeetec.EDMS.Domain.Extensions
 {
     public static class AdresExtensions
     {
-        public static string? VektisVolledigAdres(string straat, string huisnummer, string huisnummertoevoeging, string postcode, string woonplaats, string landNaam)
+        public static string? VektisVolledigAdres(string straat, string huisnummer, string? huisnummertoevoeging, string postcode, string woonplaats, string? landNaam)
         {
             return VolledigeAdres(straat, huisnummer, huisnummertoevoeging, postcode, woonplaats, landNaam);
         }
 
-        public static string? VolledigeAdres(string straat, string huisnummer, string huisnummertoevoeging, string postcode, string woonplaats, Land land)
+        public static string? VolledigeAdres(string straat, string huisnummer, string? huisnummertoevoeging, string postcode, string woonplaats, Land land)
         {
             return VolledigeAdres(straat, huisnummer, huisnummertoevoeging, postcode, woonplaats, land != null ? land.NativeName : string.Empty);
         }
 
-        public static string? VolledigeAdres(string straat, string huisnummer, string huisnummertoevoeging, string postcode, string woonplaats, string land)
+        public static string? VolledigeAdres(string straat, string huisnummer, string? huisnummertoevoeging, string postcode, string woonplaats, string? land)
         {
             var sb = new StringBuilder();
 
@@ -34,13 +34,13 @@ namespace Promeetec.EDMS.Domain.Extensions
             return sb.ToString().Trim();
         }
 
-        public static string VolledigeStraatadres(string straat, string huisnummer, string huisnummertoevoeging)
+        public static string VolledigeStraatadres(string straat, string huisnummer, string? huisnummertoevoeging)
         {
             var sb = GeefVolledigeStraatAdres(straat, huisnummer, huisnummertoevoeging);
             return sb.ToString().Trim();
         }
 
-        public static string GeefVolledigeStraatAdres(string straat, string huisnummer, string huisnummertoevoeging)
+        public static string GeefVolledigeStraatAdres(string straat, string huisnummer, string? huisnummertoevoeging)
         {
             var sb = new StringBuilder();
             if (!string.IsNullOrWhiteSpace(straat))

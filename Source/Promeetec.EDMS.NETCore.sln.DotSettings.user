@@ -69,6 +69,7 @@
 	
 	
 	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34d35756_002D558e_002D449b_002D8e80_002Db2bfa1b07484/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34d35756_002D558e_002D449b_002D8e80_002Db2bfa1b07484/@EntryIndexRemoved">True</s:Boolean>
 	
@@ -116,6 +117,11 @@
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59f9de8b_002Dc752_002D4e61_002D8ffa_002Db7cf47a096c4/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7bc19511_002D99d2_002D48a5_002D8a15_002D6541f1cd0aa6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_get_result1 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::324555D1-1206-4B09-98DD-FF2FE9568492::net7.0::Promeetec.EDMS.Reporting.Tests.Private.Betrokkene.OrganisatieHandlerTests.Should_get_result1&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	
@@ -182,6 +188,13 @@
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexedValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86be133_002Da111_002D4f89_002D86d1_002D4a9fb1d5467c/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f269f4aa_002D8f71_002D4799_002D8c57_002D16a8eef127e5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_get_result1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::324555D1-1206-4B09-98DD-FF2FE9568492::net7.0::Promeetec.EDMS.Reporting.Tests.Private.Betrokkene.OrganisatieHandlerTests.Should_get_result1&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
 	
 	
 	

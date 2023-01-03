@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Promeetec.EDMS.Reporting.Public.User.Models;
+using Promeetec.EDMS.Reporting.Public.User.Queries;
 
 namespace Promeetec.EDMS.Web.Controllers
 {
+    [Authorize]
     public abstract class BaseController : ControllerBase
     {
         private readonly IDispatcher _dispatcher;
@@ -10,8 +14,7 @@ namespace Promeetec.EDMS.Web.Controllers
         {
             _dispatcher = dispatcher;
         }
-
-        //  protected async Task<CurrentOrganisatieModel> CurrentSite() => await _dispatcher.Get(new GetCurrentOrganisatie());
-        //  protected async Task<CurrentUserModel> CurrentUser() => await _dispatcher.Get(new GetCurrentUser());
+        
+          protected async Task<CurrentUserModel> CurrentUser() => await _dispatcher.Get(new GetCurrentUser());
     }
 }
