@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Samenvatting;
 
 public class AanleverbestandSamenvatting : AggregateRoot
 {

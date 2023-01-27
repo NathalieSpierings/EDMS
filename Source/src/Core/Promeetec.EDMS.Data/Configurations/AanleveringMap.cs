@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class AanleveringMap : IEntityTypeConfiguration<Aanlevering>
 {

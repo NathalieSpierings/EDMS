@@ -1,8 +1,8 @@
 ﻿using System.Security.Claims;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class AanleveringRepository : Repository<Aanlevering>, IAanleveringRepository
 {

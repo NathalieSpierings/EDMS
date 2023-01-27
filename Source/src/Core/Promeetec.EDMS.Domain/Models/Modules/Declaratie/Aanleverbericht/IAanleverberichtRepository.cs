@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht;
 
 public interface IAanleverberichtRepository : IRepository<Aanleverbericht>
 {

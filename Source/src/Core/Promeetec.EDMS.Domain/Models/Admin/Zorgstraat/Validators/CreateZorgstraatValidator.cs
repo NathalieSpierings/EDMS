@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat.Validators;
 
 public class CreateZorgstraatValidator : AbstractValidator<CreateZorgstraat>
 {

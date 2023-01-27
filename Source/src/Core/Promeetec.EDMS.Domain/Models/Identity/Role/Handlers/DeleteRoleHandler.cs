@@ -1,14 +1,14 @@
 ﻿using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Identity.Role.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Role.Events;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Role.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Handlers;
 
 public class DeleteRoleHandler : ICommandHandler<DeleteRole>
 {

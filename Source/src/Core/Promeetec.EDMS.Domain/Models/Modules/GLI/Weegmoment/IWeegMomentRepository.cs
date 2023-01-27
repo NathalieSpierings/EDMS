@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Weegmoment;
 
 public interface IWeegmomentRepository : IRepository<Weegmoment>
 {

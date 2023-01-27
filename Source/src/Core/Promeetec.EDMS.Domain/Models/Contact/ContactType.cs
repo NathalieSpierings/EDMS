@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Contact;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Contact;
 
 public enum ContactType
 {

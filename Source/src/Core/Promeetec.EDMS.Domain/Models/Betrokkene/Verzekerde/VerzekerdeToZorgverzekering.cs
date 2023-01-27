@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
 
 public class VerzekerdeToZorgverzekering
 {

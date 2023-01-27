@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Extensions;
+﻿namespace Promeetec.EDMS.Portaal.Core.Extensions;
 
 public static class DateExtensions
 {

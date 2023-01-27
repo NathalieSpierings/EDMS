@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
 public class Aanlevering : AggregateRoot
 {

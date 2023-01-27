@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Persoon;
 
-namespace Promeetec.EDMS.Domain.Extensions;
+namespace Promeetec.EDMS.Portaal.Domain.Extensions;
 
 public static class PersoonExtensions
 {

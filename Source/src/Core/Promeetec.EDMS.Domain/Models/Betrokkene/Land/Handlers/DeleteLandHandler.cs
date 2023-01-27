@@ -1,14 +1,14 @@
 using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Events;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Handlers;
 
 public class DeleteLandHandler : ICommandHandler<DeleteLand>
 {

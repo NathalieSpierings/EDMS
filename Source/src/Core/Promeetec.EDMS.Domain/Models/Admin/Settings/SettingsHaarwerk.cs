@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Settings;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings;
 
 [Owned]
 public class SettingsHaarwerk

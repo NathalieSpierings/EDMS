@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Services;
+﻿using Promeetec.EDMS.Portaal.Core.Services;
 
-namespace Promeetec.EDMS.Events;
+namespace Promeetec.EDMS.Portaal.Core.Events;
 
 public class EventPublisher : IEventPublisher
 {

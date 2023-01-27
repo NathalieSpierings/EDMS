@@ -12,12 +12,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
-    <ProjectReference Include="..\Promeetec.EDMS\Promeetec.EDMS.csproj" />
+    <ProjectReference Include="..\Promeetec.EDMS.Domain\Promeetec.EDMS.Portaal.Domain.csproj" />
+    <ProjectReference Include="..\Promeetec.EDMS\Promeetec.EDMS.Portaal.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage;
 
 public interface IPushMessageRepository : IRepository<PushMessage>
 {

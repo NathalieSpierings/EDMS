@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Events;
+﻿namespace Promeetec.EDMS.Portaal.Core.Events;
 
 public interface IEvent
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
 public enum ProfielCode
 {

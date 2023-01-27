@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace Promeetec.EDMS.Data.Caching;
+namespace Promeetec.EDMS.Portaal.Data.Caching;
 
 public class CacheManager : ICacheManager
 {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 
-namespace Promeetec.EDMS.Domain.Extensions;
+namespace Promeetec.EDMS.Portaal.Domain.Extensions;
 
 public static class ValidatorExtensions
 {

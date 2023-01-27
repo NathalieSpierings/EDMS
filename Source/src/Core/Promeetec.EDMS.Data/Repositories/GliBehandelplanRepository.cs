@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Modules.GLI;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
-using GliStatus = Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.GliStatus;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan;
+using GliStatus = Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.GliStatus;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class GliBehandelplanRepository : Repository<GliBehandelplan>, IGliBehandelplanRepository
 {

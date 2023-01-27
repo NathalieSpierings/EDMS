@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Validators;
 
 public class UpdateOrganisatieValidator : AbstractValidator<UpdateOrganisatie>
 {

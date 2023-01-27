@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Rapportage.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage.Validators;
 
 public class CreateRapportageValidator : AbstractValidator<CreateRapportage>
 {

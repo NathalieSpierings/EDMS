@@ -2,9 +2,8 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Moq;
-using NUnit.Framework;
 
-namespace Promeetec.EDMS.Domain.Tests.Helpers;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Helpers;
 
 public class MockHelpers
 {

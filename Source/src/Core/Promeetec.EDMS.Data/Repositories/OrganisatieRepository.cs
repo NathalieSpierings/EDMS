@@ -1,12 +1,7 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Shared;
+﻿using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class OrganisatieRepository : Repository<Organisatie>, IOrganisatieRepository
 {

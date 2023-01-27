@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Events;
 
 public class AanleverberichtGeplaatst : EventBase
 {

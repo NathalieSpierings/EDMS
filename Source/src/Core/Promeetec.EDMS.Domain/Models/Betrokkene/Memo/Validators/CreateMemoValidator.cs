@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Validators;
 
 public class CreateMemoValidator : AbstractValidator<CreateMemo>
 {

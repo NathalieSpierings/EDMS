@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Identity.Role;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class RoleRepository : Repository<Role>, IRoleRepository
 {

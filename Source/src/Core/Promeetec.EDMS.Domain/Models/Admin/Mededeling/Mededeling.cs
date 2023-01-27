@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Admin.Mededeling.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Mededeling.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Mededeling;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Mededeling;
 
 public class Mededeling : AggregateRoot
 {

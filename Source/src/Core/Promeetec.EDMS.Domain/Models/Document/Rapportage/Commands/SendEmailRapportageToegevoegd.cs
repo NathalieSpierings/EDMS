@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage.Commands
 {
     public class SendEmailRapportageToegevoegd
     {

@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Services;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Services;
 
-namespace Promeetec.EDMS.Commands;
+namespace Promeetec.EDMS.Portaal.Core.Commands;
 
 public class CommandSender : ICommandSender
 {

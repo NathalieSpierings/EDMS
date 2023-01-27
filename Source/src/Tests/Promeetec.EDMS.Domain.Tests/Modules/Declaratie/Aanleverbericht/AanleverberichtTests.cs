@@ -1,10 +1,10 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.Declaratie.Aanleverbericht
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.Declaratie.Aanleverbericht
 {
     [TestFixture]
     public class AanleverberichtTests : TestFixtureBase

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Validators;
 
 public class WijzigEigenaarValidator : AbstractValidator<ChangeEigenaarAanlevering>
 {

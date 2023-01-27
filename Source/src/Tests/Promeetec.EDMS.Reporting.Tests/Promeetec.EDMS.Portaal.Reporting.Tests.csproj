@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Client\Promeetec.EDMS.Web\Promeetec.EDMS.Web.csproj" />
-    <ProjectReference Include="..\Promeetec.EDMS.Tests\Promeetec.EDMS.Tests.csproj" />
+    <ProjectReference Include="..\Promeetec.EDMS.Tests\Promeetec.EDMS.Portaal.Tests.csproj" />
   </ItemGroup>
 
 </Project>

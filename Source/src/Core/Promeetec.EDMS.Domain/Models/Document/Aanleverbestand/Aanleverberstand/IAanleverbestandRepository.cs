@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
+using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
 
 public interface IAanleverbestandRepository : IRepository<Aanleverbestand>
 {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.RedenEindeZorg;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class RedenEindeZorgMap : IEntityTypeConfiguration<RedenEindeZorg>
 {

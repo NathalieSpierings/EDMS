@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Validators;
 
 public class CreateAanleverberichtValidator : AbstractValidator<CreateAanleverbericht>
 {

@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Identity.Group;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Group;
 
 public static class GroupNames
 {

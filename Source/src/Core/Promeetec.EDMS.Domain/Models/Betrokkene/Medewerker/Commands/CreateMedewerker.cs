@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Users;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Users;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Commands;
 
 public class CreateMedewerker : CommandBase
 {

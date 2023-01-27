@@ -1,4 +1,4 @@
-﻿using Promeetec.EDMS.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
 namespace Promeetec.EDMS.Tests
 {

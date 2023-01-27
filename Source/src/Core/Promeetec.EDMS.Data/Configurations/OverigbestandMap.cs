@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class OverigbestandMap : IEntityTypeConfiguration<Overigbestand>
 {

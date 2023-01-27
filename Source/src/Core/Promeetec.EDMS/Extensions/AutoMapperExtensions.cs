@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Queries;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Queries;
 
-namespace Promeetec.EDMS.Extensions;
+namespace Promeetec.EDMS.Portaal.Core.Extensions;
 
 public static class AutoMapperExtensions
 {

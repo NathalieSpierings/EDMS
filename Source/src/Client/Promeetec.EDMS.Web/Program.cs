@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Identity.Role;
-using Promeetec.EDMS.Domain.Models.Identity.Users;
-using Promeetec.EDMS.Extensions;
+using Promeetec.EDMS.Portaal.Core.Extensions;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Users;
+using ObjectFactory = Promeetec.EDMS.Portaal.Core.Mapping.ObjectFactory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,11 +40,11 @@ builder.Services.Configure<FormOptions>(x =>
     x.MultipartBodyLengthLimit = int.MaxValue;
 });
 
-builder.Services.AddAutoMapper(new List<Type> { typeof(Promeetec.EDMS.Mapping.ObjectFactory) });
+builder.Services.AddAutoMapper(new List<Type> { typeof(ObjectFactory) });
 
 //builder.Services.AddAutoMapper(typeof(Promeetec.EDMS.Mapping.ObjectFactory));
 builder.Services.Scan(s => s
-    .FromAssembliesOf(typeof(Promeetec.EDMS.Mapping.ObjectFactory), typeof(Program), typeof(EDMSDbContext), typeof(Organisatie))
+    .FromAssembliesOf(typeof(ObjectFactory), typeof(Program), typeof(EDMSDbContext), typeof(Organisatie))
     .AddClasses()
     .AsImplementedInterfaces()
 );

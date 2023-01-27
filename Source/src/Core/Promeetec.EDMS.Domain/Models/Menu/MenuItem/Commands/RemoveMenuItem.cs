@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Commands
 {
     public class RemoveMenuItem : CommandBase
     {

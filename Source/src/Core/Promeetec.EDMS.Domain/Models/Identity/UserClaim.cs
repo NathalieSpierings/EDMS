@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Promeetec.EDMS.Domain.Models.Identity;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity;
 
 public class UserClaim : IdentityUserClaim<Guid>
 {

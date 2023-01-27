@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.UserProfile
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.UserProfile
 {
     [TestFixture]
     public class UserProfileTests : TestFixtureBase

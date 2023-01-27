@@ -1,10 +1,10 @@
 ﻿using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand;
-using Promeetec.EDMS.Domain.Models.Identity.Role;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class OverigBestandRepository : Repository<Overigbestand>, IOverigBestandRepository
 {

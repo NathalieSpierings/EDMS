@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Admin.Settings.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Settings.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings.Validators;
 
 public class UpdateSettingsValidator : AbstractValidator<UpdateSettings>
 {

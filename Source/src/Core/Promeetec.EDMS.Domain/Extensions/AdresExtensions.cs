@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land;
 
-namespace Promeetec.EDMS.Domain.Extensions
+namespace Promeetec.EDMS.Portaal.Domain.Extensions
 {
     public static class AdresExtensions
     {

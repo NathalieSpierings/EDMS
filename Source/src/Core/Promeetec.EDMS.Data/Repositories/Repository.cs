@@ -1,13 +1,9 @@
 ﻿using System.Linq.Expressions;
-using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Data.Context;
 
-namespace Promeetec.EDMS.Data.Repositories
+namespace Promeetec.EDMS.Portaal.Data.Repositories
 {
     /// <inheritdoc />
     public class Repository<T> : IRepository<T> where T : class, IAggregateRoot

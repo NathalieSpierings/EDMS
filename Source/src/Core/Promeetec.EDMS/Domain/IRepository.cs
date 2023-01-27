@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Promeetec.EDMS.Domain
+namespace Promeetec.EDMS.Portaal.Core.Domain
 {
     public interface IRepository<T> where T : class, IAggregateRoot
     {

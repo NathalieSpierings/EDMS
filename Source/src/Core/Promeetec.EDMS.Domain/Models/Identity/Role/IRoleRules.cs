@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Identity.Role;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
 
 public interface IRoleRules
 {

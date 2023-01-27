@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Commands;
+﻿namespace Promeetec.EDMS.Portaal.Core.Commands;
 
 public interface ICommand
 {

@@ -12,26 +12,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.3" />
     <PackageReference Include="Scrutor" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj" />
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj" />
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Reporting\Promeetec.EDMS.Reporting.csproj" />
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Services\Promeetec.EDMS.Services.csproj" />
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Vecozo.ION\Promeetec.EDMS.Vecozo.ION.csproj" />
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS\Promeetec.EDMS.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Portaal.Data.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Portaal.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Reporting\Promeetec.EDMS.Portaal.Reporting.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Services\Promeetec.EDMS.Portaal.Services.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Vecozo.ION\Promeetec.EDMS.Portaal.Vecozo.ION.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS\Promeetec.EDMS.Portaal.Core.csproj" />
   </ItemGroup>
 
 </Project>

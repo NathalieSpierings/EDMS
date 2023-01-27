@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.17.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
     <PackageReference Include="Moq" Version="4.18.4" />
     <PackageReference Include="NUnit" Version="3.13.3" />
@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj" />
-    <ProjectReference Include="..\Promeetec.EDMS.Tests\Promeetec.EDMS.Tests.csproj" />
+    <ProjectReference Include="..\..\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Portaal.Data.csproj" />
+    <ProjectReference Include="..\Promeetec.EDMS.Tests\Promeetec.EDMS.Portaal.Tests.csproj" />
   </ItemGroup>
 
 </Project>

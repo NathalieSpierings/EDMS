@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Reporting.Tests
+﻿namespace Promeetec.EDMS.Portaal.Reporting.Tests
 {
     public class SampleResult
     {

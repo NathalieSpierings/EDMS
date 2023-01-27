@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Events
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Events
 {
 	public class AanleverbestandAangemaakt : EventBase
 	{

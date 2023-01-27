@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Settings;
+﻿namespace Promeetec.EDMS.Portaal.Core.Settings;
 
 public class Options: IOptions
 {

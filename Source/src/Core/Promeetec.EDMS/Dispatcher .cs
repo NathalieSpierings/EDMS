@@ -1,9 +1,9 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Mapping;
-using Promeetec.EDMS.Queries;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Mapping;
+using Promeetec.EDMS.Portaal.Core.Queries;
 
-namespace Promeetec.EDMS;
+namespace Promeetec.EDMS.Portaal.Core;
 
 public class Dispatcher : IDispatcher
 {

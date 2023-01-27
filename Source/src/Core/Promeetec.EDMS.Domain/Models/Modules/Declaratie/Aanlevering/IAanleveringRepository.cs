@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
+using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
 public interface IAanleveringRepository : IRepository<Aanlevering>
 {

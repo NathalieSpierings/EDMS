@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Context;
 
 namespace Promeetec.EDMS.Tests.Helpers;
 

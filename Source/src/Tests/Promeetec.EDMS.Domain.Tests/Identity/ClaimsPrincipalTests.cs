@@ -2,7 +2,7 @@
 using Moq;
 using NUnit.Framework;
 
-namespace Promeetec.EDMS.Domain.Tests.Identity;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Identity;
 
 [TestFixture]
 public class ClaimsPrincipalTests

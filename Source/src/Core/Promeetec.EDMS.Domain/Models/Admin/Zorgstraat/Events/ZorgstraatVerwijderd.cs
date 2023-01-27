@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat.Events;
 
 public class ZorgstraatVerwijderd : EventBase
 {

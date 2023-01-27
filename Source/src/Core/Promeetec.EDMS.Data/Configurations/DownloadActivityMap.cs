@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Admin.DownloadActivity;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.DownloadActivity;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class DownloadActivityMap : IEntityTypeConfiguration<DownloadActivity>
 {

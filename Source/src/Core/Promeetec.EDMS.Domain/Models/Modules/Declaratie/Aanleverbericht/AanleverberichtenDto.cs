@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+﻿using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Persoon;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht
 {
     public class AanleverberichtenDto
     {

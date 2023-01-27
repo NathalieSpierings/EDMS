@@ -1,10 +1,10 @@
 using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Handlers;
 
 public class MarkAanleverberichtAsReadHandler : ICommandHandler<MarkAanleverberichtAsRead>
 {

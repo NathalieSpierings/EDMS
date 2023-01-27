@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Persoon;
 
 public enum Geslacht
 {

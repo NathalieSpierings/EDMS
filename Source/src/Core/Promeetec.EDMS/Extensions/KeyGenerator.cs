@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Promeetec.EDMS.Extensions;
+namespace Promeetec.EDMS.Portaal.Core.Extensions;
 
 public class KeyGenerator
 {

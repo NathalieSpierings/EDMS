@@ -1,11 +1,11 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekeraar.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Verzekeraar.Validators;
 
 [TestFixture]
 public class CreateVerzekeraarValidatorTests : TestFixtureBase

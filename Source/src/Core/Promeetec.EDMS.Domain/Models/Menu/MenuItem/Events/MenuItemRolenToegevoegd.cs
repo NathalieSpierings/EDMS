@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Events
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Events
 {
     public class MenuItemRolenToegevoegd : EventBase
     {

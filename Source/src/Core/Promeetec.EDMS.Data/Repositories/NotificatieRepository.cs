@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
+﻿using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Notification;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class NotificatieRepository : Repository<Notificatie>, INotificatieRepository
 {

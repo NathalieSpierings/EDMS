@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht;
 
 public enum AanleverberichtStatus
 {

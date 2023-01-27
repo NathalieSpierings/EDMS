@@ -1,10 +1,10 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.GLI.Intake
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.GLI.Intake
 {
     [TestFixture]
     public class IntakeTests : TestFixtureBase

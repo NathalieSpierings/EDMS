@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Adresboek
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek
 {
     public enum VerwijzerInAdresboekType
     {

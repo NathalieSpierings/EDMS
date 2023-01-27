@@ -1,15 +1,15 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Land
 {
     [TestFixture]
     public class LandTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Betrokkene.Land.Land _sut;
+        private Models.Betrokkene.Land.Land _sut;
         private CreateLand _cmd;
         private Guid _createId;
         [SetUp]

@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Menu.MenuItem
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Menu.MenuItem
 {
     [TestFixture]
     public class MenuItemTests : TestFixtureBase

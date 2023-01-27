@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Events;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Handlers;
 
 public class VerwerkGliRegistratieHandler : ICommandHandler<ProcessBehandelplan>
 {

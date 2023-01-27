@@ -1,12 +1,12 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.GLI.Behandelplan.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.GLI.Behandelplan.Validators;
 
 [TestFixture]
 public class StartBehandeltrajectTests : TestFixtureBase

@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
 using System.Text;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
 
 namespace Promeetec.EDMS.Web.Areas.Identity.Pages.Account
 {

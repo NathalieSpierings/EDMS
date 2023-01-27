@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class UserProfileMap : IEntityTypeConfiguration<UserProfile>
 {

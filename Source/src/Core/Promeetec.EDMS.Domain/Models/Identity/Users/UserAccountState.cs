@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Users;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Users;
 
 public enum UserAccountState
 {

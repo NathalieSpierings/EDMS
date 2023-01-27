@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class GliIntakeMap : IEntityTypeConfiguration<GliIntake>
 {

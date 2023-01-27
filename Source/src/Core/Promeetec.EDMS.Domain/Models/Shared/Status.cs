@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Shared;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
 public enum Status
 {

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.EiStandaard;
 
 public class EiStandaard : AggregateRoot
 {

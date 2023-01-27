@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class VerzekeraarMap : IEntityTypeConfiguration<Verzekeraar>
 {

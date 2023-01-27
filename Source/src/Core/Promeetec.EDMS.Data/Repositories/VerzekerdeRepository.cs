@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
 
-namespace Promeetec.EDMS.Data.Repositories
+namespace Promeetec.EDMS.Portaal.Data.Repositories
 {
     public class VerzekerdeRepository : Repository<Verzekerde>, IVerzekerdeRepository
     {

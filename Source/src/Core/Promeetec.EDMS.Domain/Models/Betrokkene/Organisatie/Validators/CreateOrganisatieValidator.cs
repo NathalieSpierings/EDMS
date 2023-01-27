@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
+using Promeetec.EDMS.Portaal.Core;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Validators;
 
 public class CreateOrganisatieValidator : AbstractValidator<CreateOrganisatie>
 {

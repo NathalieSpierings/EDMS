@@ -1,12 +1,11 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Group.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Identity.Group.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Identity.Group.Validators;
 
 [TestFixture]
 public class UpdateGroupValidatorTests : TestFixtureBase

@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Domain.Models.Menu.Menu.Validators.Rules;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Queries;
+using Promeetec.EDMS.Portaal.Core.Queries;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Validators.Rules;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.Menu.Validators.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Validators.Handlers;
 
 public class IsMenuIdUniqueHandler : IQueryHandler<IsMenuIdUnique, bool>
 {

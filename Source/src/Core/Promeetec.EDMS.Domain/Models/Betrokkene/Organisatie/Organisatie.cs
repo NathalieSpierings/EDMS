@@ -1,15 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Rapportage;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
-using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
 
 public class Organisatie : AggregateRoot
 {

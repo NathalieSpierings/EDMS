@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Memo
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Memo
 {
     [TestFixture]
     public class MemoTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Betrokkene.Memo.Memo _sut;
+        private Models.Betrokkene.Memo.Memo _sut;
         private CreateMemo _cmd;
         private Guid _createId;
         [SetUp]

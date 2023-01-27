@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
 
 public class OrganisatieDeleteInfo : DeleteInfo
 {

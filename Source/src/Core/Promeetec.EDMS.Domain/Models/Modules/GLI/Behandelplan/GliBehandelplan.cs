@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.RedenEindeZorg;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan;
 
 public class GliBehandelplan : AggregateRoot
 {

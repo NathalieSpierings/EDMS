@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Mapping;
+﻿namespace Promeetec.EDMS.Portaal.Core.Mapping;
 
 public interface IObjectFactory
 {

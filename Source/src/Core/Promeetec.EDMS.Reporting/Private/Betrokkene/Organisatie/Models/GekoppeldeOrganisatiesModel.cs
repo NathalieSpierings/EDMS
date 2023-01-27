@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Reporting.Shared.Models;
+﻿using Promeetec.EDMS.Portaal.Reporting.Shared.Models;
 
-namespace Promeetec.EDMS.Reporting.Private.Betrokkene.Organisatie.Models;
+namespace Promeetec.EDMS.Portaal.Reporting.Private.Betrokkene.Organisatie.Models;
 
 public class GekoppeldeOrganisatiesModel : ModelBase
 {

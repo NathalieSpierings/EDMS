@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Vecozo.ION
+﻿namespace Promeetec.EDMS.Portaal.Vecozo.ION
 {
     public class Class1
     {

@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Bestand.Events
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Bestand.Events
 {
     public class EigenaarBestandGewijzigd : EventBase
     {

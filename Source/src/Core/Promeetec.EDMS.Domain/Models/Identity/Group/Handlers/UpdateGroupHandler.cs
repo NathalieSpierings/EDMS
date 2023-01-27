@@ -1,15 +1,14 @@
 using System.Data;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Group.Events;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Group.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Handlers;
 
 public class UpdateGroupHandler : ICommandHandler<UpdateGroup>
 {

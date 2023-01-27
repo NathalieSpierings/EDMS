@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Admin.Mededeling;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Mededeling;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class MededelingMap : IEntityTypeConfiguration<Mededeling>
 {

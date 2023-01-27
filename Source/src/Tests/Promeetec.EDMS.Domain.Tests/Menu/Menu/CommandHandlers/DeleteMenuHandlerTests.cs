@@ -2,16 +2,17 @@
 using AutoFixture;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Menu.Menu;
-using Promeetec.EDMS.Domain.Models.Menu.Menu.Commands;
-using Promeetec.EDMS.Domain.Models.Menu.Menu.Handlers;
-using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Repositories;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Handlers;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 using Promeetec.EDMS.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Menu.Menu.CommandHandlers;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Menu.Menu.CommandHandlers;
 
 
 [TestFixture]

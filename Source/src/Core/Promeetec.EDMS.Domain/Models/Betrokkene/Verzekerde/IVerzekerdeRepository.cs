@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde
 {
     public interface IVerzekerdeRepository : IRepository<Verzekerde>
     {

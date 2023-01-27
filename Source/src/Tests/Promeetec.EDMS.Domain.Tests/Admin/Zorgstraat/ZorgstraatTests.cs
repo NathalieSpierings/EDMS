@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Admin.Zorgstraat
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Admin.Zorgstraat
 {
     [TestFixture]
     public class ZorgstraatTests : TestFixtureBase

@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
 
 public interface IOrganisatieRepository : IRepository<Organisatie>
 {

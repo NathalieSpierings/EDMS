@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Reporting.Public.User.Models;
+﻿namespace Promeetec.EDMS.Portaal.Reporting.Public.User.Models;
 
 public class CurrentUserModel
 {

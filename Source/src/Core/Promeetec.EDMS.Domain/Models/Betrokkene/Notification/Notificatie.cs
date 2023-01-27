@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Notification.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Notification.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Notification;
 
 public class Notificatie : AggregateRoot
 {

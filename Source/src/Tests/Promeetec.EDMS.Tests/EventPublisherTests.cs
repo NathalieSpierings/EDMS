@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Services;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Services;
 
 namespace Promeetec.EDMS.Tests
 {

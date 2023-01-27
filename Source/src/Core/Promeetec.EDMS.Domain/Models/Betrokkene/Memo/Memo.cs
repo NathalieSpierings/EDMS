@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Memo;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo;
 
 public class Memo : AggregateRoot
 {

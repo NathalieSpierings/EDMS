@@ -1,4 +1,4 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
 namespace Promeetec.EDMS.Tests
 {

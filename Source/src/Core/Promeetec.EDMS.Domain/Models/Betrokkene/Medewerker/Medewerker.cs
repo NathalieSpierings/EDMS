@@ -1,17 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
-using Promeetec.EDMS.Domain.Models.Identity;
-using Promeetec.EDMS.Domain.Models.Identity.Group;
-using Promeetec.EDMS.Domain.Models.Identity.Role;
-using Promeetec.EDMS.Domain.Models.Identity.Users;
-using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Notification;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Users;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
 
 public class Medewerker : IdentityUser<Guid>, IAggregateRoot
 {

@@ -1,4 +1,4 @@
-namespace Promeetec.EDMS.Domain.Models.Modules.Ketenzorg;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Ketenzorg;
 
 public class InvoiceCaregroup
 {

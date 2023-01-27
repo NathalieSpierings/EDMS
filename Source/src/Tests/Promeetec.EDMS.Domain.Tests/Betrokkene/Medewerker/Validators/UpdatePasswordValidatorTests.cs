@@ -1,11 +1,11 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Medewerker.Validators;
 
 [TestFixture]
 public class UpdatePasswordValidatorTests : TestFixtureBase

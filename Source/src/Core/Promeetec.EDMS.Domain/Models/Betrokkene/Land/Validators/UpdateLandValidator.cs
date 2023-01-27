@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Validators;
 
 public class UpdateLandValidator : AbstractValidator<UpdateLand>
 {

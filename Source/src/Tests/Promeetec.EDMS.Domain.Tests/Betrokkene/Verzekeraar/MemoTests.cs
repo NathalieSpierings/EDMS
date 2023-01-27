@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekeraar
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Verzekeraar
 {
     [TestFixture]
     public class VerzekeraarTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Betrokkene.Verzekeraar.Verzekeraar _sut;
+        private Models.Betrokkene.Verzekeraar.Verzekeraar _sut;
         private CreateVerzekeraar _cmd;
         private Guid _createId;
         [SetUp]

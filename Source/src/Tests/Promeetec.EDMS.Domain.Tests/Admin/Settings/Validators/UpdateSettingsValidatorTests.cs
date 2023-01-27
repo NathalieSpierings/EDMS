@@ -1,12 +1,12 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Admin.Settings;
-using Promeetec.EDMS.Domain.Models.Admin.Settings.Commands;
-using Promeetec.EDMS.Domain.Models.Admin.Settings.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Admin.Settings.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Admin.Settings.Validators;
 
 [TestFixture]
 public class UpdateSettingsValidatorTests : TestFixtureBase

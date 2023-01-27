@@ -1,8 +1,8 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Commands;
-using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile.Handlers
 {
     public class CreateUserProfileHandler : ICommandHandler<CreateUserProfile>
     {

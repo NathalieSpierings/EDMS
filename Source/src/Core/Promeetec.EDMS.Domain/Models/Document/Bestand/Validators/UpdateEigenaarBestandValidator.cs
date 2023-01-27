@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Document.Bestand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Bestand.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Bestand.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Bestand.Validators;
 
 public class UpdateEigenaarBestandValidator : AbstractValidator<UpdateEigenaarBestand>
 {

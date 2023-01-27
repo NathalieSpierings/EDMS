@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Document.Rapportage.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Rapportage;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage;
 
 public class Rapportage : Bestand.Bestand
 {

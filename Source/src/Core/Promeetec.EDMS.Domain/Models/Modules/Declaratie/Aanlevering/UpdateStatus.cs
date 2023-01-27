@@ -1,7 +1,7 @@
 ﻿using System.Net.Mail;
-using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
 public class UpdateStatus
 {

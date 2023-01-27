@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Queries;
+﻿using Promeetec.EDMS.Portaal.Core.Queries;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Validators.Rules;
 
 public class IsOrganisatieNummerUnique : QueryBase<bool>
 {

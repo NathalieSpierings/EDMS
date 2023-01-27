@@ -1,0 +1,341 @@
+﻿// === Media breakpoints
+
+$grid-breakpoints: (
+  XS: 0,
+  S: 576px,
+  M: 750px,
+  L: 992px,
+  XL: 1200px
+) !default;
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 0.02, null);
+}
+
+@mixin MQ-min($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin MQ-max($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin MQ-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include MQ-min($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include MQ-max($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+
+// === Colors
+
+@function contra-color($color) {
+  @if (lightness($color) > 75) {
+    @return var(--#{dark});
+  } @else {
+    @return var(--#{light});
+  }
+}
+
+$shades: (
+  black:        #000000,	  
+  white:        #FFFFFF,
+  dark:         #3F3F3F,
+  light:        #F7F5F3,
+  offwhite:     #FDFDFC,	
+  powder:       #F3F1EE,
+  taupe:        #74706D,
+  gritti:       #57514C,
+  clay:         #C6C2BD,
+  chalk:        #F6F5F4,
+  yellow:       #F6C160,
+  brown:        #A1887F,
+  golden:       #D4B078,
+  peach:        #FAA88F,
+  ginger:       #FFB87A,
+  orange:       #FDA24C,
+  mango:        #FF8B68,
+  lime:         #ACCC8E,
+  azure:        #8AD1C2,
+  green:        #83C49F,
+  moss:         #789A71,
+  forrest:      #7F8B7B,
+  jade:         #9FBEB3,
+  sea:          #47B3A9,
+  teal:         #009688,
+  cyan:         #46CCCD,
+  mermaid:      #67D1E1,
+  sky:          #2F8FA3,
+  petrol:       #0E5A6E,
+  blue:         #6FBAC8,
+  blueberry:    #9BB6C4,
+  violetta:     #60536C,
+  purple:       #B09CC8,
+  mulberry:     #CE879F,
+  cherry:       #C6628B,
+  rose:         #C98A96,
+  pink:         #ED9AAC,
+  flamingo:     #F55683,
+  blush:        #FFC6C7,
+  fleur:        #EF858B,
+  coral:        #F07886,
+  apricot:      #F58D82, 
+  magenta:      #ED344E,
+  magenta-light:#F27183, 
+  red:          #CE5155,
+  grey: (
+    50:  #F2F2F2,
+    100: #F5F5F5,
+    200: #EEEEEE,
+    300: #E0E0E0,
+    400: #DBDBDB,
+    base:#9E9E9E,
+    600: #757575,
+    700: #616161,
+    800: #424242,
+    900: #212121
+  ),
+  theme: (    
+    light: (
+      surface:          #F9F9F9,
+      surface-border:   #D9D9D9,
+      background:       #fdfdfc,
+      foreground:       #57514c,
+      mute: lighten(#57514c, 25%),
+      border:           #d7d7d6, 
+      link:             #57514c,
+      alpha-link: 0.85,
+      error:            #ce5155,
+      warning:          #e2985d,
+      success:          #4e8c7c,
+      info:             #479cbc,
+      primary:          #FF8558,
+      primary-light:    #FF9E81, 
+      primary-dark:     #FF683D,     
+      secondary:        #FFAC59,
+    ),   
+    dark: (
+     surface:           #484848,
+      surface-border:   #666666,
+      background:       #363636, 
+      foreground:       #9f9790,
+      mute: darken(#9f9790, 15%),
+      border: darken(#9f9790, 25%),
+      link:             #9a928a,
+      alpha-link: 0.7,
+      error:            #d36266,
+      warning:          #e2985d,
+      success:          #4e8c7c,
+      info:             #479cbc,
+      primary:          #ff8b60,
+      primary-light:    #ff9169, 
+      primary-dark:     #F27E54,     
+      secondary:        #ffb061,
+    )
+  )
+);
+
+// === Set css variables
+:root {
+  @each $name, $color in $shades {
+    @if type-of($color) == "map" {
+      @each $subname, $subcolor in $color {
+      
+        @if type-of($subcolor) == "map" {
+          @each $subsubname, $subsubcolor in $subcolor {
+            @if ($subsubname == "alpha-link") {
+                  #{--}#{$subname}-#{$subsubname}: $subsubcolor;
+                } @else {
+                  $rgb: red($subsubcolor), green($subsubcolor), blue($subsubcolor);
+                  #{--}#{$subname}-#{$subsubname}: $rgb;
+              }
+            }
+          } @else {
+            $rgb: red($subcolor), green($subcolor), blue($subcolor);
+            #{--}#{$name}-#{$subname}: $rgb;
+        }
+      }
+    } @else if type-of($color) == "color" {
+      $rgb: red($color), green($color), blue($color);
+
+      #{--}#{$name}: #{$rgb};
+    }
+  }
+}
+
+// === Set css styles
+@each $name, $color in $shades {
+  @if type-of($color) == "map" {
+    @each $subname, $subcolor in $color {
+    
+      @if type-of($subcolor) == "map" {
+        
+        $className: #{'.color-'}#{$subname};
+        @if($subname == 'light'){
+            $className: #{':root, .color-'}#{$subname}
+        }
+        
+        #{$className}{
+            --color-surface: var(--#{$subname}-#{surface});
+            --color-surface-border: var(--#{$subname}-#{surface-border});
+            --color-foreground: var(--#{$subname}-#{foreground});
+            --color-background: var(--#{$subname}-#{background});
+            --color-mute: var(--#{$subname}-#{mute});
+            --color-border: var(--#{$subname}-#{border});
+            --color-link: var(--#{$subname}-#{link});
+            --alpha-link: var(--#{$subname}-#{alpha-link});
+            --color-error: var(--#{$subname}-#{error});
+            --color-success: var(--#{$subname}-#{success});
+            --color-info: var(--#{$subname}-#{info});
+            --color-warning: var(--#{$subname}-#{warning});
+            --color-primary: var(--#{$subname}-#{primary});
+            --color-primary-light: var(--#{$subname}-#{primary-light});
+            --color-primary-dark: var(--#{$subname}-#{primary-dark});
+            --color-secondary: var(--#{$subname}-#{secondary});
+
+            --input-border: var(--color-border);
+            --input-background: var(--color-background);
+            --input-disabled-background: rgba(var(--black), 0.06);
+            --input-foreground: var(--color-mute);
+            --input-radius: 4px;
+            --input-padding: 1rem 1.5rem;
+            --input-placeholder: rgba(var(--black), 0.5);
+            --input-label-transition: translateY(-95%) scale(0.9);
+            --input-accent: var(--color-primary);
+
+            color: rgb(var(--color-foreground));
+            background: rgb(var(--color-background));
+        }
+      }
+  }
+} @else {
+    @if($name == 'color-background'  or $name == 'color-border'){
+    }@else {
+      $contraColor: contra-color($color);
+      .text-#{$name} {
+        color: rgb(var(--#{$name})) !important;
+      }
+
+      .btn-#{$name} {
+        --button-foreground: #{$contraColor} !important;
+        --button-background: var(--#{$name}) !important;
+        --button-border: var(--#{$name}) !important;
+      }
+    }
+  }
+}
+
+// === Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+    --fontstack1: "Inter", sans-serif;
+    --fontstack2: "Inter", sans-serif;  
+
+    --fontsize-xs: clamp(1rem, 5vw, 1rem);
+    --fontsize-sm: clamp(1.3rem, 5vw, 1.4rem);
+    --fontsize-base: clamp(1.5rem, 5vw, 1.6rem);
+    --fontsize-md: clamp(1.6rem, 5vw, 1.8rem);
+    --fontsize-lg: clamp(1.8rem, 5vw, 2.2rem);
+    --fontsize-xl: clamp(2.2rem, 5vw, 2.6rem);
+    --fontsize-xxl: clamp(2.6rem, 5vw, 3rem);
+    --font-body-scale: 1;
+    --font-heading-scale: 1;
+    --font-body-family: var(--fontstack1);
+
+    --scrollbar-background: rgb(var(--taupe));
+    --scrollbar-thumb-background: rgb(var(--color-secondary));
+}
+
+// === Layout
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: calc(var(--font-body-scale) * 62.5%);
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.06rem;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  font-family: var(--font-body-family);
+  font-style: normal;
+  font-weight: 400;
+  color: rgb(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+// === Scrollbar
+
+*::-webkit-scrollbar {
+  width: 11px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-background)  var(--scrollbar-background);
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-background);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbar-background);
+}

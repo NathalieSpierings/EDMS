@@ -4,19 +4,20 @@ using AutoFixture;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Queries;
-using Promeetec.EDMS.Reporting.Public.User.Models;
-using Promeetec.EDMS.Reporting.Public.User.Queries;
+using Promeetec.EDMS.Portaal.Core.Queries;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Repositories;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Adres;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Portaal.Reporting.Public.User.Models;
+using Promeetec.EDMS.Portaal.Reporting.Public.User.Queries;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 using Promeetec.EDMS.Tests.Helpers;
 
-namespace Promeetec.EDMS.Reporting.Tests.Public;
+namespace Promeetec.EDMS.Portaal.Reporting.Tests.Public;
 
 [TestFixture]
 public class GetCurrentUserHandlerTests : TestFixtureBase

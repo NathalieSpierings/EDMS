@@ -1,7 +1,6 @@
-﻿using System;
-using Promeetec.EDMS.Domain.Models.Identity.Role;
+﻿using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem;
 
 public class MenuItemRole
 {

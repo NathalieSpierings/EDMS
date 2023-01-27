@@ -1,12 +1,10 @@
-﻿using System.Globalization;
-using System.Text.RegularExpressions;
-using AutoFixture;
+﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.Haarwerk
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.Haarwerk
 {
     [TestFixture]
     public class HaarwerkTests : TestFixtureBase

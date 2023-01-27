@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar;
 
 public class Verzekeraar : AggregateRoot
 {

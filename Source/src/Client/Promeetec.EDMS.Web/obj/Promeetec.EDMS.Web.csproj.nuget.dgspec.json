@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Client\\Promeetec.EDMS.Web\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -28,23 +31,23 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Portaal.Data.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Portaal.Data.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Portaal.Reporting.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Portaal.Reporting.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj"
               }
             }
           }
@@ -61,33 +64,33 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.3, )"
             },
             "Scrutor": {
               "target": "Package",
@@ -117,15 +120,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Portaal.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
-        "projectName": "Promeetec.EDMS.Data",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Data.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Portaal.Data.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Data",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\Promeetec.EDMS.Portaal.Data.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -141,11 +147,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj"
               }
             }
           }
@@ -160,9 +166,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             }
           },
           "imports": [
@@ -185,15 +199,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
-        "projectName": "Promeetec.EDMS.Domain",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Domain",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -209,8 +226,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj"
               }
             }
           }
@@ -235,15 +252,15 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -270,15 +287,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Portaal.Reporting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
-        "projectName": "Promeetec.EDMS.Reporting",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Reporting.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Portaal.Reporting.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Reporting",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\Promeetec.EDMS.Portaal.Reporting.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Reporting\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -294,11 +314,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Portaal.Domain.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj"
               }
             }
           }
@@ -342,15 +362,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
-        "projectName": "Promeetec.EDMS.Services",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Services",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -397,15 +420,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
-        "projectName": "Promeetec.EDMS.Vecozo.ION",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Vecozo.ION",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -452,15 +478,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
-        "projectName": "Promeetec.EDMS",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Core",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -490,7 +519,7 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[12.0.0, )"
+              "version": "[12.0.1, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",

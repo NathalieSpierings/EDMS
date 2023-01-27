@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Commands;
+namespace Promeetec.EDMS.Portaal.Core.Commands;
 
 public interface ICommandHandler<in TCommand> where TCommand : ICommand
 {

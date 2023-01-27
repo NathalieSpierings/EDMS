@@ -1,7 +1,8 @@
-﻿using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Adresboek;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
 
 public class Adresboek : AggregateRoot
 {

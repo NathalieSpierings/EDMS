@@ -1,11 +1,13 @@
 ﻿using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Mapping;
-using Promeetec.EDMS.Queries;
+using Promeetec.EDMS.Portaal.Core;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Mapping;
+using Promeetec.EDMS.Portaal.Core.Queries;
+using Promeetec.EDMS.Tests;
 
-namespace Promeetec.EDMS.Tests
+namespace Promeetec.EDMS.Portaal.Tests
 {
     public class DispatcherTests
     {

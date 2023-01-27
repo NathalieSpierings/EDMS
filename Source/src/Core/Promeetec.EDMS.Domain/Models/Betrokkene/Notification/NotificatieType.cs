@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Betrokkene.Notification;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Notification;
 public enum NotificatieType
 {
     Algemeen = 0,

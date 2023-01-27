@@ -1,8 +1,8 @@
 ﻿using System.Net.Mail;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
 
 public class SendEmailAntwoordOpHoofdbericht : CommandBase
 {

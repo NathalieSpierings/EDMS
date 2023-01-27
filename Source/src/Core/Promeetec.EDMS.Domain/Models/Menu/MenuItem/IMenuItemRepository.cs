@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem;
 
 public interface IMenuItemRepository : IRepository<MenuItem>
 {

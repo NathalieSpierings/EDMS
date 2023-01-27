@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.GLI
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI
 {
     public class GliDto
     {

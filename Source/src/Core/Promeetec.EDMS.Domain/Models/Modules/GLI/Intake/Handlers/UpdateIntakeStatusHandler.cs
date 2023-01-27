@@ -1,10 +1,10 @@
 ﻿using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Handlers;
 
 public class UpdateIntakeStatusHandler : ICommandHandler<UpdateIntakeStatus>
 {

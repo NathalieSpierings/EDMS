@@ -1,0 +1,828 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+:root {
+  --black: 0, 0, 0;
+  --white: 255, 255, 255;
+  --dark: 63, 63, 63;
+  --light: 247, 245, 243;
+  --offwhite: 253, 253, 252;
+  --powder: 243, 241, 238;
+  --taupe: 116, 112, 109;
+  --gritti: 87, 81, 76;
+  --clay: 198, 194, 189;
+  --chalk: 246, 245, 244;
+  --yellow: 246, 193, 96;
+  --brown: 161, 136, 127;
+  --golden: 212, 176, 120;
+  --peach: 250, 168, 143;
+  --ginger: 255, 184, 122;
+  --orange: 253, 162, 76;
+  --mango: 255, 139, 104;
+  --lime: 172, 204, 142;
+  --azure: 138, 209, 194;
+  --green: 131, 196, 159;
+  --moss: 120, 154, 113;
+  --forrest: 127, 139, 123;
+  --jade: 159, 190, 179;
+  --sea: 71, 179, 169;
+  --teal: 0, 150, 136;
+  --cyan: 70, 204, 205;
+  --mermaid: 103, 209, 225;
+  --sky: 47, 143, 163;
+  --petrol: 14, 90, 110;
+  --blue: 111, 186, 200;
+  --blueberry: 155, 182, 196;
+  --violetta: 96, 83, 108;
+  --purple: 176, 156, 200;
+  --mulberry: 206, 135, 159;
+  --cherry: 198, 98, 139;
+  --rose: 201, 138, 150;
+  --pink: 237, 154, 172;
+  --flamingo: 245, 86, 131;
+  --blush: 255, 198, 199;
+  --fleur: 239, 133, 139;
+  --coral: 240, 120, 134;
+  --apricot: 245, 141, 130;
+  --magenta: 237, 52, 78;
+  --magenta-light: 242, 113, 131;
+  --red: 206, 81, 85;
+  --grey-50: 242, 242, 242;
+  --grey-100: 245, 245, 245;
+  --grey-200: 238, 238, 238;
+  --grey-300: 224, 224, 224;
+  --grey-400: 219, 219, 219;
+  --grey-base: 158, 158, 158;
+  --grey-600: 117, 117, 117;
+  --grey-700: 97, 97, 97;
+  --grey-800: 66, 66, 66;
+  --grey-900: 33, 33, 33;
+  --light-surface: 249, 249, 249;
+  --light-surface-border: 217, 217, 217;
+  --light-background: 253, 253, 252;
+  --light-foreground: 87, 81, 76;
+  --light-mute: 153, 145, 138;
+  --light-border: 215, 215, 214;
+  --light-link: 87, 81, 76;
+  --light-alpha-link: 0.85;
+  --light-error: 206, 81, 85;
+  --light-warning: 226, 152, 93;
+  --light-success: 78, 140, 124;
+  --light-info: 71, 156, 188;
+  --light-primary: 255, 133, 88;
+  --light-primary-light: 255, 158, 129;
+  --light-primary-dark: 255, 104, 61;
+  --light-secondary: 255, 172, 89;
+  --dark-surface: 72, 72, 72;
+  --dark-surface-border: 102, 102, 102;
+  --dark-background: 54, 54, 54;
+  --dark-foreground: 159, 151, 144;
+  --dark-mute: 121, 113, 105;
+  --dark-border: 94, 87, 81;
+  --dark-link: 154, 146, 138;
+  --dark-alpha-link: 0.7;
+  --dark-error: 211, 98, 102;
+  --dark-warning: 226, 152, 93;
+  --dark-success: 78, 140, 124;
+  --dark-info: 71, 156, 188;
+  --dark-primary: 255, 139, 96;
+  --dark-primary-light: 255, 145, 105;
+  --dark-primary-dark: 242, 126, 84;
+  --dark-secondary: 255, 176, 97;
+}
+
+.text-black {
+  color: rgb(var(--black)) !important;
+}
+
+.btn-black {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--black) !important;
+  --button-border: var(--black) !important;
+}
+
+.text-white {
+  color: rgb(var(--white)) !important;
+}
+
+.btn-white {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--white) !important;
+  --button-border: var(--white) !important;
+}
+
+.text-dark {
+  color: rgb(var(--dark)) !important;
+}
+
+.btn-dark {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--dark) !important;
+  --button-border: var(--dark) !important;
+}
+
+.text-light {
+  color: rgb(var(--light)) !important;
+}
+
+.btn-light {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--light) !important;
+  --button-border: var(--light) !important;
+}
+
+.text-offwhite {
+  color: rgb(var(--offwhite)) !important;
+}
+
+.btn-offwhite {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--offwhite) !important;
+  --button-border: var(--offwhite) !important;
+}
+
+.text-powder {
+  color: rgb(var(--powder)) !important;
+}
+
+.btn-powder {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--powder) !important;
+  --button-border: var(--powder) !important;
+}
+
+.text-taupe {
+  color: rgb(var(--taupe)) !important;
+}
+
+.btn-taupe {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--taupe) !important;
+  --button-border: var(--taupe) !important;
+}
+
+.text-gritti {
+  color: rgb(var(--gritti)) !important;
+}
+
+.btn-gritti {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--gritti) !important;
+  --button-border: var(--gritti) !important;
+}
+
+.text-clay {
+  color: rgb(var(--clay)) !important;
+}
+
+.btn-clay {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--clay) !important;
+  --button-border: var(--clay) !important;
+}
+
+.text-chalk {
+  color: rgb(var(--chalk)) !important;
+}
+
+.btn-chalk {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--chalk) !important;
+  --button-border: var(--chalk) !important;
+}
+
+.text-yellow {
+  color: rgb(var(--yellow)) !important;
+}
+
+.btn-yellow {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--yellow) !important;
+  --button-border: var(--yellow) !important;
+}
+
+.text-brown {
+  color: rgb(var(--brown)) !important;
+}
+
+.btn-brown {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--brown) !important;
+  --button-border: var(--brown) !important;
+}
+
+.text-golden {
+  color: rgb(var(--golden)) !important;
+}
+
+.btn-golden {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--golden) !important;
+  --button-border: var(--golden) !important;
+}
+
+.text-peach {
+  color: rgb(var(--peach)) !important;
+}
+
+.btn-peach {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--peach) !important;
+  --button-border: var(--peach) !important;
+}
+
+.text-ginger {
+  color: rgb(var(--ginger)) !important;
+}
+
+.btn-ginger {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--ginger) !important;
+  --button-border: var(--ginger) !important;
+}
+
+.text-orange {
+  color: rgb(var(--orange)) !important;
+}
+
+.btn-orange {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--orange) !important;
+  --button-border: var(--orange) !important;
+}
+
+.text-mango {
+  color: rgb(var(--mango)) !important;
+}
+
+.btn-mango {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--mango) !important;
+  --button-border: var(--mango) !important;
+}
+
+.text-lime {
+  color: rgb(var(--lime)) !important;
+}
+
+.btn-lime {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--lime) !important;
+  --button-border: var(--lime) !important;
+}
+
+.text-azure {
+  color: rgb(var(--azure)) !important;
+}
+
+.btn-azure {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--azure) !important;
+  --button-border: var(--azure) !important;
+}
+
+.text-green {
+  color: rgb(var(--green)) !important;
+}
+
+.btn-green {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--green) !important;
+  --button-border: var(--green) !important;
+}
+
+.text-moss {
+  color: rgb(var(--moss)) !important;
+}
+
+.btn-moss {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--moss) !important;
+  --button-border: var(--moss) !important;
+}
+
+.text-forrest {
+  color: rgb(var(--forrest)) !important;
+}
+
+.btn-forrest {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--forrest) !important;
+  --button-border: var(--forrest) !important;
+}
+
+.text-jade {
+  color: rgb(var(--jade)) !important;
+}
+
+.btn-jade {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--jade) !important;
+  --button-border: var(--jade) !important;
+}
+
+.text-sea {
+  color: rgb(var(--sea)) !important;
+}
+
+.btn-sea {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--sea) !important;
+  --button-border: var(--sea) !important;
+}
+
+.text-teal {
+  color: rgb(var(--teal)) !important;
+}
+
+.btn-teal {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--teal) !important;
+  --button-border: var(--teal) !important;
+}
+
+.text-cyan {
+  color: rgb(var(--cyan)) !important;
+}
+
+.btn-cyan {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--cyan) !important;
+  --button-border: var(--cyan) !important;
+}
+
+.text-mermaid {
+  color: rgb(var(--mermaid)) !important;
+}
+
+.btn-mermaid {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--mermaid) !important;
+  --button-border: var(--mermaid) !important;
+}
+
+.text-sky {
+  color: rgb(var(--sky)) !important;
+}
+
+.btn-sky {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--sky) !important;
+  --button-border: var(--sky) !important;
+}
+
+.text-petrol {
+  color: rgb(var(--petrol)) !important;
+}
+
+.btn-petrol {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--petrol) !important;
+  --button-border: var(--petrol) !important;
+}
+
+.text-blue {
+  color: rgb(var(--blue)) !important;
+}
+
+.btn-blue {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--blue) !important;
+  --button-border: var(--blue) !important;
+}
+
+.text-blueberry {
+  color: rgb(var(--blueberry)) !important;
+}
+
+.btn-blueberry {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--blueberry) !important;
+  --button-border: var(--blueberry) !important;
+}
+
+.text-violetta {
+  color: rgb(var(--violetta)) !important;
+}
+
+.btn-violetta {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--violetta) !important;
+  --button-border: var(--violetta) !important;
+}
+
+.text-purple {
+  color: rgb(var(--purple)) !important;
+}
+
+.btn-purple {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--purple) !important;
+  --button-border: var(--purple) !important;
+}
+
+.text-mulberry {
+  color: rgb(var(--mulberry)) !important;
+}
+
+.btn-mulberry {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--mulberry) !important;
+  --button-border: var(--mulberry) !important;
+}
+
+.text-cherry {
+  color: rgb(var(--cherry)) !important;
+}
+
+.btn-cherry {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--cherry) !important;
+  --button-border: var(--cherry) !important;
+}
+
+.text-rose {
+  color: rgb(var(--rose)) !important;
+}
+
+.btn-rose {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--rose) !important;
+  --button-border: var(--rose) !important;
+}
+
+.text-pink {
+  color: rgb(var(--pink)) !important;
+}
+
+.btn-pink {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--pink) !important;
+  --button-border: var(--pink) !important;
+}
+
+.text-flamingo {
+  color: rgb(var(--flamingo)) !important;
+}
+
+.btn-flamingo {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--flamingo) !important;
+  --button-border: var(--flamingo) !important;
+}
+
+.text-blush {
+  color: rgb(var(--blush)) !important;
+}
+
+.btn-blush {
+  --button-foreground: var(--dark) !important;
+  --button-background: var(--blush) !important;
+  --button-border: var(--blush) !important;
+}
+
+.text-fleur {
+  color: rgb(var(--fleur)) !important;
+}
+
+.btn-fleur {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--fleur) !important;
+  --button-border: var(--fleur) !important;
+}
+
+.text-coral {
+  color: rgb(var(--coral)) !important;
+}
+
+.btn-coral {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--coral) !important;
+  --button-border: var(--coral) !important;
+}
+
+.text-apricot {
+  color: rgb(var(--apricot)) !important;
+}
+
+.btn-apricot {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--apricot) !important;
+  --button-border: var(--apricot) !important;
+}
+
+.text-magenta {
+  color: rgb(var(--magenta)) !important;
+}
+
+.btn-magenta {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--magenta) !important;
+  --button-border: var(--magenta) !important;
+}
+
+.text-magenta-light {
+  color: rgb(var(--magenta-light)) !important;
+}
+
+.btn-magenta-light {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--magenta-light) !important;
+  --button-border: var(--magenta-light) !important;
+}
+
+.text-red {
+  color: rgb(var(--red)) !important;
+}
+
+.btn-red {
+  --button-foreground: var(--light) !important;
+  --button-background: var(--red) !important;
+  --button-border: var(--red) !important;
+}
+
+:root, .color-light {
+  --color-surface: var(--light-surface);
+  --color-surface-border: var(--light-surface-border);
+  --color-foreground: var(--light-foreground);
+  --color-background: var(--light-background);
+  --color-mute: var(--light-mute);
+  --color-border: var(--light-border);
+  --color-link: var(--light-link);
+  --alpha-link: var(--light-alpha-link);
+  --color-error: var(--light-error);
+  --color-success: var(--light-success);
+  --color-info: var(--light-info);
+  --color-warning: var(--light-warning);
+  --color-primary: var(--light-primary);
+  --color-primary-light: var(--light-primary-light);
+  --color-primary-dark: var(--light-primary-dark);
+  --color-secondary: var(--light-secondary);
+  --input-border: var(--color-border);
+  --input-background: var(--color-background);
+  --input-disabled-background: rgba(var(--black), 0.06);
+  --input-foreground: var(--color-mute);
+  --input-radius: 4px;
+  --input-padding: 1rem 1.5rem;
+  --input-placeholder: rgba(var(--black), 0.5);
+  --input-label-transition: translateY(-95%) scale(0.9);
+  --input-accent: var(--color-primary);
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+}
+
+.color-dark {
+  --color-surface: var(--dark-surface);
+  --color-surface-border: var(--dark-surface-border);
+  --color-foreground: var(--dark-foreground);
+  --color-background: var(--dark-background);
+  --color-mute: var(--dark-mute);
+  --color-border: var(--dark-border);
+  --color-link: var(--dark-link);
+  --alpha-link: var(--dark-alpha-link);
+  --color-error: var(--dark-error);
+  --color-success: var(--dark-success);
+  --color-info: var(--dark-info);
+  --color-warning: var(--dark-warning);
+  --color-primary: var(--dark-primary);
+  --color-primary-light: var(--dark-primary-light);
+  --color-primary-dark: var(--dark-primary-dark);
+  --color-secondary: var(--dark-secondary);
+  --input-border: var(--color-border);
+  --input-background: var(--color-background);
+  --input-disabled-background: rgba(var(--black), 0.06);
+  --input-foreground: var(--color-mute);
+  --input-radius: 4px;
+  --input-padding: 1rem 1.5rem;
+  --input-placeholder: rgba(var(--black), 0.5);
+  --input-label-transition: translateY(-95%) scale(0.9);
+  --input-accent: var(--color-primary);
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+}
+
+:root {
+  --fontstack1: "Inter", sans-serif;
+  --fontstack2: "Inter", sans-serif;
+  --fontsize-xs: clamp(1rem, 5vw, 1rem);
+  --fontsize-sm: clamp(1.3rem, 5vw, 1.4rem);
+  --fontsize-base: clamp(1.5rem, 5vw, 1.6rem);
+  --fontsize-md: clamp(1.6rem, 5vw, 1.8rem);
+  --fontsize-lg: clamp(1.8rem, 5vw, 2.2rem);
+  --fontsize-xl: clamp(2.2rem, 5vw, 2.6rem);
+  --fontsize-xxl: clamp(2.6rem, 5vw, 3rem);
+  --font-body-scale: 1;
+  --font-heading-scale: 1;
+  --font-body-family: var(--fontstack1);
+  --scrollbar-background: rgb(var(--taupe));
+  --scrollbar-thumb-background: rgb(var(--color-secondary));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: calc(var(--font-body-scale) * 62.5%);
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.06rem;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  font-family: var(--font-body-family);
+  font-style: normal;
+  font-weight: 400;
+  color: rgb(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+*::-webkit-scrollbar {
+  width: 11px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-background) var(--scrollbar-background);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-background);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbar-background);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--fontstack2);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+  color: inherit;
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  word-break: break-word;
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+  color: rgb(var(--color-foreground));
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  word-break: break-word;
+}
+
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+h1, .h1 {
+  font-size: var(--fontsize-xxl);
+}
+
+h2, .h2 {
+  font-size: var(--fontsize-xl);
+}
+
+h3, .h3 {
+  font-size: var(--fontsize-lg);
+}
+
+h4, .h4 {
+  font-size: var(--fontsize-md);
+}
+
+h5, .h5 {
+  font-size: var(--fontsize-base);
+}
+
+h6, .h6 {
+  font-size: var(--fontsize-sm);
+}
+
+.h6, h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+h6, .h6 {
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  color: rgb(var(--color-link));
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  transition: all 0.3s linear;
+}
+a:hover, a:active {
+  outline-width: 0;
+  text-decoration: none;
+  opacity: var(--alpha-link);
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  font-family: var(--fontstack2);
+  letter-spacing: 0.1em;
+  font-size: var(--fontsize-md);
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-family: var(--fontstack2);
+  letter-spacing: 0.1em;
+  font-size: var(--fontsize-base);
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.caption {
+  font-size: calc(var(--font-heading-scale) * 1.3rem);
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  font-family: var(--fontstack1);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: calc(var(--font-heading-scale) * 0.2rem);
+  color: rgba(var(--color-foreground), 0.75);
+  line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+@media (min-width: 750px) {
+  .caption {
+    font-size: calc(var(--font-heading-scale) * 1.4rem);
+  }
+}
+
+small {
+  font-size: 0.75em;
+}
+
+strong,
+.bold {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.text-xs {
+  font-size: var(--fontsize-xs);
+}
+
+.text-sm {
+  font-size: var(--fontsize-sm);
+}
+
+.text-md {
+  font-size: var(--fontsize-md);
+}
+
+.text-lg {
+  font-size: var(--fontsize-lg);
+}
+
+.text-xl {
+  font-size: var(--fontsize-xl);
+}
+
+.text-xxl {
+  font-size: var(--fontsize-xxl);
+}

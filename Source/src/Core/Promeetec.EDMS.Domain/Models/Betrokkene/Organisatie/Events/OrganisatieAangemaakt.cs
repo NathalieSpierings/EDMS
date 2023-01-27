@@ -1,8 +1,8 @@
-﻿using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Events;
 
 public class OrganisatieAangemaakt : EventBase
 {

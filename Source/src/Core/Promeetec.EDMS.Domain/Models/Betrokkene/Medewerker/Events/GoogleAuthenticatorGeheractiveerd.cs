@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Events;
 
 public class GoogleAuthenticatorGeheractiveerd : EventBase
 {

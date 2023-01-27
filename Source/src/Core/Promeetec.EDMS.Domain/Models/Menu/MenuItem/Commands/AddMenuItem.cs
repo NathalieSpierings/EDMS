@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Commands
 {
     public class AddMenuItem : CommandBase
     {

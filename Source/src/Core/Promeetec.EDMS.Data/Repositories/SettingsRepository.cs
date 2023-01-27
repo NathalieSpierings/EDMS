@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Admin.Settings;
+﻿using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class SettingsRepository : Repository<Domain.Models.Admin.Settings.Settings>, ISettingsRepository
 {

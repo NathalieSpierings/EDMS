@@ -1,6 +1,7 @@
-﻿using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
 
-namespace Promeetec.EDMS.Domain.Models.Event;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Event;
 
 public class Event: AggregateRoot
 {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7IDIPfH70GsrE3fJp8FSAkq5UGmlNXIeF3+hhpB/ge3cXNgb5a/q782hX4PHTe+QEeQMq6FCWqtcd71ZPxuqdg==",
+  "dgSpecHash": "SVDcC6wfH21AsWEd7h4qPBQjncMk//hDYGgqU+GvAz571UQ6GLwg8BJGgYnDdrRBtjBHDcGqjXYRc777h7IqyA==",
   "success": true,
-  "projectFilePath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+  "projectFilePath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

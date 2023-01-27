@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Verbruiksmiddel.Validators;
 
 public class UpdateVerbruiksmiddelPrestatieValidator : AbstractValidator<UpdateVerbruiksmiddelPrestatie>
 {

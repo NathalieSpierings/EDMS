@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Validators;
 
 public class UpdateAanleverbestandValidator : AbstractValidator<UpdateAanleverbestand>
 {

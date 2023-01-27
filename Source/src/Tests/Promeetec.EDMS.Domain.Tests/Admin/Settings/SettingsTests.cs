@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Admin.Settings.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Admin.Settings
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Admin.Settings
 {
     [TestFixture]
     public class SettingsTests : TestFixtureBase

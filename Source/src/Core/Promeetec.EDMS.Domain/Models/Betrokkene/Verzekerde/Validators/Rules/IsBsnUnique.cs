@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Queries;
+﻿using Promeetec.EDMS.Portaal.Core.Queries;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators.Rules;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Validators.Rules;
 
 public class IsBsnUnique : QueryBase<bool>
 {

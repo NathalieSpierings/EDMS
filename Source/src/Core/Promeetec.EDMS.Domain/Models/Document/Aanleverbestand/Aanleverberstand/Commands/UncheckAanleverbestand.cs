@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands
 {
     public class UncheckAanleverbestand : CommandBase
     {

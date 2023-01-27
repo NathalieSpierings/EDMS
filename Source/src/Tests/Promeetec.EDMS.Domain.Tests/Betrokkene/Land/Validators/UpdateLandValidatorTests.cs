@@ -1,11 +1,11 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Land.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Land.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Land.Validators;
 
 [TestFixture]
 public class UpdateLandValidatorTests : TestFixtureBase

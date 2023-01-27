@@ -1,18 +1,18 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
-using Promeetec.EDMS.Domain.Models.Identity.Users;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Adres;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Persoon;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Users;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Medewerker
 {
     [TestFixture]
     public class MedewerkerTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker _sut;
+        private Models.Betrokkene.Medewerker.Medewerker _sut;
         private CreateMedewerker _cmd;
         private Guid _createMedewerkerId;
 
@@ -61,7 +61,7 @@ namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Medewerker
                 }
             };
 
-            _sut = new EDMS.Domain.Models.Betrokkene.Medewerker.Medewerker(_cmd);
+            _sut = new Models.Betrokkene.Medewerker.Medewerker(_cmd);
         }
 
         [Test]

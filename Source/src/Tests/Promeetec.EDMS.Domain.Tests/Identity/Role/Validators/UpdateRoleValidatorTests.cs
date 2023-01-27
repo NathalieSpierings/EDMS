@@ -1,11 +1,11 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Identity.Role.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Role.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Identity.Role.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Identity.Role.Validators;
 
 [TestFixture]
 public class UpdateRoleValidatorTests : TestFixtureBase

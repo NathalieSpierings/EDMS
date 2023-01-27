@@ -1,11 +1,11 @@
 ﻿using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.GLI.Intake.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.GLI.Intake.Validators;
 
 [TestFixture]
 public class UpdateIntakeValidatorTests : TestFixtureBase

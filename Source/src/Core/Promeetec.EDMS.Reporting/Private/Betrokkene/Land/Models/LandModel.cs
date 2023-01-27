@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Reporting.Shared.Models;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Reporting.Shared.Models;
 
-namespace Promeetec.EDMS.Reporting.Private.Betrokkene.Land.Models;
+namespace Promeetec.EDMS.Portaal.Reporting.Private.Betrokkene.Land.Models;
 
 public class LandModel : ModelBase
 {

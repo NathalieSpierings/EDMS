@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Events;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Memo.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo.Handlers;
 
 public class CreateMemoHandler : ICommandHandler<CreateMemo>
 {

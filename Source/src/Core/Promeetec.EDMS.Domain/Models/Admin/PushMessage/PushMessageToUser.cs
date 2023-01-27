@@ -1,6 +1,6 @@
-using Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage;
 
 public class PushMessageToUser
 {

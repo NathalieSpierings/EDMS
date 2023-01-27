@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Handlers
 {
 	public class UncheckAanleverbestandHandler : ICommandHandler<UncheckAanleverbestand>
 	{

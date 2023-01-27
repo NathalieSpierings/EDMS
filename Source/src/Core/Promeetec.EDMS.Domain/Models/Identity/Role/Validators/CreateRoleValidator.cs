@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Identity.Role.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Role.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Validators;
 
 public class CreateRoleValidator : AbstractValidator<CreateRole>
 {

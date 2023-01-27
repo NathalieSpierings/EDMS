@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -31,8 +34,8 @@
               "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj": {
                 "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\Promeetec.EDMS.Domain.csproj"
               },
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj"
               }
             }
           }
@@ -81,6 +84,9 @@
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -96,8 +102,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
-                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj"
+              "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
+                "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj"
               }
             }
           }
@@ -157,15 +163,18 @@
         }
       }
     },
-    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj": {
+    "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
-        "projectName": "Promeetec.EDMS",
-        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
+        "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj",
+        "projectName": "Promeetec.EDMS.Portaal.Core",
+        "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj",
         "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

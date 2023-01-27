@@ -1,4 +1,4 @@
-﻿using Promeetec.EDMS.Reporting.Public.User.Models;
+﻿using Promeetec.EDMS.Portaal.Reporting.Public.User.Models;
 
 namespace Promeetec.EDMS.Web.Services
 {

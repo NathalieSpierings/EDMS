@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Admin.RedenEindeZorg;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.RedenEindeZorg;
 
 public interface IRedenEindeZorgRepository : IRepository<RedenEindeZorg>
 {

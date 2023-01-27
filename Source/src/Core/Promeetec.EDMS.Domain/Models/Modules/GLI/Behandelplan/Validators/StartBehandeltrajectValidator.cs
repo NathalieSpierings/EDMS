@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Behandelplan.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan.Validators;
 
 public class StartBehandeltrajectValidator : AbstractValidator<StartBehandeltraject>
 {

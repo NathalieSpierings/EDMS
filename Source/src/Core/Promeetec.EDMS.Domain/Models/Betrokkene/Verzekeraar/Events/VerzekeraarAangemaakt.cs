@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar.Events;
 
 public class VerzekeraarAangemaakt : EventBase
 {

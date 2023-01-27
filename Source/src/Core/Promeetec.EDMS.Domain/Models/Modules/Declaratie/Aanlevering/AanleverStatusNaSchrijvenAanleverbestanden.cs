@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
 public enum AanleverStatusNaSchrijvenAanleverbestanden
 {

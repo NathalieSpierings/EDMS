@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Reporting.Shared.Models;
+﻿namespace Promeetec.EDMS.Portaal.Reporting.Shared.Models;
 
 public class ModelBase
 {

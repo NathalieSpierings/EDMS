@@ -1,18 +1,18 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Adres;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Zorgverzekering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Verzekerde
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Verzekerde
 {
     [TestFixture]
     public class VerzekerdeTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Betrokkene.Verzekerde.Verzekerde _sut;
+        private Models.Betrokkene.Verzekerde.Verzekerde _sut;
         private CreateVerzekerde _cmd;
         private Guid _createId;
 

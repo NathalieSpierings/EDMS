@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk;
 
 public enum HaarwerkStatus
 {

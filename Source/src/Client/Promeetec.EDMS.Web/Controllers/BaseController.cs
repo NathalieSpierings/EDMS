@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Promeetec.EDMS.Reporting.Public.User.Models;
-using Promeetec.EDMS.Reporting.Public.User.Queries;
+using Promeetec.EDMS.Portaal.Core;
+using Promeetec.EDMS.Portaal.Reporting.Public.User.Models;
+using Promeetec.EDMS.Portaal.Reporting.Public.User.Queries;
 
 namespace Promeetec.EDMS.Web.Controllers
 {

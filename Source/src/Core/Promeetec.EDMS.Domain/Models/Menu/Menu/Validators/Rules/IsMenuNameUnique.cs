@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Queries;
+﻿using Promeetec.EDMS.Portaal.Core.Queries;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.Menu.Validators.Rules;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Validators.Rules;
 
 public class IsMenuNameUnique : QueryBase<bool>
 {

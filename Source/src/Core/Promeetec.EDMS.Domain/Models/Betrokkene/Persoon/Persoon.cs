@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Persoon;
 
 [Index(nameof(VolledigeNaam), nameof(FormeleNaam), nameof(Achternaam), nameof(Email))]
 [Owned]

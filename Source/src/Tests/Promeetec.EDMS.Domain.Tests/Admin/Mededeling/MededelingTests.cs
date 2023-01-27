@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Admin.Mededeling.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Mededeling.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Admin.Mededeling
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Admin.Mededeling
 {
     [TestFixture]
     public class MededelingTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Admin.Mededeling.Mededeling _sut;
+        private Models.Admin.Mededeling.Mededeling _sut;
         private CreateMededeling _cmd;
         private Guid _createId;
 

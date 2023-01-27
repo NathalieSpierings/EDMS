@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Validators;
 
 public class CreateOverigbestandValidator : AbstractValidator<CreateOverigBestand>
 {

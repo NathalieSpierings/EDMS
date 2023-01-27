@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker.Validators;
 
 public class UpdateMedewerkerValidator : AbstractValidator<UpdateMedewerker>
 {

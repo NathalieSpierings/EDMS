@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Data.Caching;
+﻿namespace Promeetec.EDMS.Portaal.Data.Caching;
 
 public interface ICacheManager
 {

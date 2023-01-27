@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "AutoMapper/12.0.0": {
+      "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0"
@@ -65,15 +65,15 @@
     }
   },
   "libraries": {
-    "AutoMapper/12.0.0": {
-      "sha512": "0Rmg0zI5AFu1O/y//o9VGyhxKjhggWpk9mOA1tp0DEVx40c61bs+lnQv+0jUq8XbniF7FKgIVvI1perqiMtLrA==",
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
       "type": "package",
-      "path": "automapper/12.0.0",
+      "path": "automapper/12.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "automapper.12.0.0.nupkg.sha512",
+        "automapper.12.0.1.nupkg.sha512",
         "automapper.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
@@ -210,22 +210,26 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "AutoMapper >= 12.0.0",
+      "AutoMapper >= 12.0.1",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nspierings\\.nuget\\packages\\": {}
+    "C:\\Users\\nspierings\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
-      "projectName": "Promeetec.EDMS",
-      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.csproj",
+      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj",
+      "projectName": "Promeetec.EDMS.Portaal.Core",
+      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\Promeetec.EDMS.Portaal.Core.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
       "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -255,7 +259,7 @@
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
-            "version": "[12.0.0, )"
+            "version": "[12.0.1, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",

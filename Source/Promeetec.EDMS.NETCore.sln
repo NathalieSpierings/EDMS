@@ -11,29 +11,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C3E4D5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{63606BA5-A6E2-4F6D-881C-6CBA6B0B16AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS", "src\Core\Promeetec.EDMS\Promeetec.EDMS.csproj", "{2BDC0035-5487-4963-89FC-C0BCF059385D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Core", "src\Core\Promeetec.EDMS\Promeetec.EDMS.Portaal.Core.csproj", "{2BDC0035-5487-4963-89FC-C0BCF059385D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Data", "src\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Data.csproj", "{15023CCA-8DD4-4F63-A5F4-54FC2016890A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Data", "src\Core\Promeetec.EDMS.Data\Promeetec.EDMS.Portaal.Data.csproj", "{15023CCA-8DD4-4F63-A5F4-54FC2016890A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Domain", "src\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Domain.csproj", "{538D60DF-FF61-40D2-9A3F-741981ED494F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Domain", "src\Core\Promeetec.EDMS.Domain\Promeetec.EDMS.Portaal.Domain.csproj", "{538D60DF-FF61-40D2-9A3F-741981ED494F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Reporting", "src\Core\Promeetec.EDMS.Reporting\Promeetec.EDMS.Reporting.csproj", "{90C90BD2-E192-4B33-8042-C908AB463EAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Reporting", "src\Core\Promeetec.EDMS.Reporting\Promeetec.EDMS.Portaal.Reporting.csproj", "{90C90BD2-E192-4B33-8042-C908AB463EAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Services", "src\Core\Promeetec.EDMS.Services\Promeetec.EDMS.Services.csproj", "{2028C060-712D-4726-81B3-0391C8249E16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Services", "src\Core\Promeetec.EDMS.Services\Promeetec.EDMS.Portaal.Services.csproj", "{2028C060-712D-4726-81B3-0391C8249E16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Vecozo.ION", "src\Core\Promeetec.EDMS.Vecozo.ION\Promeetec.EDMS.Vecozo.ION.csproj", "{28440A0C-6230-4B97-AE4F-6475B7D8AEF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Vecozo.ION", "src\Core\Promeetec.EDMS.Vecozo.ION\Promeetec.EDMS.Portaal.Vecozo.ION.csproj", "{28440A0C-6230-4B97-AE4F-6475B7D8AEF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4A0A641A-59CA-4236-A0DC-96E56472B300}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Domain.Tests", "src\Tests\Promeetec.EDMS.Domain.Tests\Promeetec.EDMS.Domain.Tests.csproj", "{126BC4A2-424A-4DEA-B37F-9526C4E2E7D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Domain.Tests", "src\Tests\Promeetec.EDMS.Domain.Tests\Promeetec.EDMS.Portaal.Domain.Tests.csproj", "{126BC4A2-424A-4DEA-B37F-9526C4E2E7D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B8F5A64-170F-4A0E-A5E9-FFB07C663E66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Data.Tests", "src\Tests\Promeetec.EDMS.Data.Tests\Promeetec.EDMS.Data.Tests.csproj", "{C3AA6BE9-44FB-41B6-B9A1-C6740D044DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Data.Tests", "src\Tests\Promeetec.EDMS.Data.Tests\Promeetec.EDMS.Portaal.Data.Tests.csproj", "{C3AA6BE9-44FB-41B6-B9A1-C6740D044DF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Tests", "src\Tests\Promeetec.EDMS.Tests\Promeetec.EDMS.Tests.csproj", "{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Tests", "src\Tests\Promeetec.EDMS.Tests\Promeetec.EDMS.Portaal.Tests.csproj", "{7B045140-F8CF-485E-9DE5-46FA1FFF35BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promeetec.EDMS.Reporting.Tests", "src\Tests\Promeetec.EDMS.Reporting.Tests\Promeetec.EDMS.Reporting.Tests.csproj", "{324555D1-1206-4B09-98DD-FF2FE9568492}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Promeetec.EDMS.Portaal.Reporting.Tests", "src\Tests\Promeetec.EDMS.Reporting.Tests\Promeetec.EDMS.Portaal.Reporting.Tests.csproj", "{324555D1-1206-4B09-98DD-FF2FE9568492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promeetec.EDMS.Portaal.Client", "src\Client\Promeetec.EDMS.Portaal.Client\Promeetec.EDMS.Portaal.Client.csproj", "{386422F2-C008-43BE-87DD-25A0C614A4D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{324555D1-1206-4B09-98DD-FF2FE9568492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{324555D1-1206-4B09-98DD-FF2FE9568492}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{324555D1-1206-4B09-98DD-FF2FE9568492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386422F2-C008-43BE-87DD-25A0C614A4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386422F2-C008-43BE-87DD-25A0C614A4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386422F2-C008-43BE-87DD-25A0C614A4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386422F2-C008-43BE-87DD-25A0C614A4D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{C3AA6BE9-44FB-41B6-B9A1-C6740D044DF4} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
 		{7B045140-F8CF-485E-9DE5-46FA1FFF35BE} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
 		{324555D1-1206-4B09-98DD-FF2FE9568492} = {4A0A641A-59CA-4236-A0DC-96E56472B300}
+		{386422F2-C008-43BE-87DD-25A0C614A4D9} = {C3E4D5C5-E4E6-4284-983D-93733491A179}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D0636F9-E8A4-44A5-B8E0-ED141CECE8BF}

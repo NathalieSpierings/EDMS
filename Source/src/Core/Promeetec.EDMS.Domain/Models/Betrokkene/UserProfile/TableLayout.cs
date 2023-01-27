@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile;
 
 public enum TableLayout
 {

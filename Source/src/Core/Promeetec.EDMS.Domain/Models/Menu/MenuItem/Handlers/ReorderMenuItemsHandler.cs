@@ -1,12 +1,12 @@
 using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Menu.Menu;
-using Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Handlers
 {
     public class ReorderMenuItemsHandler : ICommandHandler<ReorderMenuItems>
     {

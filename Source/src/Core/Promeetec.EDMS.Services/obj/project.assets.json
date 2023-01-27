@@ -8,17 +8,21 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\nspierings\\.nuget\\packages\\": {}
+    "C:\\Users\\nspierings\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
-      "projectName": "Promeetec.EDMS.Services",
-      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Services.csproj",
+      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj",
+      "projectName": "Promeetec.EDMS.Portaal.Services",
+      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\Promeetec.EDMS.Portaal.Services.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
       "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

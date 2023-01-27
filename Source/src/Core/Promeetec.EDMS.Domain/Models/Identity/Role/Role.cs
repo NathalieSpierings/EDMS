@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Promeetec.EDMS.Domain.Models.Identity.Group;
-using Promeetec.EDMS.Domain.Models.Identity.Role.Commands;
-using Promeetec.EDMS.Domain.Models.Menu.MenuItem;
-using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Role.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Role;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Role;
 
 public class Role : IdentityRole<Guid>, IAggregateRoot
 {

@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
 
 public class SendEmailAanleveringAangemaakt
 {

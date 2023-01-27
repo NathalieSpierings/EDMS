@@ -1,15 +1,16 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Persoon;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Repositories;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Persoon;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 using Promeetec.EDMS.Tests.Helpers;
 
-namespace Promeetec.EDMS.Data.Tests.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Tests.Repositories;
 
 [TestFixture]
 public class AdresboekRepositoryTests : TestFixtureBase

@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Events;
 
 public class VerzekerdeMetZorgprofielGedeactiveerd : EventBase
 {

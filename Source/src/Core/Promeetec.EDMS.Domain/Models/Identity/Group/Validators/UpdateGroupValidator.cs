@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
-using Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Group.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Validators;
 
 public class UpdateGroupValidator : AbstractValidator<UpdateGroup>
 {

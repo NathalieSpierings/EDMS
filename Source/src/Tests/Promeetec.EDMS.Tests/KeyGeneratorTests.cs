@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Extensions;
+using Promeetec.EDMS.Portaal.Core.Extensions;
 
 namespace Promeetec.EDMS.Tests;
 

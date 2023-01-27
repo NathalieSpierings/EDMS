@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.UserProfile;
 
 public enum EmailOntvangenType
 {

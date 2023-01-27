@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Adres;
 
 public class Adres : AggregateRoot
 {

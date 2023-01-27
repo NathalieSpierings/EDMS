@@ -1,9 +1,10 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators.Rules;
+using Promeetec.EDMS.Portaal.Core;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Validators.Rules;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Validators;
 
 public class CreateVerzekerdeValidator : AbstractValidator<CreateVerzekerde>
 {

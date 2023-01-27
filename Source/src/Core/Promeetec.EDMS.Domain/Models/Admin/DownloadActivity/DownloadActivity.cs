@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Document.Bestand;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Bestand;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.DownloadActivity;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.DownloadActivity;
 
 public class DownloadActivity : AggregateRoot
 {

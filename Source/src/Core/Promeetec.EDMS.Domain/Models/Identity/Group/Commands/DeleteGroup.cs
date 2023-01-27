@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Group.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Group.Commands;
 
 public class DeleteGroup : CommandBase
 {

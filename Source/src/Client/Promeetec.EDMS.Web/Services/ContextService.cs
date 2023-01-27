@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Reporting.Public.User.Models;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Reporting.Public.User.Models;
 
 namespace Promeetec.EDMS.Web.Services
 {

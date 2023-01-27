@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Memo;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Memo;
 
-namespace Promeetec.EDMS.Data.Configurations
+namespace Promeetec.EDMS.Portaal.Data.Configurations
 {
     public class MemoMap : IEntityTypeConfiguration<Memo>
     {

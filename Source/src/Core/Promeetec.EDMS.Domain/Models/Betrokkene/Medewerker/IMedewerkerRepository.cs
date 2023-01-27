@@ -1,8 +1,6 @@
-﻿using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.UserProfile;
-using System.Net.Mail;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
 
 public interface IMedewerkerRepository : IRepository<Medewerker>
 {

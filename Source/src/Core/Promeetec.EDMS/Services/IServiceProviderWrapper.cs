@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Services;
+﻿namespace Promeetec.EDMS.Portaal.Core.Services;
 
 public interface IServiceProviderWrapper
 {

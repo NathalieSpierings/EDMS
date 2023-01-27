@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Haarwerk;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk;
 
 public class Haarwerk : AggregateRoot
 {

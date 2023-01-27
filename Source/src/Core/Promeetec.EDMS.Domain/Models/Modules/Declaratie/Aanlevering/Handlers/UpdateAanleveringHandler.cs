@@ -1,16 +1,16 @@
 using System.Data;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Events;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Extensions;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Handlers;
 
 public class UpdateAanleveringHandler : ICommandHandler<UpdateAanlevering>
 {

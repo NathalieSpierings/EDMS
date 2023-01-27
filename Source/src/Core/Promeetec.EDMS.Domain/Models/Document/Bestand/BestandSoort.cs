@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Document.Bestand;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Bestand;
 
 public enum BestandSoort
 {

@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat;
 
 public class Zorgstraat : AggregateRoot
 {

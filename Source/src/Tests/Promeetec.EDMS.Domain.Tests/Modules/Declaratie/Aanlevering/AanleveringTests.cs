@@ -1,11 +1,11 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.Declaratie.Aanlevering
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.Declaratie.Aanlevering
 {
     [TestFixture]
     public class AanleveringTests : TestFixtureBase

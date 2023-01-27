@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage;
 
 public enum PushMessageStatus
 {

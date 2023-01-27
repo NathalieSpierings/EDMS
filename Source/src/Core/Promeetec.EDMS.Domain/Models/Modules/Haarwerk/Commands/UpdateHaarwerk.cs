@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Commands;
 
 public class UpdateHaarwerk : CommandBase
 {

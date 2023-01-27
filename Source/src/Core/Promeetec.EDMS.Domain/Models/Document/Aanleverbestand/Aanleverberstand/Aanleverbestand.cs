@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Admin.EiStandaard;
-using Promeetec.EDMS.Domain.Models.Admin.Zorgstraat;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.EiStandaard;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Zorgstraat;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Samenvatting;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
 
 public class Aanleverbestand : Bestand.Bestand
 {

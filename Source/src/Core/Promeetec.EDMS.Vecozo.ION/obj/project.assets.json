@@ -8,17 +8,21 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\nspierings\\.nuget\\packages\\": {}
+    "C:\\Users\\nspierings\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
-      "projectName": "Promeetec.EDMS.Vecozo.ION",
-      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Vecozo.ION.csproj",
+      "projectUniqueName": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj",
+      "projectName": "Promeetec.EDMS.Portaal.Vecozo.ION",
+      "projectPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\Promeetec.EDMS.Portaal.Vecozo.ION.csproj",
       "packagesPath": "C:\\Users\\nspierings\\.nuget\\packages\\",
       "outputPath": "C:\\Github\\Repos\\EDMS\\Source\\src\\Core\\Promeetec.EDMS.Vecozo.ION\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\nspierings\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

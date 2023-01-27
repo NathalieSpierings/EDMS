@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Rapportage;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Rapportage;
 
 public enum RapportageSoort
 {

@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem;
+﻿namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem;
 
 public class ReorderedMenuItem
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.GLI
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI
 {
     public enum GliStatus
     {

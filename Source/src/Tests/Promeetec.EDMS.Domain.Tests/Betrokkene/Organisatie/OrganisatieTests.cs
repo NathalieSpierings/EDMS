@@ -1,17 +1,17 @@
 ﻿using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Betrokkene.Organisatie
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Betrokkene.Organisatie
 {
     [TestFixture]
     public class OrganisatieTests : TestFixtureBase
     {
-        private EDMS.Domain.Models.Betrokkene.Organisatie.Organisatie _sut;
+        private Models.Betrokkene.Organisatie.Organisatie _sut;
         private CreateOrganisatie _cmd;
         private Guid _createOrganisatieId;
 

@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Behandelplan;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake;
 
 public class GliIntake : AggregateRoot
 {
@@ -36,7 +37,7 @@ public class GliIntake : AggregateRoot
     /// <summary>
     /// The status of the intake.
     /// </summary>
-    public GliStatus GliStatus { get; set; }
+    public Behandelplan.GliStatus GliStatus { get; set; }
 
     #region Navigation properties
 
@@ -74,7 +75,7 @@ public class GliIntake : AggregateRoot
         VerzekerdeId = cmd.VerzekerdeId;
         BehandelaarId = cmd.BehandelaarId;
         OrganisatieId = cmd.OrganisatieId;
-        GliStatus = GliStatus.NogNietGestart;
+        GliStatus = Behandelplan.GliStatus.NogNietGestart;
         Opmerking = cmd.Opmerking;
     }
 

@@ -1,11 +1,11 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Queries;
-using Promeetec.EDMS.Reporting.Public.User.Models;
+using Promeetec.EDMS.Portaal.Core.Queries;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Reporting.Public.User.Models;
 
-namespace Promeetec.EDMS.Reporting.Public.User.Queries;
+namespace Promeetec.EDMS.Portaal.Reporting.Public.User.Queries;
 
 public class GetCurrentUser : IQuery<CurrentUserModel>
 {

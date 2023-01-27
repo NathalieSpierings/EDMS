@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Changelog;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Changelog;
 
 public enum ChangeLogType
 {

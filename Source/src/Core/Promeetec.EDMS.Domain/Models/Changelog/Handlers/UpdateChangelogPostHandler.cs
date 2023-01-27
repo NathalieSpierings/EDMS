@@ -1,12 +1,12 @@
 using System.Data;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Changelog.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Changelog.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Changelog.Handlers;
 
 public class UpdateChangelogPostHandler : ICommandHandler<UpdateChangelogPost>
 {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Menu.MenuItem.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.MenuItem.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.MenuItem.Validators;
 
 public class AddMenuItemValidator : AbstractValidator<AddMenuItem>
 {

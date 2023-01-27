@@ -1,9 +1,8 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Behandelplan;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
 
 public class UpdateIntakeStatus : CommandBase
 {
-    public GliStatus GliStatus { get; set; }
+    public Behandelplan.GliStatus GliStatus { get; set; }
 }

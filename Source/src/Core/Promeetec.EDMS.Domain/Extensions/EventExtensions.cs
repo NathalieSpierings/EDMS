@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
 
-namespace Promeetec.EDMS.Domain.Extensions;
+namespace Promeetec.EDMS.Portaal.Domain.Extensions;
 
 public static class EventExtensions
 {

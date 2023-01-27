@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Promeetec.EDMS.Mapping;
+namespace Promeetec.EDMS.Portaal.Core.Mapping;
 
 public class ObjectFactory : IObjectFactory
 {

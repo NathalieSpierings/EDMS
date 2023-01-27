@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+﻿using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
-namespace Promeetec.EDMS.Data.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Repositories;
 
 public class ZorgprofielRepository : Repository<Zorgprofiel>, IZorgprofielRepository
 {

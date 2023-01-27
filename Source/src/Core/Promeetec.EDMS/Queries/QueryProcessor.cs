@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Services;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
+using Promeetec.EDMS.Portaal.Core.Services;
 
-namespace Promeetec.EDMS.Queries;
+namespace Promeetec.EDMS.Portaal.Core.Queries;
 
 public class QueryProcessor : IQueryProcessor
 {

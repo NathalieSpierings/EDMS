@@ -2,11 +2,11 @@
 using AutoFixture;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Validators;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Validators;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Modules.Haarwerk.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Modules.Haarwerk.Validators;
 
 [TestFixture]
 public class CreateHaarwerkValidatorTests : TestFixtureBase

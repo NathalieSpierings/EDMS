@@ -1,9 +1,9 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
 
-namespace Promeetec.EDMS.Domain.Models.Identity.Users;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Users;
 
 public class UserClaimsTransformation : IClaimsTransformation
 {

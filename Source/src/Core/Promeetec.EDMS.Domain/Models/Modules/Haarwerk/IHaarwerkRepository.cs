@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Modules.Haarwerk
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk
 {
     public interface IHaarwerkRepository : IRepository<Haarwerk>
     {

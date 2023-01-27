@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+﻿using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand;
 
 public class Overigbestand : Bestand.Bestand
 {

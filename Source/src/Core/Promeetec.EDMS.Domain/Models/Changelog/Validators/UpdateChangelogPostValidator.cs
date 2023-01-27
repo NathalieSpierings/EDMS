@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Changelog.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Changelog.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Changelog.Validators;
 
 public class UpdateChangelogPostValidator : AbstractValidator<UpdateChangelogPost>
 {

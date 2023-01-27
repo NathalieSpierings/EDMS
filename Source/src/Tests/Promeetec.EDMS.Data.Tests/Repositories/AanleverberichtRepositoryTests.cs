@@ -1,15 +1,15 @@
 ﻿using AutoFixture;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Repositories;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanleverbericht.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Data.Tests.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Tests.Repositories;
 
 [TestFixture]
 public class AanleverberichtRepositoryTests : TestFixtureBase

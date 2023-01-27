@@ -4,15 +4,16 @@ using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Handlers;
-using Promeetec.EDMS.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Repositories;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Handlers;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 using Promeetec.EDMS.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Document.Overigbestand.CommandHandlers;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Document.Overigbestand.CommandHandlers;
 
 
 [TestFixture]

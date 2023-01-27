@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Intake.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Validators;
 
 public class UpdateIntakeValidator : AbstractValidator<UpdateIntake>
 {

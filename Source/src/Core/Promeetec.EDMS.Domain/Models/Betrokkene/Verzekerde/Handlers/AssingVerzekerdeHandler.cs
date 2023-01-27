@@ -1,10 +1,10 @@
 ﻿using System.Data;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Handlers
 {
     public class AssingVerzekerdeHandler : ICommandHandler<AssingVerzekerde>
     {

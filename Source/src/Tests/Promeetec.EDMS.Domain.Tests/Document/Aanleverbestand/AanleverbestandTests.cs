@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand.Commands;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Document.Aanleverbestand
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Document.Aanleverbestand
 {
     [TestFixture]
     public class AanleverbestandTests : TestFixtureBase

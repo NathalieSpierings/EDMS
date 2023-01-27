@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Domain.Models.Modules.GLI;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake;
 
 public interface IGliIntakeRepository : IRepository<GliIntake>
 {

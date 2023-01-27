@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Promeetec.EDMS.Services;
+namespace Promeetec.EDMS.Portaal.Core.Services;
 
 public class ServiceProviderWrapper : IServiceProviderWrapper
 {

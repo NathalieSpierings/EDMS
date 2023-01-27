@@ -1,8 +1,8 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Admin.Mededeling.Commands;
-using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Mededeling.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Mededeling.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Mededeling.Handlers;
 
 public class CreateMededelingHandler : ICommandHandler<CreateMededeling>
 {

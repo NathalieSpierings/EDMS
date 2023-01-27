@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Menu.Menu;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu;
 
 public enum MenuType
 {

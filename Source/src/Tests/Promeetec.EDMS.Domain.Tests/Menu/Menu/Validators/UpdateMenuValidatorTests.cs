@@ -2,13 +2,14 @@
 using FluentValidation.TestHelper;
 using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Domain.Models.Menu.Menu;
-using Promeetec.EDMS.Domain.Models.Menu.Menu.Commands;
-using Promeetec.EDMS.Domain.Models.Menu.Menu.Validators;
-using Promeetec.EDMS.Domain.Models.Menu.Menu.Validators.Rules;
-using Promeetec.EDMS.Tests.Helpers;
+using Promeetec.EDMS.Portaal.Core;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Validators;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu.Validators.Rules;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 
-namespace Promeetec.EDMS.Domain.Tests.Menu.Menu.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Tests.Menu.Menu.Validators;
 
 [TestFixture]
 public class UpdateMenuValidatorTests : TestFixtureBase

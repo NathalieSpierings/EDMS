@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Domain;
+﻿namespace Promeetec.EDMS.Portaal.Core.Domain;
 
 public interface IAggregateRoot
 {

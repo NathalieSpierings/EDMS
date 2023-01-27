@@ -1,4 +1,6 @@
-﻿namespace Promeetec.EDMS.Domain.Models.Identity.Group;
+﻿using Promeetec.EDMS.Portaal.Core.Domain;
+
+namespace Promeetec.EDMS.Portaal.Domain.Models.Identity.Group;
 
 public interface IGroupRepository : IRepository<Group>
 {

@@ -1,8 +1,8 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment.Commands;
-using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Weegmoment.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Weegmoment.Handlers;
 
 public class CreateWeegmomentHandler : ICommandHandler<CreateWeegmoment>
 {

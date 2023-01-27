@@ -1,7 +1,8 @@
 ﻿using Moq;
 using NUnit.Framework;
-using Promeetec.EDMS.Queries;
-using Promeetec.EDMS.Services;
+using Promeetec.EDMS.Portaal.Core.Queries;
+using Promeetec.EDMS.Portaal.Core.Services;
+using Promeetec.EDMS.Portaal.Tests;
 
 namespace Promeetec.EDMS.Tests
 {

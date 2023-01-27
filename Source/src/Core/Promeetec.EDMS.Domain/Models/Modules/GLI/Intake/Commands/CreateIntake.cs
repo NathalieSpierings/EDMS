@@ -1,7 +1,7 @@
-﻿using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Weegmoment.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Gli.Intake.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Intake.Commands;
 
 public class CreateIntake : CommandBase
 {

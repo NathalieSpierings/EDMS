@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
-using Promeetec.EDMS.Domain.Models.Shared;
-using Promeetec.EDMS.Reporting.Private.Betrokkene.Adres.Models;
-using Promeetec.EDMS.Reporting.Shared.Models;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Shared;
+using Promeetec.EDMS.Portaal.Reporting.Private.Betrokkene.Adres.Models;
+using Promeetec.EDMS.Portaal.Reporting.Shared.Models;
 
-namespace Promeetec.EDMS.Reporting.Private.Betrokkene.Organisatie.Models;
+namespace Promeetec.EDMS.Portaal.Reporting.Private.Betrokkene.Organisatie.Models;
 
 public class OrganisatieModel : ModelBase
 {

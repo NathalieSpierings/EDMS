@@ -1,16 +1,16 @@
 ﻿using System.Data;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Events;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
-using Promeetec.EDMS.Events;
-using Promeetec.EDMS.Extensions;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Core.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Handlers
 {
     public class UpdateVerzekerdeHandler : ICommandHandler<UpdateVerzekerde>
     {

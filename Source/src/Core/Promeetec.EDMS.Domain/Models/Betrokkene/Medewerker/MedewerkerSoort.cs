@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
 
 public enum MedewerkerSoort
 {

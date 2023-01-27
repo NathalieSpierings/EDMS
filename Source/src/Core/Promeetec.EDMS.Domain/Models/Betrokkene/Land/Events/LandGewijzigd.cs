@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Events;
+﻿using Promeetec.EDMS.Portaal.Core.Events;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Land.Events;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Land.Events;
 
 public class LandGewijzigd : EventBase
 {

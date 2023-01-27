@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Admin.Settings.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.Settings;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.Settings;
 
 public class Settings : AggregateRoot
 {

@@ -1,18 +1,19 @@
 ﻿using AutoFixture;
 using NUnit.Framework;
-using Promeetec.EDMS.Data.Context;
-using Promeetec.EDMS.Data.Repositories;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Adres;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekeraar;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Verzekerde.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Zorgverzekering;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment;
-using Promeetec.EDMS.Domain.Models.Modules.GLI.Weegmoment.Commands;
-using Promeetec.EDMS.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Portaal.Data.Context;
+using Promeetec.EDMS.Portaal.Data.Repositories;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Adres;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekeraar;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Verzekerde.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Zorgverzekering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Weegmoment;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.GLI.Weegmoment.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Verbruiksmiddelen.Zorgprofiel;
+using Promeetec.EDMS.Portaal.Tests.Helpers;
 using Promeetec.EDMS.Tests.Helpers;
 
-namespace Promeetec.EDMS.Data.Tests.Repositories;
+namespace Promeetec.EDMS.Portaal.Data.Tests.Repositories;
 
 [TestFixture]
 public class WeegmomentRepositoryTests : TestFixtureBase

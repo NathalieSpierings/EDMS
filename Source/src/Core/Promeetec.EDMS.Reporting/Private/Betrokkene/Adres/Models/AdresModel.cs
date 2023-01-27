@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Reporting.Private.Betrokkene.Land.Models;
-using Promeetec.EDMS.Reporting.Shared.Models;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Reporting.Private.Betrokkene.Land.Models;
+using Promeetec.EDMS.Portaal.Reporting.Shared.Models;
 
-namespace Promeetec.EDMS.Reporting.Private.Betrokkene.Adres.Models;
+namespace Promeetec.EDMS.Portaal.Reporting.Private.Betrokkene.Adres.Models;
 
 public class AdresModel : ModelBase
 {

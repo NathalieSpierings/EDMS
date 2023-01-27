@@ -1,4 +1,4 @@
-﻿namespace Promeetec.EDMS.Queries;
+﻿namespace Promeetec.EDMS.Portaal.Core.Queries;
 
 public interface IQuery<TResult>
 {

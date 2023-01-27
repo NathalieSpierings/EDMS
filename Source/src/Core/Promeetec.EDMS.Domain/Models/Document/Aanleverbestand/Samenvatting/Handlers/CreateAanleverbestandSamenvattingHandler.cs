@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
-using Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Aanleverberstand;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Samenvatting.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Aanleverbestand.Samenvatting.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Aanleverbestand.Samenvatting.Handlers
 {
 	public class CreateAanleverbestandSamenvattingHandler : ICommandHandler<CreateAanleverbestandSamenvatting>
 	{

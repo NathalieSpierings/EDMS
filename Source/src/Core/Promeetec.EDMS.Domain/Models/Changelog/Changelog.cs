@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Promeetec.EDMS.Domain.Models.Changelog.Commands;
+using Promeetec.EDMS.Portaal.Core.Domain;
+using Promeetec.EDMS.Portaal.Domain.Models.Changelog.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Changelog;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Changelog;
 
 public class Changelog : AggregateRoot
 {

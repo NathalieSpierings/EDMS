@@ -1,6 +1,6 @@
-﻿using Promeetec.EDMS.Commands;
+﻿using Promeetec.EDMS.Portaal.Core.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage.Commands;
 
 public class RemoveUserFromPushMessage : CommandBase
 {

@@ -1,4 +1,5 @@
-﻿@inject SignInManager<Medewerker> SignInManager
+﻿@using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker
+@inject SignInManager<Medewerker> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

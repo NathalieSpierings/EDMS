@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
-using Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Commands;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Haarwerk.Validators;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Haarwerk.Validators;
 
 public class UpdateHaarwerkValidator : AbstractValidator<UpdateHaarwerk>
 {

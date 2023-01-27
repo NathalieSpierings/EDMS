@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Promeetec.EDMS.Domain.Models.Modules.Ketenzorg
+namespace Promeetec.EDMS.Portaal.Domain.Models.Modules.Ketenzorg
 {
     public class Authorization
     {

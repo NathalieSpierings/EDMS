@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Promeetec.EDMS.Domain.Models.Modules.Adresboek;
-using Promeetec.EDMS.Domain.Models.Modules.Declaratie.Aanlevering;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Adresboek;
+using Promeetec.EDMS.Portaal.Domain.Models.Modules.Declaratie.Aanlevering;
 
-namespace Promeetec.EDMS.Domain.Models.Betrokkene.Organisatie;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Organisatie;
 
 [Owned]
 public class OrganisatieSettings

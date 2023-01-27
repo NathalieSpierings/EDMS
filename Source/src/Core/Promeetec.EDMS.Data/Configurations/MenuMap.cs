@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Promeetec.EDMS.Domain.Models.Menu.Menu;
+using Promeetec.EDMS.Portaal.Domain.Models.Menu.Menu;
 
-namespace Promeetec.EDMS.Data.Configurations;
+namespace Promeetec.EDMS.Portaal.Data.Configurations;
 
 public class MenuMap : IEntityTypeConfiguration<Menu>
 {

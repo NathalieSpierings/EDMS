@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Extensions;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Commands;
-using Promeetec.EDMS.Domain.Models.Document.Overigbestand.Events;
-using Promeetec.EDMS.Domain.Models.Event;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Extensions;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Event;
 
-namespace Promeetec.EDMS.Domain.Models.Document.Overigbestand.Handlers
+namespace Promeetec.EDMS.Portaal.Domain.Models.Document.Overigbestand.Handlers
 {
 	public class CreateOverigBestandHandler : ICommandHandler<CreateOverigBestand>
 	{

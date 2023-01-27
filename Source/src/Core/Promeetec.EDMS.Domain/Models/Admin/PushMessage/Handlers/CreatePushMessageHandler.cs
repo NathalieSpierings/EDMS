@@ -1,10 +1,10 @@
-using Promeetec.EDMS.Commands;
-using Promeetec.EDMS.Domain.Models.Admin.PushMessage.Commands;
-using Promeetec.EDMS.Domain.Models.Betrokkene.Medewerker;
-using Promeetec.EDMS.Domain.Models.Identity.Group;
-using Promeetec.EDMS.Events;
+using Promeetec.EDMS.Portaal.Core.Commands;
+using Promeetec.EDMS.Portaal.Core.Events;
+using Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage.Commands;
+using Promeetec.EDMS.Portaal.Domain.Models.Betrokkene.Medewerker;
+using Promeetec.EDMS.Portaal.Domain.Models.Identity.Group;
 
-namespace Promeetec.EDMS.Domain.Models.Admin.PushMessage.Handlers;
+namespace Promeetec.EDMS.Portaal.Domain.Models.Admin.PushMessage.Handlers;
 
 public class CreatePushMessageHandler : ICommandHandler<CreatePushMessage>
 {
